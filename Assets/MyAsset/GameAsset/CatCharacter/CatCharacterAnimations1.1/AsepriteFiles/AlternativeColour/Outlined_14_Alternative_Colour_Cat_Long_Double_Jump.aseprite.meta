@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: b244da75e216a9542b89ab2de6c504bf
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_0
+    originalName: 
+    pivot: {x: 0.47058824, y: -0.375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 17
+      height: 16
+    spriteID: 0d24d151e824b4a4c997b3d221a983dd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_1
+    originalName: 
+    pivot: {x: 0.375, y: -0.53846157}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 45
+      y: 28
+      width: 16
+      height: 13
+    spriteID: 9b98e32eb4d075244a6cdda1cd130c75
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 45, y: 28}
+  - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_2
+    originalName: 
+    pivot: {x: 0.3846154, y: -0.53846157}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 73
+      y: 4
+      width: 13
+      height: 13
+    spriteID: a90545b702f461a4fafa29c2db3689d2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 73, y: 4}
+  - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_3
+    originalName: 
+    pivot: {x: 0.3846154, y: -0.53846157}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 94
+      y: 4
+      width: 13
+      height: 13
+    spriteID: c260915734d15394781155c134457e89
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 94, y: 4}
+  - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_4
+    originalName: 
+    pivot: {x: 0.42857146, y: -0.53846157}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 91
+      y: 28
+      width: 14
+      height: 13
+    spriteID: 535d18a59b7ebff4d930a70a45ed10ec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 91, y: 28}
+  - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_5
+    originalName: 
+    pivot: {x: 0.42857146, y: -0.53846157}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 29
+      y: 4
+      width: 14
+      height: 13
+    spriteID: 910136ea9e9d4c44783063e7f19abafd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 29, y: 4}
+  - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_6
+    originalName: 
+    pivot: {x: 0.3846154, y: -0.53846157}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 55
+      width: 13
+      height: 13
+    spriteID: 99980fa21f55f0a4bb362d1eddba7808
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 55}
+  - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_7
+    originalName: 
+    pivot: {x: 0.3846154, y: -0.53846157}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 25
+      y: 55
+      width: 13
+      height: 13
+    spriteID: d7d7fe0fe2ed298438c9ac0694b7efaf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 25, y: 55}
+  - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_8
+    originalName: 
+    pivot: {x: 0.42857146, y: -0.53846157}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 51
+      y: 4
+      width: 14
+      height: 13
+    spriteID: 55be93421c49e9047bf8a49721ff94cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 51, y: 4}
+  - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: -0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 69
+      y: 28
+      width: 14
+      height: 14
+    spriteID: 08b128d67a5b38c4195b263b79a9e30b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 69, y: 28}
+  - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: -0.2777778}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 25
+      y: 28
+      width: 12
+      height: 18
+    spriteID: d7ede95658db7164bafcb3a3ecc926c3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 25, y: 28}
+  - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_11
+    originalName: 
+    pivot: {x: 0.53846157, y: -0.2631579}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 28
+      width: 13
+      height: 19
+    spriteID: 06f2ad2f4eef19245a500f242236726a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 28}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1500990032
+    name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 8
+        y: 6
+        width: 17
+        height: 16
+      spriteId: 0d24d151e824b4a4c997b3d221a983dd
+    - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 10
+        y: 7
+        width: 16
+        height: 13
+      spriteId: 9b98e32eb4d075244a6cdda1cd130c75
+    - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 11
+        y: 7
+        width: 13
+        height: 13
+      spriteId: a90545b702f461a4fafa29c2db3689d2
+    - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 11
+        y: 7
+        width: 13
+        height: 13
+      spriteId: c260915734d15394781155c134457e89
+    - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 10
+        y: 7
+        width: 14
+        height: 13
+      spriteId: 535d18a59b7ebff4d930a70a45ed10ec
+    - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 10
+        y: 7
+        width: 14
+        height: 13
+      spriteId: 910136ea9e9d4c44783063e7f19abafd
+    - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 11
+        y: 7
+        width: 13
+        height: 13
+      spriteId: 99980fa21f55f0a4bb362d1eddba7808
+    - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 11
+        y: 7
+        width: 13
+        height: 13
+      spriteId: d7d7fe0fe2ed298438c9ac0694b7efaf
+    - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 10
+        y: 7
+        width: 14
+        height: 13
+      spriteId: 55be93421c49e9047bf8a49721ff94cf
+    - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 7
+        width: 14
+        height: 14
+      spriteId: 08b128d67a5b38c4195b263b79a9e30b
+    - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 10
+        y: 5
+        width: 12
+        height: 18
+      spriteId: d7ede95658db7164bafcb3a3ecc926c3
+    - name: Outlined_14_Alternative_Colour_Cat_Long_Double_Jump_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 9
+        y: 5
+        width: 13
+        height: 19
+      spriteId: 06f2ad2f4eef19245a500f242236726a
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 32, y: 32}
