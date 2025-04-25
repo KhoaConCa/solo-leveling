@@ -868,11 +868,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 1ff7c7cf-4ce9-4684-b075-187953daa9f5
+  cloudProjectId: 2b89281e-043d-40d2-9191-0711389a8725
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: SoloLeveling 2025-04-23_21-40-41
-  organizationId: dnk270204
+  projectName: Testing2DPlatformer
+  organizationId: puppy2806
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
