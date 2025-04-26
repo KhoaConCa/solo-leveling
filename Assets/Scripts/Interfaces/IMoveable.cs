@@ -4,5 +4,11 @@ using UnityEngine;
 
 interface IMoveable
 {
+
+    #region --- Methods ---
+
     public void OnMove();
+
+    #endregion
+
 }

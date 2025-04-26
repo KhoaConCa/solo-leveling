@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #region --- Properties ---
+
+    public float movementSpeed {  get; set; } = 3f;
+
+    #endregion
+
 }
