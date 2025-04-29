@@ -2,7 +2,7 @@
 - Project name: solo-leveling
 - Unity version: Unity 2022.3.41f1
 - Active game object:
-  - Name: LeftButton
-  - Tag: Untagged
+  - Name: ControlPanel
+  - Tag: MainUI
   - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
