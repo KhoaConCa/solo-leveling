@@ -24,6 +24,7 @@ namespace Platform2D.Movement
     /// </summary>
     enum MOVEMENT_FUNCTION
     {
+        NONE,
         LEFT,
         RIGHT,
         JUMP,

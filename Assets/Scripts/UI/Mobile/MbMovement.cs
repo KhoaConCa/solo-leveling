@@ -2,11 +2,10 @@
 using Platform2D.CharacterInterface;
 using Platform2D.Movement;
 using Platform2D.Vector;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Unity.VisualScripting;
+using SimpleInputNamespace;
 
 namespace Platform2D.UIMovement
 {
@@ -14,10 +13,15 @@ namespace Platform2D.UIMovement
     /// MbMovement - Nhận Input của người chơi, đối với người chơi trên nền tảng Mobile.
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 28/04/2025
     /// </summary>
-    public class MbMovement : MonoBehaviour, IMoveable, IPointerDownHandler, IPointerUpHandler
+    public class MbMovement : MonoBehaviour, IMoveable, IPointerDownHandler, IPointerUpHandler, IDragHandler
     {
 
         #region --- Overrides ---
+
+        public void OnDrag(PointerEventData eventData) {
+            if (_joystick != null)
+                OnMove();
+        }
 
         /// <summary>
         /// Ghi nhận thao tác của người chơi khi người thả Button có trên UI
@@ -36,6 +40,8 @@ namespace Platform2D.UIMovement
         {
             switch (moveDirection)
             {
+                case MOVEMENT_FUNCTION.NONE:
+                    break;
                 case MOVEMENT_FUNCTION.LEFT:
                 case MOVEMENT_FUNCTION.RIGHT:
                     OnMove();
@@ -51,7 +57,10 @@ namespace Platform2D.UIMovement
         /// </summary>
         public void OnMove()
         {
-            UIController.MainPlayer.PlayerStates.isMoving = moveDirection == MOVEMENT_FUNCTION.LEFT ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
+            if(_joystick != null)
+                UIController.MainPlayer.PlayerStates.isMoving = _joystick.Value.x < 0 ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
+            else
+                UIController.MainPlayer.PlayerStates.isMoving = moveDirection == MOVEMENT_FUNCTION.LEFT ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
         }
 
         /// <summary>
@@ -69,6 +78,8 @@ namespace Platform2D.UIMovement
         public void Awake()
         {
             UIController = GameObject.FindGameObjectWithTag(_tagMainUI).GetComponent<UIController>();
+
+            if (_joystick == null) _joystick = this.gameObject.GetComponent<SimpleJoystick>();
         }
 
         #endregion
@@ -82,6 +93,8 @@ namespace Platform2D.UIMovement
         #region --- Fields ---
 
         [SerializeField] private MOVEMENT_FUNCTION moveDirection;
+
+        [SerializeField] private SimpleJoystick _joystick;
         [SerializeField] private string _tagMainUI;
 
         #endregion
