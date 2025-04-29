@@ -1,14 +1,21 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStates : MonoBehaviour
+namespace Platform2D.CharacterStates
 {
+    /// <summary>
+    /// PlayerStates - Được tạo ra để lưu trữ trạng thái của nhân vật.
+    /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 28/04/2025
+    /// </summary>
+    public class PlayerStates : MonoBehaviour
+    {
 
-    #region --- Properties ---
+        #region --- Properties ---
 
-    public float isMoving {  get; set; }
+        public float isMoving { get; set; }
 
-    #endregion
+        #endregion
 
+    }
 }

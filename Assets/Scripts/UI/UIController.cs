@@ -1,41 +1,50 @@
+﻿using Platform2D.CharacterController;
+using Platform2D.GlobalChecker;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIController : MonoBehaviour
+namespace Platform2D.CanvasController
 {
-
-    #region --- Unity Methods ---
-
-    public void Awake()
+    /// <summary>
+    /// UIController - Được tạo ra để quản lý giữa giao diện người dùng và các chức năng thao tác của game.
+    /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 28/04/2025
+    /// </summary>
+    public class UIController : MonoBehaviour
     {
-        /*if(!platformChecker.IsMobilePlatform())
+
+        #region --- Unity Methods ---
+
+        public void Awake()
         {
-            foreach (var item in mobileObject)
+            /*if(!platformChecker.IsMobilePlatform())
             {
-                item.SetActive(false);
-            }
-            return;
-        }*/
-        mainPlayer = GameObject.FindWithTag(_tagMainPlayer).GetComponent<PlayerController>();
+                foreach (var item in mobileObject)
+                {
+                    item.SetActive(false);
+                }
+                return;
+            }*/
+            MainPlayer = GameObject.FindWithTag(_tagMainPlayer).GetComponent<PlayerController>();
+        }
+
+        #endregion
+
+        #region --- Properties ---
+
+        public PlayerController MainPlayer { get; private set; }
+
+        #endregion
+
+        #region --- Fields ---
+
+        [SerializeField] private PlatformChecker platformChecker = new PlatformChecker();
+
+        [SerializeField] private List<GameObject> mobileObject = new List<GameObject>();
+
+        [SerializeField] private string _tagMainPlayer;
+
+        #endregion
+
     }
-
-    #endregion
-
-    #region --- Properties ---
-
-    public PlayerController mainPlayer {  get; private set; }
-
-    #endregion
-
-    #region --- Fields ---
-
-    [SerializeField] private PlatformChecker platformChecker = new PlatformChecker();
-
-    [SerializeField] private List<GameObject> mobileObject = new List<GameObject>();
-
-    [SerializeField] private string _tagMainPlayer;
-
-    #endregion
-
 }
