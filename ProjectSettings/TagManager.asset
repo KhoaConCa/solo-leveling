@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MainPlayer
   - MainUI
+  - GroundChecker
   layers:
   - Default
   - TransparentFX

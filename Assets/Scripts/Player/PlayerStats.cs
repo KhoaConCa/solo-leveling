@@ -14,7 +14,15 @@ namespace Platform2D.CharacterStats
 
         #region --- Properties ---
 
-        public float movementSpeed { get; set; } = (float)BASE_STATS.MOVEMENT_SPEED;
+        public float MovementSpeed { get { return _movementSpeed; } set { _movementSpeed = value; } }
+        public float JumpSpeed { get { return _jumpSpeed; } set { _jumpSpeed = value; } }
+
+        #endregion
+
+        #region --- Fields ---
+
+        [SerializeField] private float _movementSpeed = (float)BASE_STATS.MOVEMENT_SPEED;
+        [SerializeField] private float _jumpSpeed = (float)BASE_STATS.JUMP_SPEED;
 
         #endregion
 

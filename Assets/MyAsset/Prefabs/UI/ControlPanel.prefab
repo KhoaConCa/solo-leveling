@@ -133,7 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26868a5e1dfeb5c4e82b87958d76845d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDirection: 0
+  _uiController: {fileID: 0}
+  _moveDirection: 0
   _joystick: {fileID: 0}
   _tagMainUI: MainUI
 --- !u!1 &2459448044701085508
@@ -269,7 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26868a5e1dfeb5c4e82b87958d76845d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDirection: 0
+  _uiController: {fileID: 0}
+  _moveDirection: 0
   _joystick: {fileID: 0}
   _tagMainUI: MainUI
 --- !u!1 &2864895445222309267
@@ -405,7 +407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26868a5e1dfeb5c4e82b87958d76845d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDirection: 1
+  _uiController: {fileID: 0}
+  _moveDirection: 0
   _joystick: {fileID: 0}
   _tagMainUI: MainUI
 --- !u!1 &5373922163533868185
@@ -467,7 +470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a29aecb8bfae0e4f8a749fcbdb0d03d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mobileObject:
+  _playerController: {fileID: 0}
+  _mobileObject:
   - {fileID: 7426299413038922800}
   - {fileID: 8387900461608487120}
   _tagMainPlayer: MainPlayer
@@ -569,7 +573,7 @@ GameObject:
   - component: {fileID: 3589783525395633842}
   - component: {fileID: 5133055738283274445}
   m_Layer: 5
-  m_Name: Jump
+  m_Name: JumpButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -688,7 +692,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26868a5e1dfeb5c4e82b87958d76845d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDirection: 2
+  _uiController: {fileID: 0}
+  _moveDirection: 3
   _joystick: {fileID: 0}
   _tagMainUI: MainUI
 --- !u!1001 &3514799092282733802
@@ -808,7 +813,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26868a5e1dfeb5c4e82b87958d76845d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDirection: 0
+  _uiController: {fileID: 0}
+  _moveDirection: 0
   _joystick: {fileID: 0}
   _tagMainUI: MainUI
 --- !u!224 &3735836085920324096 stripped

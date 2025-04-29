@@ -40,5 +40,6 @@ namespace Platform2D.BaseStats
     public enum BASE_STATS
     {
         MOVEMENT_SPEED = 3,
+        JUMP_SPEED = 3,
     }
 }
