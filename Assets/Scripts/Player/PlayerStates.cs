@@ -30,14 +30,14 @@ namespace Platform2D.CharacterStates
         [SerializeField] private int _jumpCount = 0;
         [SerializeField] private const int MAX_JUMP = 2;
 
-        [SerializeField] private float _isMoving;
-        [SerializeField] private float _isJumping;
+        [SerializeField] private float _isMoving = 0f;
+        [SerializeField] private float _isJumping = 0f;
         [SerializeField] private float _dashDuration = 0.2f;
 
-        [SerializeField] private bool _isCrouching;
+        [SerializeField] private bool _isCrouching = false;
         [SerializeField] private bool _isDashing = false;
-        [SerializeField] private bool _isGrounded;
-        [SerializeField] private bool _isOnWall;
+        [SerializeField] private bool _isGrounded = false;
+        [SerializeField] private bool _isOnWall = false;
 
         #endregion
 

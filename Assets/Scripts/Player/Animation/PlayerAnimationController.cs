@@ -41,9 +41,9 @@ namespace Platform2D.CharacterAnimation
         /// </summary>
         public void OnJump()
         {
-            if(_playerController.PlayerStates.IsJumping > 0 && _playerController.PlayerStates.IsGrounded)
+            if(_playerController.PlayerStates.IsJumping > 0.01f && _playerController.PlayerStates.IsGrounded)
                 _animator.SetTrigger(PlayerAnimationParameters.Jump);
-            Debug.Log(_playerController.Rg2D.velocity.y);
+
             _animator.SetFloat(PlayerAnimationParameters.YVelocity, _playerController.Rg2D.velocity.y);
         }
 
