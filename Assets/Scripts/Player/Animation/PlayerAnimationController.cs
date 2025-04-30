@@ -11,8 +11,21 @@ namespace Platform2D.CharacterAnimation
     /// PlayerAnimationController - Được tạo ra nhằm mục đích quản lý và chuyển đổi giữa các animation với nhau
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 29/04/2025
     /// </summary>
-    public class PlayerAnimationController : MonoBehaviour, IMoveable
+    [System.Serializable]
+    public class PlayerAnimationController : IMoveable
     {
+        #region --- Constructor ---
+
+        public PlayerAnimationController(
+            PlayerController playerController,
+            Animator animator
+        ) {
+            _playerController = playerController; ;
+            _animator = animator;
+        }
+
+        #endregion
+
         #region --- Overrides ---
 
         /// <summary>
@@ -20,7 +33,8 @@ namespace Platform2D.CharacterAnimation
         /// </summary>
         public void OnMove()
         {
-            _animator.SetBool(PlayerAnimationParameters.IsMoving, Mathf.Abs(_playerController.PlayerStates.IsMoving) > 0.01f);
+            var isMovingOnGround = (Mathf.Abs(_playerController.PlayerStates.IsMoving) > 0.01f) && _playerController.PlayerStates.IsGrounded;
+            _animator.SetBool(PlayerAnimationParameters.IsMoving, isMovingOnGround);
         }
 
         public void OnJump()
@@ -30,28 +44,11 @@ namespace Platform2D.CharacterAnimation
 
         #endregion
 
-        #region --- Unity Methods ---
-
-        public void Awake()
-        {
-            _playerController = this.gameObject.GetComponentInParent<PlayerController>();
-            _animator = this.gameObject.GetComponent<Animator>();
-        }
-
-        public void FixedUpdate()
-        {
-            // Chỉ thực hiện animation chạy khi 'IsGround' là true.
-            if(_playerController.PlayerStates.IsGrounded)
-                OnMove();
-        }
-
-        #endregion
-
         #region --- Fields ---
 
-        [SerializeField] private PlayerController _playerController;
+        private readonly PlayerController _playerController;
 
-        [SerializeField] private Animator _animator;
+        private readonly Animator _animator;
 
         #endregion
     }

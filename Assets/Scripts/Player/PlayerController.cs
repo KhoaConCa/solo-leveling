@@ -1,35 +1,93 @@
-﻿using Platform2D.CharacterStates;
+﻿using Platform2D.CharacterAnimation;
+using Platform2D.CharacterInterface;
+using Platform2D.CharacterStates;
 using Platform2D.CharacterStats;
 using Platform2D.Vector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 namespace Platform2D.CharacterController
 {
     /// <summary>
-    /// PlayerController - Đóng vai trò trung tâm nhằm quản lý và lưu trữ các thông tin quan trọng.
+    /// PlayerController - Đóng vai trò trung tâm nhằm quản lý, thực hiện và lưu trữ các thông tin và thao tác quan trọng.
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 28/04/2025
     /// </summary>
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IMoveable
     {
+        #region --- Overrides ---
+
+        /// <summary>
+        /// Thực hiện điều phối sự di chuyển của nhân vật thông qua các Controller.
+        /// </summary>
+        public void OnMove()
+        {
+            FlipPlayerObject();
+
+            _animationController.OnMove();
+            _movementController.OnMove();
+        }
+
+        /// <summary>
+        /// Thực hiện điều phối sự nhảy của nhân vật thông qua các Controller
+        /// </summary>
+        public void OnJump()
+        {
+            if (_playerStates.IsGrounded && _playerStates.IsJumping > 0.01f)
+                _movementController.OnJump();
+        }
+
+        #endregion
 
         #region --- Unity Methods ---
 
         public void Awake()
         {
-            _isFacingRight = true;
+            try
+            {
+                // Tìm kiếm và lấy các Component cần thiết.
+                var animator = gameObject.GetComponentInChildren<Animator>();
 
-            _rg2D = gameObject.GetComponent<Rigidbody2D>();
-            _groundChecker = GameObject.FindGameObjectWithTag(GROUND_CHECKER).GetComponent<CapsuleCollider2D>();
+                _rg2D = gameObject.GetComponent<Rigidbody2D>();
+                _groundChecker = GameObject.FindGameObjectWithTag(GROUND_CHECKER).GetComponent<CapsuleCollider2D>();
 
-            _playerStats = gameObject.GetComponentInChildren<PlayerStats>();
-            _playerStates = gameObject.GetComponentInChildren<PlayerStates>();
+                _playerStats = gameObject.GetComponentInChildren<PlayerStats>();
+                _playerStates = gameObject.GetComponentInChildren<PlayerStates>();
+
+                // Khởi tạo các giá trị mặc định
+                _isFacingRight = true;
+                _movementController = new PlayerMovementController(this);
+               
+                _animationController = new PlayerAnimationController(
+                    playerController: this,
+                    animator: animator
+                ); 
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"PlayerController Error: {ex}");
+            }
         }
 
-        public void Update()
+        public void FixedUpdate()
         {
-            FlipPlayerObject();
+            try
+            {
+                // Cập nhật vật lý nhân vật.
+                _movementController.IsGrounded();
+
+                // Thao tác vật lý nhân vật
+                OnMove();
+                
+                OnJump();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"PlayerController Update Failed: {ex}");
+            }
+            
         }
 
         #endregion
@@ -77,6 +135,9 @@ namespace Platform2D.CharacterController
 
         [SerializeField] private Rigidbody2D _rg2D;
         [SerializeField] private CapsuleCollider2D _groundChecker;
+
+        private PlayerMovementController _movementController;
+        private PlayerAnimationController _animationController;
 
         [SerializeField] private PlayerStats _playerStats;
         [SerializeField] private PlayerStates _playerStates;

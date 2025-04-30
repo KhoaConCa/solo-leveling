@@ -13,23 +13,40 @@ namespace Platform2D.UIMovement
     /// MbMovement - Nhận Input của người chơi, đối với người chơi trên nền tảng Mobile.
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 28/04/2025
     /// </summary>
-    public class MbMovement : MonoBehaviour, IMoveable, IPointerDownHandler, IPointerUpHandler, IDragHandler
+    public class MbMovement : MonoBehaviour, IMoveable, IPointerDownHandler, IPointerUpHandler, IDragHandler, IEndDragHandler
     {
 
         #region --- Overrides ---
 
+        #region -- Drag UI --
+        /// <summary>
+        /// Ghi nhận thao tác của người chơi khi kéo Joystick trên UI.
+        /// </summary>
+        /// <param name="eventData"> Các sự kiện khi người chơi kéo Joystick </param>
         public void OnDrag(PointerEventData eventData) {
             if (_joystick != null)
                 OnMove();
         }
 
         /// <summary>
+        /// Ghi nhận thao tác của người chơi khi thả Joystick trên UI.
+        /// </summary>
+        /// <param name="eventData"> Các sự kiện khi người chơi thả Joystick </param>
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            if (_joystick != null)
+                _uiController.PlayerController.PlayerStates.IsMoving = 0.0f;
+        }
+        #endregion
+
+        #region -- Pointer UI --
+        /// <summary>
         /// Ghi nhận thao tác của người chơi khi người thả Button có trên UI
         /// </summary>
         /// <param name="eventData"> Các sự kiện khi người chơi thả Button </param>
         public void OnPointerUp(PointerEventData eventData)
         {
-            _uiController.PlayerController.PlayerStates.IsMoving = 0.0f;
+            _uiController.PlayerController.PlayerStates.IsJumping = 0.0f;
         }
 
         /// <summary>
@@ -51,7 +68,9 @@ namespace Platform2D.UIMovement
                     break;
             }
         }
+        #endregion
 
+        #region -- Player Move Handle --
         /// <summary>
         /// Thực hiện chức năng di chuyển nhân vật khi người chơi thao tác di chuyển.
         /// </summary>
@@ -70,6 +89,7 @@ namespace Platform2D.UIMovement
         {
             _uiController.PlayerController.PlayerStates.IsJumping = (float)AXIS_1D.POSITIVE;
         }
+        #endregion
 
         #endregion
 
