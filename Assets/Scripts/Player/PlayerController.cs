@@ -23,7 +23,7 @@ namespace Platform2D.CharacterController
         /// <summary>
         /// Thực hiện điều phối sự di chuyển của nhân vật thông qua các Controller.
         /// </summary>
-        public void OnMove()
+        private void OnMove()
         {
             FlipPlayerObject();
 
@@ -53,19 +53,17 @@ namespace Platform2D.CharacterController
         }
 
         /// <summary>
-        /// Thực hiện điều phối sự cúi của nhân vật thông qua các Controller.
-        /// </summary>
-        public void OnCrouch()
-        {
-
-        }
-
-        /// <summary>
         /// Thực hiện điều phối sự lướt của nhân vật thông qua các Controller.
         /// </summary>
-        public void OnDash()
+        private IEnumerator OnDash()
         {
+            _animationController.OnDash();
+            _movementController.OnDash();
 
+            yield return new WaitForSeconds(_playerStates.DashDuration);
+
+            _playerStates.IsDashing = false;
+            _animationController.OnDash();
         }
 
         #endregion
@@ -111,9 +109,11 @@ namespace Platform2D.CharacterController
                 _animationController.OnGrounded();
 
                 // Thao tác vật lý nhân vật
-                OnMove();
-                
                 OnJump();
+
+                if (_playerStates.IsDashing)
+                    StartCoroutine(OnDash());
+                else OnMove();
             }
             catch (Exception ex)
             {

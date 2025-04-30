@@ -17,6 +17,7 @@ namespace Platform2D.CharacterAnimation
         public readonly static string IsGrounded = "isGrounded";
         public readonly static string IsMoving = "isMoving";
         public readonly static string IsCrouching = "isCrouching";
+        public readonly static string Dash = "isDashing";
         #endregion
 
         #region -- Float Parameters --

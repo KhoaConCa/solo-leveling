@@ -73,7 +73,12 @@ public class PlayerMovementController : IMoveable, ICheckable
     /// </summary>
     public void OnDash()
     {
+        float movementSpeed = _playerController.PlayerStats.DashSpeed;
 
+        float velY = _playerController.Rg2D.velocity.y;
+        float velX = _playerController.PlayerStates.IsMoving;
+
+        _playerController.Rg2D.velocity = new Vector2(velX * movementSpeed, velY);
     }
 
     /// <summary>

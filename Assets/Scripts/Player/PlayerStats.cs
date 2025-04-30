@@ -16,6 +16,7 @@ namespace Platform2D.CharacterStats
 
         public float MovementSpeed { get { return _movementSpeed; } set { _movementSpeed = value; } }
         public float JumpSpeed { get { return _jumpSpeed; } set { _jumpSpeed = value; } }
+        public float DashSpeed { get { return _dashSpeed; } }
         public float CrouchSpeed { get { return _crouchSpeed; } }
         public float DoubleJumpSpeed { get { return _doubleJumpSpeed; } }
 
@@ -25,6 +26,7 @@ namespace Platform2D.CharacterStats
 
         [SerializeField] private float _movementSpeed = (float)BASE_STATS.MOVEMENT_SPEED;
         [SerializeField] private float _crouchSpeed => _movementSpeed*1.2f;
+        [SerializeField] private float _dashSpeed => _movementSpeed * 3.5f;
         [SerializeField] private float _jumpSpeed = (float)BASE_STATS.JUMP_SPEED;
         [SerializeField] private float _doubleJumpSpeed => _jumpSpeed/2;
 

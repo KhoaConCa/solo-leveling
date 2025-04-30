@@ -68,7 +68,7 @@ namespace Platform2D.CharacterAnimation
         /// </summary>
         public void OnDash()
         {
-
+            _animator.SetBool(PlayerAnimationParameters.Dash, _playerController.PlayerStates.IsDashing);
         }
 
         #endregion

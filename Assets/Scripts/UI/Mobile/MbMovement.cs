@@ -47,6 +47,7 @@ namespace Platform2D.UIMovement
         public void OnPointerUp(PointerEventData eventData)
         {
             _uiController.PlayerController.PlayerStates.IsJumping = 0.0f;
+            _uiController.PlayerController.PlayerStates.IsDashing = false;
 
             if (_uiController.PlayerController.PlayerStates.IsGrounded)
                 _uiController.PlayerController.PlayerStates.IsCrouching = false;
@@ -107,7 +108,6 @@ namespace Platform2D.UIMovement
             if (_uiController.PlayerController.PlayerStates.IsGrounded)
             {
                 _uiController.PlayerController.PlayerStates.IsCrouching = true;
-                Debug.Log(_uiController.PlayerController.PlayerStates.IsCrouching);
             }
         }
 
@@ -116,7 +116,8 @@ namespace Platform2D.UIMovement
         /// </summary>
         public void OnDash()
         {
-
+            _uiController.PlayerController.PlayerStates.IsDashing = true;
+            Debug.Log(_uiController.PlayerController.PlayerStates.IsDashing);
         }
         #endregion
 
