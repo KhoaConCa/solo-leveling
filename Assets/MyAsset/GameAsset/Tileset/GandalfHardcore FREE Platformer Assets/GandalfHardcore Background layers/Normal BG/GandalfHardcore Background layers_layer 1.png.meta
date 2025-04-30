@@ -1,0 +1,5895 @@
+fileFormatVersion: 2
+guid: de343663ea1e32f439229e5e153a75fe
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d70391007c4178345a4727976b66f1cd
+      internalID: -1564732431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d641574651ef1304c8f4652623280a33
+      internalID: -613669294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d57eab0ac19f27046bdb215c05b29ab9
+      internalID: -1112238021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d73528fab0440d4dbf0b2523601198c
+      internalID: 1882188376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_4
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f711f38af3ae55347af6ace480d8d4f6
+      internalID: 1484002359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_5
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 014c25ad720d9ae49a2a902acb220cc3
+      internalID: 1461899910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_6
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a847a0b1620ce4a88c522e72784d76
+      internalID: 1298438479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_7
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4293075631b53bc4d905178d3d147a71
+      internalID: 1112595869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_8
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73640c0e5810de24f8f53e24919a5128
+      internalID: 469539132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_9
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9324ac402d853624fb172d500c905ba6
+      internalID: -803944924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_10
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 257
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df4653ce8087fe46a1f9c59512aed0d
+      internalID: -1054943819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216046d8bca4f5941b0910a54ede905d
+      internalID: -431931896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_12
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d31ea78457dbb4bbafad8b63dc6db4
+      internalID: 1530677461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd804e1e39bd274b83f03312fec7b49
+      internalID: 1523309714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac291b5a221120548addf233baf9ebb5
+      internalID: -819214077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_15
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c06ee9c1be41641ba00d1ba7bf1213
+      internalID: 1577780326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 486aa83cc79ba724d9672daeea3dc08c
+      internalID: -978381793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_17
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e682cd42efc1540b2e7434c6dfa09e
+      internalID: -668712504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_18
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fafe09e8e99ed34ea3fa76d9d321329
+      internalID: -882363809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_19
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a32059fc41317f4bb59a4931898a6db
+      internalID: -1375622528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_20
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04bd81d3cbb022040baddf6dbfe84c2c
+      internalID: 1190585271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_21
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a4c2923d6d35744bdba5c1eb8c1304
+      internalID: 1122559543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_22
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d3be77391846047b173499f1c8d4b5
+      internalID: -1376196386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_23
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 239af9c2b140ae64783a475e21b63b73
+      internalID: -283787392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_24
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23903c7fc8dd34340815b37606c1f3c4
+      internalID: -2143472618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_25
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d4a4b3de20d3e4ab7128fa92a45e26
+      internalID: -2013916896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_26
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e799e5aaa17eb564abcad4a64cdd790a
+      internalID: 1928748474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_27
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b380256f43312df4e8d2ba2566a900bb
+      internalID: 1569479211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_28
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcfa19035864f704f8377a67a07d03cd
+      internalID: -2085309987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_29
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c08c9783f2958b4eb12a134e27d75b5
+      internalID: -2143189936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_30
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296f5148b77631240a272772c8ccbc6f
+      internalID: 432877525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_31
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cae060a7adcbd24797a3c24fe4add2a
+      internalID: -531082325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_32
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72986a90558af0142b6484710dc14121
+      internalID: -1686618300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_33
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 394516e4f02e80742b96684773c2e167
+      internalID: 974431509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_34
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 980aae3e2adb24a4caff0744af3d0e0e
+      internalID: -323625375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_35
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 326373d10fa40f14ca143f5bd7408af2
+      internalID: -1223353402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_36
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a078f5733e3b141bcbc8e19284e80e
+      internalID: -2117723508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_37
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 225
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70daccf3ce2cac342bbd3a8b70da9636
+      internalID: -1364493790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e17e8e75be601674a95cc2fbdc58a82c
+      internalID: -1354801862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_39
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b498e88ff5fd18f4c8186e548fc5e8f7
+      internalID: 1563764052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_40
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a96675269207a041beaa062df9ab90d
+      internalID: -1716138028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_41
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c17dae925b15d64a9cf9a4c672960e0
+      internalID: -1744258050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_42
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a39ee2168ecce7c4ca3b801c01a18ab4
+      internalID: 113474806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_43
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c56a42984196e54ca1fe43c2d4dd962
+      internalID: 1175450331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_44
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81c4ae68ca7c1e49b63b70f698778bf
+      internalID: 1976560069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_45
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad3e82c9e410df49b4b8e14d477ed1c
+      internalID: -1873304082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_46
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23781bc2a2ce4b144a1fecf442da7f66
+      internalID: -781588336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_47
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8c6d141af81bcb4db734b7d96e6a89e
+      internalID: -675953276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_48
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eccc68bc267d0c448a46c89ad3ecb27
+      internalID: 603231138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_49
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3172edcc418b5f24abfb50ca22519136
+      internalID: -1825490501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_50
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc68562c9db1ea249a6ccea5cfae7103
+      internalID: 109582900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_51
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb1a01103fda47542a462c5298d56de7
+      internalID: 1742472926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_52
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e210bcd590a77469ac3f1ee8ef6800
+      internalID: -620240232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_53
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240a3fbed84ce1146a6cd33f45ddddb6
+      internalID: -1432258627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_54
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d7f61ae1af5ef74b91235ea543ebb57
+      internalID: 872649860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_55
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6cf26030dc08fd4e84f798cef0cdfb4
+      internalID: 1600692990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_56
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d08588129001940a9afb17b1e0565c
+      internalID: 12126818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_57
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8018b9e7365b7144ab49fa5c0b39f0dc
+      internalID: -388788735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_58
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2371a5ae8a3327439fcb83e0d0deb35
+      internalID: 2056427832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_59
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f684fe4177eac974c954c622dcaa3283
+      internalID: 1954292021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_60
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eabbd5c9ab9517148966f958a6a161fa
+      internalID: 533724670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_61
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a818fa552513334bba41f63162f4147
+      internalID: -1914315259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_62
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bd6a26846141ca44a3c43d08c18a71b
+      internalID: -1093183140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_63
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd6099d6308533489fb49caa4547ee1
+      internalID: 1854180385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_64
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3addc232a937c3d4c9ad1a06741e9296
+      internalID: -2019781978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_65
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d167af9f7b2db3b44b21fd68d8b5682f
+      internalID: 224517079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_66
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207cfd5cece6b6145bbac88ab5aba5b2
+      internalID: 326786150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_67
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d973d4cada36aa94881d059b367d84f1
+      internalID: -1945218369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_68
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 193
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e13d91278516214ba475894a25655db
+      internalID: -827824047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_69
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e3d8c9e3b9d3fa4a8e02adc7d37d101
+      internalID: 1535058794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_70
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51aa65ee71a30a449a334c0794730479
+      internalID: -976169742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_71
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf7511a0dfaca2c4096b2686bca06bc9
+      internalID: 1115320329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_72
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc0aee31ae0c3f54c997dfdd306fc496
+      internalID: 72554553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_73
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 635b5470af233124b9812f0bd938ad69
+      internalID: -2085050818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_74
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e58e261c642de649b980710b7f526f6
+      internalID: 1534908156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_75
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfd321319c301314bb8941d027065ede
+      internalID: -915265549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_76
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55bff314b8e72940a89bc831d9eaac5
+      internalID: -2047112306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_77
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70d6615ddbfe3f748b00e68abccbb521
+      internalID: 603846229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_78
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04221dad3cf3d9d4eac4e44f557a304e
+      internalID: -1741345248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_79
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 425dd4bb58aa1464087c538ec887b85c
+      internalID: -1514331019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_80
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810ebb68ea209834c9e5336d0ff660fb
+      internalID: -1323789334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_81
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbd5dff9d8b70941af3f515de4c1a45
+      internalID: 645325851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_82
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 897da0145e9506b4ca1cddc9ccd79ede
+      internalID: -2067288867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_83
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 209c995d222d17043973a2eca5b5b25d
+      internalID: -919442411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_84
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef4719fad86fb64ba23f58505ad3df4
+      internalID: 1021622758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_85
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: accf06f8c07063f4da780fd958fffc90
+      internalID: -347479654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_86
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1195da22662185143bb014cb8455a6a0
+      internalID: -1624069612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_87
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85351a5f35d8d104e9599d92dc7aa633
+      internalID: -437225680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_88
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94841fdb7a947942933bc1c2429e13f
+      internalID: 1382721450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_89
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fae154fbf708ba34e97287d7d6e2c69a
+      internalID: 1721825319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_90
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04399821443267f4890be4605c7fb0e0
+      internalID: 1001463417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_91
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c0393e9da1a14f49b162bac9f17020f
+      internalID: -1084399944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_92
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6ad84db25051e4181bdf86fbb56b99
+      internalID: 1730505583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_93
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f481205235cfbf45b7162e20fe3bdb0
+      internalID: 1565307232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_94
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d606b68a3a4f899499a5af05a762f2c8
+      internalID: -1731466491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_95
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef4c5c2f90085d4784539c911df85bf
+      internalID: 403670033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_96
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f09d3c4df0ad404fa6adfa57039e5cb
+      internalID: 1573771283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_97
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a91f69340f51843bdc463ef69440c2
+      internalID: 1613185826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_98
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baf092967e792f24e82221c8e4b5d640
+      internalID: -2074323168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_99
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36b899ebd0dcc74c857d46f4fa1849e
+      internalID: -932834511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_100
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22086f5cf491ecf4da20a65bbfc84559
+      internalID: -226488233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_101
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5461dba57573974409f38999ab91420a
+      internalID: -2118034740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_102
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1998f5cb372b68447832a635a992e166
+      internalID: 1368343815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_103
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbed7df175e23934193bbcdef8c16f95
+      internalID: -943336903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_104
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f827a69d7879a41a11f563b59c5065
+      internalID: 1135531561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_105
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 884cc8dc7c0c9d2488155844dd84a021
+      internalID: -171833294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_106
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 495ab8bb0c87ffe488572e6b4929e2b6
+      internalID: 952183384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_107
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb683b91ac976d4db63e7e538501d02
+      internalID: -324862015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_108
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b9599f4fbbb86541994a9b55d1a9cff
+      internalID: -1113300167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_109
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da36c8d75bc26d344b255c43e0e77348
+      internalID: 2097043222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_110
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b56af24cbe280043afd25575041bf1b
+      internalID: 874025946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_111
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ebb4319fa965041b7e0779a569826d
+      internalID: -1248208932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_112
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 499ad3330a6391c43889b3fd62a830d8
+      internalID: 890052557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_113
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36c2926535b4d1d469bd412b07b5554d
+      internalID: -2137470118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_114
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5193915532ffcad4caa7253634e2afdf
+      internalID: 1674126125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_115
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc74f6a5e763d743a4733bd9f6870ff
+      internalID: 745097893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_116
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e243b67cfb682774f8ce1f9cb702340c
+      internalID: 1647540329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_117
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d2eb96cb840864998516982b8e75b9
+      internalID: 1576726998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_118
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9547efe84b18f0f46ab892a33cf7d00e
+      internalID: 161941084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_119
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa279fe3dab53642b072904a59dcae9
+      internalID: 120920164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_120
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4802cdd9862fdd84ca79536bf654a4ce
+      internalID: -1760598033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_121
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8234a7e9b982d84b9066e10ac6a4949
+      internalID: -2034930440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_122
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9039db68b857f14a8d3927ead8e4131
+      internalID: 496992786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_123
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e93bcaec4c5d64dbb2d27c463d6920
+      internalID: -414279397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_124
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ad3f0b393f11243a45067e6f85a1f6
+      internalID: 2031714300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_125
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a4fadd5ef8bf54d813566bdf4bb096
+      internalID: 1370438627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_126
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c29210fd30be3184f860d8e1ada5f362
+      internalID: -1551385386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_127
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9558063f6f1204f4394a452f01ec6938
+      internalID: 536772964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_128
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fd72fc2bebd9864f9fa4b9d6d172033
+      internalID: -1942036069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_129
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 744020eb5569b534587a7bc75b8879c2
+      internalID: -1853212190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_130
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d5761aacbef1be4dbb1fd60574bf8a5
+      internalID: -747698177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_131
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7542cbf06f85f7d45a48a75225cbd983
+      internalID: 668521726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_132
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 129
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cb662b6abafd5d488e061139f861591
+      internalID: 1409253598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_133
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d035c0083557c4288bce87802a98d2
+      internalID: 2026654767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_134
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e36cc01c071f341b6a2749455cb648
+      internalID: 225767653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_135
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86eed6a45cf04e74381f11532ce60063
+      internalID: -1788885280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_136
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14c755a18aa7d334098a76d3d3c099e4
+      internalID: 1589134784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_137
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62244de887b8f4141a37a97da7e254e2
+      internalID: 677865417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_138
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a1ff6a73c36d4f42b62c0f16281d113
+      internalID: 1487924712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_139
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe4925083bf3bb4f81132888b5b7434
+      internalID: -1524306735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_140
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a0119b95212c3448056fec72bfd669
+      internalID: 627232086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_141
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e306d4492dd0db4c87e8a69adf661b3
+      internalID: -1897223221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_142
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5790f8dbde101294d88b3e587018f203
+      internalID: 710856554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_143
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ca96ece5dcd8145b8f2879ebc791ac
+      internalID: -339210895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_144
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86f553730da2bf94f865f6782a7a83e4
+      internalID: -199247895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_145
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1236dcb51b4ee4f9625a5ee89bd75e
+      internalID: 2146501667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_146
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51c608e7927a634fb660779220109a4
+      internalID: -623093790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_147
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6abc50a41ffa3214d81068c3b961608f
+      internalID: 2028724253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_148
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f2645edda7194429cab1423d034fa0
+      internalID: -1547073294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_149
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41bef0fa820956049b4317f8d5ab9565
+      internalID: 407768604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_150
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b5ceb1d3c74144db5b5234c24ac750
+      internalID: -563690841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_151
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f61cf8b6c297274b971dc8036ac85ca
+      internalID: 1304121912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_152
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3013eb933fa6fc246bb206fbf4b9179e
+      internalID: 730960389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_153
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a1343dcadcf1c4b9be30f499358219
+      internalID: -1547752056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_154
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a8ee0b9d50d7fc4892f5ba2447535e4
+      internalID: 916028730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_155
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd3645fcdbd0efb4bb07cc04869c9b91
+      internalID: 151143083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_156
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639c4f5a4e883424fb3a5c71716037c4
+      internalID: -752563234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_157
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 763e7436fbfc9cd448009740fdd1de20
+      internalID: -196562385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_158
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b8cb276e20dce49a16af73be0494c4
+      internalID: 1199972200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_159
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a75aae8395b8204a93ab81c78ae7d36
+      internalID: -1673199094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_160
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f3e5386ac97534ca6cbd3728133c6e
+      internalID: -2022255502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_161
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4621fe4ac66011b458af3dc0caad67e3
+      internalID: -1853749035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_162
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c125706b95c926c4fa4acc9e1e23ba36
+      internalID: -444428569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_163
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0df8fdcc1b96246b5096a69504f475
+      internalID: -1470719287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_164
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 97
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d71e4b0bf8bde46af7c2de4a2ad4ef
+      internalID: 1980103765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_165
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8302b605b5e4fae499b0ee670bee5b30
+      internalID: 339197974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_166
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a5972b6035cff4fb2bedf4d8cf7efc
+      internalID: 1785845270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_167
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 723be6b1e287fd94ea6f35eb1d320930
+      internalID: 192944930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_168
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930d114541e1c5e48b830d503f020edc
+      internalID: 179470258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_169
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a08787ebc6e3040a045c007f768626
+      internalID: -234109836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_170
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1aa58ff99f41744bf8f368524777a2
+      internalID: 541628908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_171
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f299f810d58832c44926c07f4b3b9888
+      internalID: 103562558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_172
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4546ff7d8f8dc694eaf8c61b7a586ba5
+      internalID: -1281992931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_173
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8cea162f4614f14595a04649f6d6097
+      internalID: 1322670147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_174
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa0a90e4e80b7914dbe0876413b2a33d
+      internalID: 1896466325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_175
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 087accfea2baf20479214dc058a7a0c9
+      internalID: 1053191092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_176
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 699ae0bdaa3aa0f47b74747c7332f777
+      internalID: -1898473152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_177
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f756d4954042734bba4917558a26128
+      internalID: -1853490745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_178
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4964fa4c6e684be488fe3421b1791338
+      internalID: 1910963409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_179
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4bf1da5e3d55e49b51166bafe13f5a
+      internalID: -147772686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_180
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53217835d86a2474ba698d5bc5b97dc9
+      internalID: 350640167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_181
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226c69cf767ee4c41a3b8f08ffcbea17
+      internalID: -437885497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_182
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a00b09631c921f0488bfa171cf1f4999
+      internalID: -1700092961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_183
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32aed91bb1ae9ae4f863e5b8247ee7e0
+      internalID: 1181330181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_184
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48dd59e5620d3954590bc2e435759e60
+      internalID: -499096288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_185
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11dab345ce78ee74dae42466275c310b
+      internalID: 690343906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_186
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efe513c61ffd0f04fa4273bee686eab4
+      internalID: 985700698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_187
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a067c4419b7f3ba438edc95f484f30dc
+      internalID: -1314698936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_188
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af39b2b4d3c7c8d4cae2eb264cd1106b
+      internalID: -288001817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_189
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba66882ae321ba4fba463ce795db6cf
+      internalID: -1066777822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_190
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b189555f7f7233e4eb70cb75db4c7166
+      internalID: -1826574973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_191
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ddbad6c35a94045b7bd04dbc08ec49
+      internalID: -674248871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_192
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e802045ea0ce64f8df4dac5b1c45d2
+      internalID: 741209324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_193
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212d5a80239b00749974ff7ae7b17931
+      internalID: 686838803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_194
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc97daa74faef4d4f8a014f00b46d75a
+      internalID: 1355143246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_195
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2131c4d3c53cc1f45a941f9e8533374a
+      internalID: -1789663993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_196
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 65
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad8f620fc3734042a844ddc07431e26
+      internalID: 863931404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_197
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae92dfb2537a8fd46b24aae3994f3237
+      internalID: 2120041760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_198
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6b51bd7ed3efe4ba6c21786516a302
+      internalID: -528050500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_199
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 912ba3558832e3a4c935dff739d78ec3
+      internalID: 1885792610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_200
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63915bec0fc22114bad4d3dbe0522a5a
+      internalID: -1091172297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_201
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63a22fbec5a5114996b0348cc665e03
+      internalID: -960840728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_202
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 471bae4c672aa1c4e855404e6e3126dd
+      internalID: -1566558862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_203
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad96e6a9a7872f74388b0aa88b70b46a
+      internalID: -1038282377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_204
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e0ffa1077dd7334eb742d92716aa545
+      internalID: -703194899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_205
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dddd306ba4492084eba400135d9135a2
+      internalID: -1562050048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_206
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc1d4e743dde9f48aa86f0790772026
+      internalID: 350940668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_207
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c86f2ed5bd1bd42a35c2be2052f3f3
+      internalID: 516263052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_208
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c932ea8a3403f4488e266c59981e791
+      internalID: 368981669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_209
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31f8c8d05ac3d924da814aa09a7e925a
+      internalID: -1154402190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_210
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b550906195120f94cbb26ec8f9959d56
+      internalID: -1882392555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_211
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b287bffa4c547d54badbb2a273305e95
+      internalID: 666118467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_212
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2d586132bd52345aaaff373a67f9b9
+      internalID: 1962836914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_213
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13983155027e3c14ab08b0488d227f71
+      internalID: 119833471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_214
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ecd0bc180ec50849a00e2fd3c881348
+      internalID: 1847256388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_215
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffcc2f1b117156140b1f6a13c531faf7
+      internalID: 106111902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_216
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f90a253b466ebb47b2f0c856e336b71
+      internalID: 2049488546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_217
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d8fbb0337501134698792f39fd7cf70
+      internalID: -2095441105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_218
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a78e78654d60d8b449060b3653fab8cd
+      internalID: 230516679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_219
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0dafee6a53c37489f6d467475acd9b
+      internalID: 862899786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_220
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb5814180fe5cd3438802206f946f81a
+      internalID: -1980122017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_221
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7c7f0d44262064799ce1a485c2695f
+      internalID: -422897332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_222
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a33fed96e32df4190bd65677a4c23f
+      internalID: -1995244125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_223
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b5efce7b56b6e41968b3a93f34bb2d
+      internalID: 1717226042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_224
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13ab5431e504aa42a78b4a560c08d0a
+      internalID: -1050343671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_225
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a00ccc11668e2a4a8f6e998c1a5e2dd
+      internalID: -1999206899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_226
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb68d866f5805b1488cae1c63bfe2819
+      internalID: 1682852055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_227
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03f70f49dc984ce47a807c516d9b8b03
+      internalID: 2092386928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_228
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 33
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d40fcfac9c77b4d9f7a3c545401db6
+      internalID: 41591834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_229
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5150bc9a9cf48584a861f209be439940
+      internalID: -1426510943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_230
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faffa95f9a94deb46a61f614e767645f
+      internalID: -1107455510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_231
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858dbf943d7c15f4088864cea6e47b7b
+      internalID: -2037873399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_232
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7329ac9c766c4645879200fca1f5fbe
+      internalID: 1111681629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_233
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5dd5955b6b7520409684d29392a10ca
+      internalID: -60538399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_234
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9066f40df46072b46b26ed67d6c7606b
+      internalID: -793922919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_235
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a64011ae186274f9be048d1edf1cb4
+      internalID: -1299828593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_236
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e39034bfe586b478d83029d0e62651
+      internalID: 2014487415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_237
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 549b72dc749942548bd1ee3b1c3dde7d
+      internalID: -1809806209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_238
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b930b48c960537040b0e1a7c97339582
+      internalID: -1013778225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_239
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcc767a4c5fe9954cbc2921f240c57d0
+      internalID: 1363687437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_240
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b200eba269d5e424297dda51253808ea
+      internalID: -25786279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_241
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d765c1b1740ba6a48a7e8bd94996cb95
+      internalID: 1919232322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_242
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45d6dc4b493e6e4aae2250818683712
+      internalID: 1479960402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_243
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cbe638ab4cd30e499629c3e667399a3
+      internalID: -463000071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_244
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766afe18695c7a74aa2c54ffc8a4a927
+      internalID: 1933227531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_245
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656133b8db2546f4b87bb2a346688c70
+      internalID: 850394488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_246
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0742285bbef5e324aab87b8d7c34e318
+      internalID: 1924060022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_247
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e1b5b2c08cc40d4aaa14455a868f121
+      internalID: -621109449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_248
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41faf7e454c75ac45902d4bbe8d6ff6f
+      internalID: 255035382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_249
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e244f39fcfe34b54a914467e28db64e5
+      internalID: 2036594266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_250
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 356e4012264b6064a8c5b8c3f09113ea
+      internalID: -872576368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_251
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d0140ac204bb447ba96c9277c52e14
+      internalID: 1099636239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_252
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d181a095515848142a547e1fb745ce5d
+      internalID: 1583804605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_253
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c41715c56870a7d47b67294199768efa
+      internalID: -442786568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_254
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e92d1e54c8cb21a498a34ec6e169efff
+      internalID: -1320958831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_255
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6a8ec6d9050c64089b07a6ffc39572
+      internalID: -1771622098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_256
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7027141e0359122408fccff5d6f13eea
+      internalID: -596119602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_257
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 608dfd83f99d7da4e88e5474f7255501
+      internalID: -1205275256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_258
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8de047dcaca248e478d73a1f9e875ff0
+      internalID: -77061440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_259
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16046cf96dcc014479a2076903bafa3a
+      internalID: 1888947576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GandalfHardcore Background layers_layer 1_260
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3215dd2d4a3c79f4fb7914148142afda
+      internalID: 187186240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      GandalfHardcore Background layers_layer 1_0: -1564732431
+      GandalfHardcore Background layers_layer 1_1: -613669294
+      GandalfHardcore Background layers_layer 1_10: -1054943819
+      GandalfHardcore Background layers_layer 1_100: -226488233
+      GandalfHardcore Background layers_layer 1_101: -2118034740
+      GandalfHardcore Background layers_layer 1_102: 1368343815
+      GandalfHardcore Background layers_layer 1_103: -943336903
+      GandalfHardcore Background layers_layer 1_104: 1135531561
+      GandalfHardcore Background layers_layer 1_105: -171833294
+      GandalfHardcore Background layers_layer 1_106: 952183384
+      GandalfHardcore Background layers_layer 1_107: -324862015
+      GandalfHardcore Background layers_layer 1_108: -1113300167
+      GandalfHardcore Background layers_layer 1_109: 2097043222
+      GandalfHardcore Background layers_layer 1_11: -431931896
+      GandalfHardcore Background layers_layer 1_110: 874025946
+      GandalfHardcore Background layers_layer 1_111: -1248208932
+      GandalfHardcore Background layers_layer 1_112: 890052557
+      GandalfHardcore Background layers_layer 1_113: -2137470118
+      GandalfHardcore Background layers_layer 1_114: 1674126125
+      GandalfHardcore Background layers_layer 1_115: 745097893
+      GandalfHardcore Background layers_layer 1_116: 1647540329
+      GandalfHardcore Background layers_layer 1_117: 1576726998
+      GandalfHardcore Background layers_layer 1_118: 161941084
+      GandalfHardcore Background layers_layer 1_119: 120920164
+      GandalfHardcore Background layers_layer 1_12: 1530677461
+      GandalfHardcore Background layers_layer 1_120: -1760598033
+      GandalfHardcore Background layers_layer 1_121: -2034930440
+      GandalfHardcore Background layers_layer 1_122: 496992786
+      GandalfHardcore Background layers_layer 1_123: -414279397
+      GandalfHardcore Background layers_layer 1_124: 2031714300
+      GandalfHardcore Background layers_layer 1_125: 1370438627
+      GandalfHardcore Background layers_layer 1_126: -1551385386
+      GandalfHardcore Background layers_layer 1_127: 536772964
+      GandalfHardcore Background layers_layer 1_128: -1942036069
+      GandalfHardcore Background layers_layer 1_129: -1853212190
+      GandalfHardcore Background layers_layer 1_13: 1523309714
+      GandalfHardcore Background layers_layer 1_130: -747698177
+      GandalfHardcore Background layers_layer 1_131: 668521726
+      GandalfHardcore Background layers_layer 1_132: 1409253598
+      GandalfHardcore Background layers_layer 1_133: 2026654767
+      GandalfHardcore Background layers_layer 1_134: 225767653
+      GandalfHardcore Background layers_layer 1_135: -1788885280
+      GandalfHardcore Background layers_layer 1_136: 1589134784
+      GandalfHardcore Background layers_layer 1_137: 677865417
+      GandalfHardcore Background layers_layer 1_138: 1487924712
+      GandalfHardcore Background layers_layer 1_139: -1524306735
+      GandalfHardcore Background layers_layer 1_14: -819214077
+      GandalfHardcore Background layers_layer 1_140: 627232086
+      GandalfHardcore Background layers_layer 1_141: -1897223221
+      GandalfHardcore Background layers_layer 1_142: 710856554
+      GandalfHardcore Background layers_layer 1_143: -339210895
+      GandalfHardcore Background layers_layer 1_144: -199247895
+      GandalfHardcore Background layers_layer 1_145: 2146501667
+      GandalfHardcore Background layers_layer 1_146: -623093790
+      GandalfHardcore Background layers_layer 1_147: 2028724253
+      GandalfHardcore Background layers_layer 1_148: -1547073294
+      GandalfHardcore Background layers_layer 1_149: 407768604
+      GandalfHardcore Background layers_layer 1_15: 1577780326
+      GandalfHardcore Background layers_layer 1_150: -563690841
+      GandalfHardcore Background layers_layer 1_151: 1304121912
+      GandalfHardcore Background layers_layer 1_152: 730960389
+      GandalfHardcore Background layers_layer 1_153: -1547752056
+      GandalfHardcore Background layers_layer 1_154: 916028730
+      GandalfHardcore Background layers_layer 1_155: 151143083
+      GandalfHardcore Background layers_layer 1_156: -752563234
+      GandalfHardcore Background layers_layer 1_157: -196562385
+      GandalfHardcore Background layers_layer 1_158: 1199972200
+      GandalfHardcore Background layers_layer 1_159: -1673199094
+      GandalfHardcore Background layers_layer 1_16: -978381793
+      GandalfHardcore Background layers_layer 1_160: -2022255502
+      GandalfHardcore Background layers_layer 1_161: -1853749035
+      GandalfHardcore Background layers_layer 1_162: -444428569
+      GandalfHardcore Background layers_layer 1_163: -1470719287
+      GandalfHardcore Background layers_layer 1_164: 1980103765
+      GandalfHardcore Background layers_layer 1_165: 339197974
+      GandalfHardcore Background layers_layer 1_166: 1785845270
+      GandalfHardcore Background layers_layer 1_167: 192944930
+      GandalfHardcore Background layers_layer 1_168: 179470258
+      GandalfHardcore Background layers_layer 1_169: -234109836
+      GandalfHardcore Background layers_layer 1_17: -668712504
+      GandalfHardcore Background layers_layer 1_170: 541628908
+      GandalfHardcore Background layers_layer 1_171: 103562558
+      GandalfHardcore Background layers_layer 1_172: -1281992931
+      GandalfHardcore Background layers_layer 1_173: 1322670147
+      GandalfHardcore Background layers_layer 1_174: 1896466325
+      GandalfHardcore Background layers_layer 1_175: 1053191092
+      GandalfHardcore Background layers_layer 1_176: -1898473152
+      GandalfHardcore Background layers_layer 1_177: -1853490745
+      GandalfHardcore Background layers_layer 1_178: 1910963409
+      GandalfHardcore Background layers_layer 1_179: -147772686
+      GandalfHardcore Background layers_layer 1_18: -882363809
+      GandalfHardcore Background layers_layer 1_180: 350640167
+      GandalfHardcore Background layers_layer 1_181: -437885497
+      GandalfHardcore Background layers_layer 1_182: -1700092961
+      GandalfHardcore Background layers_layer 1_183: 1181330181
+      GandalfHardcore Background layers_layer 1_184: -499096288
+      GandalfHardcore Background layers_layer 1_185: 690343906
+      GandalfHardcore Background layers_layer 1_186: 985700698
+      GandalfHardcore Background layers_layer 1_187: -1314698936
+      GandalfHardcore Background layers_layer 1_188: -288001817
+      GandalfHardcore Background layers_layer 1_189: -1066777822
+      GandalfHardcore Background layers_layer 1_19: -1375622528
+      GandalfHardcore Background layers_layer 1_190: -1826574973
+      GandalfHardcore Background layers_layer 1_191: -674248871
+      GandalfHardcore Background layers_layer 1_192: 741209324
+      GandalfHardcore Background layers_layer 1_193: 686838803
+      GandalfHardcore Background layers_layer 1_194: 1355143246
+      GandalfHardcore Background layers_layer 1_195: -1789663993
+      GandalfHardcore Background layers_layer 1_196: 863931404
+      GandalfHardcore Background layers_layer 1_197: 2120041760
+      GandalfHardcore Background layers_layer 1_198: -528050500
+      GandalfHardcore Background layers_layer 1_199: 1885792610
+      GandalfHardcore Background layers_layer 1_2: -1112238021
+      GandalfHardcore Background layers_layer 1_20: 1190585271
+      GandalfHardcore Background layers_layer 1_200: -1091172297
+      GandalfHardcore Background layers_layer 1_201: -960840728
+      GandalfHardcore Background layers_layer 1_202: -1566558862
+      GandalfHardcore Background layers_layer 1_203: -1038282377
+      GandalfHardcore Background layers_layer 1_204: -703194899
+      GandalfHardcore Background layers_layer 1_205: -1562050048
+      GandalfHardcore Background layers_layer 1_206: 350940668
+      GandalfHardcore Background layers_layer 1_207: 516263052
+      GandalfHardcore Background layers_layer 1_208: 368981669
+      GandalfHardcore Background layers_layer 1_209: -1154402190
+      GandalfHardcore Background layers_layer 1_21: 1122559543
+      GandalfHardcore Background layers_layer 1_210: -1882392555
+      GandalfHardcore Background layers_layer 1_211: 666118467
+      GandalfHardcore Background layers_layer 1_212: 1962836914
+      GandalfHardcore Background layers_layer 1_213: 119833471
+      GandalfHardcore Background layers_layer 1_214: 1847256388
+      GandalfHardcore Background layers_layer 1_215: 106111902
+      GandalfHardcore Background layers_layer 1_216: 2049488546
+      GandalfHardcore Background layers_layer 1_217: -2095441105
+      GandalfHardcore Background layers_layer 1_218: 230516679
+      GandalfHardcore Background layers_layer 1_219: 862899786
+      GandalfHardcore Background layers_layer 1_22: -1376196386
+      GandalfHardcore Background layers_layer 1_220: -1980122017
+      GandalfHardcore Background layers_layer 1_221: -422897332
+      GandalfHardcore Background layers_layer 1_222: -1995244125
+      GandalfHardcore Background layers_layer 1_223: 1717226042
+      GandalfHardcore Background layers_layer 1_224: -1050343671
+      GandalfHardcore Background layers_layer 1_225: -1999206899
+      GandalfHardcore Background layers_layer 1_226: 1682852055
+      GandalfHardcore Background layers_layer 1_227: 2092386928
+      GandalfHardcore Background layers_layer 1_228: 41591834
+      GandalfHardcore Background layers_layer 1_229: -1426510943
+      GandalfHardcore Background layers_layer 1_23: -283787392
+      GandalfHardcore Background layers_layer 1_230: -1107455510
+      GandalfHardcore Background layers_layer 1_231: -2037873399
+      GandalfHardcore Background layers_layer 1_232: 1111681629
+      GandalfHardcore Background layers_layer 1_233: -60538399
+      GandalfHardcore Background layers_layer 1_234: -793922919
+      GandalfHardcore Background layers_layer 1_235: -1299828593
+      GandalfHardcore Background layers_layer 1_236: 2014487415
+      GandalfHardcore Background layers_layer 1_237: -1809806209
+      GandalfHardcore Background layers_layer 1_238: -1013778225
+      GandalfHardcore Background layers_layer 1_239: 1363687437
+      GandalfHardcore Background layers_layer 1_24: -2143472618
+      GandalfHardcore Background layers_layer 1_240: -25786279
+      GandalfHardcore Background layers_layer 1_241: 1919232322
+      GandalfHardcore Background layers_layer 1_242: 1479960402
+      GandalfHardcore Background layers_layer 1_243: -463000071
+      GandalfHardcore Background layers_layer 1_244: 1933227531
+      GandalfHardcore Background layers_layer 1_245: 850394488
+      GandalfHardcore Background layers_layer 1_246: 1924060022
+      GandalfHardcore Background layers_layer 1_247: -621109449
+      GandalfHardcore Background layers_layer 1_248: 255035382
+      GandalfHardcore Background layers_layer 1_249: 2036594266
+      GandalfHardcore Background layers_layer 1_25: -2013916896
+      GandalfHardcore Background layers_layer 1_250: -872576368
+      GandalfHardcore Background layers_layer 1_251: 1099636239
+      GandalfHardcore Background layers_layer 1_252: 1583804605
+      GandalfHardcore Background layers_layer 1_253: -442786568
+      GandalfHardcore Background layers_layer 1_254: -1320958831
+      GandalfHardcore Background layers_layer 1_255: -1771622098
+      GandalfHardcore Background layers_layer 1_256: -596119602
+      GandalfHardcore Background layers_layer 1_257: -1205275256
+      GandalfHardcore Background layers_layer 1_258: -77061440
+      GandalfHardcore Background layers_layer 1_259: 1888947576
+      GandalfHardcore Background layers_layer 1_26: 1928748474
+      GandalfHardcore Background layers_layer 1_260: 187186240
+      GandalfHardcore Background layers_layer 1_27: 1569479211
+      GandalfHardcore Background layers_layer 1_28: -2085309987
+      GandalfHardcore Background layers_layer 1_29: -2143189936
+      GandalfHardcore Background layers_layer 1_3: 1882188376
+      GandalfHardcore Background layers_layer 1_30: 432877525
+      GandalfHardcore Background layers_layer 1_31: -531082325
+      GandalfHardcore Background layers_layer 1_32: -1686618300
+      GandalfHardcore Background layers_layer 1_33: 974431509
+      GandalfHardcore Background layers_layer 1_34: -323625375
+      GandalfHardcore Background layers_layer 1_35: -1223353402
+      GandalfHardcore Background layers_layer 1_36: -2117723508
+      GandalfHardcore Background layers_layer 1_37: -1364493790
+      GandalfHardcore Background layers_layer 1_38: -1354801862
+      GandalfHardcore Background layers_layer 1_39: 1563764052
+      GandalfHardcore Background layers_layer 1_4: 1484002359
+      GandalfHardcore Background layers_layer 1_40: -1716138028
+      GandalfHardcore Background layers_layer 1_41: -1744258050
+      GandalfHardcore Background layers_layer 1_42: 113474806
+      GandalfHardcore Background layers_layer 1_43: 1175450331
+      GandalfHardcore Background layers_layer 1_44: 1976560069
+      GandalfHardcore Background layers_layer 1_45: -1873304082
+      GandalfHardcore Background layers_layer 1_46: -781588336
+      GandalfHardcore Background layers_layer 1_47: -675953276
+      GandalfHardcore Background layers_layer 1_48: 603231138
+      GandalfHardcore Background layers_layer 1_49: -1825490501
+      GandalfHardcore Background layers_layer 1_5: 1461899910
+      GandalfHardcore Background layers_layer 1_50: 109582900
+      GandalfHardcore Background layers_layer 1_51: 1742472926
+      GandalfHardcore Background layers_layer 1_52: -620240232
+      GandalfHardcore Background layers_layer 1_53: -1432258627
+      GandalfHardcore Background layers_layer 1_54: 872649860
+      GandalfHardcore Background layers_layer 1_55: 1600692990
+      GandalfHardcore Background layers_layer 1_56: 12126818
+      GandalfHardcore Background layers_layer 1_57: -388788735
+      GandalfHardcore Background layers_layer 1_58: 2056427832
+      GandalfHardcore Background layers_layer 1_59: 1954292021
+      GandalfHardcore Background layers_layer 1_6: 1298438479
+      GandalfHardcore Background layers_layer 1_60: 533724670
+      GandalfHardcore Background layers_layer 1_61: -1914315259
+      GandalfHardcore Background layers_layer 1_62: -1093183140
+      GandalfHardcore Background layers_layer 1_63: 1854180385
+      GandalfHardcore Background layers_layer 1_64: -2019781978
+      GandalfHardcore Background layers_layer 1_65: 224517079
+      GandalfHardcore Background layers_layer 1_66: 326786150
+      GandalfHardcore Background layers_layer 1_67: -1945218369
+      GandalfHardcore Background layers_layer 1_68: -827824047
+      GandalfHardcore Background layers_layer 1_69: 1535058794
+      GandalfHardcore Background layers_layer 1_7: 1112595869
+      GandalfHardcore Background layers_layer 1_70: -976169742
+      GandalfHardcore Background layers_layer 1_71: 1115320329
+      GandalfHardcore Background layers_layer 1_72: 72554553
+      GandalfHardcore Background layers_layer 1_73: -2085050818
+      GandalfHardcore Background layers_layer 1_74: 1534908156
+      GandalfHardcore Background layers_layer 1_75: -915265549
+      GandalfHardcore Background layers_layer 1_76: -2047112306
+      GandalfHardcore Background layers_layer 1_77: 603846229
+      GandalfHardcore Background layers_layer 1_78: -1741345248
+      GandalfHardcore Background layers_layer 1_79: -1514331019
+      GandalfHardcore Background layers_layer 1_8: 469539132
+      GandalfHardcore Background layers_layer 1_80: -1323789334
+      GandalfHardcore Background layers_layer 1_81: 645325851
+      GandalfHardcore Background layers_layer 1_82: -2067288867
+      GandalfHardcore Background layers_layer 1_83: -919442411
+      GandalfHardcore Background layers_layer 1_84: 1021622758
+      GandalfHardcore Background layers_layer 1_85: -347479654
+      GandalfHardcore Background layers_layer 1_86: -1624069612
+      GandalfHardcore Background layers_layer 1_87: -437225680
+      GandalfHardcore Background layers_layer 1_88: 1382721450
+      GandalfHardcore Background layers_layer 1_89: 1721825319
+      GandalfHardcore Background layers_layer 1_9: -803944924
+      GandalfHardcore Background layers_layer 1_90: 1001463417
+      GandalfHardcore Background layers_layer 1_91: -1084399944
+      GandalfHardcore Background layers_layer 1_92: 1730505583
+      GandalfHardcore Background layers_layer 1_93: 1565307232
+      GandalfHardcore Background layers_layer 1_94: -1731466491
+      GandalfHardcore Background layers_layer 1_95: 403670033
+      GandalfHardcore Background layers_layer 1_96: 1573771283
+      GandalfHardcore Background layers_layer 1_97: 1613185826
+      GandalfHardcore Background layers_layer 1_98: -2074323168
+      GandalfHardcore Background layers_layer 1_99: -932834511
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
