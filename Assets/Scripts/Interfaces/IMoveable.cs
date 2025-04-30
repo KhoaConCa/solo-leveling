@@ -23,6 +23,16 @@ namespace Platform2D.CharacterInterface
         /// </summary>
         public void OnJump();
 
+        /// <summary>
+        /// Thực hiện cúi người cho nhân vật khi người chơi thao tác.
+        /// </summary>
+        public void OnCrouch();
+
+        /// <summary>
+        /// Thực hiện lướt cho nhân vật khi người chơi thao tác.
+        /// </summary>
+        public void OnDash();
+
         #endregion
 
     }

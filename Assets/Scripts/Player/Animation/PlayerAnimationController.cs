@@ -55,6 +55,22 @@ namespace Platform2D.CharacterAnimation
             _animator.SetBool(PlayerAnimationParameters.IsGrounded, _playerController.PlayerStates.IsGrounded);
         }
 
+        /// <summary>
+        /// Thực hiện animation cúi người khi nhân vật cúi.
+        /// </summary>
+        public void OnCrouch()
+        {
+            _animator.SetBool(PlayerAnimationParameters.IsCrouching, _playerController.PlayerStates.IsCrouching);
+        }
+
+        /// <summary>
+        /// Thực hiện animation lướt khi nhân vật lướt.
+        /// </summary>
+        public void OnDash()
+        {
+
+        }
+
         #endregion
 
         #region --- Fields ---

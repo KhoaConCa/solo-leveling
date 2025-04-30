@@ -47,6 +47,9 @@ namespace Platform2D.UIMovement
         public void OnPointerUp(PointerEventData eventData)
         {
             _uiController.PlayerController.PlayerStates.IsJumping = 0.0f;
+
+            if (_uiController.PlayerController.PlayerStates.IsGrounded)
+                _uiController.PlayerController.PlayerStates.IsCrouching = false;
         }
 
         /// <summary>
@@ -65,6 +68,12 @@ namespace Platform2D.UIMovement
                     break;
                 case MOVEMENT_FUNCTION.JUMP:
                     OnJump();
+                    break;
+                case MOVEMENT_FUNCTION.CROUCH:
+                    OnCrouch();
+                    break;
+                case MOVEMENT_FUNCTION.DASH:
+                    OnDash();
                     break;
             }
         }
@@ -88,6 +97,26 @@ namespace Platform2D.UIMovement
         public void OnJump()
         {
             _uiController.PlayerController.PlayerStates.IsJumping = (float)AXIS_1D.POSITIVE;
+        }
+
+        /// <summary>
+        /// Thực hiện chức năng cúi người khi người chơi thao tác cúi.
+        /// </summary>
+        public void OnCrouch()
+        {
+            if (_uiController.PlayerController.PlayerStates.IsGrounded)
+            {
+                _uiController.PlayerController.PlayerStates.IsCrouching = true;
+                Debug.Log(_uiController.PlayerController.PlayerStates.IsCrouching);
+            }
+        }
+
+        /// <summary>
+        /// Thực hiện chức năng lướt khi người chơi thao tác lướt.
+        /// </summary>
+        public void OnDash()
+        {
+
         }
         #endregion
 

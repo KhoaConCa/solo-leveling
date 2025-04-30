@@ -1,4 +1,5 @@
-﻿using Platform2D.CharacterAnimation;
+﻿using Newtonsoft.Json.Bson;
+using Platform2D.CharacterAnimation;
 using Platform2D.CharacterInterface;
 using Platform2D.CharacterStates;
 using Platform2D.CharacterStats;
@@ -15,7 +16,7 @@ namespace Platform2D.CharacterController
     /// PlayerController - Đóng vai trò trung tâm nhằm quản lý, thực hiện và lưu trữ các thông tin và thao tác quan trọng.
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 28/04/2025
     /// </summary>
-    public class PlayerController : MonoBehaviour, IMoveable
+    public class PlayerController : MonoBehaviour
     {
         #region --- Overrides ---
 
@@ -26,7 +27,15 @@ namespace Platform2D.CharacterController
         {
             FlipPlayerObject();
 
+            _animationController.OnCrouch();
             _animationController.OnMove();
+
+            if (_playerStates.IsCrouching)
+            {
+                _movementController.OnCrouch();
+                return;
+            }
+
             _movementController.OnMove();
         }
 
@@ -41,6 +50,22 @@ namespace Platform2D.CharacterController
             _animationController.OnJump();
 
             _playerStates.IsJumping = 0;
+        }
+
+        /// <summary>
+        /// Thực hiện điều phối sự cúi của nhân vật thông qua các Controller.
+        /// </summary>
+        public void OnCrouch()
+        {
+
+        }
+
+        /// <summary>
+        /// Thực hiện điều phối sự lướt của nhân vật thông qua các Controller.
+        /// </summary>
+        public void OnDash()
+        {
+
         }
 
         #endregion

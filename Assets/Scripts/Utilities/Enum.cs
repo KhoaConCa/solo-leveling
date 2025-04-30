@@ -28,6 +28,8 @@ namespace Platform2D.Movement
         LEFT,
         RIGHT,
         JUMP,
+        CROUCH,
+        DASH
     }
 }
 

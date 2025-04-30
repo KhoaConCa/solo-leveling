@@ -56,12 +56,37 @@ public class PlayerMovementController : IMoveable, ICheckable
     }
 
     /// <summary>
+    /// Thực hiện thao tác cúi người cho nhân vật.
+    /// </summary>
+    public void OnCrouch()
+    {
+        float movementSpeed = _playerController.PlayerStats.CrouchSpeed;
+
+        float velY = _playerController.Rg2D.velocity.y;
+        float velX = _playerController.PlayerStates.IsMoving;
+
+        _playerController.Rg2D.velocity = new Vector2(velX * movementSpeed, velY);
+    }
+
+    /// <summary>
+    /// Thực hiện thao tác lướt cho nhân vật.
+    /// </summary>
+    public void OnDash()
+    {
+
+    }
+
+    /// <summary>
     /// Thực hiện kiểm tra xem nhân vật có đang chạm vào mặt đất không
     /// </summary>
     public void IsGrounded()
     {
         _playerController.PlayerStates.IsGrounded = _playerController.GroundChecker.Cast(Vector2.down, _contactFilter, _onGroundHit2Ds, GROUND_DISTANCE) > 0;
     }
+
+    #endregion
+
+    #region --- Methods ---
 
     public void IsOnWall(float direction)
     {
