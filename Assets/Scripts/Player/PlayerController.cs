@@ -42,14 +42,23 @@ namespace Platform2D.CharacterController
         /// <summary>
         /// Thực hiện điều phối sự nhảy của nhân vật thông qua các Controller
         /// </summary>
-        public void OnJump()
+        private void OnJump()
         {
-            if (_playerStates.IsGrounded && _playerStates.IsJumping > 0.01f)
+            if(_playerStates.JumpCount == 0 && _rg2D.velocity.y < 0)
+                _playerStates.JumpCount++;
+
+            if ((_playerStates.IsGrounded || _playerStates.JumpCount < _playerStates.MAXJUMP) && _playerStates.IsJumping > 0)
+            {
                 _movementController.OnJump();
+                _playerStates.JumpCount++;
+            }
 
             _animationController.OnJump();
 
             _playerStates.IsJumping = 0;
+
+            if (_playerStates.IsGrounded)
+                _playerStates.JumpCount = 0;
         }
 
         /// <summary>

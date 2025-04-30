@@ -13,6 +13,8 @@ namespace Platform2D.CharacterStates
 
         #region --- Properties ---
 
+        public int JumpCount { get { return _jumpCount; } set { _jumpCount = value; } }
+        public int MAXJUMP { get { return MAX_JUMP; } }
         public float IsMoving { get { return _isMoving; } set { _isMoving = value; } }
         public float IsJumping { get { return _isJumping; } set { _isJumping = value; } }
         public float DashDuration { get { return _dashDuration; } set { _dashDuration = value; } }
@@ -24,6 +26,9 @@ namespace Platform2D.CharacterStates
         #endregion
 
         #region --- Fields ---
+
+        [SerializeField] private int _jumpCount = 0;
+        [SerializeField] private const int MAX_JUMP = 2;
 
         [SerializeField] private float _isMoving;
         [SerializeField] private float _isJumping;

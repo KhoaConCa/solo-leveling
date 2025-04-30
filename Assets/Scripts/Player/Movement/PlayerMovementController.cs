@@ -47,7 +47,13 @@ public class PlayerMovementController : IMoveable, ICheckable
     /// </summary>
     public void OnJump()
     {
+        if (_playerController.PlayerStates.JumpCount == _playerController.PlayerStates.MAXJUMP)
+            return;
+
         float velY = _playerController.PlayerStates.IsJumping;
+        if (_playerController.PlayerStates.JumpCount > 1)
+            velY = _playerController.PlayerStats.DoubleJumpSpeed;
+
         float velX = _playerController.Rg2D.velocity.x;
 
         float jumpSpeed = _playerController.PlayerStats.JumpSpeed;
@@ -86,7 +92,9 @@ public class PlayerMovementController : IMoveable, ICheckable
     /// </summary>
     public void IsGrounded()
     {
-        _playerController.PlayerStates.IsGrounded = _playerController.GroundChecker.Cast(Vector2.down, _contactFilter, _onGroundHit2Ds, GROUND_DISTANCE) > 0;
+        bool isGround = _playerController.GroundChecker.Cast(Vector2.down, _contactFilter, _onGroundHit2Ds, GROUND_DISTANCE) > 0;
+
+        _playerController.PlayerStates.IsGrounded = isGround;
     }
 
     #endregion
