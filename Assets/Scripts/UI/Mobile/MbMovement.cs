@@ -2,11 +2,10 @@
 using Platform2D.CharacterInterface;
 using Platform2D.Movement;
 using Platform2D.Vector;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Unity.VisualScripting;
+using SimpleInputNamespace;
 
 namespace Platform2D.UIMovement
 {
@@ -14,18 +13,40 @@ namespace Platform2D.UIMovement
     /// MbMovement - Nhận Input của người chơi, đối với người chơi trên nền tảng Mobile.
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 28/04/2025
     /// </summary>
-    public class MbMovement : MonoBehaviour, IMoveable, IPointerDownHandler, IPointerUpHandler
+    public class MbMovement : MonoBehaviour, IMoveable, IPointerDownHandler, IPointerUpHandler, IDragHandler, IEndDragHandler
     {
 
         #region --- Overrides ---
 
+        #region -- Drag UI --
+        /// <summary>
+        /// Ghi nhận thao tác của người chơi khi kéo Joystick trên UI.
+        /// </summary>
+        /// <param name="eventData"> Các sự kiện khi người chơi kéo Joystick </param>
+        public void OnDrag(PointerEventData eventData) {
+            if (_joystick != null)
+                OnMove();
+        }
+
+        /// <summary>
+        /// Ghi nhận thao tác của người chơi khi thả Joystick trên UI.
+        /// </summary>
+        /// <param name="eventData"> Các sự kiện khi người chơi thả Joystick </param>
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            if (_joystick != null)
+                _uiController.PlayerController.PlayerStates.IsMoving = 0.0f;
+        }
+        #endregion
+
+        #region -- Pointer UI --
         /// <summary>
         /// Ghi nhận thao tác của người chơi khi người thả Button có trên UI
         /// </summary>
         /// <param name="eventData"> Các sự kiện khi người chơi thả Button </param>
         public void OnPointerUp(PointerEventData eventData)
         {
-            UIController.MainPlayer.PlayerStates.isMoving = 0.0f;
+            _uiController.PlayerController.PlayerStates.IsJumping = 0.0f;
         }
 
         /// <summary>
@@ -34,8 +55,10 @@ namespace Platform2D.UIMovement
         /// <param name="eventData"> Các sự kiện khi người chơi ấn vào Button </param>
         public void OnPointerDown(PointerEventData eventData)
         {
-            switch (moveDirection)
+            switch (_moveDirection)
             {
+                case MOVEMENT_FUNCTION.NONE:
+                    break;
                 case MOVEMENT_FUNCTION.LEFT:
                 case MOVEMENT_FUNCTION.RIGHT:
                     OnMove();
@@ -45,13 +68,18 @@ namespace Platform2D.UIMovement
                     break;
             }
         }
+        #endregion
 
+        #region -- Player Move Handle --
         /// <summary>
         /// Thực hiện chức năng di chuyển nhân vật khi người chơi thao tác di chuyển.
         /// </summary>
         public void OnMove()
         {
-            UIController.MainPlayer.PlayerStates.isMoving = moveDirection == MOVEMENT_FUNCTION.LEFT ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
+            if(_joystick != null)
+                _uiController.PlayerController.PlayerStates.IsMoving = _joystick.Value.x < 0 ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
+            else
+                _uiController.PlayerController.PlayerStates.IsMoving = _moveDirection == MOVEMENT_FUNCTION.LEFT ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
         }
 
         /// <summary>
@@ -59,8 +87,9 @@ namespace Platform2D.UIMovement
         /// </summary>
         public void OnJump()
         {
-
+            _uiController.PlayerController.PlayerStates.IsJumping = (float)AXIS_1D.POSITIVE;
         }
+        #endregion
 
         #endregion
 
@@ -68,20 +97,20 @@ namespace Platform2D.UIMovement
 
         public void Awake()
         {
-            UIController = GameObject.FindGameObjectWithTag(_tagMainUI).GetComponent<UIController>();
+            _uiController = GameObject.FindGameObjectWithTag(_tagMainUI).GetComponent<UIController>();
+
+            if (_joystick == null) _joystick = this.gameObject.GetComponent<SimpleJoystick>();
         }
-
-        #endregion
-
-        #region --- Properties ---
-
-        public UIController UIController { get; set; }
 
         #endregion
 
         #region --- Fields ---
 
-        [SerializeField] private MOVEMENT_FUNCTION moveDirection;
+        [SerializeField] private UIController _uiController;
+
+        [SerializeField] private MOVEMENT_FUNCTION _moveDirection;
+
+        [SerializeField] private SimpleJoystick _joystick;
         [SerializeField] private string _tagMainUI;
 
         #endregion

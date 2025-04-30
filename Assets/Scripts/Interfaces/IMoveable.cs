@@ -8,7 +8,7 @@ namespace Platform2D.CharacterInterface
     /// IMoveable - Interface với nhiệm vụ tạo các hàm di chuyển cho nhân vật.
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 28/04/2025
     /// </summary>
-    interface IMoveable
+    internal interface IMoveable
     {
 
         #region --- Methods ---

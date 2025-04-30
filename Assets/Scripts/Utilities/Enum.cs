@@ -24,6 +24,7 @@ namespace Platform2D.Movement
     /// </summary>
     enum MOVEMENT_FUNCTION
     {
+        NONE,
         LEFT,
         RIGHT,
         JUMP,
@@ -39,5 +40,6 @@ namespace Platform2D.BaseStats
     public enum BASE_STATS
     {
         MOVEMENT_SPEED = 3,
+        JUMP_SPEED = 3,
     }
 }

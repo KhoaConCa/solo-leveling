@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace SimpleInputNamespace
 {
-	public class Joystick : MonoBehaviour, ISimpleInputDraggable
+	public class SimpleJoystick : MonoBehaviour, ISimpleInputDraggable
 	{
 		public enum MovementAxes { XandY, X, Y };
 

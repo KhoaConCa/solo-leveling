@@ -25,22 +25,24 @@ namespace Platform2D.CanvasController
                 }
                 return;
             }*/
-            MainPlayer = GameObject.FindWithTag(_tagMainPlayer).GetComponent<PlayerController>();
+            _playerController = GameObject.FindWithTag(_tagMainPlayer).GetComponent<PlayerController>();
         }
 
         #endregion
 
         #region --- Properties ---
 
-        public PlayerController MainPlayer { get; private set; }
+        public PlayerController PlayerController { get { return _playerController; } }
 
         #endregion
 
         #region --- Fields ---
 
-        [SerializeField] private PlatformChecker platformChecker = new PlatformChecker();
+        [SerializeField] private PlayerController _playerController;
 
-        [SerializeField] private List<GameObject> mobileObject = new List<GameObject>();
+        [SerializeField] private PlatformChecker _platformChecker = new PlatformChecker();
+
+        [SerializeField] private List<GameObject> _mobileObject = new List<GameObject>();
 
         [SerializeField] private string _tagMainPlayer;
 
