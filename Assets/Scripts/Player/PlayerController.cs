@@ -37,6 +37,10 @@ namespace Platform2D.CharacterController
         {
             if (_playerStates.IsGrounded && _playerStates.IsJumping > 0.01f)
                 _movementController.OnJump();
+
+            _animationController.OnJump();
+
+            _playerStates.IsJumping = 0;
         }
 
         #endregion
@@ -77,6 +81,9 @@ namespace Platform2D.CharacterController
             {
                 // Cập nhật vật lý nhân vật.
                 _movementController.IsGrounded();
+                _movementController.IsOnWall(this.gameObject.transform.localScale.x);
+
+                _animationController.OnGrounded();
 
                 // Thao tác vật lý nhân vật
                 OnMove();

@@ -15,6 +15,8 @@ namespace Platform2D.CharacterInterface
 
         public void IsGrounded();
 
+        public void IsOnWall(float direction);
+
         #endregion
 
     }

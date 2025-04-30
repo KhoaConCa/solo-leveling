@@ -11,7 +11,6 @@ namespace Platform2D.CharacterAnimation
     /// PlayerAnimationController - Được tạo ra nhằm mục đích quản lý và chuyển đổi giữa các animation với nhau
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 29/04/2025
     /// </summary>
-    [System.Serializable]
     public class PlayerAnimationController : IMoveable
     {
         #region --- Constructor ---
@@ -37,9 +36,23 @@ namespace Platform2D.CharacterAnimation
             _animator.SetBool(PlayerAnimationParameters.IsMoving, isMovingOnGround);
         }
 
+        /// <summary>
+        /// Thực hiện animation nhảy khi nhân vật nhảy.
+        /// </summary>
         public void OnJump()
         {
+            if(_playerController.PlayerStates.IsJumping > 0 && _playerController.PlayerStates.IsGrounded)
+                _animator.SetTrigger(PlayerAnimationParameters.Jump);
 
+            _animator.SetFloat(PlayerAnimationParameters.YVelocity, _playerController.Rg2D.velocity.y);
+        }
+
+        /// <summary>
+        /// Kích hoạt điều của 'IsGround' của các animation.
+        /// </summary>
+        public void OnGrounded()
+        {
+            _animator.SetBool(PlayerAnimationParameters.IsGrounded, _playerController.PlayerStates.IsGrounded);
         }
 
         #endregion

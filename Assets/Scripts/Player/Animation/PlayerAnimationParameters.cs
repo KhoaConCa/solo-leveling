@@ -11,9 +11,20 @@ namespace Platform2D.CharacterAnimation
     public static class PlayerAnimationParameters
     {
 
-        #region --- Properties ---
+        #region --- Fields ---
 
+        #region -- Bool Parameters --
+        public readonly static string IsGrounded = "isGrounded";
         public readonly static string IsMoving = "isMoving";
+        #endregion
+
+        #region -- Float Parameters --
+        public readonly static string YVelocity = "yVelocity";
+        #endregion
+
+        #region -- Trigger Parameters --
+        public readonly static string Jump = "jump";
+        #endregion
 
         #endregion
 
