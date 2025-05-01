@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Platform2D.CameraController
 {
     /// <summary>
-    /// CameraController - Đóng vai trò trung tâm nhằm thực hiện việc di chuyển theo người chơi.
+    /// CameraController - Đóng vai trò trung tâm nhằm thực hiện việc di chuyển camera theo người chơi.
     /// Tác giả: Dương Nhật Khoa, Ngày tạo: 01/05/2025
     /// </summary>
     public class CameraController : MonoBehaviour
