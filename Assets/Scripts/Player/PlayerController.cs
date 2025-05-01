@@ -27,9 +27,8 @@ namespace Platform2D.CharacterController
         {
             FlipPlayerObject();
 
-            _animationController.OnCrouch();
             _animationController.OnMove();
-
+            _animationController.OnCrouch();
             if (_playerStates.IsCrouching)
             {
                 _movementController.OnCrouch();
@@ -44,21 +43,29 @@ namespace Platform2D.CharacterController
         /// </summary>
         private void OnJump()
         {
-            if(_playerStates.JumpCount == 0 && _rg2D.velocity.y < 0)
-                _playerStates.JumpCount++;
-
-            if ((_playerStates.IsGrounded || _playerStates.JumpCount < _playerStates.MAXJUMP) && _playerStates.IsJumping > 0)
+            if (_playerStates.IsGrounded)
             {
+                Debug.Log("one");
+                _movementController.OnJump();
+                _playerStates.JumpCount++;
+                _playerStates.IsDoubleJump = true;
+            }
+            else if (_playerStates.IsDoubleJump)
+            {
+                Debug.Log("double");
+                _movementController.OnJump();
+                _playerStates.JumpCount++;
+                _playerStates.IsDoubleJump = false;
+            }
+            else if(!_playerStates.IsGrounded && _playerStates.JumpCount == 0 && !_playerStates.IsDoubleJump)
+            {
+                Debug.Log("hi");
                 _movementController.OnJump();
                 _playerStates.JumpCount++;
             }
+            
 
-            _animationController.OnJump();
-
-            _playerStates.IsJumping = 0;
-
-            if (_playerStates.IsGrounded)
-                _playerStates.JumpCount = 0;
+            _playerStates.IsJumping = false;
         }
 
         /// <summary>
@@ -118,11 +125,16 @@ namespace Platform2D.CharacterController
                 _animationController.OnGrounded();
 
                 // Thao tác vật lý nhân vật
-                OnJump();
+                _animationController.OnJump();
+                if (_playerStates.IsJumping)
+                    OnJump();
 
                 if (_playerStates.IsDashing)
                     StartCoroutine(OnDash());
                 else OnMove();
+
+                if (_playerStates.IsGrounded)
+                    _playerStates.JumpCount = 0;
             }
             catch (Exception ex)
             {

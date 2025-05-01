@@ -28,7 +28,7 @@ namespace Platform2D.CharacterStats
         [SerializeField] private float _crouchSpeed => _movementSpeed*1.2f;
         [SerializeField] private float _dashSpeed => _movementSpeed * 3.5f;
         [SerializeField] private float _jumpSpeed = (float)BASE_STATS.JUMP_SPEED;
-        [SerializeField] private float _doubleJumpSpeed => _jumpSpeed/2;
+        [SerializeField] private float _doubleJumpSpeed => _jumpSpeed*0.7f;
 
         #endregion
 
