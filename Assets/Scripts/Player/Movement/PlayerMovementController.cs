@@ -1,8 +1,5 @@
 ﻿using Platform2D.CharacterController;
 using Platform2D.CharacterInterface;
-using Platform2D.CharacterStates;
-using Platform2D.CharacterStats;
-using Platform2D.GlobalChecker;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
