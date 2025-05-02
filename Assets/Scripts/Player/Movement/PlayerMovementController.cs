@@ -1,8 +1,6 @@
 ﻿using Platform2D.CharacterController;
 using Platform2D.CharacterInterface;
-using Platform2D.CharacterStates;
-using Platform2D.CharacterStats;
-using Platform2D.GlobalChecker;
+using Platform2D.Vector;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -47,18 +45,13 @@ public class PlayerMovementController : IMoveable, ICheckable
     /// </summary>
     public void OnJump()
     {
-        if (_playerController.PlayerStates.JumpCount == _playerController.PlayerStates.MAXJUMP)
-            return;
-
-        float velY = _playerController.PlayerStates.IsJumping;
-        if (_playerController.PlayerStates.JumpCount > 1)
-            velY = _playerController.PlayerStats.DoubleJumpSpeed;
-
         float velX = _playerController.Rg2D.velocity.x;
 
         float jumpSpeed = _playerController.PlayerStats.JumpSpeed;
+        if (_playerController.PlayerStates.IsDoubleJump)
+            jumpSpeed = _playerController.PlayerStats.DoubleJumpSpeed;
 
-        _playerController.Rg2D.velocity = new Vector2(velX, velY * jumpSpeed);
+        _playerController.Rg2D.velocity = new Vector2(velX, (float)AXIS_1D.POSITIVE * jumpSpeed);
     }
 
     /// <summary>

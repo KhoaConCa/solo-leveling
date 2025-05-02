@@ -46,11 +46,25 @@ namespace Platform2D.UIMovement
         /// <param name="eventData"> Các sự kiện khi người chơi thả Button </param>
         public void OnPointerUp(PointerEventData eventData)
         {
-            _uiController.PlayerController.PlayerStates.IsJumping = 0.0f;
-            _uiController.PlayerController.PlayerStates.IsDashing = false;
-
-            if (_uiController.PlayerController.PlayerStates.IsGrounded)
-                _uiController.PlayerController.PlayerStates.IsCrouching = false;
+            switch (_moveDirection)
+            {
+                case MOVEMENT_FUNCTION.NONE:
+                    break;
+                case MOVEMENT_FUNCTION.LEFT:
+                case MOVEMENT_FUNCTION.RIGHT:
+                    OnMove();
+                    break;
+                case MOVEMENT_FUNCTION.JUMP:
+                    _uiController.PlayerController.PlayerStates.IsJumping = false;
+                    break;
+                case MOVEMENT_FUNCTION.CROUCH:
+                    if (_uiController.PlayerController.PlayerStates.IsGrounded)
+                        _uiController.PlayerController.PlayerStates.IsCrouching = false;
+                    break;
+                case MOVEMENT_FUNCTION.DASH:
+                    _uiController.PlayerController.PlayerStates.IsDashing = false;
+                    break;
+            }
         }
 
         /// <summary>
@@ -97,7 +111,7 @@ namespace Platform2D.UIMovement
         /// </summary>
         public void OnJump()
         {
-            _uiController.PlayerController.PlayerStates.IsJumping = (float)AXIS_1D.POSITIVE;
+            _uiController.PlayerController.PlayerStates.IsJumping = true;
         }
 
         /// <summary>
