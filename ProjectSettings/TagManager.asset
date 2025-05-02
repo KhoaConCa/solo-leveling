@@ -11,10 +11,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Penetrable
   - Water
   - UI
-  - 
+  - Interactable
   - 
   - 
   - 
@@ -44,14 +44,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Traps
+  - name: Interactable
     uniqueID: 1889951029
     locked: 0
-  - name: Wall
+  - name: Penetrable
     uniqueID: 244739771
-    locked: 0
-  - name: Ground
-    uniqueID: 2434096385
     locked: 0
   - name: UI
     uniqueID: 3332970773

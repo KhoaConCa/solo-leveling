@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Water (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2083875717323913404, guid: c3f2ba7915a80474d8d87bce454bfe49, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6918866184133423772, guid: c3f2ba7915a80474d8d87bce454bfe49, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.5
@@ -193,7 +197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 25945465}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WaterFlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +390,7 @@ GameObject:
   - component: {fileID: 110851764}
   - component: {fileID: 110851766}
   - component: {fileID: 110851765}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -447,7 +451,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1860870911
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -6271,7 +6275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 149621117}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StaticLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6448,7 +6452,7 @@ GameObject:
   - component: {fileID: 463122248}
   - component: {fileID: 463122247}
   - component: {fileID: 463122250}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LevelBoundaries
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6905,8 +6909,8 @@ GameObject:
   - component: {fileID: 641112573}
   - component: {fileID: 641112572}
   - component: {fileID: 641112571}
-  m_Layer: 0
-  m_Name: Ladder
+  m_Layer: 3
+  m_Name: OneWay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6925,7 +6929,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2138479656}
+  m_Father: {fileID: 1386112443}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &641112569
 TilemapRenderer:
@@ -7385,6 +7389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Water (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2083875717323913404, guid: c3f2ba7915a80474d8d87bce454bfe49, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6918866184133423772, guid: c3f2ba7915a80474d8d87bce454bfe49, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.5
@@ -7449,7 +7457,7 @@ GameObject:
   - component: {fileID: 772988845}
   - component: {fileID: 772988844}
   - component: {fileID: 772988843}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ClimbableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7930,7 +7938,7 @@ GameObject:
   - component: {fileID: 909597673}
   - component: {fileID: 909597672}
   - component: {fileID: 909597671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RopePoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8161,7 +8169,7 @@ GameObject:
   - component: {fileID: 917127768}
   - component: {fileID: 917127767}
   - component: {fileID: 917127766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8464,7 +8472,7 @@ GameObject:
   - component: {fileID: 983847077}
   - component: {fileID: 983847076}
   - component: {fileID: 983847075}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PushableObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8785,7 +8793,7 @@ GameObject:
   - component: {fileID: 1040500531}
   - component: {fileID: 1040500530}
   - component: {fileID: 1040500529}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Checkpoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9011,7 +9019,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1046427723}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AnimationObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9044,7 +9052,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1067551350}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Campfire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9129,7 +9137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1316136358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HazrdsAndTraps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9161,7 +9169,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386112443}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Penetrable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9182,8 +9190,106 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1040500526}
+  - {fileID: 641112568}
   m_Father: {fileID: 1109396454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1626990395
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 65236261648266555, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 65236261648266555, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionId
+      value: a64eed3f-4f5a-4b2e-b28a-95a151e7174b
+      objectReference: {fileID: 0}
+    - target: {fileID: 65236261648266555, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionId
+      value: 700039c0-4c8f-442a-9853-c9435d8c5ed9
+      objectReference: {fileID: 0}
+    - target: {fileID: 65236261648266555, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionId
+      value: 1b8c48a1-1a69-47e4-bf68-4fe964e9938c
+      objectReference: {fileID: 0}
+    - target: {fileID: 65236261648266555, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionName
+      value: Player/Jump[/Keyboard/space]
+      objectReference: {fileID: 0}
+    - target: {fileID: 65236261648266555, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionName
+      value: Player/Crouch[/Keyboard/s]
+      objectReference: {fileID: 0}
+    - target: {fileID: 65236261648266555, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
+      value: Player/Dash[/Keyboard/l]
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660248237993722294, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4353664645747370068, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: _jumpSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586927846314550862, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_Mass
+      value: 0.050240405
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103665398976919459, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
 --- !u!1 &1857802912
 GameObject:
   m_ObjectHideFlags: 0
@@ -9286,67 +9392,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1001 &1963262867
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3660248237993722294, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5586927846314550862, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
-      propertyPath: m_Mass
-      value: 0.050240405
-      objectReference: {fileID: 0}
-    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6742830900953378613, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 56dd510877e3f604cb30e8f1c42d5720, type: 3}
 --- !u!1 &2023297796
 GameObject:
   m_ObjectHideFlags: 0
@@ -9361,7 +9406,7 @@ GameObject:
   - component: {fileID: 2023297802}
   - component: {fileID: 2023297801}
   - component: {fileID: 2023297800}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Traps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9422,7 +9467,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1889951029
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -10023,6 +10068,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Water (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2083875717323913404, guid: c3f2ba7915a80474d8d87bce454bfe49, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6918866184133423772, guid: c3f2ba7915a80474d8d87bce454bfe49, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.5
@@ -10084,6 +10133,10 @@ PrefabInstance:
     - target: {fileID: 2083875717323913404, guid: c3f2ba7915a80474d8d87bce454bfe49, type: 3}
       propertyPath: m_Name
       value: Water (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083875717323913404, guid: c3f2ba7915a80474d8d87bce454bfe49, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6918866184133423772, guid: c3f2ba7915a80474d8d87bce454bfe49, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10222,7 +10275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2138479656}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Interactable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10244,7 +10297,6 @@ Transform:
   m_Children:
   - {fileID: 983847072}
   - {fileID: 909597668}
-  - {fileID: 641112568}
   m_Father: {fileID: 1109396454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5432631007920908184
@@ -10258,6 +10310,10 @@ PrefabInstance:
     - target: {fileID: 2083875717323913404, guid: c3f2ba7915a80474d8d87bce454bfe49, type: 3}
       propertyPath: m_Name
       value: Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083875717323913404, guid: c3f2ba7915a80474d8d87bce454bfe49, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6918866184133423772, guid: c3f2ba7915a80474d8d87bce454bfe49, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10312,4 +10368,4 @@ SceneRoots:
   - {fileID: 1109396454}
   - {fileID: 2130626962}
   - {fileID: 1857802916}
-  - {fileID: 1963262867}
+  - {fileID: 1626990395}
