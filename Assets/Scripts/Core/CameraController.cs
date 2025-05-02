@@ -21,15 +21,18 @@ namespace Platform2D.CameraController
             Vector3 targetPosition = _playerPosistion.position + _offset;
             transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, _smoothTime);
         }
+
         #endregion
 
         #region --- Fields ---
+
         private Transform _playerPosistion;
         private Vector3 _velocity = Vector3.zero;
 
         [Range(0,1)]
         [SerializeField] private float _smoothTime;
         [SerializeField] private Vector3 _offset;
+
         #endregion
     }
 }
