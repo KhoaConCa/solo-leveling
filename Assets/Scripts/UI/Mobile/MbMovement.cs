@@ -35,7 +35,10 @@ namespace Platform2D.UIMovement
         public void OnEndDrag(PointerEventData eventData)
         {
             if (_joystick != null)
-                _uiController.PlayerController.PlayerStates.IsMoving = 0.0f;
+            {
+                _uiController.PlayerController.PlayerStates.Horizontal = 0.0f;
+                _uiController.PlayerController.PlayerStates.Vertical = 0.0f;
+            }
         }
         #endregion
 
@@ -58,8 +61,8 @@ namespace Platform2D.UIMovement
                     _uiController.PlayerController.PlayerStates.IsJumping = false;
                     break;
                 case MOVEMENT_FUNCTION.CROUCH:
-                    if (_uiController.PlayerController.PlayerStates.IsGrounded)
-                        _uiController.PlayerController.PlayerStates.IsCrouching = false;
+                    _uiController.PlayerController.PlayerStates.IsCrouching = false;
+                    _uiController.PlayerController.PlayerStates.CanDownard = false;
                     break;
                 case MOVEMENT_FUNCTION.DASH:
                     _uiController.PlayerController.PlayerStates.IsDashing = false;
@@ -101,9 +104,15 @@ namespace Platform2D.UIMovement
         public void OnMove()
         {
             if(_joystick != null)
-                _uiController.PlayerController.PlayerStates.IsMoving = _joystick.Value.x < 0 ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
+            {
+                if (Mathf.Abs(_joystick.Value.y) < 0.6f)
+                    _uiController.PlayerController.PlayerStates.Horizontal = _joystick.Value.x < 0 ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
+                else _uiController.PlayerController.PlayerStates.Horizontal = 0;
+
+                _uiController.PlayerController.PlayerStates.Vertical = _joystick.Value.y;
+            }
             else
-                _uiController.PlayerController.PlayerStates.IsMoving = _moveDirection == MOVEMENT_FUNCTION.LEFT ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
+                _uiController.PlayerController.PlayerStates.Horizontal = _moveDirection == MOVEMENT_FUNCTION.LEFT ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
         }
 
         /// <summary>
@@ -113,16 +122,18 @@ namespace Platform2D.UIMovement
         {
             _uiController.PlayerController.PlayerStates.IsJumping = true;
         }
-
+         
         /// <summary>
         /// Thực hiện chức năng cúi người khi người chơi thao tác cúi.
         /// </summary>
         public void OnCrouch()
         {
-            if (_uiController.PlayerController.PlayerStates.IsGrounded)
+            if (_uiController.PlayerController.PlayerStates.IsGrounded && !_uiController.PlayerController.PlayerStates.IsOneWay)
             {
                 _uiController.PlayerController.PlayerStates.IsCrouching = true;
             }
+            else if (_uiController.PlayerController.PlayerStates.IsOneWay && _uiController.PlayerController.PlayerStates.Vertical < 0) 
+                _uiController.PlayerController.PlayerStates.CanDownard = true;
         }
 
         /// <summary>
@@ -131,7 +142,6 @@ namespace Platform2D.UIMovement
         public void OnDash()
         {
             _uiController.PlayerController.PlayerStates.IsDashing = true;
-            Debug.Log(_uiController.PlayerController.PlayerStates.IsDashing);
         }
         #endregion
 

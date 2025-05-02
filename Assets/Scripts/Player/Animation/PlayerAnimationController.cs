@@ -32,7 +32,7 @@ namespace Platform2D.CharacterAnimation
         /// </summary>
         public void OnMove()
         {
-            var isMovingOnGround = (Mathf.Abs(_playerController.PlayerStates.IsMoving) > 0.01f) && _playerController.PlayerStates.IsGrounded;
+            var isMovingOnGround = (Mathf.Abs(_playerController.PlayerStates.Horizontal) > 0.01f) && _playerController.PlayerStates.IsGrounded;
             _animator.SetBool(PlayerAnimationParameters.IsMoving, isMovingOnGround);
         }
 
@@ -41,7 +41,7 @@ namespace Platform2D.CharacterAnimation
         /// </summary>
         public void OnJump()
         {
-            if(_playerController.PlayerStates.IsJumping && _playerController.PlayerStates.IsGrounded)
+            if(_playerController.PlayerStates.IsJumping)
                 _animator.SetTrigger(PlayerAnimationParameters.Jump);
 
             _animator.SetFloat(PlayerAnimationParameters.YVelocity, _playerController.Rg2D.velocity.y);
