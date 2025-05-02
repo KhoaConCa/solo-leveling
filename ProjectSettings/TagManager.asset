@@ -17,18 +17,19 @@ TagManager:
   - PushableObject
   - Checkpoint
   - Background
+  - OneWayPlatform
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Penetrable
+  - 
   - Water
   - UI
   - Interactable
-  - Background
-  - 
-  - 
-  - 
+  - Penatrable
+  - StaticLevel
+  - HazrdsAndTraps
+  - AnimationObject
   - 
   - 
   - 

@@ -1,6 +1,7 @@
 ﻿using Platform2D.CharacterController;
 using Platform2D.CharacterInterface;
 using Platform2D.CharacterStats;
+using Platform2D.Utilities;
 using Platform2D.Vector;
 using System.Collections.Generic;
 using UnityEngine;
@@ -90,8 +91,8 @@ public class PlayerMovementController : IMoveable, ICheckable
         Vector2 origin = _playerController.transform.position;
         Vector2 direction = Vector2.down;
 
-        int groundLayer = LayerMask.GetMask(_groundLayerName);
-        int oneWayLayer = LayerMask.GetMask(_oneWayLayerName);
+        int staticLevelLayer = LayerMask.GetMask(TagLayerName.StaticLevel);
+        int penetrableLayer = LayerMask.GetMask(TagLayerName.Penatrable);
 
         // Vẽ raycast bằng màu xanh lá trong Scene view
         Debug.DrawRay(origin, direction * 1f, Color.green);
@@ -101,16 +102,16 @@ public class PlayerMovementController : IMoveable, ICheckable
 
         if (_playerController.CapCol2D.enabled)
         {
-            groundHit = Physics2D.Raycast(origin, direction, GROUND_DISTANCE, groundLayer);
-            oneWayHit = Physics2D.Raycast(origin, direction, ONEWAY_DISTANCE, oneWayLayer);
+            groundHit = Physics2D.Raycast(origin, direction, GROUND_DISTANCE, staticLevelLayer);
+            oneWayHit = Physics2D.Raycast(origin, direction, ONEWAY_DISTANCE, penetrableLayer);
         }
 
-        if (groundHit.collider != null)
+        if (groundHit.collider != null && groundHit.collider.CompareTag(TagLayerName.Ground))
         {
             _playerController.PlayerStates.IsGrounded = true;
             _playerController.PlayerStates.IsOneWay = false;
         }
-        else if (oneWayHit.collider != null)
+        else if (oneWayHit.collider != null && oneWayHit.collider.CompareTag(TagLayerName.OneWay))
         {
             _playerController.PlayerStates.IsGrounded = true;
             _playerController.PlayerStates.IsOneWay = true;
@@ -131,10 +132,10 @@ public class PlayerMovementController : IMoveable, ICheckable
         Vector2 origin = _playerController.transform.position;
         var vecDirection = direction < 0 ? Vector2.left : Vector2.right;
 
-        int layerMask = LayerMask.GetMask(_groundLayerName);
+        int layerMask = LayerMask.GetMask(TagLayerName.StaticLevel);
 
         RaycastHit2D wallHit2D = Physics2D.Raycast(origin, vecDirection, WALL_DISTANCE, layerMask);
-        if(wallHit2D.collider != null)
+        if(wallHit2D.collider != null && wallHit2D.collider.CompareTag(TagLayerName.Ground))
             _playerController.PlayerStates.IsOnWall = true;
         else _playerController.PlayerStates.IsOnWall = false;
     }
@@ -144,10 +145,6 @@ public class PlayerMovementController : IMoveable, ICheckable
     #region --- Fields ---
 
     private readonly PlayerController _playerController;
-
-
-    private readonly string _groundLayerName = "Ground";
-    private readonly string _oneWayLayerName = "Penetrable";
 
     private const float GROUND_DISTANCE = 1f;
     private const float ONEWAY_DISTANCE = 1f;
