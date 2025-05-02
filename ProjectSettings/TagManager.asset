@@ -7,7 +7,16 @@ TagManager:
   - MainPlayer
   - MainUI
   - GroundChecker
-  - OneWayPlatform
+  - OneWay
+  - Ground
+  - Wall
+  - ClimbableWall
+  - LevelBoundary
+  - Trap
+  - RopePoint
+  - PushableObject
+  - Checkpoint
+  - Background
   layers:
   - Default
   - TransparentFX
@@ -16,8 +25,7 @@ TagManager:
   - Water
   - UI
   - Interactable
-  - Ground
-  - 
+  - Background
   - 
   - 
   - 
@@ -43,14 +51,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 178441277
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Interactable
-    uniqueID: 1889951029
-    locked: 0
   - name: Penetrable
     uniqueID: 244739771
+    locked: 0
+  - name: Interactable
+    uniqueID: 1889951029
     locked: 0
   - name: UI
     uniqueID: 3332970773
