@@ -24,8 +24,12 @@ namespace Platform2D.CharacterAnimation
         public readonly static string YVelocity = "yVelocity";
         #endregion
 
+        #region -- Int Parameters --
+        #endregion
+
         #region -- Trigger Parameters --
-        public readonly static string Jump = "jump";
+        public readonly static string JumpTrigger = "jump";
+        public readonly static string AttackTrigger = "isAttack";
         #endregion
 
         #endregion

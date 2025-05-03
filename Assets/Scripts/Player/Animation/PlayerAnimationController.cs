@@ -11,7 +11,7 @@ namespace Platform2D.CharacterAnimation
     /// PlayerAnimationController - Được tạo ra nhằm mục đích quản lý và chuyển đổi giữa các animation với nhau
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 29/04/2025
     /// </summary>
-    public class PlayerAnimationController : IMoveable
+    public class PlayerAnimationController : IMoveable, IAction
     {
         #region --- Constructor ---
 
@@ -42,7 +42,7 @@ namespace Platform2D.CharacterAnimation
         public void OnJump()
         {
             if(_playerController.PlayerStates.IsJumping)
-                _animator.SetTrigger(PlayerAnimationParameters.Jump);
+                _animator.SetTrigger(PlayerAnimationParameters.JumpTrigger);
 
             _animator.SetFloat(PlayerAnimationParameters.YVelocity, _playerController.Rg2D.velocity.y);
         }
@@ -69,6 +69,11 @@ namespace Platform2D.CharacterAnimation
         public void OnDash()
         {
             _animator.SetBool(PlayerAnimationParameters.Dash, _playerController.PlayerStates.IsDashing);
+        }
+
+        public void OnAttack()
+        {
+            _animator.SetBool(PlayerAnimationParameters.AttackTrigger, _playerController.PlayerStates.IsAttacking);
         }
 
         #endregion

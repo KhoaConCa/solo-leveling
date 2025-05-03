@@ -40,7 +40,7 @@ namespace Platform2D.CharacterController
                 // Khởi tạo các giá trị mặc định
                 _isFacingRight = true;
                 _movementController = new PlayerMovementController(this);
-               
+                _actionController = new PlayerActionController(this);
                 _animationController = new PlayerAnimationController(
                     playerController: this,
                     animator: animator
@@ -56,26 +56,9 @@ namespace Platform2D.CharacterController
         {
             try
             {
-                // Cập nhật vật lý nhân vật.
-                _movementController.IsGrounded();
-                _movementController.IsOnWall(this.gameObject.transform.localScale.x);
+                MovementHandle();
 
-                _animationController.OnGrounded();
-
-                // Thao tác vật lý nhân vật
-                if (_playerStates.CanDownard)
-                    StartCoroutine(OnDownward());
-
-                _animationController.OnJump();
-                if (_playerStates.IsJumping)
-                    OnJump();
-
-                if (_playerStates.IsDashing)
-                    StartCoroutine(OnDash());
-                else OnMove();
-
-                if (_playerStates.IsGrounded)
-                    _playerStates.JumpCount = 0;
+                ActionHandle();
             }
             catch (Exception ex)
             {
@@ -87,6 +70,42 @@ namespace Platform2D.CharacterController
         #endregion
 
         #region --- Methods ---
+
+        /// <summary>
+        /// Thực hiện xử lý các hành động di chuyển của nhân vật.
+        /// </summary>
+        private void MovementHandle()
+        {
+            // Cập nhật vật lý nhân vật.
+            _movementController.IsGrounded();
+            _movementController.IsOnWall(this.gameObject.transform.localScale.x);
+
+            _animationController.OnGrounded();
+
+            // Thao tác vật lý nhân vật
+            if (_playerStates.CanDownard)
+                StartCoroutine(OnDownward());
+
+            _animationController.OnJump();
+            if (_playerStates.IsJumping)
+                OnJump();
+
+            if (_playerStates.IsDashing)
+                StartCoroutine(OnDash());
+            else OnMove();
+
+            if (_playerStates.IsGrounded)
+                _playerStates.JumpCount = 0;
+        }
+
+        /// <summary>
+        /// Thực hiện xử lý các hành động tương tác, tấn công của nhân vật.
+        /// </summary>
+        private void ActionHandle()
+        {
+            _actionController.OnAttack();
+            _animationController.OnAttack();
+        }
 
         /// <summary>
         /// Thực hiện đổi chiều của nhân vật.
@@ -163,6 +182,9 @@ namespace Platform2D.CharacterController
             _animationController.OnDash();
         }
 
+        /// <summary>
+        /// Thực hiện điều phối sự xuyên qua vật thể của nhân vật thông qua Collider.
+        /// </summary>
         private IEnumerator OnDownward()
         {
             _capCol2D.enabled = false;
@@ -204,6 +226,7 @@ namespace Platform2D.CharacterController
         [SerializeField] private Transform _transform;
 
         private PlayerMovementController _movementController;
+        private PlayerActionController _actionController;
         private PlayerAnimationController _animationController;
 
         [SerializeField] private PlayerStats _playerStats;

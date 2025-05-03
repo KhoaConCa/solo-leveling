@@ -1,6 +1,6 @@
 ﻿using Platform2D.CanvasController;
 using Platform2D.CharacterInterface;
-using Platform2D.Movement;
+using Platform2D.EnumFunction;
 using Platform2D.Vector;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -143,6 +143,7 @@ namespace Platform2D.UIMovement
         {
             _uiController.PlayerController.PlayerStates.IsDashing = true;
         }
+
         #endregion
 
         #endregion
