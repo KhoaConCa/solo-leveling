@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 namespace Platform2D.Utilities
 {
@@ -12,34 +13,49 @@ namespace Platform2D.Utilities
     {
         #region --- Unity Methods ---
 
-        void Start()
+        private void Start()
         {
-            _startPosition = transform.position;
-            _startZPosition = transform.position.z;
+            _startPosition = transform.position.x;
+            _length = GetComponent<SpriteRenderer>().bounds.size.x;
+
+            float maxDepth = 50f;
+            float distanceZ = Mathf.Abs(transform.position.z - _camera.transform.position.z);
+
+            _parallaxEffect = Mathf.Clamp01(1f - (distanceZ / maxDepth));
         }
 
-        void Update()
+        private void Update()
         {
-            Vector2 newPosition = _startPosition + _newPosition * _parallaxFactor;
-            transform.position = new Vector3(newPosition.x, newPosition.y, _startZPosition);
+
+        }
+
+        private void FixedUpdate()
+        {
+            float camX = _camera.transform.position.x;
+            float distance = camX * _parallaxEffect;
+            float movement = camX * (1 - _parallaxEffect);
+
+            transform.position = new Vector3(_startPosition + distance, transform.position.y, transform.position.z);
+
+            if (movement > _startPosition + _length)
+            {
+                _startPosition += _length;
+            }
+            else if (movement < _startPosition - _length)
+            {
+                _startPosition -= _length;
+            }
         }
 
         #endregion
 
         #region --- Fields ---
 
-        [SerializeField] private Camera _camera;
-        [SerializeField] private Transform _player;
+        private float _startPosition;
+        private float _length;
+        private float _parallaxEffect;
 
-        private Vector2 _startPosition;
-        private Vector2 _newPosition => (Vector2)_camera.transform.position - _startPosition;
-        private Vector2 _parallaxEffect;
-
-        private float _startZPosition;
-        private float _distanceFromPlayer => transform.position.z - _player.position.z;
-        private float _clippingPlane => (_camera.transform.position.z 
-            + (_distanceFromPlayer > 0 ? _camera.farClipPlane : _camera.nearClipPlane));
-        private float _parallaxFactor => Mathf.Abs(_distanceFromPlayer) / _clippingPlane;
+        [SerializeField] private GameObject _camera;
 
         #endregion
     }
