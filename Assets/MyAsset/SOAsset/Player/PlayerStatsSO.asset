@@ -15,7 +15,7 @@ MonoBehaviour:
   movementSpeed: 5
   crouchMultiplier: 1.2
   dashMultiplier: 3.5
-  jumpSpeed: 6
-  doubleJumpMultiplier: 0.7
+  jumpSpeed: 7
+  doubleJumpMultiplier: 0.8
   dashDuration: 0.2
   oneWayDuration: 0.5

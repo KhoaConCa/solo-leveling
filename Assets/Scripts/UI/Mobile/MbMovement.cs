@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Unity.VisualScripting;
 using SimpleInputNamespace;
+using Platform2D.CharacterController;
 
 namespace Platform2D.UIMovement
 {
@@ -36,8 +37,9 @@ namespace Platform2D.UIMovement
         {
             if (_joystick != null)
             {
-                _uiController.PlayerController.PlayerStates.Horizontal = 0.0f;
-                _uiController.PlayerController.PlayerStates.Vertical = 0.0f;
+                _playerController.PlayerStates.Horizontal = 0.0f;
+                _playerController.PlayerStates.Vertical = 0.0f;
+                
             }
         }
         #endregion
@@ -58,14 +60,14 @@ namespace Platform2D.UIMovement
                     OnMove();
                     break;
                 case MOVEMENT_FUNCTION.JUMP:
-                    _uiController.PlayerController.PlayerStates.IsJumping = false;
+                    _playerController.PlayerStates.IsJumping = false;
                     break;
                 case MOVEMENT_FUNCTION.CROUCH:
-                    _uiController.PlayerController.PlayerStates.IsCrouching = false;
-                    _uiController.PlayerController.PlayerStates.CanDownard = false;
+                    _playerController.PlayerStates.IsCrouching = false;
+                    _playerController.PlayerStates.CanDownard = false;
                     break;
                 case MOVEMENT_FUNCTION.DASH:
-                    _uiController.PlayerController.PlayerStates.IsDashing = false;
+                    _playerController.PlayerStates.IsDashing = false;
                     break;
             }
         }
@@ -106,13 +108,13 @@ namespace Platform2D.UIMovement
             if(_joystick != null)
             {
                 if (Mathf.Abs(_joystick.Value.y) < 0.6f)
-                    _uiController.PlayerController.PlayerStates.Horizontal = _joystick.Value.x < 0 ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
-                else _uiController.PlayerController.PlayerStates.Horizontal = 0;
+                    _playerController.PlayerStates.Horizontal = _joystick.Value.x < 0 ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
+                else _playerController.PlayerStates.Horizontal = 0;
 
-                _uiController.PlayerController.PlayerStates.Vertical = _joystick.Value.y;
+                _playerController.PlayerStates.Vertical = _joystick.Value.y;
             }
             else
-                _uiController.PlayerController.PlayerStates.Horizontal = _moveDirection == MOVEMENT_FUNCTION.LEFT ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
+                _playerController.PlayerStates.Horizontal = _moveDirection == MOVEMENT_FUNCTION.LEFT ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
         }
 
         /// <summary>
@@ -120,7 +122,7 @@ namespace Platform2D.UIMovement
         /// </summary>
         public void OnJump()
         {
-            _uiController.PlayerController.PlayerStates.IsJumping = true;
+            _playerController.PlayerStates.IsJumping = true;
         }
          
         /// <summary>
@@ -128,12 +130,12 @@ namespace Platform2D.UIMovement
         /// </summary>
         public void OnCrouch()
         {
-            if (_uiController.PlayerController.PlayerStates.IsGrounded && !_uiController.PlayerController.PlayerStates.IsOneWay)
+            if (_playerController.PlayerStates.IsGrounded && !_playerController.PlayerStates.IsOneWay)
             {
-                _uiController.PlayerController.PlayerStates.IsCrouching = true;
+                _playerController.PlayerStates.IsCrouching = true;
             }
-            else if (_uiController.PlayerController.PlayerStates.IsOneWay && _uiController.PlayerController.PlayerStates.Vertical < 0) 
-                _uiController.PlayerController.PlayerStates.CanDownard = true;
+            else if (_playerController.PlayerStates.IsOneWay && _playerController.PlayerStates.Vertical < 0) 
+                _playerController.PlayerStates.CanDownard = true;
         }
 
         /// <summary>
@@ -141,7 +143,7 @@ namespace Platform2D.UIMovement
         /// </summary>
         public void OnDash()
         {
-            _uiController.PlayerController.PlayerStates.IsDashing = true;
+            _playerController.PlayerStates.IsDashing = true;
         }
 
         #endregion
@@ -152,7 +154,7 @@ namespace Platform2D.UIMovement
 
         public void Awake()
         {
-            _uiController = GameObject.FindGameObjectWithTag(_tagMainUI).GetComponent<UIController>();
+            _playerController = GameObject.FindGameObjectWithTag(_tagMainPlayer).GetComponent<PlayerController>();
 
             if (_joystick == null) _joystick = this.gameObject.GetComponent<SimpleJoystick>();
         }
@@ -161,12 +163,12 @@ namespace Platform2D.UIMovement
 
         #region --- Fields ---
 
-        [SerializeField] private UIController _uiController;
+        [SerializeField] private PlayerController _playerController;
 
         [SerializeField] private MOVEMENT_FUNCTION _moveDirection;
 
         [SerializeField] private SimpleJoystick _joystick;
-        [SerializeField] private string _tagMainUI;
+        [SerializeField] private string _tagMainPlayer;
 
         #endregion
 

@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Unity.VisualScripting;
 using SimpleInputNamespace;
+using Platform2D.CharacterController;
 
 namespace Platform2D.UIMovement
 {
@@ -25,12 +26,7 @@ namespace Platform2D.UIMovement
         /// <param name="eventData"> Các sự kiện khi người chơi thả Button </param>
         public void OnPointerUp(PointerEventData eventData)
         {
-            switch (_action)
-            {
-                case ACTION_FUNCTION.ATTACK:
-                    _uiController.PlayerController.PlayerStates.IsAttacking = false;
-                    break;
-            }
+            
         }
 
         /// <summary>
@@ -54,7 +50,7 @@ namespace Platform2D.UIMovement
         /// </summary>
         public void OnAttack()
         {
-            _uiController.PlayerController.PlayerStates.IsAttacking = true;
+            _playerController.PlayerStates.IsAttacking = true;
         }
 
         #endregion
@@ -65,18 +61,18 @@ namespace Platform2D.UIMovement
 
         public void Awake()
         {
-            _uiController = GameObject.FindGameObjectWithTag(_tagMainUI).GetComponent<UIController>();
+            _playerController = GameObject.FindGameObjectWithTag(_tagMainPlayer).GetComponent<PlayerController>();
         }
 
         #endregion
 
         #region --- Fields ---
 
-        [SerializeField] private UIController _uiController;
+        [SerializeField] private PlayerController _playerController;
 
         [SerializeField] private ACTION_FUNCTION _action;
 
-        [SerializeField] private string _tagMainUI;
+        [SerializeField] private string _tagMainPlayer;
 
         #endregion
 

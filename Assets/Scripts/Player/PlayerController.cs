@@ -56,9 +56,13 @@ namespace Platform2D.CharacterController
         {
             try
             {
+                _movementController.IsGrounded();
+                _movementController.IsOnWall(this.gameObject.transform.localScale.x);
+
                 MovementHandle();
 
-                ActionHandle();
+                if (_playerStates.IsAttacking)
+                    ActionHandle();
             }
             catch (Exception ex)
             {
@@ -76,26 +80,32 @@ namespace Platform2D.CharacterController
         /// </summary>
         private void MovementHandle()
         {
-            // Cập nhật vật lý nhân vật.
-            _movementController.IsGrounded();
-            _movementController.IsOnWall(this.gameObject.transform.localScale.x);
-
             _animationController.OnGrounded();
 
             // Thao tác vật lý nhân vật
             if (_playerStates.CanDownard)
                 StartCoroutine(OnDownward());
 
-            _animationController.OnJump();
-            if (_playerStates.IsJumping)
+
+            if (!_playerStates.IsGrounded && _rg2D.velocity.y < 0)
+                _animationController.OnFall(_rg2D.velocity.y);
+            else _animationController.OnFall(0);
+
+            if (_playerStates.IsJumping && _animationController.CanMove)
+            {
+                _animationController.OnJump();
                 OnJump();
+            }
+               
 
             if (_playerStates.IsDashing)
                 StartCoroutine(OnDash());
             else OnMove();
 
             if (_playerStates.IsGrounded)
+            {
                 _playerStates.JumpCount = 0;
+            }
         }
 
         /// <summary>
@@ -105,6 +115,12 @@ namespace Platform2D.CharacterController
         {
             _actionController.OnAttack();
             _animationController.OnAttack();
+
+            int direction = 1;
+            if (!_isFacingRight)
+                direction = -1;
+            _rg2D.velocity = new Vector2(_playerStats.CurrentMovementSpeed / (_playerStats.CurrentMovementSpeed*1.5f) * direction, 0f);
+            _playerStates.IsAttacking = false;
         }
 
         /// <summary>
@@ -125,17 +141,20 @@ namespace Platform2D.CharacterController
         /// </summary>
         private void OnMove()
         {
-            FlipPlayerObject();
-
-            _animationController.OnMove();
-            _animationController.OnCrouch();
-            if (_playerStates.IsCrouching)
+            if (_animationController.CanMove)
             {
-                _movementController.OnCrouch();
-                return;
-            }
+                FlipPlayerObject();
 
-            _movementController.OnMove();
+                _animationController.OnMove();
+                _animationController.OnCrouch();
+                if (_playerStates.IsCrouching)
+                {
+                    _movementController.OnCrouch();
+                    return;
+                }
+
+                _movementController.OnMove();
+            }
         }
 
         /// <summary>

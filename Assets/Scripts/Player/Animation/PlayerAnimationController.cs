@@ -43,8 +43,11 @@ namespace Platform2D.CharacterAnimation
         {
             if(_playerController.PlayerStates.IsJumping)
                 _animator.SetTrigger(PlayerAnimationParameters.JumpTrigger);
+        }
 
-            _animator.SetFloat(PlayerAnimationParameters.YVelocity, _playerController.Rg2D.velocity.y);
+        public void OnFall(float yVel)
+        {
+            _animator.SetFloat(PlayerAnimationParameters.YVelocity, yVel);
         }
 
         /// <summary>
@@ -73,8 +76,14 @@ namespace Platform2D.CharacterAnimation
 
         public void OnAttack()
         {
-            _animator.SetBool(PlayerAnimationParameters.AttackTrigger, _playerController.PlayerStates.IsAttacking);
+            _animator.SetTrigger(PlayerAnimationParameters.AttackTrigger);
         }
+
+        #endregion
+
+        #region --- Properties ---
+
+        public bool CanMove => _animator.GetBool(PlayerAnimationParameters.CanMove);
 
         #endregion
 
