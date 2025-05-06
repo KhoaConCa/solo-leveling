@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1306345571869576056}
   - component: {fileID: 8093984907458808288}
   - component: {fileID: 2331807825776630436}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character
   m_TagString: MainPlayer
   m_Icon: {fileID: 0}
@@ -162,10 +162,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rg2D: {fileID: 0}
-  _groundChecker: {fileID: 0}
+  _capCol2D: {fileID: 0}
+  _transform: {fileID: 0}
   _playerStats: {fileID: 0}
   _playerStates: {fileID: 0}
   _isFacingRight: 0
+  _contactFilter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 384
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!1 &2470420996059526276
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6449228145918169501}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2906435612141494523}
   - component: {fileID: 3363490204148487703}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,8 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051f002900d3e4447afe25d9839af870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 4
-  _jumpSpeed: 5
+  _playerStatsSO: {fileID: 0}
 --- !u!1 &3112338987646361173
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5477099374088108604}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HitChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3763904823786067933}
   - component: {fileID: 1982315803692922036}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GoundChecker
   m_TagString: GroundChecker
   m_Icon: {fileID: 0}
@@ -353,7 +367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5616927465437664531}
   - component: {fileID: 6315030637151598117}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: States
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,9 +401,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d5ce06c2bf419b4cb59f855cd0788f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isMoving: 0
-  _isJumping: 0
+  _jumpCount: 0
+  _attackCount: 0
+  _horizontal: 0
+  _vertical: 0
+  _isCrouching: 0
+  _isInvincible: 0
+  _isDashing: 0
   _isGrounded: 0
+  _isOneWay: 0
+  _canDownard: 0
+  _isOnWall: 0
+  _isJumping: 0
+  _isDoubleJump: 0
+  _isAttacking: 0
 --- !u!1 &6925171922438240973
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +426,7 @@ GameObject:
   - component: {fileID: 9093478959274593726}
   - component: {fileID: 2095981786854595561}
   - component: {fileID: 2285700226802893217}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

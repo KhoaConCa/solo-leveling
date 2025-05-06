@@ -1,18 +1,28 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyStats : MonoBehaviour
+namespace Platform2D.CharacterStats
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// EnemyStats - Được tạo ra để hiển thị và sử dụng chỉ số của Enemy.
+    /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 06/05/2025
+    /// </summary>
+    public class EnemyStats : MonoBehaviour
     {
-        
-    }
+        #region --- Properties ---
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public EnemyStatsSO BaseStats => _baseStats;
+        public float CurrentMovementSpeed { get { return _currentMovementSpeed; } set { _currentMovementSpeed = _baseStats.movementSpeed + value; } }
+
+        #endregion
+
+        #region --- Fields ---
+
+        [SerializeField] private EnemyStatsSO _baseStats;
+
+        [SerializeField] private float _currentMovementSpeed;
+
+        #endregion
     }
 }

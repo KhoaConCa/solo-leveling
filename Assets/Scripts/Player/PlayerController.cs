@@ -57,7 +57,7 @@ namespace Platform2D.CharacterController
             try
             {
                 _movementController.IsGrounded();
-                _movementController.IsOnWall(this.gameObject.transform.localScale.x);
+                _movementController.IsOnWall(this.gameObject.transform.localScale.x, _contactFilter);
 
                 MovementHandle();
 
@@ -254,6 +254,8 @@ namespace Platform2D.CharacterController
         [SerializeField] private bool _isFacingRight;
 
         [SerializeField] private const string GROUND_CHECKER = "GroundChecker";
+
+        [SerializeField] private ContactFilter2D _contactFilter;
 
         #endregion
 

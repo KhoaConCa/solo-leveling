@@ -11,7 +11,7 @@ using UnityEngine.InputSystem;
 /// PlayerMovementController - Được tạo ra để quản lý và xử lý các chức năng liên quan đến di chuyển của nhân vật.
 /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 28/04/2025
 /// </summary>
-public class PlayerMovementController : IMoveable, ICheckable
+public class PlayerMovementController : IMoveable
 {
 
     #region --- Constructor ---
@@ -127,17 +127,10 @@ public class PlayerMovementController : IMoveable, ICheckable
 
     #region --- Methods ---
 
-    public void IsOnWall(float direction)
+    public void IsOnWall(float direction, ContactFilter2D contactFilter)
     {
-        Vector2 origin = _playerController.transform.position;
         var vecDirection = direction < 0 ? Vector2.left : Vector2.right;
-
-        int layerMask = LayerMask.GetMask(TagLayerName.StaticLevel);
-
-        RaycastHit2D wallHit2D = Physics2D.Raycast(origin, vecDirection, WALL_DISTANCE, layerMask);
-        if(wallHit2D.collider != null && wallHit2D.collider.CompareTag(TagLayerName.Ground))
-            _playerController.PlayerStates.IsOnWall = true;
-        else _playerController.PlayerStates.IsOnWall = false;
+        _playerController.PlayerStates.IsOnWall = _playerController.CapCol2D.Cast(vecDirection, contactFilter, wallHits, WALL_DISTANCE) > 0;
     }
 
     #endregion
@@ -146,9 +139,11 @@ public class PlayerMovementController : IMoveable, ICheckable
 
     private readonly PlayerController _playerController;
 
+    private readonly RaycastHit2D[] wallHits = new RaycastHit2D[5];
+
     private const float GROUND_DISTANCE = 1f;
     private const float ONEWAY_DISTANCE = 1f;
-    private const float WALL_DISTANCE = 0.5f;
+    private const float WALL_DISTANCE = 0.2f;
 
     #endregion
 

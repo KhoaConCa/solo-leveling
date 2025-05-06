@@ -10,7 +10,7 @@ namespace Platform2D.CharacterStats
     /// </summary>
     using UnityEngine;
 
-    [CreateAssetMenu(fileName = "PlayerStatsSO", menuName = "Character/PlayerStats", order = 0)]
+    [CreateAssetMenu(fileName = "StatsSO", menuName = "Character/PlayerStats", order = 0)]
     public class PlayerStatsSO : ScriptableObject
     {
 
