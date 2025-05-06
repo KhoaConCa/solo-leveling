@@ -2581,22 +2581,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1394803900}
     m_Modifications:
-    - target: {fileID: 591394867503024833, guid: 18cb97372a9efdc4ea3f2bd09946824a, type: 3}
-      propertyPath: _tagMainUI
-      value: MainPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 591394867503024833, guid: 18cb97372a9efdc4ea3f2bd09946824a, type: 3}
-      propertyPath: _tagMainPlayer
-      value: MainPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 765397669215110734, guid: 18cb97372a9efdc4ea3f2bd09946824a, type: 3}
-      propertyPath: _tagMainPlayer
-      value: MainPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 1911559011449002711, guid: 18cb97372a9efdc4ea3f2bd09946824a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3010491198158005169, guid: 18cb97372a9efdc4ea3f2bd09946824a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2677,26 +2661,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4489523423576756849, guid: 18cb97372a9efdc4ea3f2bd09946824a, type: 3}
-      propertyPath: _tagMainPlayer
-      value: MainPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 5133055738283274445, guid: 18cb97372a9efdc4ea3f2bd09946824a, type: 3}
-      propertyPath: _tagMainPlayer
-      value: MainPlayer
-      objectReference: {fileID: 0}
     - target: {fileID: 5373922163533868185, guid: 18cb97372a9efdc4ea3f2bd09946824a, type: 3}
       propertyPath: m_Name
       value: ControlPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 9036112102722553923, guid: 18cb97372a9efdc4ea3f2bd09946824a, type: 3}
-      propertyPath: _tagMainPlayer
-      value: MainPlayer
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5505217689970171699, guid: 18cb97372a9efdc4ea3f2bd09946824a, type: 3}
-    m_RemovedGameObjects:
-    - {fileID: 1911559011449002711, guid: 18cb97372a9efdc4ea3f2bd09946824a, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18cb97372a9efdc4ea3f2bd09946824a, type: 3}
