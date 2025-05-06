@@ -15,7 +15,7 @@ namespace Platform2D.Vector
     }
 }
 
-namespace Platform2D.Movement
+namespace Platform2D.EnumFunction
 {
     /// <summary>
     /// MOVEMENT_FUNCTION - Sử dụng các giá trị có trong enum MOVEMENT_FUNCTION 
@@ -30,6 +30,11 @@ namespace Platform2D.Movement
         JUMP,
         CROUCH,
         DASH
+    }
+
+    enum ACTION_FUNCTION
+    {
+        ATTACK
     }
 }
 

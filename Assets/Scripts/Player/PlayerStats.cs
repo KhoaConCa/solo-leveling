@@ -14,23 +14,19 @@ namespace Platform2D.CharacterStats
 
         #region --- Properties ---
 
-        public float MovementSpeed { get { return _movementSpeed; } set { _movementSpeed = value; } }
-        public float JumpSpeed { get { return _jumpSpeed; } set { _jumpSpeed = value; } }
-        public float DashSpeed { get { return _dashSpeed; } }
-        public float CrouchSpeed { get { return _crouchSpeed; } }
-        public float DoubleJumpSpeed { get { return _doubleJumpSpeed; } }
+        public PlayerStatsSO PlayerStatsSO => _playerStatsSO;
+        public float CurrentMovementSpeed => _playerStatsSO.movementSpeed;
+        public float CrouchSpeed => CurrentMovementSpeed * _playerStatsSO.crouchMultiplier;
+        public float DashSpeed => CurrentMovementSpeed * _playerStatsSO.dashMultiplier;
 
         #endregion
 
         #region --- Fields ---
 
-        [SerializeField] private float _movementSpeed = (float)BASE_STATS.MOVEMENT_SPEED;
-        [SerializeField] private float _crouchSpeed => _movementSpeed*1.2f;
-        [SerializeField] private float _dashSpeed => _movementSpeed * 3.5f;
-        [SerializeField] private float _jumpSpeed = (float)BASE_STATS.JUMP_SPEED;
-        [SerializeField] private float _doubleJumpSpeed => _jumpSpeed*0.7f;
+        [SerializeField] private PlayerStatsSO _playerStatsSO;
 
         #endregion
 
     }
+
 }

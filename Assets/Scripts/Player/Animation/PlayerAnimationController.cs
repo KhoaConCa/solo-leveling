@@ -11,7 +11,7 @@ namespace Platform2D.CharacterAnimation
     /// PlayerAnimationController - Được tạo ra nhằm mục đích quản lý và chuyển đổi giữa các animation với nhau
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 29/04/2025
     /// </summary>
-    public class PlayerAnimationController : IMoveable
+    public class PlayerAnimationController : IMoveable, IAction
     {
         #region --- Constructor ---
 
@@ -32,7 +32,7 @@ namespace Platform2D.CharacterAnimation
         /// </summary>
         public void OnMove()
         {
-            var isMovingOnGround = (Mathf.Abs(_playerController.PlayerStates.IsMoving) > 0.01f) && _playerController.PlayerStates.IsGrounded;
+            var isMovingOnGround = (Mathf.Abs(_playerController.PlayerStates.Horizontal) > 0.01f) && _playerController.PlayerStates.IsGrounded;
             _animator.SetBool(PlayerAnimationParameters.IsMoving, isMovingOnGround);
         }
 
@@ -41,10 +41,13 @@ namespace Platform2D.CharacterAnimation
         /// </summary>
         public void OnJump()
         {
-            if(_playerController.PlayerStates.IsJumping && _playerController.PlayerStates.IsGrounded)
-                _animator.SetTrigger(PlayerAnimationParameters.Jump);
+            if(_playerController.PlayerStates.IsJumping)
+                _animator.SetTrigger(PlayerAnimationParameters.JumpTrigger);
+        }
 
-            _animator.SetFloat(PlayerAnimationParameters.YVelocity, _playerController.Rg2D.velocity.y);
+        public void OnFall(float yVel)
+        {
+            _animator.SetFloat(PlayerAnimationParameters.YVelocity, yVel);
         }
 
         /// <summary>
@@ -70,6 +73,17 @@ namespace Platform2D.CharacterAnimation
         {
             _animator.SetBool(PlayerAnimationParameters.Dash, _playerController.PlayerStates.IsDashing);
         }
+
+        public void OnAttack()
+        {
+            _animator.SetTrigger(PlayerAnimationParameters.AttackTrigger);
+        }
+
+        #endregion
+
+        #region --- Properties ---
+
+        public bool CanMove => _animator.GetBool(PlayerAnimationParameters.CanMove);
 
         #endregion
 

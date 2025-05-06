@@ -7,6 +7,7 @@ using Platform2D.Vector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
@@ -18,24 +19,142 @@ namespace Platform2D.CharacterController
     /// </summary>
     public class PlayerController : MonoBehaviour
     {
-        #region --- Overrides ---
+
+        #region --- Unity Methods ---
+
+        public void Awake()
+        {
+            try
+            {
+                // Tìm kiếm và lấy các Component cần thiết.
+                var animator = gameObject.GetComponentInChildren<Animator>();
+
+                _rg2D = gameObject.GetComponent<Rigidbody2D>();
+                _capCol2D = GameObject.FindGameObjectWithTag(GROUND_CHECKER).GetComponent<CapsuleCollider2D>();
+
+                _transform = gameObject.transform;
+
+                _playerStats = gameObject.GetComponentInChildren<PlayerStats>();
+                _playerStates = gameObject.GetComponentInChildren<PlayerStates>();
+
+                // Khởi tạo các giá trị mặc định
+                _isFacingRight = true;
+                _movementController = new PlayerMovementController(this);
+                _actionController = new PlayerActionController(this);
+                _animationController = new PlayerAnimationController(
+                    playerController: this,
+                    animator: animator
+                ); 
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"PlayerController Error: {ex}");
+            }
+        }
+
+        public void FixedUpdate()
+        {
+            try
+            {
+                _movementController.IsGrounded();
+                _movementController.IsOnWall(this.gameObject.transform.localScale.x, _contactFilter);
+
+                MovementHandle();
+
+                if (_playerStates.IsAttacking)
+                    ActionHandle();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"PlayerController Update Failed: {ex}");
+            }
+            
+        }
+
+        #endregion
+
+        #region --- Methods ---
+
+        /// <summary>
+        /// Thực hiện xử lý các hành động di chuyển của nhân vật.
+        /// </summary>
+        private void MovementHandle()
+        {
+            _animationController.OnGrounded();
+
+            // Thao tác vật lý nhân vật
+            if (_playerStates.CanDownard)
+                StartCoroutine(OnDownward());
+
+
+            if (!_playerStates.IsGrounded && _rg2D.velocity.y < 0)
+                _animationController.OnFall(_rg2D.velocity.y);
+            else _animationController.OnFall(0);
+
+            if (_playerStates.IsJumping && _animationController.CanMove)
+            {
+                _animationController.OnJump();
+                OnJump();
+            }
+               
+
+            if (_playerStates.IsDashing)
+                StartCoroutine(OnDash());
+            else OnMove();
+
+            if (_playerStates.IsGrounded)
+            {
+                _playerStates.JumpCount = 0;
+            }
+        }
+
+        /// <summary>
+        /// Thực hiện xử lý các hành động tương tác, tấn công của nhân vật.
+        /// </summary>
+        private void ActionHandle()
+        {
+            _actionController.OnAttack();
+            _animationController.OnAttack();
+
+            int direction = 1;
+            if (!_isFacingRight)
+                direction = -1;
+            _rg2D.velocity = new Vector2(_playerStats.CurrentMovementSpeed / (_playerStats.CurrentMovementSpeed*1.5f) * direction, 0f);
+            _playerStates.IsAttacking = false;
+        }
+
+        /// <summary>
+        /// Thực hiện đổi chiều của nhân vật.
+        /// </summary>
+        public void FlipPlayerObject()
+        {
+            if (_playerStates == null) return;
+
+            if (_playerStates.Horizontal > 0 && !IsFacingRight)
+                IsFacingRight = true;
+            else if (_playerStates.Horizontal < 0 && IsFacingRight)
+                IsFacingRight = false;
+        }
 
         /// <summary>
         /// Thực hiện điều phối sự di chuyển của nhân vật thông qua các Controller.
         /// </summary>
         private void OnMove()
         {
-            FlipPlayerObject();
-
-            _animationController.OnMove();
-            _animationController.OnCrouch();
-            if (_playerStates.IsCrouching)
+            if (_animationController.CanMove)
             {
-                _movementController.OnCrouch();
-                return;
-            }
+                FlipPlayerObject();
 
-            _movementController.OnMove();
+                _animationController.OnMove();
+                _animationController.OnCrouch();
+                if (_playerStates.IsCrouching)
+                {
+                    _movementController.OnCrouch();
+                    return;
+                }
+
+                _movementController.OnMove();
+            }
         }
 
         /// <summary>
@@ -57,13 +176,13 @@ namespace Platform2D.CharacterController
                 _playerStates.JumpCount++;
                 _playerStates.IsDoubleJump = false;
             }
-            else if(!_playerStates.IsGrounded && _playerStates.JumpCount == 0 && !_playerStates.IsDoubleJump)
+            else if (!_playerStates.IsGrounded && _playerStates.JumpCount == 0 && !_playerStates.IsDoubleJump)
             {
                 Debug.Log("hi");
                 _movementController.OnJump();
                 _playerStates.JumpCount++;
             }
-            
+
 
             _playerStates.IsJumping = false;
         }
@@ -76,99 +195,33 @@ namespace Platform2D.CharacterController
             _animationController.OnDash();
             _movementController.OnDash();
 
-            yield return new WaitForSeconds(_playerStates.DashDuration);
+            yield return new WaitForSeconds(_playerStats.PlayerStatsSO.dashDuration);
 
             _playerStates.IsDashing = false;
             _animationController.OnDash();
         }
 
-        #endregion
-
-        #region --- Unity Methods ---
-
-        public void Awake()
-        {
-            try
-            {
-                // Tìm kiếm và lấy các Component cần thiết.
-                var animator = gameObject.GetComponentInChildren<Animator>();
-
-                _rg2D = gameObject.GetComponent<Rigidbody2D>();
-                _groundChecker = GameObject.FindGameObjectWithTag(GROUND_CHECKER).GetComponent<CapsuleCollider2D>();
-
-                _playerStats = gameObject.GetComponentInChildren<PlayerStats>();
-                _playerStates = gameObject.GetComponentInChildren<PlayerStates>();
-
-                // Khởi tạo các giá trị mặc định
-                _isFacingRight = true;
-                _movementController = new PlayerMovementController(this);
-               
-                _animationController = new PlayerAnimationController(
-                    playerController: this,
-                    animator: animator
-                ); 
-            }
-            catch (Exception ex)
-            {
-                Debug.LogError($"PlayerController Error: {ex}");
-            }
-        }
-
-        public void FixedUpdate()
-        {
-            try
-            {
-                // Cập nhật vật lý nhân vật.
-                _movementController.IsGrounded();
-                _movementController.IsOnWall(this.gameObject.transform.localScale.x);
-
-                _animationController.OnGrounded();
-
-                // Thao tác vật lý nhân vật
-                _animationController.OnJump();
-                if (_playerStates.IsJumping)
-                    OnJump();
-
-                if (_playerStates.IsDashing)
-                    StartCoroutine(OnDash());
-                else OnMove();
-
-                if (_playerStates.IsGrounded)
-                    _playerStates.JumpCount = 0;
-            }
-            catch (Exception ex)
-            {
-                Debug.LogError($"PlayerController Update Failed: {ex}");
-            }
-            
-        }
-
-        #endregion
-
-        #region --- Methods ---
-
         /// <summary>
-        /// Thực hiện đổi chiều của nhân vật.
+        /// Thực hiện điều phối sự xuyên qua vật thể của nhân vật thông qua Collider.
         /// </summary>
-        public void FlipPlayerObject()
+        private IEnumerator OnDownward()
         {
-            if (_playerStates == null) return;
-
-            if (_playerStates.IsMoving > 0 && !IsFacingRight)
-                IsFacingRight = true;
-            else if (_playerStates.IsMoving < 0 && IsFacingRight)
-                IsFacingRight = false;
+            _capCol2D.enabled = false;
+            yield return new WaitForSeconds(_playerStats.PlayerStatsSO.oneWayDuration);
+            _capCol2D.enabled = true;
         }
 
         #endregion
 
         #region --- Properties ---
 
-        public Rigidbody2D Rg2D { get { return _rg2D; } }
-        public CapsuleCollider2D GroundChecker { get { return _groundChecker; } }
+        public Rigidbody2D Rg2D => _rg2D;
+        public CapsuleCollider2D CapCol2D => _capCol2D;
 
-        public PlayerStats PlayerStats { get { return _playerStats; } }
-        public PlayerStates PlayerStates { get { return _playerStates; } }
+        public Transform Transform => _transform;
+
+        public PlayerStats PlayerStats =>  _playerStats;
+        public PlayerStates PlayerStates => _playerStates;
 
         public bool IsFacingRight
         {
@@ -187,9 +240,12 @@ namespace Platform2D.CharacterController
         #region --- Fields ---
 
         [SerializeField] private Rigidbody2D _rg2D;
-        [SerializeField] private CapsuleCollider2D _groundChecker;
+        [SerializeField] private CapsuleCollider2D _capCol2D;
+
+        [SerializeField] private Transform _transform;
 
         private PlayerMovementController _movementController;
+        private PlayerActionController _actionController;
         private PlayerAnimationController _animationController;
 
         [SerializeField] private PlayerStats _playerStats;
@@ -198,6 +254,8 @@ namespace Platform2D.CharacterController
         [SerializeField] private bool _isFacingRight;
 
         [SerializeField] private const string GROUND_CHECKER = "GroundChecker";
+
+        [SerializeField] private ContactFilter2D _contactFilter;
 
         #endregion
 
