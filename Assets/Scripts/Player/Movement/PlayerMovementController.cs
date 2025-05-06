@@ -141,8 +141,8 @@ public class PlayerMovementController : IMoveable
 
     private readonly RaycastHit2D[] wallHits = new RaycastHit2D[5];
 
-    private const float GROUND_DISTANCE = 1f;
-    private const float ONEWAY_DISTANCE = 1f;
+    private const float GROUND_DISTANCE = 1.5f;
+    private const float ONEWAY_DISTANCE = 1.5f;
     private const float WALL_DISTANCE = 0.2f;
 
     #endregion
