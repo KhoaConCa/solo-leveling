@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Direction
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2095981786854595561, guid: 7f86c704bd1cd7e4f9b5d5c58f522f18, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2309508822595125237, guid: 7f86c704bd1cd7e4f9b5d5c58f522f18, type: 3}
       propertyPath: m_Name
       value: Player
@@ -66,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2331807825776630436, guid: 7f86c704bd1cd7e4f9b5d5c58f522f18, type: 3}
       propertyPath: _contactFilter.useLayerMask
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2331807825776630436, guid: 7f86c704bd1cd7e4f9b5d5c58f522f18, type: 3}
       propertyPath: _contactFilter.layerMask.m_Bits
@@ -94,11 +98,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5716632060419789174, guid: 7f86c704bd1cd7e4f9b5d5c58f522f18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 82.88
+      value: -6.4
       objectReference: {fileID: 0}
     - target: {fileID: 5716632060419789174, guid: 7f86c704bd1cd7e4f9b5d5c58f522f18, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 5716632060419789174, guid: 7f86c704bd1cd7e4f9b5d5c58f522f18, type: 3}
       propertyPath: m_LocalPosition.z

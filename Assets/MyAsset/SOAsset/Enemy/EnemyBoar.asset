@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c8b69cb991f1b540b30eedd880423a2, type: 3}
   m_Name: EnemyBoar
   m_EditorClassIdentifier: 
-  movementSpeed: 6
+  movementSpeed: 2
   movementRange: 7
   idleDuration: 4
   sprite: {fileID: 2127239033, guid: 60f46ab7b7ea5824481423bd7cb0e035, type: 3}
