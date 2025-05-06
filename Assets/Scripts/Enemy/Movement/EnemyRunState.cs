@@ -27,15 +27,9 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void EnterState()
         {
-            float currentPos = _stateController.transform.position.x;
-            if(Mathf.Abs(AnchorLeft - currentPos) > 4 || Mathf.Abs(currentPos - AnchorRight) > 4)
-            {
-                _stateController.States.AnchorPosX = currentPos;
-
-            }
-            AnchorLeft = _stateController.States.AnchorPosX - _stateController.Stats.BaseStats.movementRange;
-            AnchorRight = _stateController.States.AnchorPosX + _stateController.Stats.BaseStats.movementRange;
+            AnchorMaxPos = _stateController.States.AnchorPosX + (_stateController.Stats.BaseStats.movementRange * _stateController.States.Direction);
             _currentTime = _countdownTime;
+            _stateController.States.IsMoving = true;
         }
 
         /// <summary>
@@ -51,7 +45,10 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Thoát Run State.
         /// </summary>
-        public override void ExitState() { }
+        public override void ExitState() 
+        {
+            _stateController.States.IsMoving = false;
+        }
 
         /// <summary>
         /// Kiểm tra chuyển đổi State.
@@ -85,16 +82,13 @@ namespace Platform2D.HierarchicalStateMachine
         {
             float currentPosX = _stateController.trans2D.position.x;
             float direction = _stateController.States.Direction;
-            bool reachAnchorPos = (currentPosX <= AnchorLeft && direction < 0) || (currentPosX >= AnchorRight && direction > 0);
+            bool reachAnchorPos = (currentPosX <= AnchorMaxPos && direction < 0) || (currentPosX >= AnchorMaxPos && direction > 0);
 
             if (_stateController.States.IsMoving)
-            {
-                _stateController.Animator.SetBool(EnemyAniParas.IsMoving, _stateController.States.IsMoving);
                 _stateController.Rg2D.velocity = new Vector2(
-                            _stateController.States.Direction * _stateController.Stats.BaseStats.movementSpeed,
-                            _stateController.Rg2D.velocity.y
-                        );
-            }
+                                _stateController.States.Direction * _stateController.Stats.BaseStats.movementSpeed,
+                                _stateController.Rg2D.velocity.y
+                            );
 
             if (_stateController.States.OnWall || reachAnchorPos || !_stateController.States.OnGround)
                 _stateController.States.IsMoving = false;
@@ -104,8 +98,7 @@ namespace Platform2D.HierarchicalStateMachine
 
         #region --- Properties ---
 
-        public float AnchorLeft { get;  set; }
-        public float AnchorRight { get; set; }
+        public float AnchorMaxPos { get; set; }
 
         #endregion
 

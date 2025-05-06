@@ -5,10 +5,10 @@ using UnityEngine;
 namespace Platform2D.CharacterAnimation
 {
     /// <summary>
-    /// PlayerAnimationParameters - Được tạo ra nhằm lưu trữ tên các tham số được được đặt trong animation.
+    /// AnimationStrings - Được tạo ra nhằm lưu trữ tên các tham số được được đặt trong animation.
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 29/04/2025
     /// </summary>
-    public static class PlayerAnimationParameters
+    public static class AnimationStrings
     {
 
         #region --- Fields ---

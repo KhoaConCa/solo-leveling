@@ -26,6 +26,7 @@ namespace Platform2D.HierarchicalStateMachine
         public override void EnterState() 
         {
             _currentTime = _stateController.Stats.BaseStats.idleDuration;
+            _stateController.States.IsMoving = false;
         }
 
         /// <summary>
@@ -36,16 +37,15 @@ namespace Platform2D.HierarchicalStateMachine
             CheckSwitchState();
 
             if (!_stateController.States.IsMoving)
-            {
-                _stateController.Animator.SetBool(EnemyAniParas.IsMoving, _stateController.States.IsMoving);
                 IdleHandle();
-            }
         }
 
         /// <summary>
         /// Thoát Idle State.
         /// </summary>
-        public override void ExitState() { }
+        public override void ExitState() 
+        {
+        }
 
         /// <summary>
         /// Kiểm tra chuyển đổi State.
@@ -85,7 +85,9 @@ namespace Platform2D.HierarchicalStateMachine
             }
 
             _stateController.States.IsMoving = true;
-            FlipDirectionHandle();
+            if(_stateController.States.FirstFlipDirection)
+                FlipDirectionHandle();
+            _stateController.States.FirstFlipDirection = true;
         }
 
         /// <summary>
@@ -93,7 +95,6 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         private void FlipDirectionHandle()
         {
-            Debug.Log("Flip");
             _stateController.States.Direction = -_stateController.transform.localScale.x;
             _stateController.transform.localScale = new Vector2(_stateController.States.Direction, 1f);
         }

@@ -1,5 +1,4 @@
-﻿using Platform2D.CharacterChecker;
-using Platform2D.CharacterStates;
+﻿using Platform2D.CharacterStates;
 using Platform2D.CharacterStats;
 using Platform2D.HierarchicalStateMachine;
 using Platform2D.Utilities;

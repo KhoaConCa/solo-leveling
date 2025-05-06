@@ -33,7 +33,7 @@ namespace Platform2D.CharacterAnimation
         public void OnMove()
         {
             var isMovingOnGround = (Mathf.Abs(_playerController.PlayerStates.Horizontal) > 0.01f) && _playerController.PlayerStates.IsGrounded;
-            _animator.SetBool(PlayerAnimationParameters.IsMoving, isMovingOnGround);
+            _animator.SetBool(AnimationStrings.IsMoving, isMovingOnGround);
         }
 
         /// <summary>
@@ -42,12 +42,12 @@ namespace Platform2D.CharacterAnimation
         public void OnJump()
         {
             if(_playerController.PlayerStates.IsJumping)
-                _animator.SetTrigger(PlayerAnimationParameters.JumpTrigger);
+                _animator.SetTrigger(AnimationStrings.JumpTrigger);
         }
 
         public void OnFall(float yVel)
         {
-            _animator.SetFloat(PlayerAnimationParameters.YVelocity, yVel);
+            _animator.SetFloat(AnimationStrings.YVelocity, yVel);
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Platform2D.CharacterAnimation
         /// </summary>
         public void OnGrounded()
         {
-            _animator.SetBool(PlayerAnimationParameters.IsGrounded, _playerController.PlayerStates.IsGrounded);
+            _animator.SetBool(AnimationStrings.IsGrounded, _playerController.PlayerStates.IsGrounded);
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Platform2D.CharacterAnimation
         /// </summary>
         public void OnCrouch()
         {
-            _animator.SetBool(PlayerAnimationParameters.IsCrouching, _playerController.PlayerStates.IsCrouching);
+            _animator.SetBool(AnimationStrings.IsCrouching, _playerController.PlayerStates.IsCrouching);
         }
 
         /// <summary>
@@ -71,19 +71,19 @@ namespace Platform2D.CharacterAnimation
         /// </summary>
         public void OnDash()
         {
-            _animator.SetBool(PlayerAnimationParameters.Dash, _playerController.PlayerStates.IsDashing);
+            _animator.SetBool(AnimationStrings.Dash, _playerController.PlayerStates.IsDashing);
         }
 
         public void OnAttack()
         {
-            _animator.SetTrigger(PlayerAnimationParameters.AttackTrigger);
+            _animator.SetTrigger(AnimationStrings.AttackTrigger);
         }
 
         #endregion
 
         #region --- Properties ---
 
-        public bool CanMove => _animator.GetBool(PlayerAnimationParameters.CanMove);
+        public bool CanMove => _animator.GetBool(AnimationStrings.CanMove);
 
         #endregion
 
