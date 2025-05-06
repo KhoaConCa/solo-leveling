@@ -30,10 +30,10 @@ TagManager:
   - StaticLevel
   - HazrdsAndTraps
   - AnimationObject
-  - Player
-  - Enemy
   - PlayerHitBox
   - EnemyHitBox
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -52,24 +52,30 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 178441277
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Penetrable
-    uniqueID: 244739771
+  - name: Background
+    uniqueID: 178441277
+    locked: 0
+  - name: Ground
+    uniqueID: 2493415549
     locked: 0
   - name: Interactable
     uniqueID: 1889951029
     locked: 0
-  - name: UI
-    uniqueID: 3332970773
+  - name: Penetrable
+    uniqueID: 244739771
+    locked: 0
+  - name: Decorate
+    uniqueID: 1443045769
     locked: 0
   - name: Player
     uniqueID: 2030125059
     locked: 0
   - name: Enemy
     uniqueID: 4027824565
+    locked: 0
+  - name: UI
+    uniqueID: 3332970773
     locked: 0

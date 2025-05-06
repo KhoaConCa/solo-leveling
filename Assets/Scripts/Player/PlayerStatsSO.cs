@@ -23,17 +23,21 @@ namespace Platform2D.CharacterStats
         #region --- Fields ---
 
         [Header("Movement Settings")]
-        public float movementSpeed = 5f;
-        public float crouchMultiplier = 1.2f;
-        public float dashMultiplier = 3.5f;
+        public float movementSpeed;
+        public float crouchMultiplier;
+        public float dashMultiplier;
 
         [Header("Jump Settings")]
-        public float jumpSpeed = 12f;
-        public float doubleJumpMultiplier = 0.7f;
+        public float jumpSpeed;
+        public float doubleJumpMultiplier;
 
         [Header("Duration Setting")]
-        public float dashDuration = 0.2f;
-        public float oneWayDuration = 1f;
+        public float dashDuration;
+        public float oneWayDuration;
+
+        [Header("Cooldown Setting")]
+        public float jumpCooldown;
+        public float dashCoolDown;
 
         #endregion
 

@@ -44,7 +44,10 @@ namespace Platform2D.CharacterController
                 _animationController = new PlayerAnimationController(
                     playerController: this,
                     animator: animator
-                ); 
+                );
+
+                _currentJumpTime = _playerStats.PlayerStatsSO.jumpCooldown;
+                _currentDashTime = _playerStats.PlayerStatsSO.dashCoolDown;
             }
             catch (Exception ex)
             {
@@ -86,25 +89,58 @@ namespace Platform2D.CharacterController
             if (_playerStates.CanDownard)
                 StartCoroutine(OnDownward());
 
+            if(!_playerStates.IsDashing)
+                OnMove();
 
             if (!_playerStates.IsGrounded && _rg2D.velocity.y < 0)
                 _animationController.OnFall(_rg2D.velocity.y);
             else _animationController.OnFall(0);
 
-            if (_playerStates.IsJumping && _animationController.CanMove)
+            if (_playerStates.IsjumpReady)
+            {
+                if (_playerStates.IsJumping && _animationController.CanMove)
+                {
+                    _animationController.OnJump();
+                    OnJump();
+                    if(_playerStates.JumpCount >= 2)
+                        _playerStates.IsjumpReady = false;
+                }
+            }
+            else if(_playerStates.JumpCount > 0)
             {
                 _animationController.OnJump();
-                OnJump();
+                if (_currentJumpTime > 0)
+                {
+                    _currentJumpTime -= Time.fixedDeltaTime;
+                }
+                else
+                {
+                    _playerStates.IsjumpReady = true;
+                    _playerStates.JumpCount = 0;
+                    _currentJumpTime = _playerStats.PlayerStatsSO.jumpCooldown;
+                }
             }
-               
+            else _animationController.OnJump();
 
-            if (_playerStates.IsDashing)
-                StartCoroutine(OnDash());
-            else OnMove();
-
-            if (_playerStates.IsGrounded)
+            if (_playerStates.IsDashReady)
             {
-                _playerStates.JumpCount = 0;
+                if (_playerStates.IsDashing)
+                {
+                    StartCoroutine(OnDash());
+                    _playerStates.IsDashReady = false;
+                }
+            }
+            else if(!_playerStates.IsDashReady && _playerStates.IsGrounded)
+            {
+                if (_currentDashTime > 0)
+                {
+                    _currentDashTime -= Time.fixedDeltaTime;
+                }
+                else
+                {
+                    _playerStates.IsDashReady = true;
+                    _currentDashTime = _playerStats.PlayerStatsSO.dashCoolDown;
+                }
             }
         }
 
@@ -256,6 +292,9 @@ namespace Platform2D.CharacterController
         [SerializeField] private const string GROUND_CHECKER = "GroundChecker";
 
         [SerializeField] private ContactFilter2D _contactFilter;
+
+        private float _currentJumpTime = 0f;
+        private float _currentDashTime = 0f;
 
         #endregion
 

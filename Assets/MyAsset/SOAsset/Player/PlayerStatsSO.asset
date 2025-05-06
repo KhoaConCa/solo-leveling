@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   crouchMultiplier: 1.2
-  dashMultiplier: 3.5
-  jumpSpeed: 10
-  doubleJumpMultiplier: 1.8
+  dashMultiplier: 4
+  jumpSpeed: 14
+  doubleJumpMultiplier: 1
   dashDuration: 0.2
   oneWayDuration: 0.5
+  jumpCooldown: 1
+  dashCoolDown: 1

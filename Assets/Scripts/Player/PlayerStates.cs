@@ -33,6 +33,8 @@ namespace Platform2D.CharacterStates
         public bool IsOnWall { get { return _isOnWall; } set { _isOnWall = value; } }
         public bool IsJumping { get { return _isJumping; } set { _isJumping = value; } }
         public bool IsDoubleJump { get { return _isDoubleJump; } set { _isDoubleJump = value; } }
+        public bool IsjumpReady { get; set; } = true;
+        public bool IsDashReady { get; set; } = true;
         #endregion
 
         #region -- Bool Value Action --
