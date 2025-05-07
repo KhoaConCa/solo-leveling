@@ -1,13 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.U2D;
+﻿using UnityEngine;
 
 namespace Platform2D.Utilities
 {
     /// <summary>
     /// Parallax - Đóng vai trò tạo hiệu ứng Illusion of Depth cho người chơi khi di chuyển.
-    /// Tác giả: Dương Nhật Khoa, Ngày tạo: 02/05/2025
+    /// Tác giả: Dương Nhật Khoa, Ngày tạo: 02/05/2025.
     /// </summary>
     public class Parallax : MonoBehaviour
     {
