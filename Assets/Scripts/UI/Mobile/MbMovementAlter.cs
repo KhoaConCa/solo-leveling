@@ -42,6 +42,7 @@ namespace Platform2D.UIMovement
             switch (_moveDirection)
             {
                 case MOVEMENT_FUNCTION.JUMP:
+                    _playerController.States.IsJumping = true;
                     break;
             }
         }

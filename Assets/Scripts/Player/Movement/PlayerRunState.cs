@@ -47,7 +47,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void ExitState() 
         {
-            
+            _stateController.States.IsMoving = false;
         }
 
         /// <summary>
@@ -55,7 +55,13 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState() 
         {
-            if (_stateController.States.OnMove == Vector2.zero || _stateController.States.IsWall)
+            if (_stateController.States.IsJumping)
+            {
+                SwitchState(_stateFactory.Jump());
+                return;
+            }
+
+            if (_stateController.States.OnMove == Vector2.zero)
                 SwitchState(_stateFactory.Idle());
         }
 
@@ -83,6 +89,10 @@ namespace Platform2D.HierarchicalStateMachine
             float dirX = _stateController.States.OnMove.x < 0 ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
             if (_stateController.transform.localScale.x != dirX)
                 FlipDirection(dirX);
+
+            if (_stateController.States.IsWall)
+                dirX = 0f;
+
             float speed = _stateController.Stats.CurrentMovementSpeed * dirX;
             _stateController.Rg2D.velocity = new Vector2(speed, _stateController.Rg2D.velocity.y);
         }

@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 6868839220034151589}
   - component: {fileID: 1312079179809258987}
   - component: {fileID: 3604027290092655696}
+  - component: {fileID: 1254351401355949308}
   m_Layer: 5
   m_Name: JumpButton
   m_TagString: Untagged
@@ -451,6 +452,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1254351401355949308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5315674242041546273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e31c83858ab804db194270046eb5ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerController: {fileID: 0}
+  _moveDirection: 3
+  _tagMainPlayer: MainPlayer
 --- !u!1 &6291740205229765903
 GameObject:
   m_ObjectHideFlags: 0

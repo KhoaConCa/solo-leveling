@@ -1,47 +1,53 @@
 ﻿using Platform2D.CharacterAnimation;
 using Platform2D.CharacterController;
+using Platform2D.Vector;
 using System.Collections;
 using UnityEngine;
 
 namespace Platform2D.HierarchicalStateMachine
 {
     /// <summary>
-    /// PlayerIdleState - Là một Idle State của Player được kế thừa từ BaseState, được dùng để xử lý Logic và Animation thuộc Idle.
+    /// PlayerFallState - Là một Fall State của Player được kế thừa từ BaseState, được dùng để xử lý Logic và Animation thuộc Fall.
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 07/05/2025.
     /// </summary>
-    public class PlayerIdleState : BaseState<PlayerCore, PlayerStateFactory>
+    public class PlayerFallState : BaseState<PlayerCore, PlayerStateFactory>
     {
         #region --- Overrides ---
 
         /// <summary>
-        /// Khởi tạo PlayerIdleState.
+        /// Khởi tạo PlayerFallState.
         /// </summary>
         /// <param name="stateController">Biến truyền vào mang kiểu dữ liệu PlayerCore.</param>
         /// <param name="stateFactory">Biến truyền vào mang kiểu dữ liệu PlayerStateFactory.</param>
-        public PlayerIdleState(PlayerCore stateController, PlayerStateFactory stateFactory) : base(stateController, stateFactory) { }
+        public PlayerFallState(PlayerCore stateController, PlayerStateFactory stateFactory) : base(stateController, stateFactory) { }
 
         /// <summary>
-        /// Cài đặt mặc định cho Idle State.
+        /// Cài đặt mặc định cho Fall State.
         /// </summary>
         public override void EnterState() 
         {
-            _stateController.States.IsMoving = false;
-            _stateController.Rg2D.velocity = new Vector2(0f, _stateController.Rg2D.velocity.y);
+            _stateController.States.IsFalling = true;
+            _runState = _stateFactory.Run();
         }
 
         /// <summary>
-        /// Cập nhật Idle State.
+        /// Cập nhật Fall State.
         /// </summary>
         public override void UpdateState() 
         {
+            if(_stateController.States.OnMove != Vector2.zero) 
+                _runState.UpdateState();
+
             CheckSwitchState();
         }
 
         /// <summary>
-        /// Thoát Idle State.
+        /// Thoát Fall State.
         /// </summary>
         public override void ExitState() 
         {
+            _stateController.States.IsFalling = false;
+            _runState = null;
         }
 
         /// <summary>
@@ -49,14 +55,15 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState() 
         {
-            if (_stateController.States.IsJumping)
+            if (_stateController.States.OnGround)
             {
-                SwitchState(_stateFactory.Jump());
-                return;
+                if (_stateController.States.OnMove == Vector2.zero)
+                    SwitchState(_stateFactory.Idle());
+                else if (Mathf.Abs(_stateController.States.OnMove.x) > 0.01f)
+                    SwitchState(_stateFactory.Run());
             }
-
-            if(_stateController.States.OnMove != Vector2.zero)
-                SwitchState(_stateFactory.Run());
+            else if (_stateController.States.IsJumping && _stateController.States.CanJump)
+                    SwitchState(_stateFactory.Jump());
         }
 
         /// <summary>
@@ -70,6 +77,12 @@ namespace Platform2D.HierarchicalStateMachine
             _stateController.CurrentState = newState;
             _stateController.CurrentState.EnterState();
         }
+
+        #endregion
+
+        #region --- Fields ---
+
+        private BaseState<PlayerCore, PlayerStateFactory>? _runState;
 
         #endregion
 

@@ -45,6 +45,7 @@ namespace Platform2D.CharacterController
         {
             Vector2 dir = _states.Direction.x < 0 ? Vector2.left : Vector2.right;
             _states.IsWall = _col2D.Cast(dir, _contactFilter, _wallHits, WALL_DISTANCE) > 0;
+            Debug.Log(_states.IsWall);
         }
 
 
@@ -53,7 +54,7 @@ namespace Platform2D.CharacterController
         #region --- Properties ---
 
         public Rigidbody2D Rg2D => _rg2D;
-        public Transform trans2D => gameObject.transform;
+        public Transform BasePos => _basePos;
         public Animator Animator => _animator;
 
         public PlayerStatesAlter States => _states;
@@ -71,6 +72,7 @@ namespace Platform2D.CharacterController
         [Header("Unity Components")]
         [SerializeField] private Rigidbody2D _rg2D;
         [SerializeField] private CapsuleCollider2D _col2D;
+        [SerializeField] private Transform _basePos;
 
         [Header("States & Stats")]
         [SerializeField] private PlayerStatesAlter _states;

@@ -31,6 +31,18 @@ namespace Platform2D.HierarchicalStateMachine
         /// <returns>Trả về State Run của Player.</returns>
         public BaseState<PlayerCore, PlayerStateFactory> Run() => new PlayerRunState(_controller, this);
 
+        /// <summary>
+        /// Khởi tạo State Jump của Player.
+        /// </summary>
+        /// <returns>Trả về State Jump của Player.</returns>
+        public BaseState<PlayerCore, PlayerStateFactory> Jump() => new PlayerJumpState(_controller, this);
+
+        /// <summary>
+        /// Khởi tạo State Fall của Player.
+        /// </summary>
+        /// <returns>Trả về State Fall của Player.</returns>
+        public BaseState<PlayerCore, PlayerStateFactory> Fall() => new PlayerFallState(_controller, this);
+
         #endregion
 
         #region --- Fields ---

@@ -16,6 +16,7 @@ namespace Platform2D.CharacterStates
 
         public Animator PlayerAnimator => _animator;
 
+        #region -- Movement States --
         public Vector2 Direction => this.transform.localScale;
         public Vector2 OnMove { 
             get { 
@@ -37,7 +38,40 @@ namespace Platform2D.CharacterStates
                 _animator.SetBool(AnimationStrings.IsMoving, value);
             }
         }
+        #endregion
 
+        #region -- Jumping States --
+        public bool IsJumping
+        {
+            get
+            {
+                return _isJumping;
+            }
+            set
+            {
+                _isJumping = value;
+                if(value)
+                    _animator.SetTrigger(AnimationStrings.JumpTrigger);
+            }
+        }
+        public bool IsDoubleJump { get; set; }
+
+        public bool CanJump { get; set; }
+        public bool IsFalling
+        {
+            get
+            {
+                return _isFalling;
+            }
+            set
+            {
+                _isFalling = value;
+                _animator.SetBool(AnimationStrings.IsFalling, value);
+            }
+        }
+        #endregion
+
+        #region -- Checking States --
         public bool OnGround
         {
             get
@@ -52,6 +86,7 @@ namespace Platform2D.CharacterStates
         }
 
         public bool IsWall { get; set; }
+        #endregion
 
         #endregion
 
@@ -62,6 +97,9 @@ namespace Platform2D.CharacterStates
         [SerializeField] private Vector2 _onMove;
 
         [SerializeField] private bool _isMoving;
+        [SerializeField] private bool _isJumping;
+        [SerializeField] private bool _isFalling = false;
+
         [SerializeField] private bool _onGround;
 
         #endregion
