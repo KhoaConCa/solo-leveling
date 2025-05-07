@@ -21,3 +21,5 @@ MonoBehaviour:
   oneWayDuration: 0.5
   jumpCooldown: 1
   dashCoolDown: 1
+  sprite: {fileID: 21300000, guid: b4aa6912164014b418710b46c8eb9ed4, type: 3}
+  animator: {fileID: 9100000, guid: 428381bb61e1452429b9360c3e575233, type: 2}

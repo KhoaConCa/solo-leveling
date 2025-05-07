@@ -422,7 +422,6 @@ GameObject:
   - component: {fileID: 3010491198158005169}
   - component: {fileID: 853036135628525087}
   - component: {fileID: 1634356360371550076}
-  - component: {fileID: 8932091239030213057}
   m_Layer: 5
   m_Name: ControlPanel
   m_TagString: MainUI
@@ -476,19 +475,6 @@ MonoBehaviour:
   - {fileID: 7426299413038922800}
   - {fileID: 8387900461608487120}
   _tagMainPlayer: MainPlayer
---- !u!114 &8932091239030213057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5373922163533868185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48fad396ef38b4e4dbbe12188b9682f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tagPlayer: MainPlayer
 --- !u!1 &6620211025690477736
 GameObject:
   m_ObjectHideFlags: 0

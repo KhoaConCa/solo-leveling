@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Platform2D.CharacterStats
 {
     /// <summary>
-    /// PlayerStatsSO - Được tạo ra để lưu trữ chỉ số của nhân vật.
+    /// BaseStats - Được tạo ra để lưu trữ chỉ số của nhân vật.
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 02/05/2025
     /// </summary>
     using UnityEngine;
@@ -38,6 +38,10 @@ namespace Platform2D.CharacterStats
         [Header("Cooldown Setting")]
         public float jumpCooldown;
         public float dashCoolDown;
+
+        [Header("Data Setting")]
+        public Sprite sprite;
+        public RuntimeAnimatorController animator;
 
         #endregion
 

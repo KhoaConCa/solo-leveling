@@ -46,8 +46,8 @@ namespace Platform2D.CharacterController
                     animator: animator
                 );
 
-                _currentJumpTime = _playerStats.PlayerStatsSO.jumpCooldown;
-                _currentDashTime = _playerStats.PlayerStatsSO.dashCoolDown;
+                _currentJumpTime = _playerStats.BaseStats.jumpCooldown;
+                _currentDashTime = _playerStats.BaseStats.dashCoolDown;
             }
             catch (Exception ex)
             {
@@ -117,7 +117,7 @@ namespace Platform2D.CharacterController
                 {
                     _playerStates.IsjumpReady = true;
                     _playerStates.JumpCount = 0;
-                    _currentJumpTime = _playerStats.PlayerStatsSO.jumpCooldown;
+                    _currentJumpTime = _playerStats.BaseStats.jumpCooldown;
                 }
             }
             else _animationController.OnJump();
@@ -139,7 +139,7 @@ namespace Platform2D.CharacterController
                 else
                 {
                     _playerStates.IsDashReady = true;
-                    _currentDashTime = _playerStats.PlayerStatsSO.dashCoolDown;
+                    _currentDashTime = _playerStats.BaseStats.dashCoolDown;
                 }
             }
         }
@@ -231,7 +231,7 @@ namespace Platform2D.CharacterController
             _animationController.OnDash();
             _movementController.OnDash();
 
-            yield return new WaitForSeconds(_playerStats.PlayerStatsSO.dashDuration);
+            yield return new WaitForSeconds(_playerStats.BaseStats.dashDuration);
 
             _playerStates.IsDashing = false;
             _animationController.OnDash();
@@ -243,7 +243,7 @@ namespace Platform2D.CharacterController
         private IEnumerator OnDownward()
         {
             _capCol2D.enabled = false;
-            yield return new WaitForSeconds(_playerStats.PlayerStatsSO.oneWayDuration);
+            yield return new WaitForSeconds(_playerStats.BaseStats.oneWayDuration);
             _capCol2D.enabled = true;
         }
 

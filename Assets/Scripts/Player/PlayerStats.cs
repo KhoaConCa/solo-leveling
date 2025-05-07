@@ -14,7 +14,7 @@ namespace Platform2D.CharacterStats
 
         #region --- Properties ---
 
-        public PlayerStatsSO PlayerStatsSO => _playerStatsSO;
+        public PlayerStatsSO BaseStats => _playerStatsSO;
         public float CurrentMovementSpeed => _playerStatsSO.movementSpeed;
         public float CrouchSpeed => CurrentMovementSpeed * _playerStatsSO.crouchMultiplier;
         public float DashSpeed => CurrentMovementSpeed * _playerStatsSO.dashMultiplier;

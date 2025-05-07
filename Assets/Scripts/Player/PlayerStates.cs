@@ -19,6 +19,7 @@ namespace Platform2D.CharacterStates
         #endregion
 
         #region -- Float Value --
+        public float Direction { get; set; }
         public float Horizontal { get { return _horizontal; } set { _horizontal = value; } }
         public float Vertical { get { return _vertical; } set { _vertical = value; } }
         #endregion

@@ -70,11 +70,11 @@ TagManager:
   - name: Decorate
     uniqueID: 1443045769
     locked: 0
-  - name: Player
-    uniqueID: 2030125059
-    locked: 0
   - name: Enemy
     uniqueID: 4027824565
+    locked: 0
+  - name: Player
+    uniqueID: 2030125059
     locked: 0
   - name: UI
     uniqueID: 3332970773

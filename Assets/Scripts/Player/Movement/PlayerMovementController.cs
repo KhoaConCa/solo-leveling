@@ -50,9 +50,9 @@ public class PlayerMovementController : IMoveable
     {
         float velX = _playerController.Rg2D.velocity.x;
 
-        float jumpSpeed = _playerController.PlayerStats.PlayerStatsSO.jumpSpeed;
+        float jumpSpeed = _playerController.PlayerStats.BaseStats.jumpSpeed;
         if (_playerController.PlayerStates.IsDoubleJump)
-            jumpSpeed = _playerController.PlayerStats.PlayerStatsSO.DoubleJumpSpeed;
+            jumpSpeed = _playerController.PlayerStats.BaseStats.DoubleJumpSpeed;
 
         _playerController.Rg2D.velocity = new Vector2(velX, (float)AXIS_1D.POSITIVE * jumpSpeed);
     }
