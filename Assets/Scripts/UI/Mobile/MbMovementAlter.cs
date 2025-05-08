@@ -30,6 +30,12 @@ namespace Platform2D.UIMovement
             {
                 case MOVEMENT_FUNCTION.JUMP:
                     break;
+                case MOVEMENT_FUNCTION.CROUCH:
+                    if (_playerController.States.OnGround && !_playerController.States.IsCeiling)
+                        _playerController.States.IsCrouch = false;
+
+                    _playerController.States.UnholdCrouch = true;
+                    break;
             }
         }
 
@@ -43,6 +49,18 @@ namespace Platform2D.UIMovement
             {
                 case MOVEMENT_FUNCTION.JUMP:
                     _playerController.States.IsJumping = true;
+                    break;
+                case MOVEMENT_FUNCTION.CROUCH:
+                    if(Mathf.Abs(_playerController.States.OnMove.y) > 0.7f)
+                    {
+                        _playerController.States.CanDownward = true;
+                        _playerController.States.UnholdCrouch = false;
+                    }
+                    else if (_playerController.States.OnMove != Vector2.zero && _playerController.States.OnGround)
+                    {
+                        _playerController.States.IsCrouch = true;
+                        _playerController.States.UnholdCrouch = false;
+                    }    
                     break;
             }
         }

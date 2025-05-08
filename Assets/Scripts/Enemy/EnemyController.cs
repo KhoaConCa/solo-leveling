@@ -11,8 +11,14 @@ namespace Platform2D.CharacterController
     /// EnemyController - Được dùng làm trung tâm của bộ điều khiển của Enemy.
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 06/05/2025.
     /// </summary>
-    public class EnemyController : MonoBehaviour
+    public class EnemyController : MonoBehaviour, IStateController<BaseState<EnemyController, EnemyStateFactory>>
     {
+        #region --- Overrides ---
+
+        public BaseState<EnemyController, EnemyStateFactory> CurrentState { get; set; }
+
+        #endregion
+
         #region --- Unity Methods ---
 
         private void Awake()
@@ -71,7 +77,6 @@ namespace Platform2D.CharacterController
 
         public EnemyStates States => _states;
         public EnemyStats Stats => _stats;
-        public BaseState<EnemyController, EnemyStateFactory> CurrentState { get; set; }
         public EnemyStateFactory EnemyStateFactory { get; set; }
 
         #endregion

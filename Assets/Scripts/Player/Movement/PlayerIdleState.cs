@@ -49,13 +49,15 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState() 
         {
+            if (!_stateController.States.AllowedSwitch) return;
+
             if (_stateController.States.IsJumping)
             {
                 SwitchState(_stateFactory.Jump());
                 return;
             }
 
-            if(_stateController.States.OnMove != Vector2.zero)
+            if(_stateController.States.OnMove != Vector2.zero && Mathf.Abs(_stateController.States.OnMove.y) < 0.7f)
                 SwitchState(_stateFactory.Run());
         }
 
@@ -63,15 +65,11 @@ namespace Platform2D.HierarchicalStateMachine
         /// Chuyển đổi State.
         /// </summary>
         /// <param name="newState">Biến mang kiểu dữ liệu là BaseState.</param>
-        public override void SwitchState(BaseState<PlayerCore, PlayerStateFactory> newState) 
+        public override void SwitchState(BaseState<PlayerCore, PlayerStateFactory> newState)
         {
-            ExitState();
-
-            _stateController.CurrentState = newState;
-            _stateController.CurrentState.EnterState();
+            base.SwitchState(newState);
         }
 
         #endregion
-
     }
 }

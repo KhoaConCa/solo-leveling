@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Platform2D.CharacterController;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ namespace Platform2D.HierarchicalStateMachine
     /// </summary>
     /// <typeparam name="T">Truyền vào là một Controller của đối tượng.</typeparam>
     /// <typeparam name="U">Truyền vào là một State Factory của đối tượng.</typeparam>
-    public abstract class BaseState<T, U>
+    public abstract class BaseState<T, U> where T : IStateController<BaseState<T, U>>
     {
         #region --- Methods ---
 
@@ -49,7 +50,13 @@ namespace Platform2D.HierarchicalStateMachine
         /// Phương thức đổi State.
         /// </summary>
         /// <param name="newState">Biến truyền vào là một State muốn đổi.</param>
-        public abstract void SwitchState(BaseState<T, U> newState);
+        public virtual void SwitchState(BaseState<T, U> newState) 
+        {
+            ExitState();
+
+            _stateController.CurrentState = newState;
+            _stateController.CurrentState.EnterState();
+        }
 
         #endregion
 

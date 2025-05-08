@@ -65,10 +65,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// <param name="newState">Biến mang kiểu dữ liệu là BaseState.</param>
         public override void SwitchState(BaseState<EnemyController, EnemyStateFactory> newState)
         {
-            ExitState();
-
-            _stateController.CurrentState = newState;
-            _stateController.CurrentState.EnterState();
+            base.SwitchState(newState);
         }
 
         #endregion

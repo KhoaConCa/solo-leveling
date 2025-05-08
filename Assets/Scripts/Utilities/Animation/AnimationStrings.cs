@@ -15,6 +15,7 @@ namespace Platform2D.CharacterAnimation
 
         #region -- Bool Parameters --
         public readonly static string IsGrounded = "isGrounded";
+        public readonly static string IsCeiling = "isCeiling";
         public readonly static string IsMoving = "isMoving";
         public readonly static string IsCrouching = "isCrouching";
         public readonly static string IsFalling = "isFalling";

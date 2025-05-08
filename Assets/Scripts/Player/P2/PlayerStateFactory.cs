@@ -43,6 +43,12 @@ namespace Platform2D.HierarchicalStateMachine
         /// <returns>Trả về State Fall của Player.</returns>
         public BaseState<PlayerCore, PlayerStateFactory> Fall() => new PlayerFallState(_controller, this);
 
+        /// <summary>
+        /// Khởi tạo State Crouch của Player.
+        /// </summary>
+        /// <returns>Trả về State Crouch của Player.</returns>
+        public BaseState<PlayerCore, PlayerStateFactory> Crouch() => new PlayerCrouchState(_controller, this);
+
         #endregion
 
         #region --- Fields ---

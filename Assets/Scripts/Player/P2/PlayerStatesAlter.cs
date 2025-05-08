@@ -23,9 +23,7 @@ namespace Platform2D.CharacterStates
                 return _onMove; 
             }
             set {
-                if (Mathf.Abs(value.y) < 0.8f)
-                    _onMove = value;
-                else _onMove = Vector2.zero;
+                _onMove = value;
             }
         }
 
@@ -71,7 +69,24 @@ namespace Platform2D.CharacterStates
         }
         #endregion
 
+        #region -- Crouch States --
+        public bool UnholdCrouch {  get; set; }
+        public bool IsCrouch
+        {
+            get {
+                return _isCrouch;
+            }
+            set {
+                _isCrouch = value;
+                _animator.SetBool(AnimationStrings.IsCrouching, value);
+            }
+        }
+        public bool CanDownward { get; set; }
+        #endregion
+
         #region -- Checking States --
+        public bool AllowedSwitch { get; set; } = true;
+        public bool IsDisable {  get; set; } = false;
         public bool OnGround
         {
             get
@@ -86,6 +101,15 @@ namespace Platform2D.CharacterStates
         }
 
         public bool IsWall { get; set; }
+        public bool IsCeiling { 
+            get { 
+                return _isCeiling; 
+            }
+            set {
+                _isCeiling = value;
+                _animator.SetBool(AnimationStrings.IsCeiling, value);
+            }
+        }
         #endregion
 
         #endregion
@@ -94,13 +118,15 @@ namespace Platform2D.CharacterStates
 
         [SerializeField] private Animator _animator;
 
-        [SerializeField] private Vector2 _onMove;
+        [SerializeField] private Vector2 _onMove = Vector2.zero;
 
-        [SerializeField] private bool _isMoving;
-        [SerializeField] private bool _isJumping;
+        [SerializeField] private bool _isMoving = false;
+        [SerializeField] private bool _isJumping = false;
         [SerializeField] private bool _isFalling = false;
+        [SerializeField] private bool _isCrouch = false;
 
-        [SerializeField] private bool _onGround;
+        [SerializeField] private bool _onGround = false;
+        [SerializeField] private bool _isCeiling = false;
 
         #endregion
 

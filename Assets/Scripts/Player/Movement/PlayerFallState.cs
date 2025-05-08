@@ -70,12 +70,9 @@ namespace Platform2D.HierarchicalStateMachine
         /// Chuyển đổi State.
         /// </summary>
         /// <param name="newState">Biến mang kiểu dữ liệu là BaseState.</param>
-        public override void SwitchState(BaseState<PlayerCore, PlayerStateFactory> newState) 
+        public override void SwitchState(BaseState<PlayerCore, PlayerStateFactory> newState)
         {
-            ExitState();
-
-            _stateController.CurrentState = newState;
-            _stateController.CurrentState.EnterState();
+            base.SwitchState(newState);
         }
 
         #endregion
