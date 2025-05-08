@@ -26,7 +26,6 @@ namespace Platform2D.CharacterStates
                 _onMove = value;
             }
         }
-
         public bool IsMoving { 
             get {
                 return _isMoving;

@@ -1,4 +1,5 @@
-﻿using Platform2D.CharacterStates;
+﻿using Platform2D.CameraSystem;
+using Platform2D.CharacterStates;
 using Platform2D.CharacterStats;
 using Platform2D.HierarchicalStateMachine;
 using Platform2D.Utilities;
@@ -25,6 +26,8 @@ namespace Platform2D.CharacterController
         {
             _animator.runtimeAnimatorController = _stats.BaseStats.animator;
             _spriteRenderer.sprite = _stats.BaseStats.sprite;
+
+            _cameraFollower = _cameraFollowerGO.gameObject.GetComponent<CameraFollower>();
 
             StateFactory = new PlayerStateFactory(this);
             CurrentState = StateFactory.Idle();
@@ -82,6 +85,8 @@ namespace Platform2D.CharacterController
         public Transform BasePos => _basePos;
         public Animator Animator => _animator;
 
+        public CameraFollower CameraFollower => _cameraFollower;
+
         public PlayerStatesAlter States => _states;
         public PlayerStats Stats => _stats;
         public PlayerStateFactory StateFactory { get; set; }
@@ -97,6 +102,7 @@ namespace Platform2D.CharacterController
         [SerializeField] private Rigidbody2D _rg2D;
         [SerializeField] private CapsuleCollider2D _col2D;
         [SerializeField] private Transform _basePos;
+        [SerializeField] private CameraFollower _cameraFollowerGO;
 
         [Header("Custom Components")]
         [SerializeField] private PlayerMovementChecker _movementChecker;
@@ -108,6 +114,8 @@ namespace Platform2D.CharacterController
         [Header("Sprite & Animation")]
         [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private Animator _animator;
+
+        [SerializeField] private CameraFollower _cameraFollower;
 
         private readonly RaycastHit2D[] _groundHits = new RaycastHit2D[5];
         private readonly RaycastHit2D[] _wallHits = new RaycastHit2D[5];

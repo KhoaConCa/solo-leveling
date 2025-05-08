@@ -1,14 +1,10 @@
-﻿using Newtonsoft.Json.Bson;
+﻿using Platform2D.CameraSystem;
 using Platform2D.CharacterAnimation;
-using Platform2D.CharacterInterface;
 using Platform2D.CharacterStates;
 using Platform2D.CharacterStats;
 using Platform2D.Vector;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 namespace Platform2D.CharacterController
@@ -36,6 +32,8 @@ namespace Platform2D.CharacterController
 
                 _playerStats = gameObject.GetComponentInChildren<PlayerStats>();
                 _playerStates = gameObject.GetComponentInChildren<PlayerStates>();
+
+                _cameraFollower = _cameraFollowerGO.gameObject.GetComponent<CameraFollower>();
 
                 // Khởi tạo các giá trị mặc định
                 _isFacingRight = true;
@@ -71,7 +69,7 @@ namespace Platform2D.CharacterController
             {
                 Debug.LogError($"PlayerController Update Failed: {ex}");
             }
-            
+
         }
 
         #endregion
@@ -89,7 +87,7 @@ namespace Platform2D.CharacterController
             if (_playerStates.CanDownard)
                 StartCoroutine(OnDownward());
 
-            if(!_playerStates.IsDashing)
+            if (!_playerStates.IsDashing)
                 OnMove();
 
             if (!_playerStates.IsGrounded && _rg2D.velocity.y < 0)
@@ -102,11 +100,11 @@ namespace Platform2D.CharacterController
                 {
                     _animationController.OnJump();
                     OnJump();
-                    if(_playerStates.JumpCount >= 2)
+                    if (_playerStates.JumpCount >= 2)
                         _playerStates.IsjumpReady = false;
                 }
             }
-            else if(_playerStates.JumpCount > 0)
+            else if (_playerStates.JumpCount > 0)
             {
                 _animationController.OnJump();
                 if (_currentJumpTime > 0)
@@ -130,7 +128,7 @@ namespace Platform2D.CharacterController
                     _playerStates.IsDashReady = false;
                 }
             }
-            else if(!_playerStates.IsDashReady && _playerStates.IsGrounded)
+            else if (!_playerStates.IsDashReady && _playerStates.IsGrounded)
             {
                 if (_currentDashTime > 0)
                 {
@@ -155,7 +153,7 @@ namespace Platform2D.CharacterController
             int direction = 1;
             if (!_isFacingRight)
                 direction = -1;
-            _rg2D.velocity = new Vector2(_playerStats.CurrentMovementSpeed / (_playerStats.CurrentMovementSpeed*1.5f) * direction, 0f);
+            _rg2D.velocity = new Vector2(_playerStats.CurrentMovementSpeed / (_playerStats.CurrentMovementSpeed * 1.5f) * direction, 0f);
             _playerStates.IsAttacking = false;
         }
 
@@ -167,9 +165,17 @@ namespace Platform2D.CharacterController
             if (_playerStates == null) return;
 
             if (_playerStates.Horizontal > 0 && !IsFacingRight)
+            {
                 IsFacingRight = true;
+                Debug.Log("Right");
+                _cameraFollower.TurnCalling();
+            }
             else if (_playerStates.Horizontal < 0 && IsFacingRight)
+            {
                 IsFacingRight = false;
+                Debug.Log("Left");
+                _cameraFollower.TurnCalling();
+            }
         }
 
         /// <summary>
@@ -256,7 +262,7 @@ namespace Platform2D.CharacterController
 
         public Transform Transform => _transform;
 
-        public PlayerStats PlayerStats =>  _playerStats;
+        public PlayerStats PlayerStats => _playerStats;
         public PlayerStates PlayerStates => _playerStates;
 
         public bool IsFacingRight
@@ -264,7 +270,7 @@ namespace Platform2D.CharacterController
             get { return _isFacingRight; }
             private set
             {
-                if(_isFacingRight != value)
+                if (_isFacingRight != value)
                     this.gameObject.transform.localScale *= new Vector2((float)AXIS_1D.NEGATIVE, (float)AXIS_1D.POSITIVE);
 
                 _isFacingRight = value;
@@ -292,6 +298,10 @@ namespace Platform2D.CharacterController
         [SerializeField] private const string GROUND_CHECKER = "GroundChecker";
 
         [SerializeField] private ContactFilter2D _contactFilter;
+
+        [SerializeField] private CameraFollower _cameraFollowerGO;
+
+        private CameraFollower _cameraFollower;
 
         private float _currentJumpTime = 0f;
         private float _currentDashTime = 0f;

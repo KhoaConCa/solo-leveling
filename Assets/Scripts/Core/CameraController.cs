@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Platform2D.CameraController
 {
@@ -29,7 +27,7 @@ namespace Platform2D.CameraController
         private Transform _playerPosistion;
         private Vector3 _velocity = Vector3.zero;
 
-        [Range(0,1)]
+        [Range(0, 1)]
         [SerializeField] private float _smoothTime;
         [SerializeField] private Vector3 _offset;
 

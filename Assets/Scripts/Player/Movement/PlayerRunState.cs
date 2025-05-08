@@ -1,4 +1,5 @@
-﻿using Platform2D.CharacterAnimation;
+﻿using Platform2D.CameraSystem;
+using Platform2D.CharacterAnimation;
 using Platform2D.CharacterController;
 using Platform2D.Vector;
 using UnityEngine;
@@ -106,6 +107,7 @@ namespace Platform2D.HierarchicalStateMachine
         {
             float dirY = _stateController.transform.localScale.y;
             _stateController.transform.localScale = new Vector2(dirX, dirY);
+            _stateController.CameraFollower.TurnCalling();
         }
 
         #endregion
