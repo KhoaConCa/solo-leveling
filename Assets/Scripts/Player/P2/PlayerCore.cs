@@ -3,8 +3,10 @@ using Platform2D.CharacterStates;
 using Platform2D.CharacterStats;
 using Platform2D.HierarchicalStateMachine;
 using Platform2D.Utilities;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.VersionControl.Asset;
 
 namespace Platform2D.CharacterController
 {
@@ -36,12 +38,14 @@ namespace Platform2D.CharacterController
 
         private void FixedUpdate()
         {
+            if (_states.IsPenetrable && _movementChecker.IsOneWay)
+                _movementChecker.TryStartDisable();
+
+            Debug.Log(CurrentState);
+
             GroundChecker();
             WallChecker();
             CeilingChecker();
-
-            if (_states.CanDownward)
-                StartCoroutine(_movementChecker.DisableCollider());
 
             CurrentState.UpdateState();
         }
@@ -55,8 +59,7 @@ namespace Platform2D.CharacterController
         /// </summary>
         private void GroundChecker()
         {
-            if(!_states.IsDisable)
-                _states.OnGround = _col2D.Cast(Vector2.down, _contactFilter, _groundHits, GROUND_DISTANCE) > 0;
+            _states.OnGround = _col2D.Cast(Vector2.down, _contactFilter, _groundHits, GROUND_DISTANCE) > 0;
         }
         
         /// <summary>
@@ -84,6 +87,8 @@ namespace Platform2D.CharacterController
         public CapsuleCollider2D Col2D => _col2D;
         public Transform BasePos => _basePos;
         public Animator Animator => _animator;
+
+        public PlayerMovementChecker MovementChecker => _movementChecker;
 
         public CameraFollower CameraFollower => _cameraFollower;
 
@@ -117,7 +122,7 @@ namespace Platform2D.CharacterController
 
         [SerializeField] private CameraFollower _cameraFollower;
 
-        private readonly RaycastHit2D[] _groundHits = new RaycastHit2D[5];
+        private readonly RaycastHit2D[] _groundHits = new RaycastHit2D[1];
         private readonly RaycastHit2D[] _wallHits = new RaycastHit2D[5];
         private readonly RaycastHit2D[] _ceilingHits = new RaycastHit2D[5];
 

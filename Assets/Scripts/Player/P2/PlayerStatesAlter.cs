@@ -80,12 +80,11 @@ namespace Platform2D.CharacterStates
                 _animator.SetBool(AnimationStrings.IsCrouching, value);
             }
         }
-        public bool CanDownward { get; set; }
+        public bool IsPenetrable { get; set; } = false;
         #endregion
 
         #region -- Checking States --
         public bool AllowedSwitch { get; set; } = true;
-        public bool IsDisable {  get; set; } = false;
         public bool OnGround
         {
             get

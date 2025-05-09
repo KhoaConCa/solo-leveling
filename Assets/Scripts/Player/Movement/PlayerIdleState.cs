@@ -26,6 +26,7 @@ namespace Platform2D.HierarchicalStateMachine
         public override void EnterState() 
         {
             _stateController.States.IsMoving = false;
+            _stateController.States.IsFalling = false;
             _stateController.Rg2D.velocity = new Vector2(0f, _stateController.Rg2D.velocity.y);
         }
 
@@ -50,6 +51,12 @@ namespace Platform2D.HierarchicalStateMachine
         public override void CheckSwitchState() 
         {
             if (!_stateController.States.AllowedSwitch) return;
+
+            if(_stateController.Rg2D.velocity.y < 0f)
+            {
+                SwitchState(_stateFactory.Fall());
+                return;
+            }
 
             if (_stateController.States.IsJumping)
             {

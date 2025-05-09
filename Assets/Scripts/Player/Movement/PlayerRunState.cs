@@ -37,10 +37,10 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void UpdateState() 
         {
-            CheckSwitchState();
-
             if (_stateController.States.OnMove != Vector2.zero)
                 RunHandle();
+
+            CheckSwitchState();
         }
 
         /// <summary>
@@ -57,6 +57,12 @@ namespace Platform2D.HierarchicalStateMachine
         public override void CheckSwitchState() 
         {
             if (!_stateController.States.AllowedSwitch) return;
+
+            if (!_stateController.MovementChecker.IsGround && _stateController.States.IsPenetrable)
+            {
+                SwitchState(_stateFactory.Fall());
+                return;
+            }
 
             if (_stateController.States.IsCrouch)
             {
@@ -96,7 +102,7 @@ namespace Platform2D.HierarchicalStateMachine
             if (_stateController.transform.localScale.x != dirX)
                 FlipDirection(dirX);
 
-            if (_stateController.States.IsWall)
+            if (_stateController.States.IsWall || Mathf.Abs(_stateController.States.OnMove.y) > 0.7f)
                 dirX = 0f;
 
             float speed = _stateController.Stats.CurrentMovementSpeed * dirX;

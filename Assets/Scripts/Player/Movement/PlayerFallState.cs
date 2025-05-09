@@ -27,6 +27,7 @@ namespace Platform2D.HierarchicalStateMachine
         public override void EnterState() 
         {
             _stateController.States.IsFalling = true;
+
             _runState = _stateFactory.Run();
         }
 
@@ -35,10 +36,10 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void UpdateState() 
         {
-            if(_stateController.States.OnMove != Vector2.zero) 
+            if (!_stateController.States.IsPenetrable && _stateController.States.OnMove != Vector2.zero && Mathf.Abs(_stateController.States.OnMove.y) < 0.7f)
                 _runState.UpdateState();
 
-            CheckSwitchState();
+            CheckSwitchState(); 
         }
 
         /// <summary>
@@ -55,11 +56,11 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState() 
         {
-            if (_stateController.States.OnGround)
+            if (_stateController.States.OnGround && !_stateController.States.IsPenetrable)
             {
-                if (_stateController.States.OnMove == Vector2.zero)
+                if (_stateController.States.OnMove == Vector2.zero || Mathf.Abs(_stateController.States.OnMove.y) > 0.7f)
                     SwitchState(_stateFactory.Idle());
-                else if (Mathf.Abs(_stateController.States.OnMove.x) > 0.01f)
+                else
                     SwitchState(_stateFactory.Run());
             }
             else if (_stateController.States.IsJumping && _stateController.States.CanJump)
@@ -79,7 +80,7 @@ namespace Platform2D.HierarchicalStateMachine
 
         #region --- Fields ---
 
-        private BaseState<PlayerCore, PlayerStateFactory>? _runState;
+        private BaseState<PlayerCore, PlayerStateFactory> _runState;
 
         #endregion
 

@@ -86,7 +86,7 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 384
+      m_Bits: 896
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
@@ -94,11 +94,13 @@ MonoBehaviour:
   _rg2D: {fileID: 4338247596368606770}
   _col2D: {fileID: 1577498299927652187}
   _basePos: {fileID: 4792270569379086118}
+  _cameraFollowerGO: {fileID: 0}
   _movementChecker: {fileID: 2243747549487778166}
   _states: {fileID: 6352507766094013598}
   _stats: {fileID: 2520929918556831673}
   _spriteRenderer: {fileID: 8332821715812232791}
   _animator: {fileID: 4622743532844707235}
+  _cameraFollower: {fileID: 0}
 --- !u!114 &2243747549487778166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerController: {fileID: 0}
   _oneWayGO: {fileID: 0}
+  _groundGO: {fileID: 0}
   _tagOneWay: OneWay
 --- !u!114 &6352507766094013598
 MonoBehaviour:

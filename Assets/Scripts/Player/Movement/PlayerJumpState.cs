@@ -38,7 +38,10 @@ namespace Platform2D.HierarchicalStateMachine
             if (_stateController.States.IsJumping)
                 JumpHandle();
 
-            if(_stateController.States.OnMove != Vector2.zero)
+            if (_stateController.States.IsCeiling)
+                FocusFall();
+
+            if (_stateController.States.OnMove != Vector2.zero)
                 _runState.UpdateState();
 
             CheckSwitchState();
@@ -59,7 +62,18 @@ namespace Platform2D.HierarchicalStateMachine
         public override void CheckSwitchState() 
         {
             if ((int)_stateController.transform.position.y >= (int)_highestPos)
+            {
                 SwitchState(_stateFactory.Fall());
+                return;
+            }
+
+            if (_stateController.States.OnGround && !_stateController.States.IsPenetrable)
+            {
+                if (_stateController.States.OnMove == Vector2.zero || Mathf.Abs(_stateController.States.OnMove.y) > 0.7f)
+                    SwitchState(_stateFactory.Idle());
+                else
+                    SwitchState(_stateFactory.Run());
+            }
         }
 
         /// <summary>
@@ -80,7 +94,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         private void JumpHandle()
         {
-            if (_stateController.States.OnGround)
+            if (_stateController.States.OnGround && !_stateController.States.IsPenetrable)
             {
                 JumpForce(_stateController.Stats.BaseStats.jumpSpeed);
                 _stateController.States.IsDoubleJump = true;
@@ -91,8 +105,17 @@ namespace Platform2D.HierarchicalStateMachine
                 _stateController.States.IsDoubleJump = false;
                 _stateController.States.CanJump = false;
             }
-
+            
             _stateController.States.IsJumping = false;
+        }
+
+        private void FocusFall()
+        {
+            if (_stateController.MovementChecker.IsGround)
+            {
+                _stateController.Rg2D.velocity = new Vector2(_stateController.Rg2D.velocity.x, 0f);
+                _highestPos = _stateController.transform.position.y;
+            }    
         }
 
         private void JumpForce(float jumpSpeed)
@@ -114,7 +137,7 @@ namespace Platform2D.HierarchicalStateMachine
 
         private float _highestPos;
 
-        private BaseState<PlayerCore, PlayerStateFactory>? _runState;
+        private BaseState<PlayerCore, PlayerStateFactory> _runState;
 
         #endregion
     }
