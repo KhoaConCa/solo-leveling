@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 4425843952117374335}
   - component: {fileID: 2882348884254941890}
   - component: {fileID: 1677550433219891977}
+  - component: {fileID: 6302209224008471470}
   m_Layer: 5
   m_Name: DashButton
   m_TagString: Untagged
@@ -211,6 +212,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6302209224008471470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3234478420631288958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e31c83858ab804db194270046eb5ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerController: {fileID: 0}
+  _moveDirection: 5
+  _tagMainPlayer: MainPlayer
 --- !u!1 &5132653405694795105
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,6 +30,7 @@ namespace Platform2D.HierarchicalStateMachine
         public override void EnterState()
         {
             _stateController.States.IsMoving = true;
+            _stateController.States.IsTouchOneWay = false;
         }
 
         /// <summary>
@@ -58,7 +59,13 @@ namespace Platform2D.HierarchicalStateMachine
         {
             if (!_stateController.States.AllowedSwitch) return;
 
-            if (!_stateController.MovementChecker.IsGround && _stateController.States.IsPenetrable)
+            if(_stateController.States.IsDashing && _stateController.States.CanDashing)
+            {
+                SwitchState(_stateFactory.Dash());
+                return;
+            }
+
+            if (!_stateController.States.OnGround || _stateController.States.IsPenetrable)
             {
                 SwitchState(_stateFactory.Fall());
                 return;

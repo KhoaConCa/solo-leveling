@@ -21,29 +21,43 @@ namespace Platform2D.CharacterController
 
             if(collision.gameObject.CompareTag(TagLayerName.OneWay))
             {
-                _oneWayGO = collision.gameObject;
-                _playerController.States.IsPenetrable = true;
-
-                var oneWayCol = _oneWayGO.GetComponent<CompositeCollider2D>();
-                Vector2 newVector = oneWayCol.transform.position - _playerController.Col2D.transform.position;
-                if (newVector.normalized.y < 0.2f)
-                    _playerController.States.IsPenetrable = false;
-
-                return;
+                _oneWayGO = collision.gameObject;            
             }
 
-            if (collision.gameObject.CompareTag(TagLayerName.Ground) && _playerController.States.IsPenetrable)
+            if (collision.gameObject.CompareTag(TagLayerName.Ground))
             {
                 _groundGO = collision.gameObject;
                 _playerController.States.IsPenetrable = false;
+            }
+
+            RaycastHit2D hit = Physics2D.Raycast(_playerController.Col2D.bounds.center, Vector2.down, 1.5f, LayerMask.GetMask(TagLayerName.Penatrable, TagLayerName.StaticLevel));
+            Debug.DrawRay(_playerController.Col2D.bounds.max, Vector2.up, Color.green, 10f);
+            if (hit.collider != null && (hit.collider.gameObject.CompareTag(TagLayerName.OneWay) || hit.collider.gameObject.CompareTag(TagLayerName.Ground)))
+                _playerController.States.IsTouchOneWay = false;
+        }
+
+        private void OnCollisionStay2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag(TagLayerName.OneWay))
+            {
+                RaycastHit2D hit = Physics2D.Raycast(_playerController.Col2D.bounds.center, Vector2.up, 1.5f, LayerMask.GetMask(TagLayerName.Penatrable));
+                Debug.DrawRay(_playerController.Col2D.bounds.max, Vector2.up, Color.red, 10f);
+                if(hit.collider != null && hit.collider.gameObject.CompareTag(TagLayerName.OneWay))
+                    _playerController.States.IsTouchOneWay = true;
             }
         }
 
         private void OnCollisionExit2D(Collision2D collision)
         {
-            if (collision.gameObject.CompareTag(_tagOneWay))
+            if (collision.gameObject.CompareTag(TagLayerName.OneWay))
             {
                 _oneWayGO = null;
+                return;
+            }
+
+            if (collision.gameObject.CompareTag(TagLayerName.Ground))
+            {
+                _groundGO = null;
             }
         }
 
@@ -85,8 +99,6 @@ namespace Platform2D.CharacterController
 
         [SerializeField] private GameObject _oneWayGO;
         [SerializeField] private GameObject _groundGO;
-
-        [SerializeField] private string _tagOneWay;
 
         #endregion
     }

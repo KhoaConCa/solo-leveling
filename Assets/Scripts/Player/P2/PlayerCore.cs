@@ -31,6 +31,8 @@ namespace Platform2D.CharacterController
 
             _cameraFollower = _cameraFollowerGO.gameObject.GetComponent<CameraFollower>();
 
+            _coolDown = new Utilities.Timer();
+
             StateFactory = new PlayerStateFactory(this);
             CurrentState = StateFactory.Idle();
             CurrentState.EnterState();
@@ -42,6 +44,8 @@ namespace Platform2D.CharacterController
                 _movementChecker.TryStartDisable();
 
             Debug.Log(CurrentState);
+
+            ResetDashingCooldown();
 
             GroundChecker();
             WallChecker();
@@ -77,6 +81,25 @@ namespace Platform2D.CharacterController
         private void CeilingChecker()
         {
             _states.IsCeiling = _col2D.Cast(Vector2.up, _contactFilter, _ceilingHits, CEILING_DISTANCE) > 0;
+        }
+
+        private void ResetDashingCooldown()
+        {
+            if (!_states.CanDashing)
+            {
+                bool countDown;
+                _coolDown.FixedTimeCountdown(out countDown, _stats.BaseStats.dashCoolDown);
+
+                if (countDown)
+                    _states.CanDashing = countDown;
+
+                Debug.Log($"Can Dashing: {_states.CanDashing}");
+            }
+            else if (_states.CanDashing && _states.IsDashing)
+            {
+                _coolDown.StartCountdown();
+            }
+
         }
 
         #endregion
@@ -121,6 +144,8 @@ namespace Platform2D.CharacterController
         [SerializeField] private Animator _animator;
 
         [SerializeField] private CameraFollower _cameraFollower;
+
+        private Utilities.Timer _coolDown;
 
         private readonly RaycastHit2D[] _groundHits = new RaycastHit2D[1];
         private readonly RaycastHit2D[] _wallHits = new RaycastHit2D[5];

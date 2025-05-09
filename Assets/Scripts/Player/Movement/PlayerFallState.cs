@@ -27,8 +27,6 @@ namespace Platform2D.HierarchicalStateMachine
         public override void EnterState() 
         {
             _stateController.States.IsFalling = true;
-
-            _runState = _stateFactory.Run();
         }
 
         /// <summary>
@@ -37,7 +35,7 @@ namespace Platform2D.HierarchicalStateMachine
         public override void UpdateState() 
         {
             if (!_stateController.States.IsPenetrable && _stateController.States.OnMove != Vector2.zero && Mathf.Abs(_stateController.States.OnMove.y) < 0.7f)
-                _runState.UpdateState();
+                RunHandle();
 
             CheckSwitchState(); 
         }
@@ -48,7 +46,6 @@ namespace Platform2D.HierarchicalStateMachine
         public override void ExitState() 
         {
             _stateController.States.IsFalling = false;
-            _runState = null;
         }
 
         /// <summary>
@@ -56,6 +53,14 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState() 
         {
+            if (_stateController.States.IsTouchOneWay) return;
+
+            if (_stateController.States.IsDashing && _stateController.States.CanDashing)
+            {
+                SwitchState(_stateFactory.Dash());
+                return;
+            }
+
             if (_stateController.States.OnGround && !_stateController.States.IsPenetrable)
             {
                 if (_stateController.States.OnMove == Vector2.zero || Mathf.Abs(_stateController.States.OnMove.y) > 0.7f)
@@ -78,9 +83,34 @@ namespace Platform2D.HierarchicalStateMachine
 
         #endregion
 
-        #region --- Fields ---
+        #region --- Methods ---
 
-        private BaseState<PlayerCore, PlayerStateFactory> _runState;
+        /// <summary>
+        /// Thực hiện di chuyển khi nhân vật đang rơi.
+        /// </summary>
+        private void RunHandle()
+        {
+            float dirX = _stateController.States.OnMove.x < 0 ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
+            if (_stateController.transform.localScale.x != dirX)
+                FlipDirection(dirX);
+
+            if (_stateController.States.IsWall || Mathf.Abs(_stateController.States.OnMove.y) > 0.7f)
+                dirX = 0f;
+
+            float speed = _stateController.Stats.CurrentMovementSpeed * dirX;
+            _stateController.Rg2D.velocity = new Vector2(speed, _stateController.Rg2D.velocity.y);
+        }
+
+        /// <summary>
+        /// Thực hiện xoay hướng khi nhân vật đang rơi.
+        /// </summary>
+        /// <param name="dirX">Chiều của hướng cần xoay.</param>
+        private void FlipDirection(float dirX)
+        {
+            float dirY = _stateController.transform.localScale.y;
+            _stateController.transform.localScale = new Vector2(dirX, dirY);
+            _stateController.CameraFollower.TurnCalling();
+        }
 
         #endregion
 

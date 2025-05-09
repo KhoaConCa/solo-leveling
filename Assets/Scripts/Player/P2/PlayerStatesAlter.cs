@@ -18,15 +18,15 @@ namespace Platform2D.CharacterStates
 
         #region -- Movement States --
         public Vector2 Direction => this.transform.localScale;
-        public Vector2 OnMove { 
-            get { 
-                return _onMove; 
+        public Vector2 OnMove {
+            get {
+                return _onMove;
             }
             set {
                 _onMove = value;
             }
         }
-        public bool IsMoving { 
+        public bool IsMoving {
             get {
                 return _isMoving;
             }
@@ -47,7 +47,7 @@ namespace Platform2D.CharacterStates
             set
             {
                 _isJumping = value;
-                if(value)
+                if (value)
                     _animator.SetTrigger(AnimationStrings.JumpTrigger);
             }
         }
@@ -69,7 +69,7 @@ namespace Platform2D.CharacterStates
         #endregion
 
         #region -- Crouch States --
-        public bool UnholdCrouch {  get; set; }
+        public bool UnholdCrouch { get; set; }
         public bool IsCrouch
         {
             get {
@@ -81,6 +81,21 @@ namespace Platform2D.CharacterStates
             }
         }
         public bool IsPenetrable { get; set; } = false;
+        #endregion
+
+        #region --- Dashing States --
+        public bool CanDashing { get; set; } = true;
+        public bool IsDashing
+        {
+            get {
+                return _isDashing;
+            }
+            set {
+                _isDashing = value;
+                if (_isDashing)
+                    _animator.SetTrigger(AnimationStrings.DashTrigger);
+            }
+        }
         #endregion
 
         #region -- Checking States --
@@ -97,17 +112,19 @@ namespace Platform2D.CharacterStates
                 _animator.SetBool(AnimationStrings.IsGrounded, value);
             }
         }
+        public bool IsTouchOneWay { get; set; } = false;
 
         public bool IsWall { get; set; }
-        public bool IsCeiling { 
-            get { 
-                return _isCeiling; 
+        public bool IsCeiling {
+            get {
+                return _isCeiling;
             }
             set {
                 _isCeiling = value;
                 _animator.SetBool(AnimationStrings.IsCeiling, value);
             }
         }
+
         #endregion
 
         #endregion
@@ -122,6 +139,7 @@ namespace Platform2D.CharacterStates
         [SerializeField] private bool _isJumping = false;
         [SerializeField] private bool _isFalling = false;
         [SerializeField] private bool _isCrouch = false;
+        [SerializeField] private bool _isDashing = false;
 
         [SerializeField] private bool _onGround = false;
         [SerializeField] private bool _isCeiling = false;
