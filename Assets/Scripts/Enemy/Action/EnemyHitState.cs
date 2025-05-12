@@ -32,9 +32,9 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void UpdateState() 
         {
-            CheckSwitchState();
-
             HitHandle();
+
+            CheckSwitchState();
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Platform2D.HierarchicalStateMachine
         public override void CheckSwitchState() 
         {
             if (!_stateController.States.CanMove) return;
-
+            Debug.Log("hello");
             if (_stateController.States.IsMoving)
                 SwitchState(_stateFactory.Run());
             else
@@ -76,9 +76,10 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         private void HitHandle()
         {
+            if (!_stateController.States.IsHitting) return;
+
             var knockBackSpeed = _stateController.States.KnockBackDirection.x * _stateController.Stats.BaseStats.KnockBackForce;
             _stateController.Rg2D.velocity = new Vector2(knockBackSpeed, _stateController.Rg2D.velocity.y);
-            Debug.Log("hello");
         }
 
         #endregion

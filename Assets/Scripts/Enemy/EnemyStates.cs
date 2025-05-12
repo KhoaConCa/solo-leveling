@@ -41,6 +41,17 @@ namespace Platform2D.CharacterStates
             }
         }
 
+        public bool IsDead
+        {
+            get { return _isDead; }
+            set
+            {
+                if (value)
+                    _animator.SetTrigger(AnimationStrings.DeadTrigger);
+                _isDead = value;
+            }
+        }
+
         public bool OnGround { get; set; } = false;
         public bool OnWall { get; set; } = false;
 
@@ -51,6 +62,7 @@ namespace Platform2D.CharacterStates
         [Header("State Parameters")]
         [SerializeField] private bool _isMoving = false;
         [SerializeField] private bool _isHitting = false;
+        [SerializeField] private bool _isDead = false;
 
         [Header("Animator")]
         [SerializeField] private Animator _animator;

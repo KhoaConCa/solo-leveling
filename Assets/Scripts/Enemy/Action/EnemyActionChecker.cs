@@ -22,10 +22,16 @@ namespace Platform2D.CharacterController
         {
             if (_enemyController == null) return;
 
+            _enemyController.Stats.CurrentHealthPoint -= damage - _enemyController.Stats.CurrentDefencePoint;
+
+            if(_enemyController.Stats.CurrentHealthPoint <= 0)
+            {
+                _enemyController.States.IsDead = true;
+                return;
+            }
+
             _enemyController.States.IsHitting = true;
             _enemyController.States.KnockBackDirection = knockBack;
-
-            _enemyController.Stats.CurrentHealthPoint -= damage - _enemyController.Stats.CurrentDefencePoint;
             Debug.Log($"{this.gameObject.name} get hit: {_enemyController.Stats.CurrentHealthPoint}");
         }
 

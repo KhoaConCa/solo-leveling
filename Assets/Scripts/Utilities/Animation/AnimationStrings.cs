@@ -36,6 +36,7 @@ namespace Platform2D.CharacterAnimation
         public readonly static string DashTrigger = "dash";
         public readonly static string AttackTrigger = "attack";
         public readonly static string HitTrigger = "hit";
+        public readonly static string DeadTrigger = "dead";
         #endregion
 
         #endregion
