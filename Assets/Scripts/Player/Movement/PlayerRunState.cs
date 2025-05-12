@@ -1,10 +1,6 @@
-﻿using Platform2D.CameraSystem;
-using Platform2D.CharacterAnimation;
-using Platform2D.CharacterController;
+﻿using Platform2D.CharacterController;
 using Platform2D.Vector;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.TextCore.Text;
 
 
 namespace Platform2D.HierarchicalStateMachine
@@ -35,7 +31,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Cập nhật Run State.
         /// </summary>
-        public override void UpdateState() 
+        public override void UpdateState()
         {
             CheckSwitchState();
 
@@ -46,7 +42,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Thoát Run State.
         /// </summary>
-        public override void ExitState() 
+        public override void ExitState()
         {
             _stateController.States.IsMoving = false;
         }
@@ -54,7 +50,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Kiểm tra chuyển đổi State.
         /// </summary>
-        public override void CheckSwitchState() 
+        public override void CheckSwitchState()
         {
             if (!_stateController.States.AllowedSwitch) return;
 
@@ -107,7 +103,7 @@ namespace Platform2D.HierarchicalStateMachine
         {
             float dirY = _stateController.transform.localScale.y;
             _stateController.transform.localScale = new Vector2(dirX, dirY);
-            _stateController.CameraFollower.TurnCalling();
+            _stateController.CameraController.TurnCalling();
         }
 
         #endregion

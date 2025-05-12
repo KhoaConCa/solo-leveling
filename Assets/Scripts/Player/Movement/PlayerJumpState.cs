@@ -1,7 +1,5 @@
-﻿using Platform2D.CharacterAnimation;
-using Platform2D.CharacterController;
+﻿using Platform2D.CharacterController;
 using Platform2D.Vector;
-using System.Collections;
 using UnityEngine;
 
 namespace Platform2D.HierarchicalStateMachine
@@ -24,21 +22,29 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Cài đặt mặc định cho Jump State.
         /// </summary>
-        public override void EnterState() 
+        public override void EnterState()
         {
             _stateController.States.CanJump = true;
             _runState = _stateFactory.Run();
+
+            if (_stateController.Rg2D.velocity.y >= 0f
+                && !_stateController.CameraController.IsLerpingYDamping
+                && _stateController.CameraController.LerpedFromPlayerFalling)
+            {
+                _stateController.CameraController.LerpedFromPlayerFalling = false;
+                _stateController.CameraController.LerpYDamping(false);
+            }
         }
 
         /// <summary>
         /// Cập nhật Jump State.
         /// </summary>
-        public override void UpdateState() 
+        public override void UpdateState()
         {
             if (_stateController.States.IsJumping)
                 JumpHandle();
 
-            if(_stateController.States.OnMove != Vector2.zero)
+            if (_stateController.States.OnMove != Vector2.zero)
                 _runState.UpdateState();
 
             CheckSwitchState();
@@ -47,7 +53,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Thoát Jump State.
         /// </summary>
-        public override void ExitState() 
+        public override void ExitState()
         {
             _runState = null;
             _highestPos = 0f;
@@ -56,7 +62,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Kiểm tra chuyển đổi State.
         /// </summary>
-        public override void CheckSwitchState() 
+        public override void CheckSwitchState()
         {
             if ((int)_stateController.transform.position.y >= (int)_highestPos)
                 SwitchState(_stateFactory.Fall());
