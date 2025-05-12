@@ -2,11 +2,7 @@
 using Platform2D.CharacterStates;
 using Platform2D.CharacterStats;
 using Platform2D.HierarchicalStateMachine;
-using Platform2D.Utilities;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.VersionControl.Asset;
 
 namespace Platform2D.CharacterController
 {
@@ -29,7 +25,6 @@ namespace Platform2D.CharacterController
             _animator.runtimeAnimatorController = _stats.BaseStats.animator;
             _spriteRenderer.sprite = _stats.BaseStats.sprite;
 
-            _cameraFollower = _cameraFollowerGO.gameObject.GetComponent<CameraFollower>();
 
             _coolDown = new Utilities.Timer();
 
@@ -43,7 +38,7 @@ namespace Platform2D.CharacterController
             if (_states.IsPenetrable && _movementChecker.IsOneWay)
                 _movementChecker.TryStartDisable();
 
-            Debug.Log(CurrentState);
+            //Debug.Log(CurrentState);
 
             ResetDashingCooldown();
 
@@ -65,7 +60,7 @@ namespace Platform2D.CharacterController
         {
             _states.OnGround = _col2D.Cast(Vector2.down, _contactFilter, _groundHits, GROUND_DISTANCE) > 0;
         }
-        
+
         /// <summary>
         /// Kiểm tra hiện tại Player có chạm Wall.
         /// </summary>
@@ -110,11 +105,9 @@ namespace Platform2D.CharacterController
         public CapsuleCollider2D Col2D => _col2D;
         public Transform BasePos => _basePos;
         public Animator Animator => _animator;
-
+        public CameraCore CameraController => _cameraController;
         public PlayerMovementChecker MovementChecker => _movementChecker;
         public PlayerActionChecker ActionChecker => _actionChecker;
-
-        public CameraFollower CameraFollower => _cameraFollower;
 
         public PlayerStatesAlter States => _states;
         public PlayerStats Stats => _stats;
@@ -131,7 +124,6 @@ namespace Platform2D.CharacterController
         [SerializeField] private Rigidbody2D _rg2D;
         [SerializeField] private CapsuleCollider2D _col2D;
         [SerializeField] private Transform _basePos;
-        [SerializeField] private CameraFollower _cameraFollowerGO;
 
         [Header("Custom Components")]
         [SerializeField] private PlayerMovementChecker _movementChecker;
@@ -145,7 +137,8 @@ namespace Platform2D.CharacterController
         [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private Animator _animator;
 
-        [SerializeField] private CameraFollower _cameraFollower;
+        [Header("Camera")]
+        [SerializeField] private CameraCore _cameraController;
 
         private Utilities.Timer _coolDown;
 
@@ -156,6 +149,7 @@ namespace Platform2D.CharacterController
         private const float GROUND_DISTANCE = 0.05f;
         private const float WALL_DISTANCE = 0.2f;
         private const float CEILING_DISTANCE = 0.3f;
+        public float fallSpeedYDampingThreshold = 10f;
 
         #endregion
     }

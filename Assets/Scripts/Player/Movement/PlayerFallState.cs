@@ -1,7 +1,5 @@
-﻿using Platform2D.CharacterAnimation;
-using Platform2D.CharacterController;
+﻿using Platform2D.CharacterController;
 using Platform2D.Vector;
-using System.Collections;
 using UnityEngine;
 
 namespace Platform2D.HierarchicalStateMachine
@@ -24,26 +22,33 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Cài đặt mặc định cho Fall State.
         /// </summary>
-        public override void EnterState() 
+        public override void EnterState()
         {
             _stateController.States.IsFalling = true;
+
+            if (_stateController.Rg2D.velocity.y < _stateController.fallSpeedYDampingThreshold
+                && !_stateController.CameraController.IsLerpingYDamping
+                && !_stateController.CameraController.LerpedFromPlayerFalling)
+            {
+                _stateController.CameraController.LerpYDamping(true);
+            }
         }
 
         /// <summary>
         /// Cập nhật Fall State.
         /// </summary>
-        public override void UpdateState() 
+        public override void UpdateState()
         {
             if (!_stateController.States.IsPenetrable && _stateController.States.OnMove != Vector2.zero && Mathf.Abs(_stateController.States.OnMove.y) < 0.7f)
                 RunHandle();
 
-            CheckSwitchState(); 
+            CheckSwitchState();
         }
 
         /// <summary>
         /// Thoát Fall State.
         /// </summary>
-        public override void ExitState() 
+        public override void ExitState()
         {
             _stateController.States.IsFalling = false;
         }
@@ -51,7 +56,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Kiểm tra chuyển đổi State.
         /// </summary>
-        public override void CheckSwitchState() 
+        public override void CheckSwitchState()
         {
             if (_stateController.States.IsTouchOneWay) return;
 
@@ -69,7 +74,7 @@ namespace Platform2D.HierarchicalStateMachine
                     SwitchState(_stateFactory.Run());
             }
             else if (_stateController.States.IsJumping && _stateController.States.CanJump)
-                    SwitchState(_stateFactory.Jump());
+                SwitchState(_stateFactory.Jump());
         }
 
         /// <summary>
@@ -109,7 +114,7 @@ namespace Platform2D.HierarchicalStateMachine
         {
             float dirY = _stateController.transform.localScale.y;
             _stateController.transform.localScale = new Vector2(dirX, dirY);
-            _stateController.CameraFollower.TurnCalling();
+            _stateController.CameraController.TurnCalling();
         }
 
         #endregion

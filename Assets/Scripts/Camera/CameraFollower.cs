@@ -6,7 +6,7 @@ namespace Platform2D.CameraSystem
 {
     /// <summary>
     /// CameraFollower - Đóng vai trò trung tâm nhằm thực hiện cân bằng việc camera di chuyển theo người chơi.
-    /// Tác giả: Dương Nhật Khoa, Ngày tạo: 08/05/2025
+    /// Tác giả: Dương Nhật Khoa, Ngày tạo: 08/05/2025.
     /// </summary>
     public class CameraFollower : MonoBehaviour
     {
@@ -26,19 +26,38 @@ namespace Platform2D.CameraSystem
 
         #region --- Methods ---
 
+        #region -- LeanTween --
+        /// <summary>
+        /// Thực hiện việc quay camera theo hướng của người chơi bằng LeanTween.
+        /// </summary>
         public void TurnCalling()
         {
-            //if (_turnCoroutine != null)
-            //{
-            //    StopCoroutine(_turnCoroutine);
-            //}
+            _isFacingRight = _playerController.States.Direction.x > 0;
+
+            LeanTween.rotateY(gameObject, DetermineEndRotation(), _flipYRotationTime).setEaseInOutSine();
+        }
+        #endregion
+
+        #region -- Coroutine --
+        /// <summary>
+        /// Thực hiện việc quay camera theo hướng của người chơi bằng Coroutine.
+        /// </summary>
+        public void BasicTurnCalling()
+        {
+            if (_turnCoroutine != null)
+            {
+                StopCoroutine(_turnCoroutine);
+            }
 
             _isFacingRight = _playerController.States.Direction.x > 0;
 
-            //_turnCoroutine = StartCoroutine(FlipYLerp());
-            LeanTween.rotateY(gameObject, DetermineEndRotation(), _flipYRotationTime).setEaseInOutSine();
+            _turnCoroutine = StartCoroutine(FlipYLerp());
         }
 
+        /// <summary>
+        /// Hàm Coroutine thực hiện việc quay camera theo hướng của người chơi.
+        /// </summary>
+        /// <returns>null</returns>
         private IEnumerator FlipYLerp()
         {
             float startRoatation = transform.localEulerAngles.y;
@@ -55,7 +74,12 @@ namespace Platform2D.CameraSystem
                 yield return null;
             }
         }
+        #endregion
 
+        /// <summary>
+        /// Xác định góc quay cuối cùng của camera dựa trên hướng di chuyển của người chơi.
+        /// </summary>
+        /// <returns>0 đối với xoay qua phải - 180 đối với xoay qua trái</returns>
         private float DetermineEndRotation()
         {
             return _isFacingRight ? 0f : 180f;

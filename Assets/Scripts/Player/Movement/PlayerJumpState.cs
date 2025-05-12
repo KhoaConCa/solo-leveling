@@ -1,7 +1,5 @@
-﻿using Platform2D.CharacterAnimation;
-using Platform2D.CharacterController;
+﻿using Platform2D.CharacterController;
 using Platform2D.Vector;
-using System.Collections;
 using UnityEngine;
 
 namespace Platform2D.HierarchicalStateMachine
@@ -24,15 +22,23 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Cài đặt mặc định cho Jump State.
         /// </summary>
-        public override void EnterState() 
+        public override void EnterState()
         {
             _stateController.States.CanJump = true;
+
+            if (_stateController.Rg2D.velocity.y >= 0f
+                && !_stateController.CameraController.IsLerpingYDamping
+                && _stateController.CameraController.LerpedFromPlayerFalling)
+            {
+                _stateController.CameraController.LerpedFromPlayerFalling = false;
+                _stateController.CameraController.LerpYDamping(false);
+            }
         }
 
         /// <summary>
         /// Cập nhật Jump State.
         /// </summary>
-        public override void UpdateState() 
+        public override void UpdateState()
         {
             if (_stateController.States.IsJumping)
                 JumpHandle();
@@ -49,7 +55,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Thoát Jump State.
         /// </summary>
-        public override void ExitState() 
+        public override void ExitState()
         {
             _highestPos = 0f;
         }
@@ -57,7 +63,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Kiểm tra chuyển đổi State.
         /// </summary>
-        public override void CheckSwitchState() 
+        public override void CheckSwitchState()
         {
             if (_stateController.States.IsDashing && _stateController.States.CanDashing)
             {
@@ -100,7 +106,7 @@ namespace Platform2D.HierarchicalStateMachine
                 _stateController.States.IsDoubleJump = false;
                 _stateController.States.CanJump = false;
             }
-            
+
             _stateController.States.IsJumping = false;
         }
 
@@ -112,8 +118,8 @@ namespace Platform2D.HierarchicalStateMachine
             if (_stateController.MovementChecker.IsGround)
             {
                 _stateController.Rg2D.velocity = new Vector2(_stateController.Rg2D.velocity.x, 0f);
-  
-            }    
+
+            }
         }
 
         /// <summary>
@@ -157,7 +163,7 @@ namespace Platform2D.HierarchicalStateMachine
         {
             float dirY = _stateController.transform.localScale.y;
             _stateController.transform.localScale = new Vector2(dirX, dirY);
-            _stateController.CameraFollower.TurnCalling();
+            _stateController.CameraController.TurnCalling();
         }
 
         #endregion
