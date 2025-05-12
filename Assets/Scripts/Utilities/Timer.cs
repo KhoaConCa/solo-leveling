@@ -1,18 +1,56 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Timer : MonoBehaviour
+namespace Platform2D.Utilities
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Timer - Được tạo ra làm bộ đếm giờ.
+    /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 09/05/2025.
+    /// </summary>
+    public class Timer
     {
-        
-    }
+        #region --- Methods ---
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        /// <summary>
+        /// Thực hiện Countdown.
+        /// </summary>
+        /// <param name="conditionCheck">điều kiện cần kiểm tra.</param>
+        /// <param name="duration">Thời gian Countdown.</param>
+        public void FixedTimeCountdown(out bool conditionCheck, float duration)
+        {
+            conditionCheck = false;
+
+            if (_isCounting)
+            {
+                _timer += Time.fixedDeltaTime;
+
+                if (_timer >= duration)
+                {
+                    conditionCheck = true;
+                    _isCounting = false;
+                    _timer = 0f;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Reset Countdown.
+        /// </summary>
+        public void StartCountdown()
+        {
+            _isCounting = true;
+            _timer = 0f;
+        }
+
+        #endregion
+
+        #region --- Fields ---
+
+        private float _timer = 0f;
+        private bool _isCounting = false;
+
+        #endregion
+
     }
 }

@@ -349,7 +349,7 @@ MonoBehaviour:
   - {fileID: 1060260748762184917}
   virtualCamera: {fileID: 1060260748762184917}
   _fallPanAmount: 0.25
-  _fallPanYDampingTime: 0.35
+  _fallPanYDampingTime: 0.1
   playerPosition: {fileID: 0}
   cameraFollower: {fileID: 7025439908737455231}
   _flipYRotationTime: 0.5

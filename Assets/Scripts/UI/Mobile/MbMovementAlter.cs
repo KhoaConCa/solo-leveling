@@ -51,16 +51,20 @@ namespace Platform2D.UIMovement
                     _playerController.States.IsJumping = true;
                     break;
                 case MOVEMENT_FUNCTION.CROUCH:
-                    if(Mathf.Abs(_playerController.States.OnMove.y) > 0.7f)
+                    if(Mathf.Abs(_playerController.States.OnMove.y) > 0.7f && _playerController.MovementChecker.IsOneWay)
                     {
-                        _playerController.States.CanDownward = true;
+                        _playerController.States.IsPenetrable = true;
                         _playerController.States.UnholdCrouch = false;
                     }
-                    else if (_playerController.States.OnMove != Vector2.zero && _playerController.States.OnGround)
+                    else if (_playerController.States.OnMove != Vector2.zero && _playerController.States.OnGround && Mathf.Abs(_playerController.States.OnMove.y) < 0.7f)
                     {
                         _playerController.States.IsCrouch = true;
                         _playerController.States.UnholdCrouch = false;
                     }    
+                    break;
+                case MOVEMENT_FUNCTION.DASH:
+                    if(Mathf.Abs(_playerController.States.OnMove.y) < 0.7f && _playerController.States.OnMove != Vector2.zero && _playerController.States.CanDashing)
+                        _playerController.States.IsDashing = true;
                     break;
             }
         }

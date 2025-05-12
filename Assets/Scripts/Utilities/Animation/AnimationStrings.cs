@@ -18,8 +18,8 @@ namespace Platform2D.CharacterAnimation
         public readonly static string IsCeiling = "isCeiling";
         public readonly static string IsMoving = "isMoving";
         public readonly static string IsCrouching = "isCrouching";
+        public readonly static string Dash = "dash";
         public readonly static string IsFalling = "isFalling";
-        public readonly static string Dash = "isDashing";
         public readonly static string CanMove = "canMove";
         #endregion
 
@@ -32,6 +32,7 @@ namespace Platform2D.CharacterAnimation
 
         #region -- Trigger Parameters --
         public readonly static string JumpTrigger = "jump";
+        public readonly static string DashTrigger = "dash";
         public readonly static string AttackTrigger = "attack";
         #endregion
 

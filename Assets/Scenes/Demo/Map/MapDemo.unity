@@ -208,7 +208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4792270569379086118, guid: 1e0737d9e778d104dbace3d57f413e4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3
+      value: 0.227
       objectReference: {fileID: 0}
     - target: {fileID: 4792270569379086118, guid: 1e0737d9e778d104dbace3d57f413e4e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -719,26 +719,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3916879802673346236, guid: 6a6418cce9e387b4eb488fdac5db82e9, type: 3}
-      propertyPath: m_YDamping
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6103187672512380815, guid: 6a6418cce9e387b4eb488fdac5db82e9, type: 3}
       propertyPath: m_Name
       value: Cameras
       objectReference: {fileID: 0}
     - target: {fileID: 6132349710219762190, guid: 6a6418cce9e387b4eb488fdac5db82e9, type: 3}
-      propertyPath: _fallPanAmount
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6132349710219762190, guid: 6a6418cce9e387b4eb488fdac5db82e9, type: 3}
       propertyPath: playerPosition
       value: 
       objectReference: {fileID: 587976380}
-    - target: {fileID: 6132349710219762190, guid: 6a6418cce9e387b4eb488fdac5db82e9, type: 3}
-      propertyPath: _fallPanYDampingTime
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 9005626687557738446, guid: 6a6418cce9e387b4eb488fdac5db82e9, type: 3}
       propertyPath: _playerPosition
       value: 

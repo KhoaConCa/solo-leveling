@@ -25,7 +25,6 @@ namespace Platform2D.HierarchicalStateMachine
         public override void EnterState()
         {
             _stateController.States.CanJump = true;
-            _runState = _stateFactory.Run();
 
             if (_stateController.Rg2D.velocity.y >= 0f
                 && !_stateController.CameraController.IsLerpingYDamping
@@ -44,8 +43,11 @@ namespace Platform2D.HierarchicalStateMachine
             if (_stateController.States.IsJumping)
                 JumpHandle();
 
-            if (_stateController.States.OnMove != Vector2.zero)
-                _runState.UpdateState();
+            if (_stateController.States.IsCeiling)
+                FocusFall();
+
+            if (_stateController.States.OnMove != Vector2.zero && !_stateController.States.OnGround)
+                RunHandle();
 
             CheckSwitchState();
         }
@@ -55,7 +57,6 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void ExitState()
         {
-            _runState = null;
             _highestPos = 0f;
         }
 
@@ -64,8 +65,26 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState()
         {
-            if ((int)_stateController.transform.position.y >= (int)_highestPos)
+            if (_stateController.States.IsDashing && _stateController.States.CanDashing)
+            {
+                SwitchState(_stateFactory.Dash());
+                return;
+            }
+
+            if ((int)_stateController.transform.position.y >= (int)_highestPos || _stateController.States.IsCeiling)
+            {
                 SwitchState(_stateFactory.Fall());
+            }
+
+            /*if (_stateController.States.IsTouchOneWay)
+            {
+                if (_stateController.States.OnMove == Vector2.zero || Mathf.Abs(_stateController.States.OnMove.y) > 0.7f)
+                {
+                    SwitchState(_stateFactory.Idle());
+                }
+                else
+                    SwitchState(_stateFactory.Run());
+            }*/
         }
 
         /// <summary>
@@ -86,7 +105,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         private void JumpHandle()
         {
-            if (_stateController.States.OnGround)
+            if (_stateController.States.OnGround && !_stateController.States.IsPenetrable)
             {
                 JumpForce(_stateController.Stats.BaseStats.jumpSpeed);
                 _stateController.States.IsDoubleJump = true;
@@ -101,6 +120,22 @@ namespace Platform2D.HierarchicalStateMachine
             _stateController.States.IsJumping = false;
         }
 
+        /// <summary>
+        /// Tập trung xử lý rơi khi nhân vật đụng trần.
+        /// </summary>
+        private void FocusFall()
+        {
+            if (_stateController.MovementChecker.IsGround)
+            {
+                _stateController.Rg2D.velocity = new Vector2(_stateController.Rg2D.velocity.x, 0f);
+
+            }
+        }
+
+        /// <summary>
+        /// Thực hiện lực nhảy và xác định điểm cao nhất khi nhảy.
+        /// </summary>
+        /// <param name="jumpSpeed">Tham số đầu vào của lực.</param>
         private void JumpForce(float jumpSpeed)
         {
             // Tính độ cao cao nhất khi nhảy.
@@ -114,13 +149,38 @@ namespace Platform2D.HierarchicalStateMachine
             _stateController.Rg2D.velocity = new Vector2(velX, velY);
         }
 
+        /// <summary>
+        /// Thực hiện di chuyển khi nhân vật đang nhảy.
+        /// </summary>
+        private void RunHandle()
+        {
+            float dirX = _stateController.States.OnMove.x < 0 ? (float)AXIS_1D.NEGATIVE : (float)AXIS_1D.POSITIVE;
+            if (_stateController.transform.localScale.x != dirX)
+                FlipDirection(dirX);
+
+            if (_stateController.States.IsWall || Mathf.Abs(_stateController.States.OnMove.y) > 0.7f)
+                dirX = 0f;
+
+            float speed = _stateController.Stats.CurrentMovementSpeed * dirX;
+            _stateController.Rg2D.velocity = new Vector2(speed, _stateController.Rg2D.velocity.y);
+        }
+
+        /// <summary>
+        /// Thực hiện xoay hướng khi nhân vật đang nhảy.
+        /// </summary>
+        /// <param name="dirX">Chiều của hướng cần xoay.</param>
+        private void FlipDirection(float dirX)
+        {
+            float dirY = _stateController.transform.localScale.y;
+            _stateController.transform.localScale = new Vector2(dirX, dirY);
+            _stateController.CameraController.TurnCalling();
+        }
+
         #endregion
 
         #region --- Fields ---
 
         private float _highestPos;
-
-        private BaseState<PlayerCore, PlayerStateFactory>? _runState;
 
         #endregion
     }

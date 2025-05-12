@@ -25,6 +25,9 @@ namespace Platform2D.CharacterController
             _animator.runtimeAnimatorController = _stats.BaseStats.animator;
             _spriteRenderer.sprite = _stats.BaseStats.sprite;
 
+
+            _coolDown = new Utilities.Timer();
+
             StateFactory = new PlayerStateFactory(this);
             CurrentState = StateFactory.Idle();
             CurrentState.EnterState();
@@ -32,12 +35,16 @@ namespace Platform2D.CharacterController
 
         private void FixedUpdate()
         {
+            if (_states.IsPenetrable && _movementChecker.IsOneWay)
+                _movementChecker.TryStartDisable();
+
+            //Debug.Log(CurrentState);
+
+            ResetDashingCooldown();
+
             GroundChecker();
             WallChecker();
             CeilingChecker();
-
-            if (_states.CanDownward)
-                StartCoroutine(_movementChecker.DisableCollider());
 
             CurrentState.UpdateState();
         }
@@ -51,8 +58,7 @@ namespace Platform2D.CharacterController
         /// </summary>
         private void GroundChecker()
         {
-            if (!_states.IsDisable)
-                _states.OnGround = _col2D.Cast(Vector2.down, _contactFilter, _groundHits, GROUND_DISTANCE) > 0;
+            _states.OnGround = _col2D.Cast(Vector2.down, _contactFilter, _groundHits, GROUND_DISTANCE) > 0;
         }
 
         /// <summary>
@@ -72,6 +78,25 @@ namespace Platform2D.CharacterController
             _states.IsCeiling = _col2D.Cast(Vector2.up, _contactFilter, _ceilingHits, CEILING_DISTANCE) > 0;
         }
 
+        private void ResetDashingCooldown()
+        {
+            if (!_states.CanDashing)
+            {
+                bool countDown;
+                _coolDown.FixedTimeCountdown(out countDown, _stats.BaseStats.dashCoolDown);
+
+                if (countDown)
+                    _states.CanDashing = countDown;
+
+                Debug.Log($"Can Dashing: {_states.CanDashing}");
+            }
+            else if (_states.CanDashing && _states.IsDashing)
+            {
+                _coolDown.StartCountdown();
+            }
+
+        }
+
         #endregion
 
         #region --- Properties ---
@@ -81,6 +106,8 @@ namespace Platform2D.CharacterController
         public Transform BasePos => _basePos;
         public Animator Animator => _animator;
         public CameraCore CameraController => _cameraController;
+        public PlayerMovementChecker MovementChecker => _movementChecker;
+
         public PlayerStatesAlter States => _states;
         public PlayerStats Stats => _stats;
         public PlayerStateFactory StateFactory { get; set; }
@@ -111,7 +138,9 @@ namespace Platform2D.CharacterController
         [Header("Camera")]
         [SerializeField] private CameraCore _cameraController;
 
-        private readonly RaycastHit2D[] _groundHits = new RaycastHit2D[5];
+        private Utilities.Timer _coolDown;
+
+        private readonly RaycastHit2D[] _groundHits = new RaycastHit2D[1];
         private readonly RaycastHit2D[] _wallHits = new RaycastHit2D[5];
         private readonly RaycastHit2D[] _ceilingHits = new RaycastHit2D[5];
 
