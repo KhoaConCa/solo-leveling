@@ -107,6 +107,7 @@ namespace Platform2D.CharacterController
         public Animator Animator => _animator;
         public CameraCore CameraController => _cameraController;
         public PlayerMovementChecker MovementChecker => _movementChecker;
+        public PlayerActionChecker ActionChecker => _actionChecker;
 
         public PlayerStatesAlter States => _states;
         public PlayerStats Stats => _stats;
@@ -126,6 +127,7 @@ namespace Platform2D.CharacterController
 
         [Header("Custom Components")]
         [SerializeField] private PlayerMovementChecker _movementChecker;
+        [SerializeField] private PlayerActionChecker _actionChecker;
 
         [Header("States & Stats")]
         [SerializeField] private PlayerStatesAlter _states;

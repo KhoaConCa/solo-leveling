@@ -14,7 +14,7 @@ namespace Platform2D.UIMovement
     /// MbMovementAlter - Nhận Input của người chơi, đối với người chơi trên nền tảng Mobile.
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 28/04/2025
     /// </summary>
-    public class MbMovementAlter : MonoBehaviour, IMoveable, IPointerDownHandler, IPointerUpHandler
+    public class MbMovementAlter : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
 
         #region --- Overrides ---
@@ -68,41 +68,6 @@ namespace Platform2D.UIMovement
                     break;
             }
         }
-        #endregion
-
-        #region -- Player Move Handle --
-        /// <summary>
-        /// Thực hiện chức năng di chuyển nhân vật khi người chơi thao tác di chuyển.
-        /// </summary>
-        public void OnMove()
-        {
-            
-        }
-
-        /// <summary>
-        /// Thực hiện chức năng nhảy của nhân vật khi người chơi thao tác nhảy.
-        /// </summary>
-        public void OnJump()
-        {
-            
-        }
-         
-        /// <summary>
-        /// Thực hiện chức năng cúi người khi người chơi thao tác cúi.
-        /// </summary>
-        public void OnCrouch()
-        {
-           
-        }
-
-        /// <summary>
-        /// Thực hiện chức năng lướt khi người chơi thao tác lướt.
-        /// </summary>
-        public void OnDash()
-        {
-            
-        }
-
         #endregion
 
         #endregion

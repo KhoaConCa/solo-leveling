@@ -29,6 +29,12 @@ namespace Platform2D.CharacterController
             _states.Direction = gameObject.transform.localScale.x;
             _states.AnchorPosX = gameObject.transform.position.x;
 
+            _stats.CurrentHealthPoint = _stats.BaseStats.healthPoint;
+            _stats.CurrentEnergyPoint = _stats.BaseStats.energyPoint;
+            _stats.CurrentDefencePoint = _stats.BaseStats.defencePoint;
+
+            _stats.CurrentMovementSpeed = 0;
+
             EnemyStateFactory = new EnemyStateFactory(this);
             CurrentState = EnemyStateFactory.Idle();
             CurrentState.EnterState();

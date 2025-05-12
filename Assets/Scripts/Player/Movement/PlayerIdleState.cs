@@ -52,7 +52,13 @@ namespace Platform2D.HierarchicalStateMachine
         {
             if (!_stateController.States.AllowedSwitch) return;
 
-            if(_stateController.Rg2D.velocity.y < 0f)
+            if (_stateController.States.IsAttacking)
+            {
+                SwitchState(_stateFactory.GroundAttack());
+                return;
+            }
+
+            if (_stateController.Rg2D.velocity.y < 0f)
             {
                 SwitchState(_stateFactory.Fall());
                 return;

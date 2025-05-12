@@ -75,16 +75,6 @@ namespace Platform2D.HierarchicalStateMachine
             {
                 SwitchState(_stateFactory.Fall());
             }
-
-            /*if (_stateController.States.IsTouchOneWay)
-            {
-                if (_stateController.States.OnMove == Vector2.zero || Mathf.Abs(_stateController.States.OnMove.y) > 0.7f)
-                {
-                    SwitchState(_stateFactory.Idle());
-                }
-                else
-                    SwitchState(_stateFactory.Run());
-            }*/
         }
 
         /// <summary>

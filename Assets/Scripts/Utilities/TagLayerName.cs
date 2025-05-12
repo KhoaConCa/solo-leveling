@@ -19,6 +19,8 @@ namespace Platform2D.Utilities
         #region -- Tags --
         public readonly static string OneWay = "OneWay";
         public readonly static string Ground = "Ground";
+
+        public readonly static string Enemy = "Enemy";
         #endregion
 
         #endregion

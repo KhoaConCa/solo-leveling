@@ -31,6 +31,14 @@ namespace Platform2D.HierarchicalStateMachine
         /// <returns>Trả về State Run của Enemy.</returns>
         public BaseState<EnemyController, EnemyStateFactory> Run() => new EnemyRunState(_controller, this);
 
+        #region -- Attack States --
+        /// <summary>
+        /// Khởi tạo State Hit của Enemy.
+        /// </summary>
+        /// <returns>Trả về State Hit của Enemy.</returns>
+        public BaseState<EnemyController, EnemyStateFactory> Hit() => new EnemyHitState(_controller, this);
+        #endregion
+
         #endregion
 
         #region --- Fields ---

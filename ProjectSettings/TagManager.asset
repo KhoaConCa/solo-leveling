@@ -19,6 +19,7 @@ TagManager:
   - Background
   - OneWayPlatform
   - InterpolationCamera
+  - Enemy
   layers:
   - Default
   - TransparentFX

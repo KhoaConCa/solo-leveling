@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c8b69cb991f1b540b30eedd880423a2, type: 3}
   m_Name: EnemyMushroom
   m_EditorClassIdentifier: 
+  healthPoint: 100
+  energyPoint: 100
+  defencePoint: 5
+  weight: 8
+  knockBackMultiplier: 0.4
   movementSpeed: 4
   movementRange: 3
   idleDuration: 3

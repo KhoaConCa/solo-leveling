@@ -21,6 +21,7 @@ namespace Platform2D.CharacterAnimation
         public readonly static string Dash = "dash";
         public readonly static string IsFalling = "isFalling";
         public readonly static string CanMove = "canMove";
+        public readonly static string DefaultDamage = "defaultDamage";
         #endregion
 
         #region -- Float Parameters --
@@ -34,6 +35,7 @@ namespace Platform2D.CharacterAnimation
         public readonly static string JumpTrigger = "jump";
         public readonly static string DashTrigger = "dash";
         public readonly static string AttackTrigger = "attack";
+        public readonly static string HitTrigger = "hit";
         #endregion
 
         #endregion
