@@ -22,7 +22,12 @@ namespace Platform2D.CharacterStats
 
         #region --- Fields ---
 
-        [Header("Movement Settings")]
+        [Header("Base Setting")]
+        public float healthPoint;
+        public float energyPoint;
+        public float defencePoint;
+
+        [Header("Move Settings")]
         public float movementSpeed;
         public float crouchMultiplier;
         public float dashMultiplier;
@@ -30,6 +35,11 @@ namespace Platform2D.CharacterStats
         [Header("Jump Settings")]
         public float jumpSpeed;
         public float doubleJumpMultiplier;
+
+        [Header("Attack Setting")]
+        public float attackPullForce;
+        public float attackDamage;
+        public float attackDamageMultiplier;
 
         [Header("Duration Setting")]
         public float dashDuration;

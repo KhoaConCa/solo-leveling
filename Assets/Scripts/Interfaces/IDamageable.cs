@@ -1,18 +1,21 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IDamageable : MonoBehaviour
+namespace Platform2D.GlobalInterface
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// IDamageable - Là một Interface khai báo các hàm tính sát thương.
+    /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 09/05/2025.
+    /// </summary>
+    public interface IDamageable
     {
-        
-    }
+        #region --- Methods ---
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void OnHit();
+
+        public void ReceiveDamage(float damage, Vector2 knockBack);
+
+        #endregion
     }
 }

@@ -13,9 +13,20 @@ namespace Platform2D.CharacterStats
     {
         #region --- Properties ---
 
+        public float KnockBackForce => weight * knockBackMultiplier;
+
         #endregion
 
         #region --- Fields ---
+
+        [Header("Base Setting")]
+        public float healthPoint;
+        public float energyPoint;
+        public float defencePoint;
+
+        [Header("Detail Setting")]
+        public float weight;
+        public float knockBackMultiplier;
 
         [Header("Movement Setting")]
         public float movementSpeed;

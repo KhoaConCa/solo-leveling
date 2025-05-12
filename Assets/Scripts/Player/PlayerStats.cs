@@ -19,11 +19,23 @@ namespace Platform2D.CharacterStats
         public float CrouchSpeed => CurrentMovementSpeed * _playerStatsSO.crouchMultiplier;
         public float DashSpeed => CurrentMovementSpeed * _playerStatsSO.dashMultiplier;
 
+        public float CurrentDamage
+        {
+            get {
+                return _currentDamage;
+            }
+            set {
+                _currentDamage = value;
+            }
+        }
+
         #endregion
 
         #region --- Fields ---
 
         [SerializeField] private PlayerStatsSO _playerStatsSO;
+
+        [SerializeField] private float _currentDamage;
 
         #endregion
 

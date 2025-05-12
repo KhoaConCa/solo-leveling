@@ -19,6 +19,7 @@ namespace Platform2D.HierarchicalStateMachine
             _controller = controller;
         }
 
+        #region -- Movement --
         /// <summary>
         /// Khởi tạo State Idle của Player
         /// </summary>
@@ -54,6 +55,15 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         /// <returns>Trả về State Dash của Player.</returns>
         public BaseState<PlayerCore, PlayerStateFactory> Dash() => new PlayerDashState(_controller, this);
+        #endregion
+
+        #region -- Attack --
+        /// <summary>
+        /// Khởi tạo State Ground Attack của Player
+        /// </summary>
+        /// <returns>Trả về State Ground Attack của Player.</returns>
+        public BaseState<PlayerCore, PlayerStateFactory> GroundAttack() => new PlayerGroundAttackState(_controller, this);
+        #endregion
 
         #endregion
 

@@ -12,11 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceab1b24b44a00b4da024f3ee985bb9c, type: 3}
   m_Name: PlayerStatsSO
   m_EditorClassIdentifier: 
+  healthPoint: 100
+  energyPoint: 100
+  defencePoint: 100
   movementSpeed: 5
   crouchMultiplier: 1.2
   dashMultiplier: 4
-  jumpSpeed: 14
+  jumpSpeed: 10
   doubleJumpMultiplier: 1
+  attackPullForce: 0.4
+  attackDamage: 8
+  attackDamageMultiplier: 0.8
   dashDuration: 0.2
   oneWayDuration: 0.5
   jumpCooldown: 1

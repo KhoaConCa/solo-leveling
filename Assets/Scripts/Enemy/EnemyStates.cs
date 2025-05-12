@@ -13,6 +13,7 @@ namespace Platform2D.CharacterStates
     {
         #region --- Properties ---
 
+        public Vector2 KnockBackDirection { get; set; }
         public float Direction {  get; set; }
 
         public float AnchorPosX { get; set; }
@@ -29,6 +30,17 @@ namespace Platform2D.CharacterStates
             }
         }
 
+        public bool CanMove => _animator.GetBool(AnimationStrings.CanMove);
+
+        public bool IsHitting { 
+            get { return _isHitting; }
+            set {
+                if (value)
+                    _animator.SetTrigger(AnimationStrings.HitTrigger);
+                _isHitting = value;
+            }
+        }
+
         public bool OnGround { get; set; } = false;
         public bool OnWall { get; set; } = false;
 
@@ -38,6 +50,7 @@ namespace Platform2D.CharacterStates
 
         [Header("State Parameters")]
         [SerializeField] private bool _isMoving = false;
+        [SerializeField] private bool _isHitting = false;
 
         [Header("Animator")]
         [SerializeField] private Animator _animator;

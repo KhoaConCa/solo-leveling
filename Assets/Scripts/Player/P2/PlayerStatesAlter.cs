@@ -35,6 +35,8 @@ namespace Platform2D.CharacterStates
                 _animator.SetBool(AnimationStrings.IsMoving, value);
             }
         }
+
+        public bool CanMove => _animator.GetBool(AnimationStrings.CanMove);
         #endregion
 
         #region -- Jumping States --
@@ -83,7 +85,7 @@ namespace Platform2D.CharacterStates
         public bool IsPenetrable { get; set; } = false;
         #endregion
 
-        #region --- Dashing States --
+        #region -- Dashing States --
         public bool CanDashing { get; set; } = true;
         public bool IsDashing
         {
@@ -96,6 +98,24 @@ namespace Platform2D.CharacterStates
                     _animator.SetTrigger(AnimationStrings.DashTrigger);
             }
         }
+        #endregion
+
+        #region -- Attack States --
+
+        public bool IsAttacking
+        {
+            get {
+                return _isAttacking;
+            }
+            set {
+                _isAttacking = value;
+                if (_isAttacking)
+                    _animator.SetTrigger(AnimationStrings.AttackTrigger);
+            }
+        }
+
+        public bool CanIncreaseDamage => _animator.GetBool(AnimationStrings.DefaultDamage);
+
         #endregion
 
         #region -- Checking States --
@@ -140,6 +160,8 @@ namespace Platform2D.CharacterStates
         [SerializeField] private bool _isFalling = false;
         [SerializeField] private bool _isCrouch = false;
         [SerializeField] private bool _isDashing = false;
+
+        [SerializeField] private bool _isAttacking = false;
 
         [SerializeField] private bool _onGround = false;
         [SerializeField] private bool _isCeiling = false;
