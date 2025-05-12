@@ -181,8 +181,8 @@ namespace Platform2D.CameraSystem
         [Header("Controls for lerping Y Damping during player jump/fall")]
         [SerializeField] private CinemachineVirtualCamera[] _allVirtualCameras;
         [SerializeField] public CinemachineVirtualCamera virtualCamera;
-        [SerializeField] private float _fallPanAmount = 0.25f;
-        [SerializeField] private float _fallPanYDampingTime = 0.1f;
+        [SerializeField] private float _fallPanAmount;
+        [SerializeField] private float _fallPanYDampingTime;
 
         public static CameraCore instance;
         private Coroutine _lerpYPanCoroutine;
