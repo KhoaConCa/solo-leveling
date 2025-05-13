@@ -95,14 +95,14 @@ MonoBehaviour:
   _rg2D: {fileID: 4338247596368606770}
   _col2D: {fileID: 1577498299927652187}
   _basePos: {fileID: 4792270569379086118}
-  _cameraFollowerGO: {fileID: 0}
   _movementChecker: {fileID: 2243747549487778166}
   _actionChecker: {fileID: 7761218697196676666}
   _states: {fileID: 6352507766094013598}
   _stats: {fileID: 2520929918556831673}
   _spriteRenderer: {fileID: 8332821715812232791}
   _animator: {fileID: 4622743532844707235}
-  _cameraFollower: {fileID: 0}
+  _cameraController: {fileID: 0}
+  fallSpeedYDampingThreshold: 10
 --- !u!114 &2243747549487778166
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   energyPoint: 100
   defencePoint: 5
   weight: 8
-  knockBackMultiplier: 0.4
+  knockBackMultiplier: 0.2
   movementSpeed: 4
   movementRange: 3
   idleDuration: 3
