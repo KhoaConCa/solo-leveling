@@ -16,9 +16,12 @@ MonoBehaviour:
   energyPoint: 100
   defencePoint: 5
   weight: 8
-  knockBackMultiplier: 0.2
+  knockBackMultiplier: 0.3
+  DeadknockBackMultiplier: 0.6
   movementSpeed: 4
   movementRange: 3
+  maxMovementRange: 7
   idleDuration: 3
+  detectDuration: 3
   sprite: {fileID: 4723107735738678597, guid: f8b30c2afe165d645b54d500a9c30862, type: 3}
   animator: {fileID: 9100000, guid: 8b7baeac19a3cdc4b936d9a29fdc52ed, type: 2}

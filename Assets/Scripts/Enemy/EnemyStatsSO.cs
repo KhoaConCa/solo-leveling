@@ -14,6 +14,7 @@ namespace Platform2D.CharacterStats
         #region --- Properties ---
 
         public float KnockBackForce => weight * knockBackMultiplier;
+        public float DeadKnockBackForce => weight * DeadknockBackMultiplier;
 
         #endregion
 
@@ -27,15 +28,18 @@ namespace Platform2D.CharacterStats
         [Header("Detail Setting")]
         public float weight;
         public float knockBackMultiplier;
+        public float DeadknockBackMultiplier;
 
         [Header("Movement Setting")]
         public float movementSpeed;
 
         [Header("Range Setting")]
         public float movementRange;
+        public float maxMovementRange;
 
         [Header("Duration Setting")]
         public float idleDuration;
+        public float detectDuration;
 
         [Header("Data Setting")]
         public Sprite sprite;

@@ -17,21 +17,20 @@ namespace Platform2D.Utilities
         /// </summary>
         /// <param name="conditionCheck">điều kiện cần kiểm tra.</param>
         /// <param name="duration">Thời gian Countdown.</param>
-        public void FixedTimeCountdown(out bool conditionCheck, float duration)
+        public bool FixedTimeCountdown(float duration)
         {
-            conditionCheck = false;
-
             if (_isCounting)
             {
                 _timer += Time.fixedDeltaTime;
-
                 if (_timer >= duration)
                 {
-                    conditionCheck = true;
                     _isCounting = false;
                     _timer = 0f;
-                }
+                    return true;
+                } 
             }
+
+            return false;
         }
 
         /// <summary>

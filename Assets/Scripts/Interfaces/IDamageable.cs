@@ -12,8 +12,6 @@ namespace Platform2D.GlobalInterface
     {
         #region --- Methods ---
 
-        public void OnHit();
-
         public void ReceiveDamage(float damage, Vector2 knockBack);
 
         #endregion
