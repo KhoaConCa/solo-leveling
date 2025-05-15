@@ -26,7 +26,7 @@ namespace Platform2D.HierarchicalStateMachine
         {
             _stateController.States.IsFalling = true;
 
-            if (_stateController.Rg2D.velocity.y < _stateController.fallSpeedYDampingThreshold
+            if (!_stateController.States.IsDoubleJump
                 && !_stateController.CameraController.IsLerpingYDamping
                 && !_stateController.CameraController.LerpedFromPlayerFalling)
             {
@@ -51,6 +51,8 @@ namespace Platform2D.HierarchicalStateMachine
         public override void ExitState()
         {
             _stateController.States.IsFalling = false;
+            if (_stateController.States.OnGround)
+                _stateController.States.IsDoubleJump = false;
         }
 
         /// <summary>
@@ -114,7 +116,7 @@ namespace Platform2D.HierarchicalStateMachine
         {
             float dirY = _stateController.transform.localScale.y;
             _stateController.transform.localScale = new Vector2(dirX, dirY);
-            _stateController.CameraController.TurnCalling();
+            _stateController.CameraFollower.TurnCalling();
         }
 
         #endregion

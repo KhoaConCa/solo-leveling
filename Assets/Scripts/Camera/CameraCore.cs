@@ -1,6 +1,5 @@
 ﻿using Cinemachine;
 using Platform2D.CharacterController;
-using Platform2D.HierarchicalStateMachine;
 using System.Collections;
 using UnityEngine;
 
@@ -10,14 +9,8 @@ namespace Platform2D.CameraSystem
     /// CameraCore - Đóng vai trò trung tâm bộ điều khiển Camera.
     /// Tác giả: Dương Nhật Khoa, Ngày tạo: 09/05/2025.
     /// </summary>
-    public class CameraCore : MonoBehaviour, IStateController<BaseState<CameraCore, CameraStateFactory>>
+    public class CameraCore : MonoBehaviour
     {
-        #region --- Overrides ---
-
-        public BaseState<CameraCore, CameraStateFactory> CurrentState { get; set; }
-
-        #endregion
-
         #region --- Unity Methods ---
 
         void Awake()
@@ -35,16 +28,11 @@ namespace Platform2D.CameraSystem
             GetPlayerCoreComponent();
 
             SetupCameras();
-
-            StateFactory = new CameraStateFactory(this);
-
-            CurrentState = StateFactory.DefaultFollow();
-            CurrentState.EnterState();
         }
 
         void Update()
         {
-            CurrentState.UpdateState();
+
         }
 
         #endregion
@@ -64,27 +52,6 @@ namespace Platform2D.CameraSystem
                 enabled = false;
             }
         }
-
-        #region -- Direction Bias --
-        /// <summary>
-        /// Thực hiện việc quay camera theo hướng của người chơi bằng LeanTween.
-        /// </summary>
-        public void TurnCalling()
-        {
-            _isFacingRight = _playerController.States.Direction.x > 0;
-
-            LeanTween.rotateY(gameObject, DetermineEndRotation(), _flipYRotationTime).setEaseInOutSine();
-        }
-
-        /// <summary>
-        /// Xác định góc quay cuối cùng của camera dựa trên hướng di chuyển của người chơi.
-        /// </summary>
-        /// <returns>0 đối với xoay qua phải - 180 đối với xoay qua trái</returns>
-        private float DetermineEndRotation()
-        {
-            return _isFacingRight ? 0f : 180f;
-        }
-        #endregion
 
         #region -- Interpolation Based on Player's Y Velocity --
         /// <summary>
@@ -108,6 +75,7 @@ namespace Platform2D.CameraSystem
             if (_framingTransposer != null)
             {
                 _normalYPanAnount = _framingTransposer.m_YDamping;
+                _startingTrackedObjectOffset = _framingTransposer.m_TrackedObjectOffset;
             }
             else
             {
@@ -172,7 +140,6 @@ namespace Platform2D.CameraSystem
 
         public bool IsLerpingYDamping { get; set; }
         public bool LerpedFromPlayerFalling { get; set; }
-        public CameraStateFactory StateFactory { get; private set; }
 
         #endregion
 
@@ -200,6 +167,7 @@ namespace Platform2D.CameraSystem
 
         private bool _isFacingRight;
         private readonly float _followSpeed = 5f;
+        private Vector2 _startingTrackedObjectOffset;
 
         #endregion
     }

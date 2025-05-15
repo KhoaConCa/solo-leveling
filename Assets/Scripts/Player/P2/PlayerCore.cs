@@ -33,6 +33,11 @@ namespace Platform2D.CharacterController
             CurrentState.EnterState();
         }
 
+        private void Start()
+        {
+            _cameraFollowerObject = _cameraFollower.GetComponent<CameraFollower>();
+        }
+
         private void FixedUpdate()
         {
             if (_states.IsPenetrable && _movementChecker.IsOneWay)
@@ -99,10 +104,10 @@ namespace Platform2D.CharacterController
         public CapsuleCollider2D Col2D => _col2D;
         public Transform BasePos => _basePos;
         public Animator Animator => _animator;
-        public CameraCore CameraController => _cameraController;
+        public CameraFollower CameraFollower => _cameraFollowerObject;
+        public CameraController CameraController => _cameraController;
         public PlayerMovementChecker MovementChecker => _movementChecker;
         public PlayerActionChecker ActionChecker => _actionChecker;
-
         public PlayerStatesAlter States => _states;
         public PlayerStats Stats => _stats;
         public PlayerStateFactory StateFactory { get; set; }
@@ -132,7 +137,8 @@ namespace Platform2D.CharacterController
         [SerializeField] private Animator _animator;
 
         [Header("Camera")]
-        [SerializeField] private CameraCore _cameraController;
+        [SerializeField] private GameObject _cameraFollower;
+        [SerializeField] private CameraController _cameraController;
 
         private Utilities.Timer _coolDown;
 
@@ -143,8 +149,8 @@ namespace Platform2D.CharacterController
         private const float GROUND_DISTANCE = 0.05f;
         private const float WALL_DISTANCE = 0.2f;
         private const float CEILING_DISTANCE = 0.3f;
-        public float fallSpeedYDampingThreshold = 10f;
 
+        private CameraFollower _cameraFollowerObject;
         #endregion
     }
 }

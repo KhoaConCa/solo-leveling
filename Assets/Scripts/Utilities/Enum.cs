@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace Platform2D.Vector
+﻿namespace Platform2D.Vector
 {
     /// <summary>
     /// AXIS_1D - Sử dụng giá trị của NEGATIVE và POSITIVE để xác định chiều và hướng đi cho nhân vật 2D.
@@ -48,5 +44,20 @@ namespace Platform2D.BaseStats
     {
         MOVEMENT_SPEED = 3,
         JUMP_SPEED = 3,
+    }
+}
+
+namespace Platform2D.CameraSystem
+{
+    /// <summary>
+    /// CAMERA_PAN_DIRECTION - Sử dụng các giá trị có trong enum CAMERA_PAN_DIRECTION để xác định hướng di chuyển của Camera.
+    /// Tác giả: Dương Nhật Khoa, Ngày tạo: 14/05/2025.
+    /// </summary>
+    public enum CAMERA_PAN_DIRECTION
+    {
+        UP,
+        DOWN,
+        LEFT,
+        RIGHT
     }
 }
