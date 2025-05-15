@@ -26,8 +26,12 @@ namespace Platform2D.HierarchicalStateMachine
         {
             _stateController.States.CanJump = true;
 
-            if (_stateController.Rg2D.velocity.y >= 0f
-                && !_stateController.CameraController.IsLerpingYDamping
+            if (_stateController.States.IsDoubleJump)
+            {
+                _stateController.CameraController.IsLerpingYDamping = false;
+            }
+
+            if (!_stateController.CameraController.IsLerpingYDamping
                 && _stateController.CameraController.LerpedFromPlayerFalling)
             {
                 _stateController.CameraController.LerpedFromPlayerFalling = false;
@@ -105,6 +109,7 @@ namespace Platform2D.HierarchicalStateMachine
                 JumpForce(_stateController.Stats.BaseStats.DoubleJumpSpeed);
                 _stateController.States.IsDoubleJump = false;
                 _stateController.States.CanJump = false;
+                Debug.Log("Double Jump");
             }
 
             _stateController.States.IsJumping = false;
@@ -163,7 +168,7 @@ namespace Platform2D.HierarchicalStateMachine
         {
             float dirY = _stateController.transform.localScale.y;
             _stateController.transform.localScale = new Vector2(dirX, dirY);
-            _stateController.CameraController.TurnCalling();
+            _stateController.CameraFollower.TurnCalling();
         }
 
         #endregion

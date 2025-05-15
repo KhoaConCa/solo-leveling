@@ -1,7 +1,4 @@
-﻿using Platform2D.CharacterAnimation;
-using Platform2D.CharacterController;
-using Platform2D.Vector;
-using System.Collections;
+﻿using Platform2D.CharacterController;
 using UnityEngine;
 
 namespace Platform2D.HierarchicalStateMachine
@@ -24,7 +21,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Cài đặt mặc định cho Crouch State.
         /// </summary>
-        public override void EnterState() 
+        public override void EnterState()
         {
             _stateController.States.AllowedSwitch = false;
 
@@ -42,7 +39,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Cập nhật Crouch State.
         /// </summary>
-        public override void UpdateState() 
+        public override void UpdateState()
         {
             CrouchHandle();
 
@@ -55,7 +52,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Thoát Crouch State.
         /// </summary>
-        public override void ExitState() 
+        public override void ExitState()
         {
             _stateController.States.AllowedSwitch = true;
 
@@ -72,7 +69,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// <summary>
         /// Kiểm tra chuyển đổi State.
         /// </summary>
-        public override void CheckSwitchState() 
+        public override void CheckSwitchState()
         {
             if (!_stateController.States.UnholdCrouch) return;
 
@@ -123,7 +120,7 @@ namespace Platform2D.HierarchicalStateMachine
         {
             if (_stateController.States.OnMove != Vector2.zero)
                 _subState = _stateFactory.Run();
-            else if(_stateController.States.OnMove == Vector2.zero)
+            else if (_stateController.States.OnMove == Vector2.zero)
             {
                 _subState = _stateFactory.Idle();
                 Debug.Log("hi");

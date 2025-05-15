@@ -1,18 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class LookUpDownState : MonoBehaviour
+﻿namespace Platform2D.HirarchicalStateMachine
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    /// <summary>
+    /// LookUpDownState - Là một State của Camera được kế thừa từ BaseState, được dùng để xử lý Logic.
+    /// Tác giả: Dương Nhật Khoa, Ngày tạo: 14/05/2025.
+    /// </summary>
+    //public class LookUpDownState : BaseState<CameraCore, CameraStateFactory>
+    //{
+    //    #region --- Overrides ---
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //    public LookUpDownState(CameraCore stateController, CameraStateFactory stateFactory) : base(stateController, stateFactory) { }
+
+    //    public override void EnterState()
+    //    {
+
+    //    }
+    //    public override void UpdateState()
+    //    {
+
+    //    }
+    //    public override void ExitState() { }
+
+    //    public override void CheckSwitchState() { }
+
+    //    public override void SwitchState(BaseState<CameraCore, CameraStateFactory> newState)
+    //    {
+    //        base.SwitchState(newState);
+    //    }
+
+    //    #endregion
+
+    //    #region --- Methods ---
+
+
+
+    //    #endregion
+
+    //    #region --- Fields ---
+
+    //    #endregion
+    //}
 }

@@ -1,5 +1,4 @@
 ﻿using Platform2D.CameraSystem;
-using Platform2D.HirarchicalStateMachine;
 
 namespace Platform2D.HierarchicalStateMachine
 {
@@ -19,8 +18,6 @@ namespace Platform2D.HierarchicalStateMachine
         {
             _controller = controller;
         }
-
-        public BaseState<CameraCore, CameraStateFactory> DefaultFollow() => new DefaultFollowState(_controller, this);
 
         #endregion
 

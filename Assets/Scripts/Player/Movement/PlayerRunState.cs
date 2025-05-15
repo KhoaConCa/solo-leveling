@@ -61,7 +61,7 @@ namespace Platform2D.HierarchicalStateMachine
                 return;
             }
 
-            if(_stateController.States.IsDashing && _stateController.States.CanDashing)
+            if (_stateController.States.IsDashing && _stateController.States.CanDashing)
             {
                 SwitchState(_stateFactory.Dash());
                 return;
@@ -122,7 +122,7 @@ namespace Platform2D.HierarchicalStateMachine
         {
             float dirY = _stateController.transform.localScale.y;
             _stateController.transform.localScale = new Vector2(dirX, dirY);
-            _stateController.CameraController.TurnCalling();
+            _stateController.CameraFollower.TurnCalling();
         }
 
         #endregion
