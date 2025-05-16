@@ -1,5 +1,6 @@
 ﻿using Platform2D.CharacterAnimation;
 using Platform2D.CharacterController;
+using Platform2D.Utilities;
 using System.Collections;
 using UnityEngine;
 
@@ -25,8 +26,13 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void EnterState() 
         {
-            _currentTime = _stateController.Stats.BaseStats.idleDuration;
+            _idleTimer = new Timer();
+            _idleTimer.StartCountdown();
+
+            _idleDuration = _stateController.Stats.BaseStats.idleDuration;
             _stateController.States.IsMoving = false;
+
+            _stateController.Rg2D.velocity = new Vector2(0f, _stateController.Rg2D.velocity.y);
         }
 
         /// <summary>
@@ -34,10 +40,10 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void UpdateState() 
         {
-            CheckSwitchState();
-
             if (!_stateController.States.IsMoving)
                 IdleHandle();
+
+            CheckSwitchState();
         }
 
         /// <summary>
@@ -45,6 +51,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void ExitState() 
         {
+            _idleTimer = null;
         }
 
         /// <summary>
@@ -52,9 +59,21 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState() 
         {
+            if (_stateController.States.IsDead)
+            {
+                SwitchState(_stateFactory.Dead());
+                return;
+            }
+
             if (_stateController.States.IsHitting)
             {
                 SwitchState(_stateFactory.Hit());
+                return;
+            }
+
+            if (_stateController.States.IsDetecting)
+            {
+                SwitchState(_stateFactory.Detect());
                 return;
             }
 
@@ -80,14 +99,10 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         private void IdleHandle()
         {
-            _stateController.Rg2D.velocity = new Vector2(0f, _stateController.Rg2D.velocity.y);
-            if (_currentTime > 0)
-            {
-                _currentTime -= Time.fixedDeltaTime;
-                return;
-            }
+            _stateController.States.IsMoving = _idleTimer.FixedTimeCountdown(_idleDuration);
 
-            _stateController.States.IsMoving = true;
+            if (!_stateController.States.IsMoving) return;
+
             if(_stateController.States.FirstFlipDirection)
                 FlipDirectionHandle();
             _stateController.States.FirstFlipDirection = true;
@@ -106,7 +121,9 @@ namespace Platform2D.HierarchicalStateMachine
 
         #region --- Fields ---
 
-        private float _currentTime;
+        private float _idleDuration;
+
+        private Timer _idleTimer;
 
         #endregion
     }

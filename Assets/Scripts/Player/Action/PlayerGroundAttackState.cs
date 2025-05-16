@@ -27,6 +27,7 @@ namespace Platform2D.HierarchicalStateMachine
         public override void EnterState() 
         {
             _stateController.Stats.CurrentDamage = _stateController.Stats.BaseStats.attackDamage;
+            _stackCount = MAX_STACK_DMG;
         }
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState() 
         {
-            if (_stateController.States.CanMove)
+            if (_stateController.States.CanMove || _stackCount <= 0)
             {
                 if (_stateController.States.OnMove == Vector2.zero || Mathf.Abs(_stateController.States.OnMove.y) > 0.7f)
                     SwitchState(_stateFactory.Idle());
@@ -88,8 +89,10 @@ namespace Platform2D.HierarchicalStateMachine
 
             _stateController.ActionChecker.Enemy.ReceiveDamage(_stateController.Stats.CurrentDamage, _stateController.transform.localScale);
 
-            if (!_stateController.States.CanIncreaseDamage)
+            if (!_stateController.States.CanIncreaseDamage && _stackCount > 0)
                 IncreaseDamageCombo();
+
+            _stackCount--;
 
             _stateController.States.IsAttacking = false;
         }
@@ -105,6 +108,13 @@ namespace Platform2D.HierarchicalStateMachine
             var speed = _stateController.Stats.BaseStats.attackPullForce * _stateController.transform.localScale.x;
             _stateController.Rg2D.velocity = new Vector2(speed, _stateController.Rg2D.velocity.y);
         }
+
+        #endregion
+
+        #region --- Fields ---
+
+        private const int MAX_STACK_DMG = 3;
+        private int _stackCount;
 
         #endregion
 

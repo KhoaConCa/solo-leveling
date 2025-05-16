@@ -22,7 +22,7 @@ MonoBehaviour:
   doubleJumpMultiplier: 1
   attackPullForce: 0.4
   attackDamage: 8
-  attackDamageMultiplier: 0.8
+  attackDamageMultiplier: 0.4
   dashDuration: 0.2
   oneWayDuration: 0.5
   jumpCooldown: 1

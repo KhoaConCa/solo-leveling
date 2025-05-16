@@ -87,13 +87,7 @@ namespace Platform2D.CharacterController
         {
             if (!_states.CanDashing)
             {
-                bool countDown;
-                _coolDown.FixedTimeCountdown(out countDown, _stats.BaseStats.dashCoolDown);
-
-                if (countDown)
-                    _states.CanDashing = countDown;
-
-                Debug.Log($"Can Dashing: {_states.CanDashing}");
+                _states.CanDashing = _coolDown.FixedTimeCountdown(_stats.BaseStats.dashCoolDown);
             }
             else if (_states.CanDashing && _states.IsDashing)
             {

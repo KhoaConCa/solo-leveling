@@ -32,6 +32,7 @@ namespace Platform2D.CharacterStates
 
         public bool CanMove => _animator.GetBool(AnimationStrings.CanMove);
 
+        public bool Invulnerable { get; set; } = false;
         public bool IsHitting { 
             get { return _isHitting; }
             set {
@@ -40,6 +41,23 @@ namespace Platform2D.CharacterStates
                 _isHitting = value;
             }
         }
+
+        public bool IsDead
+        {
+            get { return _isDead; }
+            set
+            {
+                if (value)
+                    _animator.SetTrigger(AnimationStrings.DeadTrigger);
+                _isDead = value;
+            }
+        }
+
+        public bool IsDetecting { get; set; } = false;
+        public bool IsChasing { get; set; } = false;
+        public bool IsReturn { get; set; } = false;
+
+        public float RangeToPlayer { get; set; } = -1;
 
         public bool OnGround { get; set; } = false;
         public bool OnWall { get; set; } = false;
@@ -51,6 +69,8 @@ namespace Platform2D.CharacterStates
         [Header("State Parameters")]
         [SerializeField] private bool _isMoving = false;
         [SerializeField] private bool _isHitting = false;
+        [SerializeField] private bool _isDead = false;
+        [SerializeField] private bool _canDisale = false;
 
         [Header("Animator")]
         [SerializeField] private Animator _animator;

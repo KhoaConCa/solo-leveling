@@ -44,6 +44,11 @@ namespace Platform2D.CharacterController
         {
             GroundChecker();
             WallChecker();
+
+            _actionChecker.DetectedPlayer();
+
+            Debug.Log($"{this.gameObject.name}: {CurrentState}");
+
             CurrentState.UpdateState();
         }
 
@@ -78,6 +83,7 @@ namespace Platform2D.CharacterController
         #region --- Properties ---
 
         public Rigidbody2D Rg2D => _rg2D;
+        public CapsuleCollider2D Col2D => _col2D;
         public Transform trans2D => gameObject.transform;
         public Animator Animator => _animator;
 
@@ -96,6 +102,9 @@ namespace Platform2D.CharacterController
         [SerializeField] private Rigidbody2D _rg2D;
         [SerializeField] private CapsuleCollider2D _col2D;
         [SerializeField] private Transform _groundDetection;
+
+        [Header("Custom Components")]
+        [SerializeField] private EnemyActionChecker _actionChecker;
 
         [Header("States & Stats")]
         [SerializeField] private EnemyStates _states;

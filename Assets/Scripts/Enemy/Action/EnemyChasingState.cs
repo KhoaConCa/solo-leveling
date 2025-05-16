@@ -1,52 +1,50 @@
 ﻿using Platform2D.CharacterAnimation;
 using Platform2D.CharacterController;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.TextCore.Text;
-
 
 namespace Platform2D.HierarchicalStateMachine
 {
     /// <summary>
-    /// EnemyRunState - Là một Run State của Enemy được kế thừa từ BaseState, được dùng để xử lý Logic và Animation thuộc Run.
-    /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 06/05/2025.
+    /// EnemyChasingState - Là một Chasing State của Enemy được kế thừa từ BaseState, được dùng để xử lý Logic và Animation thuộc Chasing.
+    /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 12/05/2025.
     /// </summary>
-    public class EnemyRunState : BaseState<EnemyController, EnemyStateFactory>
+    public class EnemyChasingState : BaseState<EnemyController, EnemyStateFactory>
     {
         #region --- Overrides ---
 
         /// <summary>
-        /// Khởi tạo EnemyRunState.
+        /// Khởi tạo EnemyChasingState.
         /// </summary>
         /// <param name="stateController">Biến truyền vào mang kiểu dữ liệu EnemyController.</param>
         /// <param name="stateFactory">Biến truyền vào mang kiểu dữ liệu EnemyStateFactory.</param>
-        public EnemyRunState(EnemyController stateController, EnemyStateFactory stateFactory) : base(stateController, stateFactory) { }
+        public EnemyChasingState(EnemyController stateController, EnemyStateFactory stateFactory) : base(stateController, stateFactory) { }
 
         /// <summary>
-        /// Cài đặt mặc định cho Run State.
+        /// Cài đặt mặc định cho Chasing State.
         /// </summary>
-        public override void EnterState()
+        public override void EnterState() 
         {
-            AnchorMaxPos = _stateController.States.AnchorPosX + (_stateController.Stats.BaseStats.movementRange * _stateController.States.Direction);
+            _anchorMaxPos = _stateController.States.AnchorPosX + (_stateController.Stats.BaseStats.maxMovementRange * _stateController.States.Direction);
             _stateController.States.IsMoving = true;
         }
 
         /// <summary>
-        /// Cập nhật Run State.
+        /// Cập nhật Chasing State.
         /// </summary>
         public override void UpdateState() 
         {
-            RunHandle();
+            ChasingHandle();
 
             CheckSwitchState();
         }
 
         /// <summary>
-        /// Thoát Run State.
+        /// Thoát Chasing State.
         /// </summary>
-        public override void ExitState() 
+        public override void ExitState()
         {
-            _stateController.States.IsMoving = false;
+            _stateController.States.Invulnerable = false;
         }
 
         /// <summary>
@@ -54,26 +52,14 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState() 
         {
-            if (_stateController.States.IsDead)
-            {
-                SwitchState(_stateFactory.Dead());
-                return;
-            }
-
             if (_stateController.States.IsHitting)
             {
                 SwitchState(_stateFactory.Hit());
                 return;
             }
 
-            if (_stateController.States.IsDetecting)
-            {
-                SwitchState(_stateFactory.Detect());
-                return;
-            }
-
-            if (!_stateController.States.IsMoving)
-                SwitchState(_stateFactory.Idle());
+            if (!_stateController.States.IsDetecting || ReachMaxPos())
+                SwitchState(_stateFactory.Return());
         }
 
         /// <summary>
@@ -90,13 +76,17 @@ namespace Platform2D.HierarchicalStateMachine
         #region --- Methods ---
 
         /// <summary>
-        /// Xử lý logic khi Enemy đang trong Run State.
+        /// Xử lý logic khi Enemy đang trong Chasing State.
         /// </summary>
-        private void RunHandle()
+        private void ChasingHandle()
         {
-            float currentPosX = _stateController.trans2D.position.x;
-            float direction = _stateController.States.Direction;
-            bool reachAnchorPos = (currentPosX <= AnchorMaxPos && direction < 0) || (currentPosX >= AnchorMaxPos && direction > 0);
+            if(_stateController.States.RangeToPlayer <= 1)
+            {
+                _stateController.Rg2D.velocity = new Vector2(0f, _stateController.Rg2D.velocity.y);
+                return;
+            }
+
+            bool reachAnchorPos = ReachMaxPos();
 
             if (_stateController.States.IsMoving)
                 _stateController.Rg2D.velocity = new Vector2(
@@ -108,17 +98,19 @@ namespace Platform2D.HierarchicalStateMachine
                 _stateController.States.IsMoving = false;
         }
 
+        private bool ReachMaxPos()
+        {
+            float currentPosX = _stateController.trans2D.position.x;
+            float direction = _stateController.States.Direction;
+            return (currentPosX <= _anchorMaxPos && direction < 0) || (currentPosX >= _anchorMaxPos && direction > 0);
+        }
+
         #endregion
 
-        #region --- Properties ---
-
-        public float AnchorMaxPos { get; set; }
-
-        #endregion
 
         #region --- Fields ---
 
-
+        private float _anchorMaxPos;
 
         #endregion
     }

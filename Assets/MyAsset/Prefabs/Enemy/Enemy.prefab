@@ -236,6 +236,7 @@ MonoBehaviour:
   _rg2D: {fileID: 6321099218853770361}
   _col2D: {fileID: 1790633704592299632}
   _groundDetection: {fileID: 2096532205277447259}
+  _actionChecker: {fileID: 268413767355138826}
   _states: {fileID: 1830443011759378833}
   _stats: {fileID: 3499701746425920395}
   _spriteRenderer: {fileID: 3956653619559789571}
@@ -253,6 +254,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyController: {fileID: 393389706298008631}
+  _player: {fileID: 0}
+  _enemyDetected: {fileID: 0}
+  _radius: 4
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 8192
+  _showGizmos: 1
+  _defaultDetectColor: {r: 0, g: 1, b: 0, a: 1}
+  _detectedColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &1830443011759378833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +276,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isMoving: 0
+  _isHitting: 0
+  _isDead: 0
+  _canDisale: 0
   _animator: {fileID: 5958833114107238341}
 --- !u!114 &3499701746425920395
 MonoBehaviour:
