@@ -18,7 +18,7 @@ MonoBehaviour:
   movementSpeed: 5
   crouchMultiplier: 1.2
   dashMultiplier: 4
-  jumpSpeed: 10
+  jumpSpeed: 12
   doubleJumpMultiplier: 1
   attackPullForce: 0.4
   attackDamage: 8
