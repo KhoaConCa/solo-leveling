@@ -45,6 +45,7 @@ namespace Platform2D.CameraSystem
 
                     // Get the Framing Transposer component from the current virtual camera
                     _framingTransposer = _currentVirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+                    Debug.Log("CameraController: SetupCameras - Camera found: " + cam.name);
                     break;
                 }
             }
@@ -183,6 +184,7 @@ namespace Platform2D.CameraSystem
                 camLeft.enabled = true;
                 camRight.enabled = false;
                 _currentVirtualCamera = camLeft;
+                Debug.Log("CameraController: SwitchCamera - Camera switched to: " + camLeft.name);
                 _framingTransposer = _currentVirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
             }
         }
