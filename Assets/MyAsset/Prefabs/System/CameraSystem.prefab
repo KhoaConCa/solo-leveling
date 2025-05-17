@@ -951,7 +951,7 @@ Transform:
   m_GameObject: {fileID: 3766917937234128638}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.879532, y: -16.3378, z: -9.993013}
+  m_LocalPosition: {x: -9.710903, y: 4.0394306, z: -10.048958}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1940,6 +1940,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8178643626405906869, guid: d88f0bd2a94ec954bbad1525bc78a75a, type: 3}
+      propertyPath: panDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178643626405906869, guid: d88f0bd2a94ec954bbad1525bc78a75a, type: 3}
+      propertyPath: panCameraOnContact
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2174,6 +2182,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8178643626405906869, guid: d88f0bd2a94ec954bbad1525bc78a75a, type: 3}
+      propertyPath: swapCamera
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178643626405906869, guid: d88f0bd2a94ec954bbad1525bc78a75a, type: 3}
+      propertyPath: cameraOnLeft
+      value: 
+      objectReference: {fileID: 1465934505797801869}
+    - target: {fileID: 8178643626405906869, guid: d88f0bd2a94ec954bbad1525bc78a75a, type: 3}
+      propertyPath: cameraOnRight
+      value: 
+      objectReference: {fileID: 1395107258992052939}
     - target: {fileID: 8178643626405906869, guid: d88f0bd2a94ec954bbad1525bc78a75a, type: 3}
       propertyPath: customInspectorObject.swapCamera
       value: 1

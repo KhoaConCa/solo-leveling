@@ -659,6 +659,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 1465934505797801869, guid: 5df5021eee8cf2b46941ac72712e3252, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 685188108}
     - target: {fileID: 2552220767372426245, guid: 5df5021eee8cf2b46941ac72712e3252, type: 3}
       propertyPath: m_LocalPosition.x
       value: 65.48953
@@ -699,10 +703,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5433991719970410449, guid: 5df5021eee8cf2b46941ac72712e3252, type: 3}
-      propertyPath: m_Follow
-      value: 
-      objectReference: {fileID: 685188108}
     - target: {fileID: 6653676994022324001, guid: 5df5021eee8cf2b46941ac72712e3252, type: 3}
       propertyPath: _playerPosition
       value: 

@@ -1,5 +1,4 @@
 ﻿using Cinemachine;
-using UnityEditor;
 using UnityEngine;
 
 namespace Platform2D.CameraSystem
@@ -23,11 +22,11 @@ namespace Platform2D.CameraSystem
 
             if (collider.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
-                if (customInspectorObject.panCameraOnContact)
+                if (panCameraOnContact)
                 {
-                    CameraController.instance.PanCameraOnContact(customInspectorObject.panDistance,
-                        customInspectorObject.panTime,
-                        customInspectorObject.panDirection, false);
+                    CameraController.instance.PanCameraOnContact(panDistance,
+                        panTime,
+                        panDirection, false);
                 }
             }
         }
@@ -40,16 +39,16 @@ namespace Platform2D.CameraSystem
             {
                 Vector2 exitDirection = (collider.transform.position - collider.bounds.center).normalized;
 
-                if (customInspectorObject.swapCamera && customInspectorObject.cameraOnLeft != null && customInspectorObject.cameraOnRight != null)
+                if (swapCamera && cameraOnLeft != null && cameraOnRight != null)
                 {
-                    CameraController.instance.SwitchCamera(customInspectorObject.cameraOnLeft, customInspectorObject.cameraOnRight, exitDirection);
+                    CameraController.instance.SwitchCamera(cameraOnLeft, cameraOnRight, exitDirection);
                 }
 
-                if (customInspectorObject.panCameraOnContact)
+                if (panCameraOnContact)
                 {
-                    CameraController.instance.PanCameraOnContact(customInspectorObject.panDistance,
-                        customInspectorObject.panTime,
-                        customInspectorObject.panDirection, true);
+                    CameraController.instance.PanCameraOnContact(panDistance,
+                        panTime,
+                        panDirection, true);
                 }
             }
         }
@@ -65,75 +64,18 @@ namespace Platform2D.CameraSystem
         #region --- Fields ---
 
         [Header("Camera Ledge Detection")]
-        public CustomInspector customInspectorObject;
+        public bool swapCamera = true;
+        public bool panCameraOnContact = true;
+
+        [SerializeField] public CinemachineVirtualCamera cameraOnLeft;
+        [SerializeField] public CinemachineVirtualCamera cameraOnRight;
+
+        [SerializeField] public CAMERA_PAN_DIRECTION panDirection;
+        [SerializeField] public float panDistance = 3f;
+        [SerializeField] public float panTime = 0.35f;
 
         private Collider2D _collider2D;
         private Coroutine _panCameraCoroutine;
-
-        #endregion
-    }
-
-    [System.Serializable]
-    public class CustomInspector
-    {
-        #region --- Fields ---
-
-        public bool swapCamera = false;
-        public bool panCameraOnContact = false;
-
-        [HideInInspector] public CinemachineVirtualCamera cameraOnLeft;
-        [HideInInspector] public CinemachineVirtualCamera cameraOnRight;
-
-        [HideInInspector] public CAMERA_PAN_DIRECTION panDirection;
-        [HideInInspector] public float panDistance = 3f;
-        [HideInInspector] public float panTime = 0.35f;
-
-        #endregion
-    }
-
-    [CustomEditor(typeof(CameraTrigger))]
-    public class CameraLegdeEditor : Editor
-    {
-        public CameraTrigger cameraTrigger;
-
-        #region --- Unity Methods ---
-
-        private void OnEnable()
-        {
-            cameraTrigger = (CameraTrigger)target;
-        }
-
-        #endregion
-
-        #region --- Overrides ---
-
-        public override void OnInspectorGUI()
-        {
-            DrawDefaultInspector();
-
-            if (cameraTrigger.customInspectorObject.swapCamera)
-            {
-                cameraTrigger.customInspectorObject.cameraOnLeft = EditorGUILayout.ObjectField("Camera on Left",
-                    cameraTrigger.customInspectorObject.cameraOnLeft,
-                    typeof(CinemachineVirtualCamera), true) as CinemachineVirtualCamera;
-
-                cameraTrigger.customInspectorObject.cameraOnRight = EditorGUILayout.ObjectField("Camera on Right",
-                    cameraTrigger.customInspectorObject.cameraOnRight,
-                    typeof(CinemachineVirtualCamera), true) as CinemachineVirtualCamera;
-            }
-
-            if (cameraTrigger.customInspectorObject.panCameraOnContact)
-            {
-                cameraTrigger.customInspectorObject.panDirection = (CAMERA_PAN_DIRECTION)EditorGUILayout.EnumPopup(" Camera Pan Direction", cameraTrigger.customInspectorObject.panDirection);
-                cameraTrigger.customInspectorObject.panDistance = EditorGUILayout.FloatField("Pan Distance", cameraTrigger.customInspectorObject.panDistance);
-                cameraTrigger.customInspectorObject.panTime = EditorGUILayout.FloatField("Pan Time", cameraTrigger.customInspectorObject.panTime);
-            }
-
-            if (GUI.changed)
-            {
-                EditorUtility.SetDirty(cameraTrigger);
-            }
-        }
 
         #endregion
     }
