@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoint: 100
   energyPoint: 100
-  defencePoint: 100
+  defencePoint: 3
+  weight: 8
+  knockBackMultiplier: 0.4
+  DeadknockBackMultiplier: 0.6
   movementSpeed: 5
   crouchMultiplier: 1.2
   dashMultiplier: 4

@@ -34,16 +34,29 @@ namespace Platform2D.EnumFunction
     }
 }
 
-namespace Platform2D.BaseStats
+namespace Platform2D.EnemyType
 {
     /// <summary>
-    /// BASE_STATS - Sử dụng các giá trị có trong enum BASE_STATS làm chỉ số mặc định cho các nhân vật.
-    /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 28/04/2025
+    /// ENEMY_ATTACK_TYPE - Sử dụng các giá trị có trong enum ENEMY_ATTACK_TYPE để phân loại cách tấn công của Enemy.
+    /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 24/05/2025
     /// </summary>
-    public enum BASE_STATS
+    public enum ENEMY_ATTACK_TYPE
     {
-        MOVEMENT_SPEED = 3,
-        JUMP_SPEED = 3,
+        DASH_ATTACK,
+        MELEE_ATTACK,
+        RANGE_ATTACK,
+        SUMMON_ATTACK,
+    }
+
+    /// <summary>
+    /// ENEMY_TYPE - Sử dụng các giá trị có trong enum ENEMY_TYPE để phân loại vai trò của Enemy.
+    /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 24/05/2025
+    /// </summary>
+    public enum ENEMY_TYPE
+    {
+        MINIONS,
+        ELITE,
+        BOSS
     }
 }
 

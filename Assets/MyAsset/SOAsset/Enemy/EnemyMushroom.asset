@@ -19,6 +19,8 @@ MonoBehaviour:
   knockBackMultiplier: 0.3
   DeadknockBackMultiplier: 0.6
   movementSpeed: 4
+  attackPullForce: 0.4
+  attackDamage: 8
   movementRange: 3
   maxMovementRange: 7
   idleDuration: 3

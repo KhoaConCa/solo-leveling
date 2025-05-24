@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 302597139247613946, guid: 9576958d0ec0ad744baa12642166e7bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 302597139247613946, guid: 9576958d0ec0ad744baa12642166e7bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.212
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104396149691026746, guid: 9576958d0ec0ad744baa12642166e7bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.039
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104396149691026746, guid: 9576958d0ec0ad744baa12642166e7bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.076
+      objectReference: {fileID: 0}
     - target: {fileID: 1790633704592299632, guid: 9576958d0ec0ad744baa12642166e7bd, type: 3}
       propertyPath: m_Size.x
       value: 1.3544389
@@ -38,12 +54,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3197764580093732881, guid: 9576958d0ec0ad744baa12642166e7bd, type: 3}
       propertyPath: m_Name
-      value: Enemy Boar Variant
+      value: Enemy Boar
+      objectReference: {fileID: 0}
+    - target: {fileID: 3210649018942186133, guid: 9576958d0ec0ad744baa12642166e7bd, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340497574275558070, guid: 9576958d0ec0ad744baa12642166e7bd, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3421555852109591979, guid: 9576958d0ec0ad744baa12642166e7bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.212
       objectReference: {fileID: 0}
     - target: {fileID: 3499701746425920395, guid: 9576958d0ec0ad744baa12642166e7bd, type: 3}
       propertyPath: _baseStats
       value: 
       objectReference: {fileID: 11400000, guid: 23b977b5e4309e84480ba4ff4092fcce, type: 2}
+    - target: {fileID: 3807078254972944746, guid: 9576958d0ec0ad744baa12642166e7bd, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3956653619559789571, guid: 9576958d0ec0ad744baa12642166e7bd, type: 3}
       propertyPath: m_Sprite
       value: 

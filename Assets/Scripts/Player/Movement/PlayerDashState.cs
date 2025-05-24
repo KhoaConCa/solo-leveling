@@ -84,8 +84,11 @@ namespace Platform2D.HierarchicalStateMachine
             var speed = _stateController.Stats.DashSpeed * _stateController.transform.localScale.x;
             _stateController.Rg2D.velocity = new Vector2(speed, _stateController.Rg2D.velocity.y);
 
+            _stateController.States.Invulnerable = true;
+
             yield return new WaitForSeconds(_stateController.Stats.BaseStats.dashDuration);
 
+            _stateController.States.Invulnerable = false;
             _stateController.States.CanDashing = false;
             _stateController.States.IsDashing = false;
         }

@@ -54,6 +54,12 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState() 
         {
+            if (_stateController.States.IsHitting)
+            {
+                SwitchState(_stateFactory.Hit());
+                return;
+            }
+
             if (_stateController.States.CanMove || _stackCount <= 0)
             {
                 if (_stateController.States.OnMove == Vector2.zero || Mathf.Abs(_stateController.States.OnMove.y) > 0.7f)

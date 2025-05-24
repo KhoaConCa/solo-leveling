@@ -17,6 +17,8 @@ namespace Platform2D.CharacterStats
         #region --- Properties ---
 
         public float DoubleJumpSpeed => jumpSpeed * doubleJumpMultiplier;
+        public float KnockBackForce => weight * knockBackMultiplier;
+        public float DeadKnockBackForce => weight * DeadknockBackMultiplier;
 
         #endregion
 
@@ -26,6 +28,11 @@ namespace Platform2D.CharacterStats
         public float healthPoint;
         public float energyPoint;
         public float defencePoint;
+
+        [Header("Detail Setting")]
+        public float weight;
+        public float knockBackMultiplier;
+        public float DeadknockBackMultiplier;
 
         [Header("Move Settings")]
         public float movementSpeed;

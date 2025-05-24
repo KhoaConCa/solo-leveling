@@ -33,6 +33,10 @@ namespace Platform2D.CharacterStats
         [Header("Movement Setting")]
         public float movementSpeed;
 
+        [Header("Attack Setting")]
+        public float attackPullForce;
+        public float attackDamage;
+
         [Header("Range Setting")]
         public float movementRange;
         public float maxMovementRange;

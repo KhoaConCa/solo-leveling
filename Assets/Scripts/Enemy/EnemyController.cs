@@ -1,6 +1,7 @@
 ﻿using Platform2D.CharacterStates;
 using Platform2D.CharacterStats;
 using Platform2D.HierarchicalStateMachine;
+using Platform2D.UIElement;
 using Platform2D.Utilities;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -26,6 +27,8 @@ namespace Platform2D.CharacterController
             _animator.runtimeAnimatorController = _stats.BaseStats.animator;
             _spriteRenderer.sprite = _stats.BaseStats.sprite;
 
+            _healthBar.SetMaxHealth(_stats.BaseStats.healthPoint);
+
             _states.Direction = gameObject.transform.localScale.x;
             _states.AnchorPosX = gameObject.transform.position.x;
 
@@ -46,8 +49,6 @@ namespace Platform2D.CharacterController
             WallChecker();
 
             _actionChecker.DetectedPlayer();
-
-            Debug.Log($"{this.gameObject.name}: {CurrentState}");
 
             CurrentState.UpdateState();
         }
@@ -87,6 +88,8 @@ namespace Platform2D.CharacterController
         public Transform trans2D => gameObject.transform;
         public Animator Animator => _animator;
 
+        public CustomHealthBar HealthBar => _healthBar;
+
         public EnemyStates States => _states;
         public EnemyStats Stats => _stats;
         public EnemyStateFactory EnemyStateFactory { get; set; }
@@ -105,6 +108,7 @@ namespace Platform2D.CharacterController
 
         [Header("Custom Components")]
         [SerializeField] private EnemyActionChecker _actionChecker;
+        [SerializeField] private CustomHealthBar _healthBar;
 
         [Header("States & Stats")]
         [SerializeField] private EnemyStates _states;

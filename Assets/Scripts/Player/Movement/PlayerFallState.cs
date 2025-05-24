@@ -62,6 +62,12 @@ namespace Platform2D.HierarchicalStateMachine
         {
             if (_stateController.States.IsTouchOneWay) return;
 
+            if (_stateController.States.IsHitting)
+            {
+                SwitchState(_stateFactory.Hit());
+                return;
+            }
+
             if (_stateController.States.IsDashing && _stateController.States.CanDashing)
             {
                 SwitchState(_stateFactory.Dash());
