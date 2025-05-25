@@ -17,25 +17,6 @@ namespace Platform2D.UI.InventorySystem
             _inventoryUI.InitializInventoryUI(inventorySize);
         }
 
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.B))
-            {
-                if (_inventoryUI.isActiveAndEnabled == false)
-                {
-                    _inventoryUI.transform.parent.gameObject.SetActive(true);
-
-                    _inventoryUI.Show();
-
-                    _goBackButton.gameObject.SetActive(true);
-                }
-                else
-                {
-                    _inventoryUI.Hide();
-                }
-            }
-        }
-
         #endregion
 
         #region --- Fields ---

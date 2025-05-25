@@ -12,6 +12,10 @@ namespace Platform2D.UI.InventorySystem
     {
         #region --- Methods ---
 
+        /// <summary>
+        /// InitializInventoryUI - Khởi tạo giao diện kho đồ với số lượng ô nhất định.
+        /// </summary>
+        /// <param name="size">Số lượng ô mong muốn</param>
         public void InitializInventoryUI(int size)
         {
             for (int i = 0; i < size; i++)
@@ -20,16 +24,6 @@ namespace Platform2D.UI.InventorySystem
                 slot.transform.SetParent(_contentPannel);
                 _listOfSlot.Add(slot);
             }
-        }
-
-        public void Show()
-        {
-            gameObject.SetActive(true);
-        }
-
-        public void Hide()
-        {
-            gameObject.SetActive(false);
         }
 
         #endregion

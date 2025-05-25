@@ -39,6 +39,12 @@ namespace Platform2D.UI
 
         #region --- Methods ---
 
+        /// <summary>
+        /// Xử lý sự kiện khi người dùng nhấn vào một nút trong thanh điều hướng chính. 
+        /// Riêng đối với nút tắt phải xử lý ngoại lệ. 
+        /// Không bao gồm bên trong hàm này.
+        /// </summary>
+        /// <param name="clickedButton">Nút được nhấn</param>
         public void OnClickButton(Button clickedButton)
         {
             if (clickedButton == _goBackButton)
@@ -70,6 +76,11 @@ namespace Platform2D.UI
             _activeButton = clickedButton;
         }
 
+        /// <summary>
+        /// Thực hiện việc đặt hình ảnh cho nút khi được chọn hoặc không được chọn.
+        /// </summary>
+        /// <param name="button">Nút được đặt hình ảnh</param>
+        /// <param name="sprite">Hình ảnh được chọn để gắn cho nút đó</param>
         private void SetButtonSprite(Button button, Sprite sprite)
         {
             if (button.image != null)

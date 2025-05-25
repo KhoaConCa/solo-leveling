@@ -31,6 +31,10 @@ namespace Platform2D.UI
 
         #region --- Methods ---
 
+        /// <summary>
+        ///  Xử lý sự kiện khi người dùng nhấn vào một nút trong vùng cài đặt.
+        /// </summary>
+        /// <param name="btn">Nút được nhấn</param>
         public void OnClickButton(Button btn)
         {
             if (btn == null)
