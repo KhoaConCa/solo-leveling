@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 7761218697196676666}
   - component: {fileID: 6352507766094013598}
   - component: {fileID: 2520929918556831673}
-  - component: {fileID: 7408267882265703502}
   m_Layer: 13
   m_Name: Player_P2
   m_TagString: MainPlayer
@@ -168,21 +167,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerStatsSO: {fileID: 11400000, guid: aef9e1ec6628c84439bbaf572e9296d9, type: 2}
   _currentDamage: 0
---- !u!114 &7408267882265703502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139710455755727675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1244697aa30f9449821a134be92c6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inventoryUI: {fileID: 0}
-  _goBackButton: {fileID: 0}
-  inventorySize: 20
 --- !u!1 &3542924302110867111
 GameObject:
   m_ObjectHideFlags: 0

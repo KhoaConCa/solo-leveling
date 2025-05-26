@@ -837,18 +837,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7408267882265703502, guid: 1e0737d9e778d104dbace3d57f413e4e, type: 3}
-      propertyPath: _goToTools
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7408267882265703502, guid: 1e0737d9e778d104dbace3d57f413e4e, type: 3}
-      propertyPath: _inventoryUI
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7408267882265703502, guid: 1e0737d9e778d104dbace3d57f413e4e, type: 3}
-      propertyPath: _goBackButton
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7522848563674685856, guid: 1e0737d9e778d104dbace3d57f413e4e, type: 3}
       propertyPath: _cameraFollower
       value: 
@@ -857,8 +845,7 @@ PrefabInstance:
       propertyPath: _cameraController
       value: 
       objectReference: {fileID: 1954914118}
-    m_RemovedComponents:
-    - {fileID: 7408267882265703502, guid: 1e0737d9e778d104dbace3d57f413e4e, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
