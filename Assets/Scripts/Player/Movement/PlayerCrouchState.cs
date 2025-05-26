@@ -73,6 +73,12 @@ namespace Platform2D.HierarchicalStateMachine
         {
             if (!_stateController.States.UnholdCrouch) return;
 
+            if (_stateController.States.IsHitting)
+            {
+                SwitchState(_stateFactory.Hit());
+                return;
+            }
+
             if (_stateController.States.IsJumping)
             {
                 SwitchState(_stateFactory.Jump());

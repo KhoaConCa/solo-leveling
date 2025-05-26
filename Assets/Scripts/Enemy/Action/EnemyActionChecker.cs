@@ -1,4 +1,5 @@
 ﻿using Platform2D.GlobalInterface;
+using Platform2D.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,7 @@ namespace Platform2D.CharacterController
             if (_enemyController.States.IsDead) return;
 
             _enemyController.Stats.CurrentHealthPoint -= damage - _enemyController.Stats.CurrentDefencePoint;
+            _enemyController.HealthBar.ChangeHealth(_enemyController.Stats.CurrentHealthPoint);
 
             _enemyController.States.KnockBackDirection = knockBack;
             _enemyController.States.Invulnerable = true;
@@ -36,7 +38,35 @@ namespace Platform2D.CharacterController
             }
 
             _enemyController.States.IsHitting = true;
-            Debug.Log($"{this.gameObject.name} get hit: {_enemyController.Stats.CurrentHealthPoint}");
+        }
+
+        public void OnHit()
+        {
+            if (Player == null) return;
+            Player.ReceiveDamage(_enemyController.Stats.BaseStats.attackDamage, _enemyController.transform.localScale);
+        }
+
+        #endregion
+
+        #region --- Unity Methods ---
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision == null) return;
+
+            if (!collision.gameObject.CompareTag(TagLayerName.Player)) return;
+
+            Player = collision.gameObject.GetComponentInParent<PlayerActionChecker>();
+            OnHit();
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision == null) return;
+
+            if (!collision.gameObject.CompareTag(TagLayerName.Player)) return;
+
+            Player = null;
         }
 
         #endregion
@@ -86,6 +116,11 @@ namespace Platform2D.CharacterController
             }
         }
 
+        #endregion
+
+        #region -- Properties --
+
+        public IDamageable Player { get; private set; } = null;
 
         #endregion
 

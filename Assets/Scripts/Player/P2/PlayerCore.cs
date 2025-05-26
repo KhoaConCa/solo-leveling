@@ -2,6 +2,7 @@
 using Platform2D.CharacterStates;
 using Platform2D.CharacterStats;
 using Platform2D.HierarchicalStateMachine;
+using Platform2D.UIElement;
 using UnityEngine;
 
 namespace Platform2D.CharacterController
@@ -22,9 +23,14 @@ namespace Platform2D.CharacterController
 
         private void Awake()
         {
+            _stats.CurrentHealthPoint = _stats.BaseStats.healthPoint;
+            _stats.CurrentEnergyPoint = _stats.BaseStats.energyPoint;
+            _stats.CurrentDefencePoint = _stats.BaseStats.defencePoint;
+
             _animator.runtimeAnimatorController = _stats.BaseStats.animator;
             _spriteRenderer.sprite = _stats.BaseStats.sprite;
 
+            _healthBar.SetMaxHealth(_stats.BaseStats.healthPoint, true);
 
             _coolDown = new Utilities.Timer();
 
@@ -43,7 +49,7 @@ namespace Platform2D.CharacterController
             if (_states.IsPenetrable && _movementChecker.IsOneWay)
                 _movementChecker.TryStartDisable();
 
-            //Debug.Log(CurrentState);
+            Debug.Log(CurrentState);
 
             ResetDashingCooldown();
 
@@ -104,6 +110,7 @@ namespace Platform2D.CharacterController
         public CapsuleCollider2D Col2D => _col2D;
         public Transform BasePos => _basePos;
         public Animator Animator => _animator;
+        public CustomHealthBar HealthBar => _healthBar;
         public CameraFollower CameraFollower => _cameraFollowerObject;
         public CameraController CameraController => _cameraController;
         public PlayerMovementChecker MovementChecker => _movementChecker;
@@ -127,6 +134,7 @@ namespace Platform2D.CharacterController
         [Header("Custom Components")]
         [SerializeField] private PlayerMovementChecker _movementChecker;
         [SerializeField] private PlayerActionChecker _actionChecker;
+        [SerializeField] private CustomHealthBar _healthBar;
 
         [Header("States & Stats")]
         [SerializeField] private PlayerStatesAlter _states;

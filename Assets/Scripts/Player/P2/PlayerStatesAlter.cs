@@ -17,6 +17,7 @@ namespace Platform2D.CharacterStates
         public Animator PlayerAnimator => _animator;
 
         #region -- Movement States --
+        public Vector2 KnockBackDirection { get; set; }
         public Vector2 Direction => this.transform.localScale;
         public Vector2 OnMove {
             get {
@@ -118,6 +119,33 @@ namespace Platform2D.CharacterStates
 
         #endregion
 
+        #region -- Receive States --
+
+        public bool Invulnerable { get; set; } = false;
+        public bool IsHitting
+        {
+            get { return _isHitting; }
+            set
+            {
+                if (value)
+                    _animator.SetTrigger(AnimationStrings.HitTrigger);
+                _isHitting = value;
+            }
+        }
+
+        public bool IsDead
+        {
+            get { return _isDead; }
+            set
+            {
+                if (value)
+                    _animator.SetTrigger(AnimationStrings.DeadTrigger);
+                _isDead = value;
+            }
+        }
+
+        #endregion
+
         #region -- Checking States --
         public bool AllowedSwitch { get; set; } = true;
         public bool OnGround
@@ -162,6 +190,10 @@ namespace Platform2D.CharacterStates
         [SerializeField] private bool _isDashing = false;
 
         [SerializeField] private bool _isAttacking = false;
+
+        [SerializeField] private bool _isHitting = false;
+        [SerializeField] private bool _isDead = false;
+        [SerializeField] private bool _canDisale = false;
 
         [SerializeField] private bool _onGround = false;
         [SerializeField] private bool _isCeiling = false;

@@ -124,6 +124,7 @@ namespace Platform2D.HierarchicalStateMachine
             {
                 float healingPoint = _stateController.Stats.BaseStats.healthPoint * 5 / 100;
                 _stateController.Stats.CurrentHealthPoint += healingPoint;
+                _stateController.HealthBar.ChangeHealth(_stateController.Stats.CurrentHealthPoint);
                 Debug.Log(_stateController.Stats.CurrentHealthPoint);
 
                 _healingTimer.StartCountdown();

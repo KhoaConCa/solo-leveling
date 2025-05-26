@@ -21,6 +21,7 @@ namespace Platform2D.Utilities
         public readonly static string Ground = "Ground";
 
         public readonly static string Enemy = "Enemy";
+        public readonly static string Player = "MainPlayer";
         #endregion
 
         #endregion

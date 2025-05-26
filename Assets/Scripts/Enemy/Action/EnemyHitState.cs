@@ -91,7 +91,6 @@ namespace Platform2D.HierarchicalStateMachine
             {
                 FlipDirectionHandle();
                 _stateController.States.IsDetecting = true;
-                Debug.Log("chasing flip");
                 return;
             }
 
@@ -107,12 +106,6 @@ namespace Platform2D.HierarchicalStateMachine
             _stateController.States.Direction = -_stateController.transform.localScale.x;
             _stateController.transform.localScale = new Vector2(_stateController.States.Direction, 1f);
         }
-
-        #endregion
-
-        #region --- Fields ---
-
-        private float _currentTime;
 
         #endregion
     }

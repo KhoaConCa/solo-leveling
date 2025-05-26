@@ -65,6 +65,14 @@ namespace Platform2D.HierarchicalStateMachine
         public BaseState<PlayerCore, PlayerStateFactory> GroundAttack() => new PlayerGroundAttackState(_controller, this);
         #endregion
 
+        #region -- Receive --
+        /// <summary>
+        /// Khởi tạo State Hit của Player.
+        /// </summary>
+        /// <returns>Trả về State Hit của Player.</returns>
+        public BaseState<PlayerCore, PlayerStateFactory> Hit() => new PlayerHitState(_controller, this);
+        #endregion
+
         #endregion
 
         #region --- Fields ---

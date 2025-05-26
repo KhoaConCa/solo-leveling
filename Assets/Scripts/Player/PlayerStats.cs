@@ -1,5 +1,4 @@
-﻿using Platform2D.BaseStats;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +18,10 @@ namespace Platform2D.CharacterStats
         public float CrouchSpeed => CurrentMovementSpeed * _playerStatsSO.crouchMultiplier;
         public float DashSpeed => CurrentMovementSpeed * _playerStatsSO.dashMultiplier;
 
+        public float CurrentHealthPoint { get { return _currentHealthPoint; } set { _currentHealthPoint = value; } }
+        public float CurrentEnergyPoint { get { return _currentEnergyPoint; } set { _currentEnergyPoint = value; } }
+        public float CurrentDefencePoint { get { return _currentDefencePoint; } set { _currentDefencePoint = value; } }
+
         public float CurrentDamage
         {
             get {
@@ -36,6 +39,10 @@ namespace Platform2D.CharacterStats
         [SerializeField] private PlayerStatsSO _playerStatsSO;
 
         [SerializeField] private float _currentDamage;
+
+        [SerializeField] private float _currentHealthPoint;
+        [SerializeField] private float _currentEnergyPoint;
+        [SerializeField] private float _currentDefencePoint;
 
         #endregion
 

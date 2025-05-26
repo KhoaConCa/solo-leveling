@@ -55,6 +55,12 @@ namespace Platform2D.HierarchicalStateMachine
         {
             if (!_stateController.States.AllowedSwitch) return;
 
+            if (_stateController.States.IsHitting)
+            {
+                SwitchState(_stateFactory.Hit());
+                return;
+            }
+
             if (_stateController.States.IsAttacking)
             {
                 SwitchState(_stateFactory.GroundAttack());
