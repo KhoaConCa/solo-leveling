@@ -55,9 +55,11 @@ namespace Platform2D.UI
 
         #region --- Fields ---
 
+        [Header("Pannel")]
         //[SerializeField] private GameObject _settingPannel;
         [SerializeField] private GameObject _toolsPannel;
 
+        [Header("Button")]
         [SerializeField] private Button _openSettings;
         [SerializeField] private Button _openTools;
         [SerializeField] private Button _goBackToHome;

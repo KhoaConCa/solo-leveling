@@ -15,6 +15,40 @@ namespace Platform2D.UI.InventorySystem
         void Start()
         {
             _inventoryUI.InitializInventoryUI(inventorySize);
+            _goToTools.onClick.AddListener(ToggleInventoryUI);
+            _goBackButton.onClick.AddListener(HideInventory);
+        }
+
+        //private void Update()
+        //{
+        //    if (_goToTools.Invoke)
+        //    {
+        //        if (_inventoryUI.isActiveAndEnabled == false)
+        //        {
+        //            _inventoryUI.Show();
+        //        }
+        //        else
+        //        {
+        //            _inventoryUI.Hide();
+        //        }
+        //    }
+        //}
+
+        #endregion
+
+        #region --- Methods ---
+
+        private void ToggleInventoryUI()
+        {
+            if (_inventoryUI.isActiveAndEnabled)
+                _inventoryUI.Hide();
+            else
+                _inventoryUI.Show();
+        }
+
+        private void HideInventory()
+        {
+            _inventoryUI.Hide();
         }
 
         #endregion
@@ -23,6 +57,7 @@ namespace Platform2D.UI.InventorySystem
 
         [SerializeField] private UIInventory _inventoryUI;
         [SerializeField] private Button _goBackButton;
+        [SerializeField] private Button _goToTools;
 
         public int inventorySize = 20;
 
