@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Platform2D.UI.Inventory;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -52,6 +53,7 @@ namespace Platform2D.UI
                 _menu.SetActive(false);
                 _goBackButton.gameObject.SetActive(false);
                 _settingZone.gameObject.SetActive(true);
+                _slotPrefab.DeSelect();
                 return;
             }
 
@@ -99,6 +101,7 @@ namespace Platform2D.UI
         [SerializeField] private GameObject _status;
         [SerializeField] private GameObject _menu;
         [SerializeField] private GameObject _settingZone;
+        [SerializeField] private UIInventoryItem _slotPrefab;
 
 
         [Header("Main navigation Buttons")]

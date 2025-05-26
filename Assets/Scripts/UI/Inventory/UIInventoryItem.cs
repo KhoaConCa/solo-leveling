@@ -33,6 +33,7 @@ namespace Platform2D.UI.Inventory
 
         public void DeSelect()
         {
+            Debug.Log("DeSelect");
             _itemSelected.enabled = false;
         }
 
@@ -40,7 +41,7 @@ namespace Platform2D.UI.Inventory
         {
             this._itemIcon.gameObject.SetActive(true);
             this._itemIcon.sprite = sprite;
-            this._itemQuantity.text = quantity + "";
+            this._itemQuantity.text = quantity.ToString();
             _empty = false;
         }
 
@@ -82,6 +83,7 @@ namespace Platform2D.UI.Inventory
             else
             {
                 OnRightMouseBtnClick?.Invoke(this);
+                DeSelect();
             }
         }
 

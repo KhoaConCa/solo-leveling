@@ -67,11 +67,17 @@ namespace Platform2D.UI.InventorySystem
             _descriptionPanel.ResetDescription();
 
             _listOfSlot[0].SetData(image, quantity);
+            _listOfSlot[1].SetData(image, quantity);
         }
 
         public void Hide()
         {
             gameObject.SetActive(false);
+        }
+
+        public void SetCurrentSelect(bool value)
+        {
+            _currentSelect = value;
         }
 
         #endregion
@@ -87,6 +93,7 @@ namespace Platform2D.UI.InventorySystem
 
         public int quantity;
         public string title, description;
+        private bool _currentSelect;
 
         #endregion
     }
