@@ -22,6 +22,9 @@ namespace Platform2D.UI.Inventory
 
         #region --- Methods ---
 
+        /// <summary>
+        /// ResetDescription - Đặt lại mô tả của mục thông tin vật phẩm trong kho đồ về trạng thái mặc định là không có thông tin gì.
+        /// </summary>
         public void ResetDescription()
         {
             this._itemImage.gameObject.SetActive(false);
@@ -29,6 +32,12 @@ namespace Platform2D.UI.Inventory
             this._itemDescription.text = "";
         }
 
+        /// <summary>
+        /// SetDescription - Thiết lập mô tả cho một mục thông tin vật phẩm trong kho đồ với hình ảnh, tiêu đề và mô tả cụ thể.
+        /// </summary>
+        /// <param name="sprite">Hình ảnh vật phẩm</param>
+        /// <param name="title">Tên vật phẩm</param>
+        /// <param name="description">Mô tả</param>
         public void SetDescription(Sprite sprite, string title, string description)
         {
             this._itemImage.gameObject.SetActive(true);

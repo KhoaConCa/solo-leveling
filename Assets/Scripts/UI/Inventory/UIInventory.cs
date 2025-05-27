@@ -16,6 +16,7 @@ namespace Platform2D.UI.InventorySystem
         private void Awake()
         {
             Hide();
+            _touchFolower.Toggle(false);
             _descriptionPanel.ResetDescription();
         }
 
@@ -34,6 +35,7 @@ namespace Platform2D.UI.InventorySystem
                 UIInventoryItem slot = Instantiate(_slotPrefab, Vector3.zero, Quaternion.identity);
                 slot.transform.SetParent(_contentPannel);
                 _listOfSlot.Add(slot);
+
                 slot.OnItemClicked += HandleItemSelection;
                 slot.OnItemBeginDrag += HandleItemBeginDrag;
                 slot.OnItemEndDrag += HandleItemEndDrag;
@@ -41,43 +43,61 @@ namespace Platform2D.UI.InventorySystem
             }
         }
 
-        private void HandleSwap(UIInventoryItem item)
+        private void HandleSwap(UIInventoryItem inventoryItemUI)
         {
-            Debug.Log("Swap");
+            int index = _listOfSlot.IndexOf(inventoryItemUI);
+
+            if (index == -1)
+            {
+                _touchFolower.Toggle(false);
+                _currentDragItemIndex = -1;
+                return;
+            }
+
+            _listOfSlot[_currentDragItemIndex].SetData(index == 0 ? image : image1, quantity);
+            _listOfSlot[index].SetData(_currentDragItemIndex == 0 ? image : image1, quantity);
+            _touchFolower.Toggle(false);
+            _currentDragItemIndex = -1;
         }
 
-        private void HandleItemEndDrag(UIInventoryItem item)
+        private void HandleItemEndDrag(UIInventoryItem inventoryItemUI)
         {
-            Debug.Log("End Drag");
+            _touchFolower.Toggle(false);
         }
 
-        private void HandleItemBeginDrag(UIInventoryItem item)
+        private void HandleItemBeginDrag(UIInventoryItem inventoryItemUI)
         {
-            Debug.Log("Start Drag");
+            int index = _listOfSlot.IndexOf(inventoryItemUI);
+            if (index == -1) return;
+            _currentDragItemIndex = index;
+            _touchFolower.Toggle(true);
+            _touchFolower.SetData(index == 0 ? image : image1, quantity);
         }
 
-        private void HandleItemSelection(UIInventoryItem item)
+        private void HandleItemSelection(UIInventoryItem inventoryItemUI)
         {
             _descriptionPanel.SetDescription(image, title, description);
+            _listOfSlot[0].Select();
         }
 
+        /// <summary>
+        /// Show - Hiển thị giao diện kho đồ và đặt dữ liệu cho các ô kho đồ.
+        /// </summary>
         public void Show()
         {
             gameObject.SetActive(true);
             _descriptionPanel.ResetDescription();
 
             _listOfSlot[0].SetData(image, quantity);
-            _listOfSlot[1].SetData(image, quantity);
+            _listOfSlot[1].SetData(image1, quantity);
         }
 
+        /// <summary>
+        /// Hide - Ẩn giao diện kho đồ, không hiển thị các ô kho đồ và mô tả vật phẩm.
+        /// </summary>
         public void Hide()
         {
             gameObject.SetActive(false);
-        }
-
-        public void SetCurrentSelect(bool value)
-        {
-            _currentSelect = value;
         }
 
         #endregion
@@ -87,13 +107,15 @@ namespace Platform2D.UI.InventorySystem
         [SerializeField] private UIInventoryItem _slotPrefab;
         [SerializeField] private RectTransform _contentPannel;
         [SerializeField] private UIInventoryDescription _descriptionPanel;
+        [SerializeField] private DragFollower _touchFolower;
 
         private List<UIInventoryItem> _listOfSlot = new List<UIInventoryItem>();
-        public Sprite image;
+        public Sprite image, image1;
 
         public int quantity;
         public string title, description;
-        private bool _currentSelect;
+
+        private int _currentDragItemIndex = -1;
 
         #endregion
     }
