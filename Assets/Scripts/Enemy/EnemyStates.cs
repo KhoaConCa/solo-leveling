@@ -59,6 +59,20 @@ namespace Platform2D.CharacterStates
 
         public float RangeToPlayer { get; set; } = -1;
 
+        public bool IsAttacking
+        {
+            get { 
+                return _canAttack; 
+            }
+            set {
+                _canAttack = value;
+                if (_canAttack)
+                    _animator.SetTrigger(AnimationStrings.AttackTrigger);
+            } 
+        }
+
+        public bool CanAttack { get; set; } = true;
+
         public bool OnGround { get; set; } = false;
         public bool OnWall { get; set; } = false;
 
@@ -71,6 +85,7 @@ namespace Platform2D.CharacterStates
         [SerializeField] private bool _isHitting = false;
         [SerializeField] private bool _isDead = false;
         [SerializeField] private bool _canDisale = false;
+        [SerializeField] private bool _canAttack = false;
 
         [Header("Animator")]
         [SerializeField] private Animator _animator;

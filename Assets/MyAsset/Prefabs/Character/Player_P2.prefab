@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7761218697196676666}
   - component: {fileID: 6352507766094013598}
   - component: {fileID: 2520929918556831673}
-  m_Layer: 13
+  m_Layer: 11
   m_Name: Player_P2
   m_TagString: MainPlayer
   m_Icon: {fileID: 0}
@@ -218,8 +218,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7891757220051057181}
-  - component: {fileID: 8970979497102296316}
-  m_Layer: 11
+  - component: {fileID: 6858553700382668041}
+  m_Layer: 13
   m_Name: AttackHit #1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,14 +235,14 @@ Transform:
   m_GameObject: {fileID: 3542924302110867111}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29, y: -0.193, z: 0}
+  m_LocalPosition: {x: 0.33, y: -0.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7864637203424213486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &8970979497102296316
-PolygonCollider2D:
+--- !u!61 &6858553700382668041
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -283,26 +283,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.31919923, y: 0.3055433}
-      - {x: 0.1514755, y: 0.31504428}
-      - {x: 0.15384053, y: 0.14432278}
-      - {x: -0.010465354, y: 0.0004534796}
-      - {x: -0.1599892, y: 0.0031332448}
-      - {x: -0.20520036, y: -0.024877049}
-      - {x: -0.2501387, y: -0.022148507}
-      - {x: -0.354183, y: -0.11029822}
-      - {x: -0.159045, y: -0.17828229}
-      - {x: 0.014024807, y: -0.1685969}
-      - {x: 0.14052981, y: -0.14246713}
-      - {x: 0.21961465, y: -0.108873546}
-      - {x: 0.2890078, y: -0.07407226}
-      - {x: 0.36257204, y: -0.027850688}
-      - {x: 0.42386752, y: 0.013201336}
-      - {x: 0.45107734, y: 0.15932538}
-      - {x: 0.44127128, y: 0.2181368}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.6}
+  m_EdgeRadius: 0
 --- !u!1 &4639487382424341426
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,8 +295,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9161565240077184951}
-  - component: {fileID: 8016687578710354529}
-  m_Layer: 11
+  - component: {fileID: 3097652721664460230}
+  m_Layer: 13
   m_Name: AttackHit #2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,14 +312,14 @@ Transform:
   m_GameObject: {fileID: 4639487382424341426}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29, y: -0.193, z: 0}
+  m_LocalPosition: {x: 0.33, y: -0.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7864637203424213486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &8016687578710354529
-PolygonCollider2D:
+--- !u!61 &3097652721664460230
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -377,29 +360,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.28473976, y: 0.24569252}
-      - {x: 0.118829645, y: 0.31685793}
-      - {x: 0.12300831, y: 0.18966436}
-      - {x: 0.21304211, y: 0.10434869}
-      - {x: 0.15077169, y: 0.014075141}
-      - {x: 0.04213082, y: -0.026751433}
-      - {x: -0.1599892, y: -0.029512618}
-      - {x: -0.20520036, y: -0.024877049}
-      - {x: -0.2501387, y: -0.022148507}
-      - {x: -0.39408353, y: -0.13024849}
-      - {x: -0.159045, y: -0.17828229}
-      - {x: 0.014024807, y: -0.18310621}
-      - {x: 0.045159336, y: -0.17592606}
-      - {x: 0.14052981, y: -0.14246713}
-      - {x: 0.21961465, y: -0.108873546}
-      - {x: 0.2890078, y: -0.07407226}
-      - {x: 0.36257204, y: -0.027850688}
-      - {x: 0.3658304, y: -0.06115872}
-      - {x: 0.3694626, y: 0.06501501}
-      - {x: 0.36509752, y: 0.16554064}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.6}
+  m_EdgeRadius: 0
 --- !u!1 &9184014728058483579
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +374,7 @@ GameObject:
   - component: {fileID: 7864637203424213486}
   - component: {fileID: 8332821715812232791}
   - component: {fileID: 4622743532844707235}
-  m_Layer: 13
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Player
   m_Icon: {fileID: 0}

@@ -45,6 +45,7 @@ namespace Platform2D.HierarchicalStateMachine
         public override void ExitState()
         {
             _stateController.States.Invulnerable = false;
+            _stateController.States.IsChasing = false;
         }
 
         /// <summary>
@@ -55,6 +56,12 @@ namespace Platform2D.HierarchicalStateMachine
             if (_stateController.States.IsHitting)
             {
                 SwitchState(_stateFactory.Hit());
+                return;
+            }
+
+            if (_stateController.States.RangeToPlayer <= _stateController.Stats.BaseStats.attackRange && _stateController.States.CanAttack)
+            {
+                SwitchState(_stateFactory.Attack());
                 return;
             }
 

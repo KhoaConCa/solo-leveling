@@ -32,10 +32,10 @@ TagManager:
   - StaticLevel
   - HazrdsAndTraps
   - AnimationObject
-  - PlayerHitBox
-  - EnemyHitBox
   - Player
   - Enemy
+  - PlayerHitBox
+  - EnemyHitBox
   - 
   - 
   - 

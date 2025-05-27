@@ -29,9 +29,10 @@ namespace Platform2D.HierarchicalStateMachine
             _detectTimer = new Timer();
             _detectTimer.StartCountdown();
 
-            _detectDuration = _stateController.Stats.BaseStats.detectDuration;
             _stateController.States.Invulnerable = true;
             _stateController.States.IsMoving = false;
+            _stateController.States.IsChasing = false;
+
             _stateController.Rg2D.velocity = Vector2.zero;
         }
 
@@ -58,6 +59,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState() 
         {
+
             if (_stateController.States.IsChasing)
             {
                 SwitchState(_stateFactory.Chasing());
@@ -88,15 +90,13 @@ namespace Platform2D.HierarchicalStateMachine
         {
             if(_stateController.States.IsDetecting)
             {
-                _stateController.States.IsChasing = _detectTimer.FixedTimeCountdown(_detectDuration);
+                _stateController.States.IsChasing = _detectTimer.FixedTimeCountdown(_stateController.Stats.BaseStats.detectDuration);
             }
         }
 
         #endregion
 
         #region --- Fields ---
-
-        private float _detectDuration;
 
         private Timer _detectTimer;
 

@@ -43,7 +43,9 @@ namespace Platform2D.CharacterController
         public void OnHit()
         {
             if (Player == null) return;
-            Player.ReceiveDamage(_enemyController.Stats.BaseStats.attackDamage, _enemyController.transform.localScale);
+            Vector2 lengthDetect = _target.transform.position - _enemyController.transform.position;
+            Vector2 dirDetect = lengthDetect.normalized.x < 0 ? new Vector2(-1, 0) : new Vector2(1, 0);
+            Player.ReceiveDamage(_enemyController.Stats.BaseStats.attackDamage, dirDetect);
         }
 
         #endregion
@@ -75,7 +77,7 @@ namespace Platform2D.CharacterController
 
         public void DetectedPlayer()
         {
-            var col = Physics2D.OverlapCircle(_enemyController.Col2D.bounds.center, _radius, _playerLayer);
+            var col = Physics2D.OverlapCircle(_enemyController.Col2D.bounds.center, _enemyController.Stats.BaseStats.detectedRange, _playerLayer);
             if(col != null)
             {
                 _target = col.gameObject;
@@ -112,7 +114,7 @@ namespace Platform2D.CharacterController
                 Gizmos.DrawCube(_enemyController.Col2D.bounds.center, Vector2.one * 0.1f);
 
                 // Vẽ phạm vi phát hiện (OverlapCircle)
-                Gizmos.DrawWireSphere(_enemyController.Col2D.bounds.center, _radius);
+                Gizmos.DrawWireSphere(_enemyController.Col2D.bounds.center, _enemyController.Stats.BaseStats.detectedRange);
             }
         }
 
@@ -131,7 +133,6 @@ namespace Platform2D.CharacterController
         [SerializeField] private GameObject _target;
 
         [SerializeField] private Transform _enemyDetected;
-        [SerializeField] private float _radius;
 
         [SerializeField] private LayerMask _playerLayer;
 

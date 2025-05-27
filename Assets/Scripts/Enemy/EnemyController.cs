@@ -37,6 +37,7 @@ namespace Platform2D.CharacterController
             _stats.CurrentDefencePoint = _stats.BaseStats.defencePoint;
 
             _stats.CurrentMovementSpeed = 0;
+            _coolDown = new Utilities.Timer();
 
             EnemyStateFactory = new EnemyStateFactory(this);
             CurrentState = EnemyStateFactory.Idle();
@@ -45,12 +46,16 @@ namespace Platform2D.CharacterController
 
         private void FixedUpdate()
         {
+            ResetAttackCooldown();
+
             GroundChecker();
             WallChecker();
 
             _actionChecker.DetectedPlayer();
 
             CurrentState.UpdateState();
+
+            Debug.Log(CurrentState);
         }
 
         #endregion
@@ -78,6 +83,20 @@ namespace Platform2D.CharacterController
             _states.OnWall = _col2D.Cast(direction, _contactFilter, wallHits, WALL_DISTANCE) > 0;
         }
 
+        private void ResetAttackCooldown()
+        {
+            if (!_states.CanAttack)
+            {
+                _states.CanAttack = _coolDown.FixedTimeCountdown(_stats.BaseStats.attackDuration);
+                Debug.Log("countdown");
+;            }
+            else if (_states.CanAttack && _states.IsAttacking)
+            {
+                _coolDown.StartCountdown();
+                Debug.Log("reset");
+            }
+
+        }
 
         #endregion
 
@@ -117,6 +136,8 @@ namespace Platform2D.CharacterController
         [Header("Sprite & Animation")]
         [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private Animator _animator;
+
+        private Utilities.Timer _coolDown;
 
         private readonly RaycastHit2D[] wallHits = new RaycastHit2D[5];
 

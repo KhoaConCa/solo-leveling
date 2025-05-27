@@ -29,6 +29,7 @@ namespace Platform2D.CharacterStats
         public float weight;
         public float knockBackMultiplier;
         public float DeadknockBackMultiplier;
+        
 
         [Header("Movement Setting")]
         public float movementSpeed;
@@ -40,10 +41,13 @@ namespace Platform2D.CharacterStats
         [Header("Range Setting")]
         public float movementRange;
         public float maxMovementRange;
+        public float detectedRange;
+        public float attackRange;
 
         [Header("Duration Setting")]
         public float idleDuration;
         public float detectDuration;
+        public float attackDuration;
 
         [Header("Data Setting")]
         public Sprite sprite;

@@ -31,7 +31,6 @@ namespace Platform2D.CharacterController
 
             _playerController.Stats.CurrentHealthPoint -= damage - _playerController.Stats.CurrentDefencePoint;
             _playerController.HealthBar.ChangeHealth(_playerController.Stats.CurrentHealthPoint, true);
-            Debug.Log("Hello");
 
             _playerController.States.KnockBackDirection = knockBack;
             _playerController.States.Invulnerable = true;
