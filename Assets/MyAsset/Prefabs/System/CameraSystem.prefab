@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4428064114773708155}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: SwitchCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6712362889381462169}
   - component: {fileID: 8612936461949361845}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LockCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 4078138591140704545}
   - component: {fileID: 6088586218502267200}
   - component: {fileID: 5323933750323167341}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1070,7 +1070,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3746684541613062415, guid: d88f0bd2a94ec954bbad1525bc78a75a, type: 3}
       propertyPath: m_Size.x
-      value: 0.53198624
+      value: 1.2316055
       objectReference: {fileID: 0}
     - target: {fileID: 3746684541613062415, guid: d88f0bd2a94ec954bbad1525bc78a75a, type: 3}
       propertyPath: m_Size.y
@@ -1078,7 +1078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3746684541613062415, guid: d88f0bd2a94ec954bbad1525bc78a75a, type: 3}
       propertyPath: m_Offset.x
-      value: 14.280703
+      value: 14.630512
       objectReference: {fileID: 0}
     - target: {fileID: 3746684541613062415, guid: d88f0bd2a94ec954bbad1525bc78a75a, type: 3}
       propertyPath: m_Offset.y
