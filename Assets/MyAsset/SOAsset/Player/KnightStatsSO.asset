@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoint: 100
   energyPoint: 100
-  defencePoint: 3
+  defencePoint: 6
   weight: 8
   knockBackMultiplier: 0.4
   DeadknockBackMultiplier: 0.6
@@ -23,9 +23,9 @@ MonoBehaviour:
   dashMultiplier: 4
   jumpSpeed: 12
   doubleJumpMultiplier: 1
-  attackPullForce: 0.4
-  attackDamage: 8
-  attackDamageMultiplier: 0.4
+  attackPullForce: 0.2
+  attackDamage: 15
+  attackDamageMultiplier: 0.25
   dashDuration: 0.2
   oneWayDuration: 0.5
   jumpCooldown: 1

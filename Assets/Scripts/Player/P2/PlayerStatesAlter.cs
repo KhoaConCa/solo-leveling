@@ -117,6 +117,8 @@ namespace Platform2D.CharacterStates
 
         public bool CanIncreaseDamage => _animator.GetBool(AnimationStrings.DefaultDamage);
 
+        public bool IsFinishAttack => _isFinishAttack;
+
         #endregion
 
         #region -- Receive States --
@@ -190,6 +192,7 @@ namespace Platform2D.CharacterStates
         [SerializeField] private bool _isDashing = false;
 
         [SerializeField] private bool _isAttacking = false;
+        [SerializeField] private bool _isFinishAttack = false;
 
         [SerializeField] private bool _isHitting = false;
         [SerializeField] private bool _isDead = false;

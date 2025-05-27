@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 1620952033214858563}
   - component: {fileID: 1964016217361227198}
   - component: {fileID: 7550521606521705762}
+  - component: {fileID: 3039421095261732384}
   m_Layer: 11
   m_Name: Sprite
   m_TagString: Player
@@ -105,7 +106,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4644213817078896821}
@@ -186,6 +187,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3039421095261732384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2332960690967148216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b7ffbed7610f0c4a9b214260e7d2114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 7550521606521705762}
+  _onMove: {x: 0, y: 0}
+  _isMoving: 0
+  _isJumping: 0
+  _isFalling: 0
+  _isCrouch: 0
+  _isDashing: 0
+  _isAttacking: 0
+  _isFinishAttack: 0
+  _isHitting: 0
+  _isDead: 0
+  _canDisale: 0
+  _onGround: 0
+  _isCeiling: 0
 --- !u!1 &3461307752631191755
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +381,6 @@ GameObject:
   - component: {fileID: 5568097618270119002}
   - component: {fileID: 7179777633204708174}
   - component: {fileID: 4794701597768158476}
-  - component: {fileID: 6640609249427982965}
   - component: {fileID: 6904211638612810108}
   m_Layer: 11
   m_Name: Player_Knight
@@ -438,8 +464,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06430626, y: -0.11787379}
-  m_Size: {x: 0.6286278, y: 2.1504557}
+  m_Offset: {x: 0.03716278, y: -0.077157915}
+  m_Size: {x: 0.5743408, y: 1.8518728}
   m_Direction: 0
 --- !u!114 &5568097618270119002
 MonoBehaviour:
@@ -473,7 +499,7 @@ MonoBehaviour:
   _movementChecker: {fileID: 7179777633204708174}
   _actionChecker: {fileID: 4794701597768158476}
   _healthBar: {fileID: 0}
-  _states: {fileID: 6640609249427982965}
+  _states: {fileID: 3039421095261732384}
   _stats: {fileID: 6904211638612810108}
   _spriteRenderer: {fileID: 1964016217361227198}
   _animator: {fileID: 7550521606521705762}
@@ -507,31 +533,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerController: {fileID: 5568097618270119002}
---- !u!114 &6640609249427982965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8819455263851608651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b7ffbed7610f0c4a9b214260e7d2114, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 7550521606521705762}
-  _onMove: {x: 0, y: 0}
-  _isMoving: 0
-  _isJumping: 0
-  _isFalling: 0
-  _isCrouch: 0
-  _isDashing: 0
-  _isAttacking: 0
-  _isHitting: 0
-  _isDead: 0
-  _canDisale: 0
-  _onGround: 0
-  _isCeiling: 0
 --- !u!114 &6904211638612810108
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -37,6 +37,9 @@ namespace Platform2D.HierarchicalStateMachine
         {
             GroundAttackHandle();
 
+            if (_stateController.States.IsFinishAttack)
+                _stateController.StartCoroutine(AttackFinisherHandle());
+
             CheckSwitchState();
         }
 
@@ -46,6 +49,7 @@ namespace Platform2D.HierarchicalStateMachine
         public override void ExitState() 
         {
             _stateController.States.IsAttacking = false;
+            _stateController.States.Invulnerable = false;
             _stateController.Stats.CurrentDamage = 0;
         }
 
@@ -89,7 +93,8 @@ namespace Platform2D.HierarchicalStateMachine
         {
             if (!_stateController.States.IsAttacking) return;
 
-            AttackPullForce();
+            if (!_stateController.States.IsFinishAttack)
+                AttackPullForce();
 
             if (_stateController.ActionChecker.Enemy == null) return;
 
@@ -113,6 +118,16 @@ namespace Platform2D.HierarchicalStateMachine
         {
             var speed = _stateController.Stats.BaseStats.attackPullForce * _stateController.transform.localScale.x;
             _stateController.Rg2D.velocity = new Vector2(speed, _stateController.Rg2D.velocity.y);
+        }
+
+        private IEnumerator AttackFinisherHandle()
+        {
+            var speed = _stateController.Stats.DashSpeed * _stateController.transform.localScale.x * 0.6f;
+            _stateController.Rg2D.velocity = new Vector2(speed, _stateController.Rg2D.velocity.y);
+
+            _stateController.States.Invulnerable = true;
+
+            yield return new WaitForSeconds(_stateController.Stats.BaseStats.dashDuration); 
         }
 
         #endregion
