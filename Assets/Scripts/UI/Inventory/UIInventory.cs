@@ -43,23 +43,38 @@ namespace Platform2D.UI.InventorySystem
             }
         }
 
-        private void HandleSwap(UIInventoryItem item)
+        private void HandleSwap(UIInventoryItem inventoryItemUI)
         {
-            Debug.Log("Swap");
+            int index = _listOfSlot.IndexOf(inventoryItemUI);
+
+            if (index == -1)
+            {
+                _touchFolower.Toggle(false);
+                _currentDragItemIndex = -1;
+                return;
+            }
+
+            _listOfSlot[_currentDragItemIndex].SetData(index == 0 ? image : image1, quantity);
+            _listOfSlot[index].SetData(_currentDragItemIndex == 0 ? image : image1, quantity);
+            _touchFolower.Toggle(false);
+            _currentDragItemIndex = -1;
         }
 
-        private void HandleItemEndDrag(UIInventoryItem item)
+        private void HandleItemEndDrag(UIInventoryItem inventoryItemUI)
         {
             _touchFolower.Toggle(false);
         }
 
-        private void HandleItemBeginDrag(UIInventoryItem item)
+        private void HandleItemBeginDrag(UIInventoryItem inventoryItemUI)
         {
+            int index = _listOfSlot.IndexOf(inventoryItemUI);
+            if (index == -1) return;
+            _currentDragItemIndex = index;
             _touchFolower.Toggle(true);
-            _touchFolower.SetData(image, quantity);
+            _touchFolower.SetData(index == 0 ? image : image1, quantity);
         }
 
-        private void HandleItemSelection(UIInventoryItem item)
+        private void HandleItemSelection(UIInventoryItem inventoryItemUI)
         {
             _descriptionPanel.SetDescription(image, title, description);
             _listOfSlot[0].Select();
@@ -74,7 +89,7 @@ namespace Platform2D.UI.InventorySystem
             _descriptionPanel.ResetDescription();
 
             _listOfSlot[0].SetData(image, quantity);
-            _listOfSlot[1].SetData(image, quantity);
+            _listOfSlot[1].SetData(image1, quantity);
         }
 
         /// <summary>
@@ -95,10 +110,12 @@ namespace Platform2D.UI.InventorySystem
         [SerializeField] private DragFollower _touchFolower;
 
         private List<UIInventoryItem> _listOfSlot = new List<UIInventoryItem>();
-        public Sprite image;
+        public Sprite image, image1;
 
         public int quantity;
         public string title, description;
+
+        private int _currentDragItemIndex = -1;
 
         #endregion
     }

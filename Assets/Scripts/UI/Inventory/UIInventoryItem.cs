@@ -11,7 +11,7 @@ namespace Platform2D.UI.Inventory
     /// Tác giả: Dương Nhật Khoa, Ngày tạo: 26/05/2025.
     /// </summary>
 
-    public class UIInventoryItem : MonoBehaviour
+    public class UIInventoryItem : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IEndDragHandler, IDropHandler, IDragHandler
     {
         #region --- Unity Methods ---
 
@@ -63,43 +63,10 @@ namespace Platform2D.UI.Inventory
             _itemSelected.enabled = true;
         }
 
-        /// <summary>
-        /// OnBeginDrag - Xử lý sự kiện bắt đầu kéo thả ô kho đồ.
-        /// </summary>
-        public void OnBeginDrag()
+        public void OnPointerClick(PointerEventData pointerData)
         {
             if (_empty)
                 return;
-
-            OnItemBeginDrag?.Invoke(this);
-        }
-
-        /// <summary>
-        /// OnDrop - Xử lý sự kiện khi ô kho đồ được thả vào một vị trí khác.
-        /// </summary>
-        public void OnDrop()
-        {
-            OnItemDroppedOn?.Invoke(this);
-        }
-
-        /// <summary>
-        /// OnEndDrag - Xử lý sự kiện khi kết thúc kéo thả ô kho đồ.
-        /// </summary>
-        public void OnEndDrag()
-        {
-            OnItemEndDrag?.Invoke(this);
-        }
-
-        /// <summary>
-        /// OnPointerClick - Xử lý sự kiện khi người dùng nhấp chuột vào ô kho đồ.
-        /// </summary>
-        /// <param name="data">Event cần phải thực hiện</param>
-        public void OnPointerClick(BaseEventData data)
-        {
-            if (_empty)
-                return;
-
-            PointerEventData pointerData = (PointerEventData)data;
 
             if (pointerData.button == PointerEventData.InputButton.Right)
             {
@@ -109,6 +76,29 @@ namespace Platform2D.UI.Inventory
             {
                 OnItemClicked?.Invoke(this);
             }
+        }
+
+        public void OnBeginDrag(PointerEventData eventData)
+        {
+            if (_empty)
+                return;
+
+            OnItemBeginDrag?.Invoke(this);
+        }
+
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            OnItemEndDrag?.Invoke(this);
+        }
+
+        public void OnDrop(PointerEventData eventData)
+        {
+            OnItemDroppedOn?.Invoke(this);
+        }
+
+        public void OnDrag(PointerEventData eventData)
+        {
+
         }
 
         #endregion
