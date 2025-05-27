@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceab1b24b44a00b4da024f3ee985bb9c, type: 3}
+  m_Name: KnightStatsSO
+  m_EditorClassIdentifier: 
+  healthPoint: 100
+  energyPoint: 100
+  defencePoint: 3
+  weight: 8
+  knockBackMultiplier: 0.4
+  DeadknockBackMultiplier: 0.6
+  movementSpeed: 5
+  crouchMultiplier: 1.2
+  dashMultiplier: 4
+  jumpSpeed: 12
+  doubleJumpMultiplier: 1
+  attackPullForce: 0.4
+  attackDamage: 8
+  attackDamageMultiplier: 0.4
+  dashDuration: 0.2
+  oneWayDuration: 0.5
+  jumpCooldown: 1
+  dashCoolDown: 1
+  sprite: {fileID: -799234732, guid: a8cf465a303b08a49bf393543a800247, type: 3}
+  animator: {fileID: 9100000, guid: 29eacb9e2d49baa4195e917c3c83bce6, type: 2}

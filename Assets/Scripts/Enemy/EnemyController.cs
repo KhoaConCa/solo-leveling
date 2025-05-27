@@ -1,8 +1,10 @@
 ﻿using Platform2D.CharacterStates;
 using Platform2D.CharacterStats;
+using Platform2D.EnemyType;
 using Platform2D.HierarchicalStateMachine;
 using Platform2D.UIElement;
 using Platform2D.Utilities;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -107,6 +109,9 @@ namespace Platform2D.CharacterController
         public Transform trans2D => gameObject.transform;
         public Animator Animator => _animator;
 
+        public ENEMY_TYPE EnemyType => _enemyType;
+        public List<ENEMY_ATTACK_TYPE> AttackType => _attackType;
+
         public CustomHealthBar HealthBar => _healthBar;
 
         public EnemyStates States => _states;
@@ -119,6 +124,10 @@ namespace Platform2D.CharacterController
 
         [Header("Filter Layer")]
         [SerializeField] private ContactFilter2D _contactFilter;
+
+        [Header("Enemy's Type")]
+        [SerializeField] private ENEMY_TYPE _enemyType;
+        [SerializeField] private List<ENEMY_ATTACK_TYPE> _attackType;
 
         [Header("Unity Components")]
         [SerializeField] private Rigidbody2D _rg2D;
