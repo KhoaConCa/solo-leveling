@@ -62,11 +62,6 @@ namespace Platform2D.UI.InventorySystem
             }
 
             OnSwapItems?.Invoke(_currentDragItemIndex, index);
-
-            //_listOfSlot[_currentDragItemIndex].SetData(index == 0 ? image : image1, quantity);
-            //_listOfSlot[index].SetData(_currentDragItemIndex == 0 ? image : image1, quantity);
-            //_touchFollower.Toggle(false);
-            //_currentDragItemIndex = -1;
         }
 
         private void ResetDraggedItem()
@@ -87,8 +82,6 @@ namespace Platform2D.UI.InventorySystem
             _currentDragItemIndex = index;
             HandleItemSelection(inventoryItemUI);
             OnStartDragging?.Invoke(index);
-            //_touchFollower.Toggle(true);
-            //_touchFollower.SetData(index == 0 ? image : image1, quantity);
         }
 
         public void CreateDragItem(Sprite sprite, int quantity)
