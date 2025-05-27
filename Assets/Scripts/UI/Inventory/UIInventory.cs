@@ -16,6 +16,7 @@ namespace Platform2D.UI.InventorySystem
         private void Awake()
         {
             Hide();
+            _touchFolower.Toggle(false);
             _descriptionPanel.ResetDescription();
         }
 
@@ -34,6 +35,7 @@ namespace Platform2D.UI.InventorySystem
                 UIInventoryItem slot = Instantiate(_slotPrefab, Vector3.zero, Quaternion.identity);
                 slot.transform.SetParent(_contentPannel);
                 _listOfSlot.Add(slot);
+
                 slot.OnItemClicked += HandleItemSelection;
                 slot.OnItemBeginDrag += HandleItemBeginDrag;
                 slot.OnItemEndDrag += HandleItemEndDrag;
@@ -48,19 +50,24 @@ namespace Platform2D.UI.InventorySystem
 
         private void HandleItemEndDrag(UIInventoryItem item)
         {
-            Debug.Log("End Drag");
+            _touchFolower.Toggle(false);
         }
 
         private void HandleItemBeginDrag(UIInventoryItem item)
         {
-            Debug.Log("Start Drag");
+            _touchFolower.Toggle(true);
+            _touchFolower.SetData(image, quantity);
         }
 
         private void HandleItemSelection(UIInventoryItem item)
         {
             _descriptionPanel.SetDescription(image, title, description);
+            _listOfSlot[0].Select();
         }
 
+        /// <summary>
+        /// Show - Hiển thị giao diện kho đồ và đặt dữ liệu cho các ô kho đồ.
+        /// </summary>
         public void Show()
         {
             gameObject.SetActive(true);
@@ -70,14 +77,12 @@ namespace Platform2D.UI.InventorySystem
             _listOfSlot[1].SetData(image, quantity);
         }
 
+        /// <summary>
+        /// Hide - Ẩn giao diện kho đồ, không hiển thị các ô kho đồ và mô tả vật phẩm.
+        /// </summary>
         public void Hide()
         {
             gameObject.SetActive(false);
-        }
-
-        public void SetCurrentSelect(bool value)
-        {
-            _currentSelect = value;
         }
 
         #endregion
@@ -87,13 +92,13 @@ namespace Platform2D.UI.InventorySystem
         [SerializeField] private UIInventoryItem _slotPrefab;
         [SerializeField] private RectTransform _contentPannel;
         [SerializeField] private UIInventoryDescription _descriptionPanel;
+        [SerializeField] private DragFollower _touchFolower;
 
         private List<UIInventoryItem> _listOfSlot = new List<UIInventoryItem>();
         public Sprite image;
 
         public int quantity;
         public string title, description;
-        private bool _currentSelect;
 
         #endregion
     }

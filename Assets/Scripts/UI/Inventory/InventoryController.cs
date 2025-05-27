@@ -38,6 +38,9 @@ namespace Platform2D.UI.InventorySystem
 
         #region --- Methods ---
 
+        /// <summary>
+        /// ToggleInventoryUI - Chuyển đổi hiển thị của giao diện kho đồ.
+        /// </summary>
         private void ToggleInventoryUI()
         {
             if (_inventoryUI.isActiveAndEnabled)
@@ -46,6 +49,9 @@ namespace Platform2D.UI.InventorySystem
                 _inventoryUI.Show();
         }
 
+        /// <summary>
+        /// HideInventory - Ẩn giao diện kho đồ khi người dùng nhấn nút "Go Back".
+        /// </summary>
         private void HideInventory()
         {
             _inventoryUI.Hide();
