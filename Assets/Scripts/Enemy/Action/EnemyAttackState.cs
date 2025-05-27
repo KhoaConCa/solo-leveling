@@ -1,5 +1,8 @@
 ﻿using Platform2D.CharacterAnimation;
 using Platform2D.CharacterController;
+using Platform2D.CharacterInterface;
+using Platform2D.EnemyAttackType;
+using Platform2D.EnemyType;
 using Platform2D.Utilities;
 using Platform2D.Vector;
 using System.Collections;
@@ -29,6 +32,19 @@ namespace Platform2D.HierarchicalStateMachine
         {
             _stateController.States.IsAttacking = true;
             _stateController.Rg2D.velocity = Vector2.zero;
+
+            switch (_stateController.EnemyType)
+            {
+                case ENEMY_TYPE.MINIONS:
+                    switch(_stateController.AttackType[0])
+                    {
+                        case ENEMY_ATTACK_TYPE.MELEE_ATTACK:
+                            _attackHandle = _stateController.Stats.GetComponentInChildren<EnemyMeleeAttack>();
+                            break;
+                    }
+                            
+                    break;
+            }
         }
 
         /// <summary>
@@ -93,15 +109,14 @@ namespace Platform2D.HierarchicalStateMachine
             _stateController.States.IsAttacking = false;
             _stateController.States.CanAttack = false;
 
-            AttackPullForce();
+            _attackHandle.AttackHandle();
         }
 
+        #endregion
 
-        private void AttackPullForce()
-        {
-            var speed = _stateController.Stats.BaseStats.attackPullForce * _stateController.transform.localScale.x;
-            _stateController.Rg2D.velocity = new Vector2(speed, _stateController.Rg2D.velocity.y);
-        }
+        #region --- Fields ---
+
+        private IAttackHandle _attackHandle;
 
         #endregion
     }
