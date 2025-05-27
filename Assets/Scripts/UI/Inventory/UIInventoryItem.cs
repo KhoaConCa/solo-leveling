@@ -65,9 +65,6 @@ namespace Platform2D.UI.Inventory
 
         public void OnPointerClick(PointerEventData pointerData)
         {
-            if (_empty)
-                return;
-
             if (pointerData.button == PointerEventData.InputButton.Right)
             {
                 OnRightMouseBtnClick?.Invoke(this);

@@ -66498,6 +66498,10 @@ PrefabInstance:
       propertyPath: _touchFolower
       value: 
       objectReference: {fileID: 1459147660}
+    - target: {fileID: 7924013801028721293, guid: 5b8f70abe3adb224f80ebc19ed3e1cf6, type: 3}
+      propertyPath: _touchFollower
+      value: 
+      objectReference: {fileID: 1459147660}
     - target: {fileID: 8134668586592981754, guid: 5b8f70abe3adb224f80ebc19ed3e1cf6, type: 3}
       propertyPath: m_Name
       value: Inventory

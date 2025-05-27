@@ -1,4 +1,5 @@
 ﻿using Platform2D.UI.Inventory;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ namespace Platform2D.UI.InventorySystem
         private void Awake()
         {
             Hide();
-            _touchFolower.Toggle(false);
+            _touchFollower.Toggle(false);
             _descriptionPanel.ResetDescription();
         }
 
@@ -43,26 +44,40 @@ namespace Platform2D.UI.InventorySystem
             }
         }
 
+        public void UpdateData(int itemIndex, Sprite image, int quantity)
+        {
+            if (_listOfSlot.Count > itemIndex)
+            {
+                _listOfSlot[itemIndex].SetData(image, quantity);
+            }
+        }
+
         private void HandleSwap(UIInventoryItem inventoryItemUI)
         {
             int index = _listOfSlot.IndexOf(inventoryItemUI);
 
             if (index == -1)
             {
-                _touchFolower.Toggle(false);
-                _currentDragItemIndex = -1;
                 return;
             }
 
-            _listOfSlot[_currentDragItemIndex].SetData(index == 0 ? image : image1, quantity);
-            _listOfSlot[index].SetData(_currentDragItemIndex == 0 ? image : image1, quantity);
-            _touchFolower.Toggle(false);
+            OnSwapItems?.Invoke(_currentDragItemIndex, index);
+
+            //_listOfSlot[_currentDragItemIndex].SetData(index == 0 ? image : image1, quantity);
+            //_listOfSlot[index].SetData(_currentDragItemIndex == 0 ? image : image1, quantity);
+            //_touchFollower.Toggle(false);
+            //_currentDragItemIndex = -1;
+        }
+
+        private void ResetDraggedItem()
+        {
+            _touchFollower.Toggle(false);
             _currentDragItemIndex = -1;
         }
 
         private void HandleItemEndDrag(UIInventoryItem inventoryItemUI)
         {
-            _touchFolower.Toggle(false);
+            ResetDraggedItem();
         }
 
         private void HandleItemBeginDrag(UIInventoryItem inventoryItemUI)
@@ -70,14 +85,23 @@ namespace Platform2D.UI.InventorySystem
             int index = _listOfSlot.IndexOf(inventoryItemUI);
             if (index == -1) return;
             _currentDragItemIndex = index;
-            _touchFolower.Toggle(true);
-            _touchFolower.SetData(index == 0 ? image : image1, quantity);
+            HandleItemSelection(inventoryItemUI);
+            OnStartDragging?.Invoke(index);
+            //_touchFollower.Toggle(true);
+            //_touchFollower.SetData(index == 0 ? image : image1, quantity);
+        }
+
+        public void CreateDragItem(Sprite sprite, int quantity)
+        {
+            _touchFollower.Toggle(true);
+            _touchFollower.SetData(sprite, quantity);
         }
 
         private void HandleItemSelection(UIInventoryItem inventoryItemUI)
         {
-            _descriptionPanel.SetDescription(image, title, description);
-            _listOfSlot[0].Select();
+            int index = _listOfSlot.IndexOf(inventoryItemUI);
+            if (index == -1) return;
+            OnDescriptionRequested?.Invoke(index);
         }
 
         /// <summary>
@@ -87,9 +111,21 @@ namespace Platform2D.UI.InventorySystem
         {
             gameObject.SetActive(true);
             _descriptionPanel.ResetDescription();
+            ResetSelection();
+        }
 
-            _listOfSlot[0].SetData(image, quantity);
-            _listOfSlot[1].SetData(image1, quantity);
+        private void ResetSelection()
+        {
+            _descriptionPanel.ResetDescription();
+            DeselectAllItems();
+        }
+
+        private void DeselectAllItems()
+        {
+            foreach (UIInventoryItem slot in _listOfSlot)
+            {
+                slot.DeSelect();
+            }
         }
 
         /// <summary>
@@ -98,6 +134,7 @@ namespace Platform2D.UI.InventorySystem
         public void Hide()
         {
             gameObject.SetActive(false);
+            ResetDraggedItem();
         }
 
         #endregion
@@ -107,13 +144,12 @@ namespace Platform2D.UI.InventorySystem
         [SerializeField] private UIInventoryItem _slotPrefab;
         [SerializeField] private RectTransform _contentPannel;
         [SerializeField] private UIInventoryDescription _descriptionPanel;
-        [SerializeField] private DragFollower _touchFolower;
+        [SerializeField] private DragFollower _touchFollower;
 
         private List<UIInventoryItem> _listOfSlot = new List<UIInventoryItem>();
-        public Sprite image, image1;
 
-        public int quantity;
-        public string title, description;
+        public event Action<int> OnDescriptionRequested, OnItemActionRequest, OnStartDragging;
+        public event Action<int, int> OnSwapItems;
 
         private int _currentDragItemIndex = -1;
 
