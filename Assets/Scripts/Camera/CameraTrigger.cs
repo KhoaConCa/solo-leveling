@@ -22,6 +22,7 @@ namespace Platform2D.CameraSystem
 
             if (collider.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
+                Debug.Log("Camera Trigger Enter: " + collider.name);
                 if (panCameraOnContact)
                 {
                     CameraController.instance.PanCameraOnContact(panDistance,
@@ -37,7 +38,10 @@ namespace Platform2D.CameraSystem
 
             if (collider.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
-                Vector2 exitDirection = (collider.transform.position - collider.bounds.center).normalized;
+                Vector2 triggerCenter = _collider2D.bounds.center;
+                Vector2 playerPosition = collider.bounds.center;
+                Vector2 exitDirection = (playerPosition - triggerCenter).normalized;
+                //Vector2 exitDirection = (collider.transform.position - collider.bounds.center).normalized;
 
                 if (swapCamera && cameraOnLeft != null && cameraOnRight != null)
                 {

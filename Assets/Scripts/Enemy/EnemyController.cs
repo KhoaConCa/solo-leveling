@@ -5,7 +5,6 @@ using Platform2D.HierarchicalStateMachine;
 using Platform2D.UIElement;
 using Platform2D.Utilities;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Platform2D.CharacterController
@@ -57,7 +56,7 @@ namespace Platform2D.CharacterController
 
             CurrentState.UpdateState();
 
-            Debug.Log(CurrentState);
+            //Debug.Log(CurrentState);
         }
 
         #endregion
@@ -75,7 +74,7 @@ namespace Platform2D.CharacterController
                 return;
             }
 
-            if(groundHit.collider.CompareTag(TagLayerName.Ground) || groundHit.collider.CompareTag(TagLayerName.OneWay))
+            if (groundHit.collider.CompareTag(TagLayerName.Ground) || groundHit.collider.CompareTag(TagLayerName.OneWay))
                 _states.OnGround = true;
         }
 
@@ -91,7 +90,8 @@ namespace Platform2D.CharacterController
             {
                 _states.CanAttack = _coolDown.FixedTimeCountdown(_stats.BaseStats.attackDuration);
                 Debug.Log("countdown");
-;            }
+                ;
+            }
             else if (_states.CanAttack && _states.IsAttacking)
             {
                 _coolDown.StartCountdown();
