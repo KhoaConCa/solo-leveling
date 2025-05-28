@@ -10,6 +10,8 @@ namespace Platform2D.UI.InventorySystem
     [CreateAssetMenu]
     public class ItemSO : ScriptableObject
     {
+        #region --- Properties ---
+
         [field: SerializeField] public bool IsStackable { get; set; }
         [field: SerializeField] public int MaxStackSize { get; set; } = 1;
         [field: SerializeField] public string Name { get; set; }
@@ -17,5 +19,7 @@ namespace Platform2D.UI.InventorySystem
         [field: SerializeField] public Sprite ItemImage { get; set; }
 
         public int ID => GetInstanceID();
+
+        #endregion
     }
 }

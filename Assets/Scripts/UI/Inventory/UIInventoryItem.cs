@@ -26,7 +26,7 @@ namespace Platform2D.UI.Inventory
         #region --- Methods ---
 
         /// <summary>
-        /// ResetData - Đặt lại dữ liệu của ô kho đồ về trạng thái mặc định, không có vật phẩm nào.
+        /// Đặt lại dữ liệu của ô kho đồ về trạng thái mặc định, không có vật phẩm nào.
         /// </summary>
         public void ResetData()
         {
@@ -35,7 +35,7 @@ namespace Platform2D.UI.Inventory
         }
 
         /// <summary>
-        /// DeSelect - Bỏ chọn ô kho đồ, ẩn hình ảnh được chọn.
+        ///  chọn ô kho đồ, ẩn hình ảnh được chọn.
         /// </summary>
         public void DeSelect()
         {
@@ -43,7 +43,7 @@ namespace Platform2D.UI.Inventory
         }
 
         /// <summary>
-        /// SetData - Thiết lập dữ liệu cho ô kho đồ với hình ảnh và số lượng vật phẩm.
+        /// Thiết lập dữ liệu cho ô kho đồ với hình ảnh và số lượng vật phẩm.
         /// </summary>
         /// <param name="sprite">Hình ảnh vật phẩm</param>
         /// <param name="quantity">Số lượng của vật phẩm đó</param>
@@ -56,7 +56,7 @@ namespace Platform2D.UI.Inventory
         }
 
         /// <summary>
-        /// Select - Chọn ô kho đồ, hiển thị hình ảnh được chọn để người dùng biết đây là ô đang được chọn.
+        /// Chọn ô kho đồ, hiển thị hình ảnh được chọn để người dùng biết đây là ô đang được chọn.
         /// </summary>
         public void Select()
         {
