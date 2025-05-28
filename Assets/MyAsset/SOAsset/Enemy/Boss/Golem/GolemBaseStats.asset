@@ -9,23 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c8b69cb991f1b540b30eedd880423a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 64c027ae4ec51514784dc641af3d5b43, type: 3}
   m_Name: GolemBaseStats
   m_EditorClassIdentifier: 
-  healthPoint: 100
+  healthPoint: 500
   energyPoint: 100
-  defencePoint: 5
-  weight: 8
-  knockBackMultiplier: 0.2
-  DeadknockBackMultiplier: 0.4
-  movementSpeed: 9.9
-  attackDamage: 15
-  movementRange: 8
-  maxMovementRange: 14
-  detectedRange: 10
-  attackRange: 4
-  idleDuration: 3
-  detectDuration: 0.5
-  attackDuration: 1
-  sprite: {fileID: 4723107735738678597, guid: f8b30c2afe165d645b54d500a9c30862, type: 3}
+  defencePoint: 8
+  weight: 20
+  knockBackMultiplier: 0.1
+  DeadknockBackMultiplier: 0.2
+  movementSpeed: 1.5
+  attackDamage: 20
+  detectedRange: 8
+  attackRange: 5
+  appearanceDuration: 0
+  attackDuration: 2
+  name: Ashbringer Golem
+  sprite: {fileID: 1382417902, guid: f172e0a3d8ca0c44eb05d375ef4d662f, type: 3}
   animator: {fileID: 9100000, guid: a84d3e1d5ab9bde4ab1a9014508480f9, type: 2}

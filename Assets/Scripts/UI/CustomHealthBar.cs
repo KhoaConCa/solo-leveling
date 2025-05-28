@@ -26,7 +26,7 @@ namespace Platform2D.UIElement
             if (isTarget)
                 _healthFill.color = _healthBarGradient.Evaluate(1f);
 
-            if (_isShowHp)
+            if (_isShowHp && isTarget)
             {
                 Text curHp = this.gameObject.GetComponentInChildren<Text>();
                 _maxHp = maxHealth;
@@ -45,11 +45,17 @@ namespace Platform2D.UIElement
             if (isTarget)
                 _healthFill.color = _healthBarGradient.Evaluate(_healthBar.normalizedValue);
 
-            if (_isShowHp)
+            if (_isShowHp && isTarget)
             {
                 Text curHp = this.gameObject.GetComponentInChildren<Text>();
                 curHp.text = $"{curHealth} / {_maxHp}";
             }
+        }
+
+        public void ChangeText(string text)
+        {
+            Text name = this.gameObject.GetComponentInChildren<Text>();
+            name.text = text;
         }
 
         #endregion

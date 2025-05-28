@@ -78,7 +78,6 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         private void HitHandle()
         {
-            Debug.Log(_stateController.States.IsHitting);
             if (!_stateController.States.IsHitting) return;
 
             var knockBackSpeed = _stateController.States.KnockBackDirection.x * _stateController.Stats.BaseStats.KnockBackForce;

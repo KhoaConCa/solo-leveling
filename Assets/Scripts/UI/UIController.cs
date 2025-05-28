@@ -12,39 +12,28 @@ namespace Platform2D.CanvasController
     /// </summary>
     public class UIController : MonoBehaviour
     {
-
         #region --- Unity Methods ---
 
-        public void Awake()
+        private void Awake()
         {
-            /*if(!platformChecker.IsMobilePlatform())
-            {
-                foreach (var item in mobileObject)
-                {
-                    item.SetActive(false);
-                }
-                return;
-            }*/
-            _playerController = GameObject.FindWithTag(_tagMainPlayer).GetComponent<PlayerController>();
+            _bossHealthBar.SetActive(false);
         }
 
         #endregion
 
-        #region --- Properties ---
+        #region --- Methods ---
 
-        public PlayerController PlayerController { get { return _playerController; } }
+        public void ShowBossHealthBar()
+        {
+            if(!_bossHealthBar.activeSelf)
+                _bossHealthBar.SetActive(true);
+        }
 
         #endregion
 
         #region --- Fields ---
 
-        [SerializeField] private PlayerController _playerController;
-
-        [SerializeField] private PlatformChecker _platformChecker = new PlatformChecker();
-
-        [SerializeField] private List<GameObject> _mobileObject = new List<GameObject>();
-
-        [SerializeField] private string _tagMainPlayer;
+        [SerializeField] private GameObject _bossHealthBar;
 
         #endregion
 

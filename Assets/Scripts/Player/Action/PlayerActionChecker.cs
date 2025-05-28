@@ -11,13 +11,6 @@ namespace Platform2D.CharacterController
     {
         #region --- Overrides ---
 
-        public void OnHit()
-        {
-            if (Enemy == null) return;
-
-            Enemy.ReceiveDamage(_playerController.Stats.CurrentDamage, _playerController.transform.localScale);
-        }
-
         public void ReceiveDamage(float damage, Vector2 knockBack)
         {
             // Thoát hàm khi _playerController là false.
@@ -55,7 +48,9 @@ namespace Platform2D.CharacterController
 
             if(!collision.gameObject.CompareTag(TagLayerName.Enemy)) return;
 
-            Enemy = collision.gameObject.GetComponent<EnemyActionChecker>();
+            Enemy = collision.gameObject.GetComponent<IDamageable>();
+            if(Enemy == null) 
+                Enemy = collision.gameObject.GetComponentInParent<IDamageable>();
         }
 
         private void OnTriggerExit2D(Collider2D collision)
