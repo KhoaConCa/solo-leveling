@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Platform2D.UI.InventorySystem
@@ -31,19 +32,88 @@ namespace Platform2D.UI.InventorySystem
         /// </summary>
         /// <param name="item">Loại vật phẩm được thêm vào</param>
         /// <param name="quantity">Số lượng vật phẩm</param>
-        public void AddItem(ItemSO item, int quantity)
+        public int AddItem(ItemSO item, int quantity)
         {
+            if (item.IsStackable == false)
+            {
+                for (int i = 0; i < _inventoryItems.Count; i++)
+                {
+                    while (quantity > 0 && IsInventoryFull() == false)
+                    {
+                        quantity -= AddItemToFirstFreeSlot(item, 1);
+                    }
+                    InformationChange();
+                    return quantity;
+                }
+            }
+
+            quantity = AddStackableItems(item, quantity);
+            InformationChange();
+            return quantity;
+        }
+
+        /// <summary>
+        /// Kiểm tra xem kho đồ có đầy hay không.
+        /// </summary>
+        /// <returns>True là đã đầy - False là chưa đầy</returns>
+        private bool IsInventoryFull() => _inventoryItems.Where(item => item.IsEmpty).Any() == false;
+
+        private int AddStackableItems(ItemSO item, int quantity)
+        {
+            for (int i = 0; i < _inventoryItems.Count; i++)
+            {
+                if (_inventoryItems[i].IsEmpty) continue;
+                if (_inventoryItems[i].item.ID == item.ID)
+                {
+                    int amountCanTake = _inventoryItems[i].item.MaxStackSize - _inventoryItems[i].quantity;
+
+                    if (quantity > amountCanTake)
+                    {
+                        _inventoryItems[i] = _inventoryItems[i].ChangeQuantity(_inventoryItems[i].item.MaxStackSize);
+                        quantity -= amountCanTake;
+                    }
+                    else
+                    {
+                        _inventoryItems[i] = _inventoryItems[i].ChangeQuantity(_inventoryItems[i].quantity + quantity);
+                        InformationChange();
+                        return 0;
+                    }
+                }
+            }
+
+            while (quantity > 0 && IsInventoryFull() == false)
+            {
+                int newQuantity = Mathf.Clamp(quantity, 0, item.MaxStackSize);
+                quantity -= newQuantity;
+                AddItemToFirstFreeSlot(item, newQuantity);
+            }
+            return quantity;
+        }
+
+        /// <summary>
+        /// Thêm một vật phẩm không thể xếp chồng vào kho đồ.
+        /// </summary>
+        /// <param name="item">Loại vật phẩm</param>
+        /// <param name="quantity">Số lượng</param>
+        /// <returns>Số lượng vật phẩm đó</returns>
+        private int AddItemToFirstFreeSlot(ItemSO item, int newQuantity)
+        {
+            InventoryItem newItem = new InventoryItem
+            {
+                item = item,
+                quantity = newQuantity
+            };
+
             for (int i = 0; i < _inventoryItems.Count; i++)
             {
                 if (_inventoryItems[i].IsEmpty)
                 {
-                    _inventoryItems[i] = new InventoryItem
-                    {
-                        item = item,
-                        quantity = quantity
-                    };
+                    _inventoryItems[i] = newItem;
+                    return newQuantity;
                 }
             }
+
+            return 0;
         }
 
         /// <summary>
@@ -74,11 +144,43 @@ namespace Platform2D.UI.InventorySystem
             return _inventoryItems[itemIndex];
         }
 
+        /// <summary>
+        /// Theem một vật phẩm vào kho đồ.
+        /// </summary>
+        /// <param name="item">Thông tin vật phẩm</param>
+        public void AddItem(InventoryItem item)
+        {
+            AddItem(item.item, item.quantity);
+        }
+
+        /// <summary>
+        /// Đổi chỗ của hai vật phẩm trong kho đồ.
+        /// </summary>
+        /// <param name="itemIndex_1">Vật phẩm 1</param>
+        /// <param name="itemIndex_2">Vật phẩm 2</param>
+        public void SwapItems(int itemIndex_1, int itemIndex_2)
+        {
+            InventoryItem item1 = _inventoryItems[itemIndex_1];
+            _inventoryItems[itemIndex_1] = _inventoryItems[itemIndex_2];
+            _inventoryItems[itemIndex_2] = item1;
+            InformationChange();
+        }
+
+        /// <summary>
+        /// Thay đổi thông tin kho đồ và thông báo cho các đối tượng lắng nghe về sự thay đổi này.
+        /// </summary>
+        private void InformationChange()
+        {
+            OnInventoryChanged?.Invoke(GetCurrentInventoryState());
+        }
+
         #endregion
 
         #region --- Fields ---
 
         [SerializeField] private List<InventoryItem> _inventoryItems;
+
+        public event Action<Dictionary<int, InventoryItem>> OnInventoryChanged;
 
         [field: SerializeField] public int size { get; private set; } = 20;
 

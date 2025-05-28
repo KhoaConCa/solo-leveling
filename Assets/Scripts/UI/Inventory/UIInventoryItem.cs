@@ -30,7 +30,7 @@ namespace Platform2D.UI.Inventory
         /// </summary>
         public void ResetData()
         {
-            this._itemIcon.gameObject.SetActive(false);
+            _itemIcon.gameObject.SetActive(false);
             _empty = true;
         }
 

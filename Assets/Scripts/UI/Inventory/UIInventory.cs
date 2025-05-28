@@ -55,6 +55,7 @@ namespace Platform2D.UI.InventorySystem
             }
 
             OnSwapItems?.Invoke(_currentDragItemIndex, index);
+            HandleItemSelection(inventoryItemUI);
         }
 
         private void HandleItemEndDrag(UIInventoryItem inventoryItemUI)
@@ -165,6 +166,21 @@ namespace Platform2D.UI.InventorySystem
             _descriptionPanel.SetDescription(itemImage, name, description);
             DeselectAllItems();
             _listOfSlot[itemIndex].Select();
+        }
+
+        /// <summary>
+        /// Đặt lại dữ liệu của các ô về trạng thái mặc định.
+        /// </summary>
+        public void ResetAllItems()
+        {
+            for (int i = 0; i < _listOfSlot.Count; i++)
+            {
+                if (_listOfSlot[i] != null)
+                {
+                    _listOfSlot[i].ResetData();
+                    _listOfSlot[i].DeSelect();
+                }
+            }
         }
 
         #endregion

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Platform2D.UI.InventorySystem
@@ -15,7 +16,7 @@ namespace Platform2D.UI.InventorySystem
         void Start()
         {
             PrepareForUI();
-            //_inventoryData.Initialize();
+            PrepareForInventoryData();
 
             _goToTools.onClick.AddListener(OpenInventory);
 
@@ -42,6 +43,27 @@ namespace Platform2D.UI.InventorySystem
 
         #region --- Methods ---
 
+        private void PrepareForInventoryData()
+        {
+            _inventoryData.Initialize();
+            _inventoryData.OnInventoryChanged += UpdateInventoryUI;
+            foreach (InventoryItem item in initialItems)
+            {
+                if (item.IsEmpty)
+                    continue;
+
+                _inventoryData.AddItem(item);
+            }
+        }
+
+        private void UpdateInventoryUI(Dictionary<int, InventoryItem> InventoryState)
+        {
+            _inventoryUI.ResetAllItems();
+            foreach (var item in InventoryState)
+            {
+                _inventoryUI.UpdateData(item.Key, item.Value.item.ItemImage, item.Value.quantity);
+            }
+        }
 
         /// <summary>
         /// Chuẩn bị giao diện người dùng cho kho đồ, bao gồm khởi tạo UI và đăng ký các sự kiện cần thiết.
@@ -63,12 +85,14 @@ namespace Platform2D.UI.InventorySystem
 
         private void HandleDragging(int itemIndex)
         {
-
+            InventoryItem inventoryItem = _inventoryData.GetItemAt(itemIndex);
+            if (inventoryItem.IsEmpty) return;
+            _inventoryUI.CreateDragItem(inventoryItem.item.ItemImage, inventoryItem.quantity);
         }
 
         private void HandleSwapItems(int itemIndex_1, int itemIndex_2)
         {
-
+            _inventoryData.SwapItems(itemIndex_1, itemIndex_2);
         }
 
         private void HandleDescriptionRequest(int itemIndex)
@@ -117,7 +141,7 @@ namespace Platform2D.UI.InventorySystem
         [SerializeField] private Button _goToTools;
         [SerializeField] private InventorySO _inventoryData;
 
-        private bool _openInventory = false;
+        public List<InventoryItem> initialItems = new List<InventoryItem>();
 
         #endregion
     }

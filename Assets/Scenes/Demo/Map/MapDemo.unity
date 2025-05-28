@@ -67516,6 +67516,46 @@ PrefabInstance:
       propertyPath: _goBackButton
       value: 
       objectReference: {fileID: 1113367172}
+    - target: {fileID: 1534492490937158494, guid: d4cf1a9974bf5dd45b7b162d4675de74, type: 3}
+      propertyPath: _inventoryData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c7751f374d738b48b22f746f577536e, type: 2}
+    - target: {fileID: 1534492490937158494, guid: d4cf1a9974bf5dd45b7b162d4675de74, type: 3}
+      propertyPath: initialItems.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534492490937158494, guid: d4cf1a9974bf5dd45b7b162d4675de74, type: 3}
+      propertyPath: initialItems.Array.data[0].item
+      value: 
+      objectReference: {fileID: 11400000, guid: d2d00447f3ff1034b89718515d860694, type: 2}
+    - target: {fileID: 1534492490937158494, guid: d4cf1a9974bf5dd45b7b162d4675de74, type: 3}
+      propertyPath: initialItems.Array.data[2].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 195ee288751a67542b8a83761fb9d331, type: 2}
+    - target: {fileID: 1534492490937158494, guid: d4cf1a9974bf5dd45b7b162d4675de74, type: 3}
+      propertyPath: initialItems.Array.data[3].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 195ee288751a67542b8a83761fb9d331, type: 2}
+    - target: {fileID: 1534492490937158494, guid: d4cf1a9974bf5dd45b7b162d4675de74, type: 3}
+      propertyPath: initialItems.Array.data[4].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 195ee288751a67542b8a83761fb9d331, type: 2}
+    - target: {fileID: 1534492490937158494, guid: d4cf1a9974bf5dd45b7b162d4675de74, type: 3}
+      propertyPath: initialItems.Array.data[0].quantity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534492490937158494, guid: d4cf1a9974bf5dd45b7b162d4675de74, type: 3}
+      propertyPath: initialItems.Array.data[2].quantity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534492490937158494, guid: d4cf1a9974bf5dd45b7b162d4675de74, type: 3}
+      propertyPath: initialItems.Array.data[3].quantity
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534492490937158494, guid: d4cf1a9974bf5dd45b7b162d4675de74, type: 3}
+      propertyPath: initialItems.Array.data[4].quantity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2141676788752121373, guid: d4cf1a9974bf5dd45b7b162d4675de74, type: 3}
       propertyPath: _healthBar
       value: 
