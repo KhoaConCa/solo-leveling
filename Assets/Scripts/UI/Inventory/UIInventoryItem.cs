@@ -49,9 +49,9 @@ namespace Platform2D.UI.Inventory
         /// <param name="quantity">Số lượng của vật phẩm đó</param>
         public void SetData(Sprite sprite, int quantity)
         {
-            this._itemIcon.gameObject.SetActive(true);
-            this._itemIcon.sprite = sprite;
-            this._itemQuantity.text = quantity.ToString();
+            _itemIcon.gameObject.SetActive(true);
+            _itemIcon.sprite = sprite;
+            _itemQuantity.text = quantity.ToString();
             _empty = false;
         }
 
@@ -63,6 +63,7 @@ namespace Platform2D.UI.Inventory
             _itemSelected.enabled = true;
         }
 
+        #region -- Events --
         public void OnPointerClick(PointerEventData pointerData)
         {
             if (pointerData.button == PointerEventData.InputButton.Right)
@@ -97,6 +98,7 @@ namespace Platform2D.UI.Inventory
         {
 
         }
+        #endregion
 
         #endregion
 

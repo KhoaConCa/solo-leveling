@@ -21,7 +21,7 @@ namespace Platform2D.UI.InventorySystem
         public void Initialize()
         {
             _inventoryItems = new List<InventoryItem>();
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < Size; i++)
             {
                 _inventoryItems.Add(InventoryItem.GetEmptyItem());
             }
@@ -42,12 +42,13 @@ namespace Platform2D.UI.InventorySystem
                     {
                         quantity -= AddItemToFirstFreeSlot(item, 1);
                     }
+
                     InformationChange();
                     return quantity;
                 }
             }
 
-            quantity = AddStackableItems(item, quantity);
+            quantity = AddStackableItem(item, quantity);
             InformationChange();
             return quantity;
         }
@@ -58,19 +59,21 @@ namespace Platform2D.UI.InventorySystem
         /// <returns>True là đã đầy - False là chưa đầy</returns>
         private bool IsInventoryFull() => _inventoryItems.Where(item => item.IsEmpty).Any() == false;
 
-        private int AddStackableItems(ItemSO item, int quantity)
+        private int AddStackableItem(ItemSO item, int quantity)
         {
             for (int i = 0; i < _inventoryItems.Count; i++)
             {
-                if (_inventoryItems[i].IsEmpty) continue;
+                if (_inventoryItems[i].IsEmpty)
+                    continue;
+
                 if (_inventoryItems[i].item.ID == item.ID)
                 {
-                    int amountCanTake = _inventoryItems[i].item.MaxStackSize - _inventoryItems[i].quantity;
+                    int amountPossibleToTake = _inventoryItems[i].item.MaxStackSize - _inventoryItems[i].quantity;
 
-                    if (quantity > amountCanTake)
+                    if (quantity > amountPossibleToTake)
                     {
                         _inventoryItems[i] = _inventoryItems[i].ChangeQuantity(_inventoryItems[i].item.MaxStackSize);
-                        quantity -= amountCanTake;
+                        quantity -= amountPossibleToTake;
                     }
                     else
                     {
@@ -87,6 +90,7 @@ namespace Platform2D.UI.InventorySystem
                 quantity -= newQuantity;
                 AddItemToFirstFreeSlot(item, newQuantity);
             }
+
             return quantity;
         }
 
@@ -96,12 +100,13 @@ namespace Platform2D.UI.InventorySystem
         /// <param name="item">Loại vật phẩm</param>
         /// <param name="quantity">Số lượng</param>
         /// <returns>Số lượng vật phẩm đó</returns>
-        private int AddItemToFirstFreeSlot(ItemSO item, int newQuantity)
+        private int AddItemToFirstFreeSlot(ItemSO item, int quantity)
         {
             InventoryItem newItem = new InventoryItem
             {
                 item = item,
-                quantity = newQuantity
+                quantity = quantity,
+                //itemState = new List<ItemParameter>(itemState == null ? item.DefaultParametersList : itemState)
             };
 
             for (int i = 0; i < _inventoryItems.Count; i++)
@@ -109,10 +114,9 @@ namespace Platform2D.UI.InventorySystem
                 if (_inventoryItems[i].IsEmpty)
                 {
                     _inventoryItems[i] = newItem;
-                    return newQuantity;
+                    return quantity;
                 }
             }
-
             return 0;
         }
 
@@ -122,13 +126,15 @@ namespace Platform2D.UI.InventorySystem
         /// <returns>Trạng thái của kho đồ hiện tại</returns>
         public Dictionary<int, InventoryItem> GetCurrentInventoryState()
         {
-            Dictionary<int, InventoryItem> returnValue = new Dictionary<int, InventoryItem>();
+            Dictionary<int, InventoryItem> returnValue =
+                new Dictionary<int, InventoryItem>();
+
             for (int i = 0; i < _inventoryItems.Count; i++)
             {
-                if (!_inventoryItems[i].IsEmpty)
-                {
-                    returnValue[i] = _inventoryItems[i];
-                }
+                if (_inventoryItems[i].IsEmpty)
+                    continue;
+
+                returnValue[i] = _inventoryItems[i];
             }
 
             return returnValue;
@@ -182,7 +188,9 @@ namespace Platform2D.UI.InventorySystem
 
         public event Action<Dictionary<int, InventoryItem>> OnInventoryChanged;
 
-        [field: SerializeField] public int size { get; private set; } = 20;
+        [field: SerializeField] public int Size { get; private set; } = 20;
+
+        InventoryItem item = new InventoryItem();
 
         #endregion
     }
@@ -203,6 +211,7 @@ namespace Platform2D.UI.InventorySystem
             {
                 item = this.item,
                 quantity = newQuantity,
+                //itemState = new List<ItemParameter>(this.itemState)
             };
         }
 
@@ -215,6 +224,7 @@ namespace Platform2D.UI.InventorySystem
             {
                 item = null,
                 quantity = 0,
+                //itemState = new List<ItemParameter>()
             };
 
         #endregion
@@ -229,6 +239,7 @@ namespace Platform2D.UI.InventorySystem
 
         public ItemSO item;
         public int quantity;
+        //public List<ItemParameter> itemState;
 
         #endregion
     }

@@ -19,7 +19,6 @@ namespace Platform2D.UI.InventorySystem
             PrepareForInventoryData();
 
             _goToTools.onClick.AddListener(OpenInventory);
-
             _goBackButton.onClick.AddListener(HideInventory);
         }
 
@@ -43,10 +42,14 @@ namespace Platform2D.UI.InventorySystem
 
         #region --- Methods ---
 
+        /// <summary>
+        /// Chuẩn bị dữ liệu kho đồ, bao gồm khởi tạo kho đồ và đăng ký các sự kiện cần thiết.
+        /// </summary>
         private void PrepareForInventoryData()
         {
             _inventoryData.Initialize();
             _inventoryData.OnInventoryChanged += UpdateInventoryUI;
+
             foreach (InventoryItem item in initialItems)
             {
                 if (item.IsEmpty)
@@ -56,10 +59,15 @@ namespace Platform2D.UI.InventorySystem
             }
         }
 
-        private void UpdateInventoryUI(Dictionary<int, InventoryItem> InventoryState)
+        /// <summary>
+        /// Cập nhật giao diện kho đồ dựa trên trạng thái hiện tại của kho đồ.
+        /// </summary>
+        /// <param name="inventoryState">Trạng thái kho đồ</param>
+        private void UpdateInventoryUI(Dictionary<int, InventoryItem> inventoryState)
         {
             _inventoryUI.ResetAllItems();
-            foreach (var item in InventoryState)
+
+            foreach (var item in inventoryState)
             {
                 _inventoryUI.UpdateData(item.Key, item.Value.item.ItemImage, item.Value.quantity);
             }
@@ -70,11 +78,11 @@ namespace Platform2D.UI.InventorySystem
         /// </summary>
         private void PrepareForUI()
         {
-            _inventoryUI.InitializInventoryUI(_inventoryData.size);
-            this._inventoryUI.OnDescriptionRequested += HandleDescriptionRequest;
-            this._inventoryUI.OnSwapItems += HandleSwapItems;
-            this._inventoryUI.OnStartDragging += HandleDragging;
-            this._inventoryUI.OnItemActionRequest += HandleItemActionRequest;
+            _inventoryUI.InitializInventoryUI(_inventoryData.Size);
+            _inventoryUI.OnDescriptionRequested += HandleDescriptionRequest;
+            _inventoryUI.OnSwapItems += HandleSwapItems;
+            _inventoryUI.OnStartDragging += HandleDragging;
+            _inventoryUI.OnItemActionRequest += HandleItemActionRequest;
         }
 
         #region -- Events ---
@@ -86,7 +94,10 @@ namespace Platform2D.UI.InventorySystem
         private void HandleDragging(int itemIndex)
         {
             InventoryItem inventoryItem = _inventoryData.GetItemAt(itemIndex);
-            if (inventoryItem.IsEmpty) return;
+
+            if (inventoryItem.IsEmpty)
+                return;
+
             _inventoryUI.CreateDragItem(inventoryItem.item.ItemImage, inventoryItem.quantity);
         }
 
