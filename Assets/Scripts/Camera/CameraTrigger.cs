@@ -25,9 +25,7 @@ namespace Platform2D.CameraSystem
                 Debug.Log("Camera Trigger Enter: " + collider.name);
                 if (panCameraOnContact)
                 {
-                    CameraController.instance.PanCameraOnContact(panDistance,
-                        panTime,
-                        panDirection, false);
+                    CameraController.instance.PanCameraOnContact(panDistance, panTime, panDirection, false);
                 }
             }
         }
@@ -50,9 +48,7 @@ namespace Platform2D.CameraSystem
 
                 if (panCameraOnContact)
                 {
-                    CameraController.instance.PanCameraOnContact(panDistance,
-                        panTime,
-                        panDirection, true);
+                    CameraController.instance.PanCameraOnContact(panDistance, panTime, panDirection, true);
                 }
             }
         }

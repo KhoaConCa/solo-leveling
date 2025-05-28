@@ -23,6 +23,7 @@ namespace Platform2D.CameraSystem
                 return;
             }
 
+            Camera.main.aspect = 16f / 9f;
             SetupCameras();
         }
 
