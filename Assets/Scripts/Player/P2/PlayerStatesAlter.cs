@@ -51,7 +51,10 @@ namespace Platform2D.CharacterStates
             {
                 _isJumping = value;
                 if (value)
+                {
                     _animator.SetTrigger(AnimationStrings.JumpTrigger);
+                    _effectAnimator.SetTrigger(AnimationStrings.JumpTrigger);
+                }
             }
         }
         public bool IsDoubleJump { get; set; }
@@ -96,7 +99,10 @@ namespace Platform2D.CharacterStates
             set {
                 _isDashing = value;
                 if (_isDashing)
+                {
                     _animator.SetTrigger(AnimationStrings.DashTrigger);
+                    _effectAnimator.SetTrigger(AnimationStrings.DashTrigger);
+                }
             }
         }
         #endregion
@@ -182,6 +188,7 @@ namespace Platform2D.CharacterStates
         #region --- Fields ---
 
         [SerializeField] private Animator _animator;
+        [SerializeField] private Animator _effectAnimator;
 
         [SerializeField] private Vector2 _onMove = Vector2.zero;
 

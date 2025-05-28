@@ -49,7 +49,7 @@ namespace Platform2D.CharacterController
             if (_states.IsPenetrable && _movementChecker.IsOneWay)
                 _movementChecker.TryStartDisable();
 
-            //Debug.Log(CurrentState);
+            Debug.Log(CurrentState);
 
             ResetDashingCooldown();
 

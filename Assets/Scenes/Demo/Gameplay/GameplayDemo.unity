@@ -1784,6 +1784,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3352299703224744340, guid: 9d46dcc30fba9cd4db7f6dda54d3855e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5333495
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352299703224744340, guid: 9d46dcc30fba9cd4db7f6dda54d3855e, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8290999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352299703224744340, guid: 9d46dcc30fba9cd4db7f6dda54d3855e, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.025776386
+      objectReference: {fileID: 0}
+    - target: {fileID: 3352299703224744340, guid: 9d46dcc30fba9cd4db7f6dda54d3855e, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.06577146
+      objectReference: {fileID: 0}
     - target: {fileID: 5568097618270119002, guid: 9d46dcc30fba9cd4db7f6dda54d3855e, type: 3}
       propertyPath: _healthBar
       value: 
@@ -1799,10 +1815,6 @@ PrefabInstance:
     - target: {fileID: 8819455263851608651, guid: 9d46dcc30fba9cd4db7f6dda54d3855e, type: 3}
       propertyPath: m_Name
       value: Player_Knight
-      objectReference: {fileID: 0}
-    - target: {fileID: 8819455263851608651, guid: 9d46dcc30fba9cd4db7f6dda54d3855e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
