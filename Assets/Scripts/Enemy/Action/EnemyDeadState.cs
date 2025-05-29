@@ -70,7 +70,7 @@ namespace Platform2D.HierarchicalStateMachine
         {
             var knockBackSpeed = _stateController.States.KnockBackDirection.x * _stateController.Stats.BaseStats.DeadKnockBackForce;
             _stateController.Rg2D.velocity = new Vector2(knockBackSpeed, _stateController.Rg2D.velocity.y);
-            Debug.Log(_stateController.Rg2D.velocity);
+
         }
 
         #endregion

@@ -29,11 +29,28 @@ namespace Platform2D.CanvasController
                 _bossHealthBar.SetActive(true);
         }
 
+        public void ShowInteractButton(bool canInteract)
+        {
+            if (canInteract)
+            {
+                _attackButton.SetActive(false);
+                _interactButton.SetActive(true);
+            }
+            else
+            {
+                _attackButton.SetActive(true);
+                _interactButton.SetActive(false);
+            }
+        }
+
         #endregion
 
         #region --- Fields ---
 
         [SerializeField] private GameObject _bossHealthBar;
+
+        [SerializeField] private GameObject _attackButton;
+        [SerializeField] private GameObject _interactButton;
 
         #endregion
 

@@ -4,6 +4,7 @@ using Platform2D.EnemyType;
 using Platform2D.HierarchicalStateMachine;
 using Platform2D.UIElement;
 using Platform2D.Utilities;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -40,6 +41,8 @@ namespace Platform2D.CharacterController
             _stats.CurrentMovementSpeed = 0;
             _coolDown = new Utilities.Timer();
 
+            _deadTrigger = true;
+
             EnemyStateFactory = new EnemyStateFactory(this);
             CurrentState = EnemyStateFactory.Idle();
             CurrentState.EnterState();
@@ -47,10 +50,11 @@ namespace Platform2D.CharacterController
 
         private void FixedUpdate()
         {
-            if (_states.CanDisable)
-            {
-                Destroy(this.gameObject);
-            }
+            DestroyEnemy();
+
+            Debug.Log(CurrentState);
+
+            if (_states.IsDead) return;
 
             ResetAttackCooldown();
 
@@ -59,9 +63,8 @@ namespace Platform2D.CharacterController
 
             _actionChecker.DetectedPlayer();
 
+            
             CurrentState.UpdateState();
-
-            //Debug.Log(CurrentState);
         }
 
         #endregion
@@ -105,6 +108,26 @@ namespace Platform2D.CharacterController
 
         }
 
+        private void DestroyEnemy()
+        {
+            if (_deadTrigger && _states.IsDead && _states.CanDisable)
+                OnDestroyEnemy();
+        }
+
+        private void OnDestroyEnemy()
+        {
+            _deadTrigger = false;
+
+            CurrentState.SwitchState(EnemyStateFactory.Dead());
+
+            if (SpawnerCtrl != null)
+            {
+                SpawnerCtrl.Enemy = null;
+            }
+            
+            Destroy(this.gameObject, 2f);
+        }
+
         #endregion
 
         #region --- Properties ---
@@ -122,6 +145,8 @@ namespace Platform2D.CharacterController
         public EnemyStates States => _states;
         public EnemyStats Stats => _stats;
         public EnemyStateFactory EnemyStateFactory { get; set; }
+
+        public Spawner SpawnerCtrl { get; set; }
 
         #endregion
 
@@ -157,6 +182,8 @@ namespace Platform2D.CharacterController
 
         private const float GROUND_DISTANCE = 1f;
         private const float WALL_DISTANCE = 0.2f;
+
+        private bool _deadTrigger;
 
         #endregion
     }

@@ -57,9 +57,32 @@ namespace Platform2D.CharacterController
         {
             if (collision == null) return;
 
+            if (!collision.gameObject.layer.Equals(LayerMask.GetMask(TagLayerName.Interactable)))
+            {
+                _playerController.UICtrl.ShowInteractButton(false);
+            }
+            else
+                _playerController.UICtrl.ShowInteractButton(true);
+
             if (!collision.gameObject.CompareTag(TagLayerName.Enemy)) return;
 
             Enemy = null;
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision == null) return;
+
+            if (!collision.gameObject.layer.Equals(LayerMask.GetMask(TagLayerName.Interactable))) return;
+
+            _playerController.UICtrl.ShowInteractButton(true);
+        }
+
+        private void OnCollisionExit2D(Collision2D collision)
+        {
+            if (collision == null) return;
+
+            _playerController.UICtrl.ShowInteractButton(false);
         }
 
         #endregion

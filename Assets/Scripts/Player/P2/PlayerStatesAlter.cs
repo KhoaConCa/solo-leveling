@@ -1,4 +1,5 @@
 ﻿using Platform2D.CharacterAnimation;
+using Platform2D.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -127,6 +128,28 @@ namespace Platform2D.CharacterStates
 
         #endregion
 
+        #region -- Interact States --
+
+        public string TagInteract {  get; set; }
+        public bool IsInteracted
+        {
+            get
+            {
+                return _isInteracted;
+            }
+            set
+            {
+                _isInteracted = value;
+
+                if (TagInteract.Length <= 0) return;
+
+                if (_isInteracted && TagInteract == TagLayerName.Checkpoint)
+                    _animator.SetTrigger(AnimationStrings.RecoveryTrigger);
+            }
+        }
+
+        #endregion
+
         #region -- Receive States --
 
         public bool Invulnerable { get; set; } = false;
@@ -200,6 +223,7 @@ namespace Platform2D.CharacterStates
 
         [SerializeField] private bool _isAttacking = false;
         [SerializeField] private bool _isFinishAttack = false;
+        [SerializeField] private bool _isInteracted = false;
 
         [SerializeField] private bool _isHitting = false;
         [SerializeField] private bool _isDead = false;

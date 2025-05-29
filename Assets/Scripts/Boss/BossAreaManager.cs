@@ -27,6 +27,7 @@ public class BossAreaManager : MonoBehaviour
             Debug.DrawLine((Vector2)_anchorSpawner.transform.position, _playerPos, Color.yellow);
             var rg = _anchorSpawner.GetComponent<Rigidbody2D>();
             rg.velocity = new Vector3(speed, rg.velocity.x);
+            AnchorSpawnerPos = _anchorSpawner.transform.position;
         }
     }
 
@@ -34,7 +35,7 @@ public class BossAreaManager : MonoBehaviour
 
     #region --- Properties ---
 
-    public Vector2 AnchorSpawnerPos => _anchorSpawner.transform.position;
+    public Vector2 AnchorSpawnerPos { get; set; }
 
     #endregion
 

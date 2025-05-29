@@ -1,9 +1,11 @@
 ﻿using Platform2D.CameraSystem;
+using Platform2D.CanvasController;
 using Platform2D.CharacterStates;
 using Platform2D.CharacterStats;
 using Platform2D.HierarchicalStateMachine;
 using Platform2D.UIElement;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Platform2D.CharacterController
 {
@@ -110,6 +112,7 @@ namespace Platform2D.CharacterController
         public CapsuleCollider2D Col2D => _col2D;
         public Transform BasePos => _basePos;
         public Animator Animator => _animator;
+        public UIController UICtrl => _uiCtrl;
         public CustomHealthBar HealthBar => _healthBar;
         public CameraFollower CameraFollower => _cameraFollowerObject;
         public CameraController CameraController => _cameraController;
@@ -118,6 +121,7 @@ namespace Platform2D.CharacterController
         public PlayerStatesAlter States => _states;
         public PlayerStats Stats => _stats;
         public PlayerStateFactory StateFactory { get; set; }
+        public UnityEvent RecoveryAllEnemy => _recoveryAllEnemy;
 
         #endregion
 
@@ -134,6 +138,7 @@ namespace Platform2D.CharacterController
         [Header("Custom Components")]
         [SerializeField] private PlayerMovementChecker _movementChecker;
         [SerializeField] private PlayerActionChecker _actionChecker;
+        [SerializeField] private UIController _uiCtrl;
         [SerializeField] private CustomHealthBar _healthBar;
 
         [Header("States & Stats")]
@@ -147,6 +152,9 @@ namespace Platform2D.CharacterController
         [Header("Camera")]
         [SerializeField] private GameObject _cameraFollower;
         [SerializeField] private CameraController _cameraController;
+
+        [Header("Unity Events")]
+        [SerializeField] private UnityEvent _recoveryAllEnemy;
 
         private Utilities.Timer _coolDown;
 

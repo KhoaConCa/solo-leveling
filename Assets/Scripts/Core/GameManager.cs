@@ -1,18 +1,39 @@
+using Platform2D.CharacterController;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    #region --- Unity Methods ---
+
+    private void Start()
     {
-        
+        RecoveryAllEnemies();
     }
 
-    // Update is called once per frame
-    void Update()
+    #endregion
+
+    #region --- Methods ---
+
+    public void RecoveryAllEnemies()
     {
-        
+        foreach(var spawner in _spawners)
+        {
+            var spawnCtrl = spawner.GetComponent<Spawner>();
+            spawnCtrl.Spawn(_enemyPrefab);
+        }
     }
+
+    #endregion
+
+    #region --- Fields ---
+
+    [SerializeField] private GameObject _player;
+
+    [SerializeField] private List<GameObject> _spawners;
+
+    [SerializeField] private GameObject _enemyPrefab;
+
+    #endregion
 }
