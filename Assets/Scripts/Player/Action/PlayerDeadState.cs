@@ -6,45 +6,44 @@ using UnityEngine;
 namespace Platform2D.HierarchicalStateMachine
 {
     /// <summary>
-    /// PlayerHitState - Là một Hit State của Player được kế thừa từ BaseState, được dùng để xử lý Logic và Animation thuộc Hit.
+    /// PlayerDeadState - Là một Dead State của Player được kế thừa từ BaseState, được dùng để xử lý Logic và Animation thuộc Dead.
     /// Tác giả: Nguyễn Ngọc Phú, Ngày tạo: 12/05/2025.
     /// </summary>
-    public class PlayerHitState : BaseState<PlayerCore, PlayerStateFactory>
+    public class PlayerDeadState : BaseState<PlayerCore, PlayerStateFactory>
     {
         #region --- Overrides ---
 
         /// <summary>
-        /// Khởi tạo PlayerHitState.
+        /// Khởi tạo PlayerDeadState.
         /// </summary>
         /// <param name="stateController">Biến truyền vào mang kiểu dữ liệu PlayerController.</param>
         /// <param name="stateFactory">Biến truyền vào mang kiểu dữ liệu PlayerStateFactory.</param>
-        public PlayerHitState(PlayerCore stateController, PlayerStateFactory stateFactory) : base(stateController, stateFactory) { }
+        public PlayerDeadState(PlayerCore stateController, PlayerStateFactory stateFactory) : base(stateController, stateFactory) { }
 
         /// <summary>
-        /// Cài đặt mặc định cho Hit State.
+        /// Cài đặt mặc định cho Dead State.
         /// </summary>
         public override void EnterState() 
         {
-            _stateController.States.Invulnerable = true;
         }
 
         /// <summary>
-        /// Cập nhật Hit State.
+        /// Cập nhật Dead State.
         /// </summary>
         public override void UpdateState() 
         {
-            HitHandle();
+            if(_isTrigger)
+                DeadHandle();
 
             CheckSwitchState();
         }
 
         /// <summary>
-        /// Thoát Hit State.
+        /// Thoát Dead State.
         /// </summary>
         public override void ExitState()
         {
-            _stateController.States.IsHitting = false;
-            _stateController.States.Invulnerable = false;
+            
         }
 
         /// <summary>
@@ -52,18 +51,10 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState() 
         {
-            if (!_stateController.States.CanMove) return;
-
-            if (_stateController.States.IsDead)
+            if (_stateController.States.IsRevived)
             {
-                SwitchState(_stateFactory.Dead());
-                return;
+                SwitchState(_stateFactory.Revive());
             }
-
-            if (_stateController.States.IsMoving)
-                SwitchState(_stateFactory.Run());
-            else
-                SwitchState(_stateFactory.Idle());
         }
 
         /// <summary>
@@ -80,15 +71,27 @@ namespace Platform2D.HierarchicalStateMachine
         #region --- Methods ---
 
         /// <summary>
-        /// Xử lý logic khi Player đang trong Hit State.
+        /// Xử lý logic khi Player đang trong Dead State.
         /// </summary>
-        private void HitHandle()
+        private void DeadHandle()
         {
-            if (!_stateController.States.IsHitting) return;
+            _isTrigger = false;
 
-            var knockBackSpeed = _stateController.States.KnockBackDirection.x * _stateController.Stats.BaseStats.KnockBackForce;
-            _stateController.Rg2D.velocity = new Vector2(knockBackSpeed, _stateController.Rg2D.velocity.y);
+            _stateController.StartCoroutine(ShowDead());
         }
+
+        private IEnumerator ShowDead()
+        {
+            yield return new WaitForSeconds(1.5f);
+
+            _stateController.OnDeadCallback?.Invoke();
+        }
+
+        #endregion
+
+        #region --- Fields ---
+
+        private bool _isTrigger = true;
 
         #endregion
     }

@@ -32,7 +32,8 @@ namespace Platform2D.UIMovement
                     OnAttack();
                     break;
                 case ACTION_FUNCTION.INTERACT:
-                    _playerController.States.IsInteracted = true;
+                    if(_playerController.States.CanMove)
+                        _playerController.States.IsInteracted = true;
                     break;
             }
         }

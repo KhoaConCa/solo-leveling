@@ -56,6 +56,12 @@ namespace Platform2D.HierarchicalStateMachine
         {
             if (!_stateController.States.CanMove) return;
 
+            if (_stateController.States.IsDead)
+            {
+                SwitchState(_stateFactory.Dead());
+                return;
+            }
+
             if (_stateController.States.IsMoving)
                 SwitchState(_stateFactory.Run());
             else
@@ -84,7 +90,7 @@ namespace Platform2D.HierarchicalStateMachine
 
             _stateController.Stats.CurrentHealthPoint = _stateController.Stats.BaseStats.healthPoint;
             _stateController.HealthBar.SetMaxHealth(_stateController.Stats.BaseStats.healthPoint, true);
-            _stateController.RecoveryAllEnemy?.Invoke();
+            _stateController.OnRecoveryCallback?.Invoke();
         }
 
         #endregion
