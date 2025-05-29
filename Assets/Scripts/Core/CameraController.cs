@@ -27,6 +27,34 @@ namespace Platform2D.CameraSystem
             SetupCameras();
         }
 
+        private void Update()
+        {
+            //Vector2 playerPosition = _playerCollider.bounds.center;
+            //Vector2 bossZone = _bossCollider.bounds.center;
+            //Vector2 directionGuess = (playerPosition - bossZone).normalized;
+
+            ResetCameraAfterDieInBossRoom();
+        }
+
+        private void ResetCameraAfterDieInBossRoom()
+        {
+            if (_currentVirtualCamera == _allVirtualCameras[1])
+            {
+                Vector2 playerPosition = _playerCollider.bounds.center;
+                Vector2 bossZone = _bossCollider.bounds.center;
+                Vector2 directionGuess = (playerPosition - bossZone).normalized;
+
+                if (directionGuess.x < 0 && directionGuess.y > 0)
+                {
+                    _allVirtualCameras[1].enabled = false;
+                    _allVirtualCameras[0].enabled = true;
+                    _currentVirtualCamera = _allVirtualCameras[0];
+                    _framingTransposer = _currentVirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+                    Debug.Log("CameraController: ResetCameraAfterDieInBossRoom - Camera reset to: " + _currentVirtualCamera.name);
+                }
+            }
+        }
+
         #endregion
 
         #region --- Methods ---
@@ -206,6 +234,8 @@ namespace Platform2D.CameraSystem
         [SerializeField] private CinemachineVirtualCamera[] _allVirtualCameras;
         [SerializeField] private float _fallPanAmount = 0.25f;
         [SerializeField] private float _fallPanYDampingTime = 0.1f;
+        [SerializeField] private Collider2D _playerCollider;
+        [SerializeField] private Collider2D _bossCollider;
 
         public static CameraController instance;
         private Coroutine _lerpYPanCoroutine;

@@ -55,12 +55,6 @@ namespace Platform2D.CameraSystem
 
         #endregion
 
-        #region --- Methods ---
-
-
-
-        #endregion
-
         #region --- Fields ---
 
         [Header("Camera Ledge Detection")]
