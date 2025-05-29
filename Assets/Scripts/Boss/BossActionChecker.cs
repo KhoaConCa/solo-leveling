@@ -25,7 +25,10 @@ namespace Platform2D.CharacterController
             // Thoaát hàm khi Boss đã chết.
             if (_bossController.States.IsDead) return;
 
-            _bossController.Stats.CurrentHealthPoint -= damage - _bossController.Stats.CurrentDefencePoint;
+            var moreDmg = _bossController.States.IsWeakness ? _bossController.Stats.CurrentWeaknessMultiplier : 1f;
+            var dmgDeal = (damage - _bossController.Stats.CurrentDefencePoint) * moreDmg;
+            Debug.Log($"Dmg deal: {dmgDeal}");
+            _bossController.Stats.CurrentHealthPoint -= dmgDeal;
 
             if (!_bossController.States.IsHitting)
             {
@@ -47,7 +50,7 @@ namespace Platform2D.CharacterController
             if (Player == null) return;
             Vector2 lengthDetect = TargetPlayer.transform.position - _bossController.transform.position;
             Vector2 dirDetect = lengthDetect.normalized.x < 0 ? new Vector2(-1, 0) : new Vector2(1, 0);
-            Player.ReceiveDamage(_bossController.Stats.BaseStats.attackDamage, dirDetect);
+            Player.ReceiveDamage(_bossController.Stats.CurrentAttackDamage, dirDetect);
         }
 
         #endregion

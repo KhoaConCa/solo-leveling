@@ -30,15 +30,9 @@ namespace Platform2D.HierarchicalStateMachine
         {
             _stateController.Rg2D.velocity = Vector2.zero;
 
-            var checkPharse = _stateController.Stats.BaseStats.healthPoint * 30 / 100;
-            if(_stateController.Stats.CurrentHealthPoint >= checkPharse)
-            {
-                _queAttackHandle.Enqueue(new KeyValuePair<ENEMY_ATTACK_TYPE, IAttackHandle>(ENEMY_ATTACK_TYPE.MELEE_ATTACK, new BossMeleeAttack(_stateController)));
-                _queAttackHandle.Enqueue(new KeyValuePair<ENEMY_ATTACK_TYPE, IAttackHandle>(ENEMY_ATTACK_TYPE.MELEE_ATTACK, new BossMeleeAttack(_stateController)));
-                _queAttackHandle.Enqueue(new KeyValuePair<ENEMY_ATTACK_TYPE, IAttackHandle>(ENEMY_ATTACK_TYPE.MELEE_ATTACK, new BossMeleeAttack(_stateController)));
-            }
+            SetSkill();
 
-            _stateController.StartCoroutine(ResetCoolDown(4f));
+            _stateController.StartCoroutine(ResetCoolDown(_stateController.Stats.BaseStats.appearanceDuration));
         }
 
         /// <summary>
@@ -56,6 +50,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void ExitState() 
         {
+            _stateController.States.CanAttack = false;
         }
 
         /// <summary>
@@ -63,7 +58,10 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState() 
         {
-            
+            if(_queAttackHandle.Count == 0 && !_resetCoolDown)
+            {
+                SwitchState(_stateFactory.Injure());
+            }
         }
 
         /// <summary>
@@ -92,7 +90,7 @@ namespace Platform2D.HierarchicalStateMachine
                 _queAttackHandle.Peek().Value.AttackHandle();
             else
             {
-                _stateController.StartCoroutine(ResetCoolDown(2f));
+                _stateController.StartCoroutine(ResetCoolDown(_stateController.Stats.BaseStats.attackDuration));
                 _queAttackHandle.Dequeue();
             }
         }
@@ -102,6 +100,30 @@ namespace Platform2D.HierarchicalStateMachine
             _resetCoolDown = true;
             yield return new WaitForSeconds(timer);
             _resetCoolDown = false;
+        }
+
+        private void SetSkill()
+        {
+            var checkPharse = _stateController.Stats.BaseStats.healthPoint * 30 / 100;
+            if (_stateController.Stats.CurrentHealthPoint >= checkPharse)
+            {
+                _queAttackHandle.Enqueue(new KeyValuePair<ENEMY_ATTACK_TYPE, IAttackHandle>(ENEMY_ATTACK_TYPE.JUMP_ATTACK, new BossJumpAttack(_stateController)));
+                _queAttackHandle.Enqueue(new KeyValuePair<ENEMY_ATTACK_TYPE, IAttackHandle>(ENEMY_ATTACK_TYPE.MELEE_ATTACK, new BossMeleeAttack(_stateController)));
+                _queAttackHandle.Enqueue(new KeyValuePair<ENEMY_ATTACK_TYPE, IAttackHandle>(ENEMY_ATTACK_TYPE.MELEE_ATTACK, new BossMeleeAttack(_stateController)));
+            }
+            else
+            {
+                if(_stateController.States.IsRampage)
+                {
+                    _stateController.Stats.RampageStats();
+                    _stateController.States.IsRampage = false;
+                }
+                _queAttackHandle.Enqueue(new KeyValuePair<ENEMY_ATTACK_TYPE, IAttackHandle>(ENEMY_ATTACK_TYPE.JUMP_ATTACK, new BossJumpAttack(_stateController)));
+                _queAttackHandle.Enqueue(new KeyValuePair<ENEMY_ATTACK_TYPE, IAttackHandle>(ENEMY_ATTACK_TYPE.MELEE_ATTACK, new BossMeleeAttack(_stateController)));
+                _queAttackHandle.Enqueue(new KeyValuePair<ENEMY_ATTACK_TYPE, IAttackHandle>(ENEMY_ATTACK_TYPE.JUMP_ATTACK, new BossJumpAttack(_stateController)));
+                _queAttackHandle.Enqueue(new KeyValuePair<ENEMY_ATTACK_TYPE, IAttackHandle>(ENEMY_ATTACK_TYPE.MELEE_ATTACK, new BossMeleeAttack(_stateController)));
+                _queAttackHandle.Enqueue(new KeyValuePair<ENEMY_ATTACK_TYPE, IAttackHandle>(ENEMY_ATTACK_TYPE.JUMP_ATTACK, new BossJumpAttack(_stateController)));
+            }
         }
 
         #endregion

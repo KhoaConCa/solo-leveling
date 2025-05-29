@@ -51,7 +51,7 @@ namespace Platform2D.BossAttackType
 
         private void AttackChasing(Vector2 dir)
         {
-            var speed = _enemyCtrl.Stats.BaseStats.movementSpeed * 1.4f;
+            var speed = _enemyCtrl.Stats.CurrentMovementSpeed * 1.4f;
             _enemyCtrl.Rg2D.velocity = new Vector2(dir.x * speed, _enemyCtrl.Rg2D.velocity.y);
         }
 

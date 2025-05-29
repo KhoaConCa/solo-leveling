@@ -36,6 +36,7 @@ namespace Platform2D.CharacterStats
 
         [Header("Attack Setting")]
         public float attackDamage;
+        public float weaknessMultiplier;
 
         [Header("Range Setting")]
         public float detectedRange;
@@ -44,6 +45,7 @@ namespace Platform2D.CharacterStats
         [Header("Duration Setting")]
         public float appearanceDuration;
         public float attackDuration;
+        public float chainAttackDuration;
 
         [Header("Data Setting")]
         public string name;

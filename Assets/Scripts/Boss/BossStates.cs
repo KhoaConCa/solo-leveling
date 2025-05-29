@@ -39,8 +39,6 @@ namespace Platform2D.CharacterStates
         public bool IsHitting { 
             get { return _isHitting; }
             set {
-                if (value)
-                    _animator.SetTrigger(AnimationStrings.HitTrigger);
                 _isHitting = value;
             }
         }
@@ -72,8 +70,12 @@ namespace Platform2D.CharacterStates
 
         public bool IsFinishing => _animator.GetBool(AnimationStrings.IsFinish);
 
+        public bool IsWeakness { get; set; } = false;
+
         public bool IsChasing { get; set; } = false;
         public bool IsReturn { get; set; } = false;
+        public bool IsDrop { get; set; } = false;
+        public bool IsRampage { get; set; } = true;
 
         public float RangeToPlayer { get; set; } = -1;
 
@@ -87,7 +89,7 @@ namespace Platform2D.CharacterStates
             set {
                 _canAttack = value;
                 if (_canAttack)
-                    _animator.SetTrigger(AnimationStrings.AttackTrigger);
+                    _animator.SetBool(AnimationStrings.AttackTrigger, value);
             } 
         }
 
@@ -105,7 +107,18 @@ namespace Platform2D.CharacterStates
             }
         }
 
-        public bool CanAttack { get; set; } = true;
+        public bool CanAttack
+        {
+            get
+            {
+                return _canAttack;
+            }
+            set
+            {
+                _canAttack = value;
+                _animator.SetBool(AnimationStrings.CanAttack, value);
+            }
+        }
 
         public bool OnGround { get; set; } = false;
         public bool OnWall { get; set; } = false;
@@ -124,7 +137,7 @@ namespace Platform2D.CharacterStates
         [SerializeField] private bool _isHitting = false;
         [SerializeField] private bool _isDead = false;
         [SerializeField] private bool _canDisale = false;
-        [SerializeField] private bool _canAttack = false;
+        [SerializeField] private bool _canAttack = true;
 
         [SerializeField] private bool _meleeAttack = false;
 

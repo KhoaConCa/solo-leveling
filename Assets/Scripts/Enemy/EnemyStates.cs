@@ -57,6 +57,7 @@ namespace Platform2D.CharacterStates
         public bool IsChasing { get; set; } = false;
         public bool IsReturn { get; set; } = false;
 
+        public bool CanDisable => _animator.GetBool(AnimationStrings.CanDisable);
         public float RangeToPlayer { get; set; } = -1;
 
         public bool BossCanAttack => _animator.GetBool(AnimationStrings.CanAttack);

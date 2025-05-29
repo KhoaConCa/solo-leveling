@@ -45,6 +45,7 @@ namespace Platform2D.EnemyType
         DASH_ATTACK,
         MELEE_ATTACK,
         RANGE_ATTACK,
+        JUMP_ATTACK,
         SUMMON_ATTACK,
     }
 
