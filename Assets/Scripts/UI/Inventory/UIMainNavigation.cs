@@ -50,9 +50,16 @@ namespace Platform2D.UI
             if (clickedButton == _goBackButton)
             {
                 _goBackButton.gameObject.SetActive(false);
+
+                _buttonControlUI[_inventoryButton].SetActive(true);
+                _buttonControlUI[_mapButton].SetActive(false);
+                _buttonControlUI[_statusButton].SetActive(false);
                 _menu.SetActive(false);
+
                 _slotPrefab.DeSelect();
+
                 _settingZone.gameObject.SetActive(true);
+
                 return;
             }
 

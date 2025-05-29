@@ -44,6 +44,7 @@ namespace Platform2D.UI
                 _buttons[btn].SetActive(true);
                 this.gameObject.SetActive(false);
                 _goBackToHome.gameObject.SetActive(true);
+                _mainNavigation.OnClickButton(_inventoryButton);
             }
             else if (btn == _openSettings)
             {
@@ -63,6 +64,8 @@ namespace Platform2D.UI
         [SerializeField] private Button _openSettings;
         [SerializeField] private Button _openTools;
         [SerializeField] private Button _goBackToHome;
+        [SerializeField] private Button _inventoryButton;
+        [SerializeField] private UIMainNavigation _mainNavigation;
 
         private Dictionary<Button, GameObject> _buttons = new Dictionary<Button, GameObject>();
 

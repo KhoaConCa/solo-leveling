@@ -662,6 +662,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2044259459}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1195903928 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4851549714498397146, guid: 0597d047dbf800f49a7b627d50900ca8, type: 3}
+  m_PrefabInstance: {fileID: 8468161785614472166}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1214520301 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6139604108884440473, guid: 0597d047dbf800f49a7b627d50900ca8, type: 3}
+  m_PrefabInstance: {fileID: 8468161785614472166}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dacd8eb9208d4544a3519a3c5e6aaca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1237504313
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,6 +937,18 @@ PrefabInstance:
       propertyPath: _playerPosition
       value: 
       objectReference: {fileID: 3193142093914379388}
+    - target: {fileID: 6858302263593061350, guid: 5df5021eee8cf2b46941ac72712e3252, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -60.940006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858302263593061350, guid: 5df5021eee8cf2b46941ac72712e3252, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.1511307
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858302263593061350, guid: 5df5021eee8cf2b46941ac72712e3252, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.048958
+      objectReference: {fileID: 0}
     - target: {fileID: 8612936461949361845, guid: 5df5021eee8cf2b46941ac72712e3252, type: 3}
       propertyPath: m_Follow
       value: 
@@ -1568,6 +1602,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1698818373541511199, guid: 0597d047dbf800f49a7b627d50900ca8, type: 3}
+      propertyPath: _mainNavigation
+      value: 
+      objectReference: {fileID: 1214520301}
+    - target: {fileID: 1698818373541511199, guid: 0597d047dbf800f49a7b627d50900ca8, type: 3}
+      propertyPath: _inventoryButton
+      value: 
+      objectReference: {fileID: 1195903928}
     - target: {fileID: 2409600142961827141, guid: 0597d047dbf800f49a7b627d50900ca8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
