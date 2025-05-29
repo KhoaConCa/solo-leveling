@@ -121,7 +121,8 @@ namespace Platform2D.CharacterController
         public PlayerStatesAlter States => _states;
         public PlayerStats Stats => _stats;
         public PlayerStateFactory StateFactory { get; set; }
-        public UnityEvent RecoveryAllEnemy => _recoveryAllEnemy;
+        public UnityEvent OnRecoveryCallback => _onRecoveryCallbacl;
+        public UnityEvent OnDeadCallback => _onDeadCallbacl;
 
         #endregion
 
@@ -154,7 +155,8 @@ namespace Platform2D.CharacterController
         [SerializeField] private CameraController _cameraController;
 
         [Header("Unity Events")]
-        [SerializeField] private UnityEvent _recoveryAllEnemy;
+        [SerializeField] private UnityEvent _onRecoveryCallbacl;
+        [SerializeField] private UnityEvent _onDeadCallbacl;
 
         private Utilities.Timer _coolDown;
 

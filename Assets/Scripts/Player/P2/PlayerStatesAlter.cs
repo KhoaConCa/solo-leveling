@@ -175,6 +175,19 @@ namespace Platform2D.CharacterStates
             }
         }
 
+        public bool IsRevived
+        {
+            get
+            {
+                return _isRevived;
+            }
+            set
+            {
+                _animator.SetBool(AnimationStrings.IsRevived, value);
+                _isRevived = value;
+            }
+        }
+
         #endregion
 
         #region -- Checking States --
@@ -204,6 +217,8 @@ namespace Platform2D.CharacterStates
             }
         }
 
+        public GameObject SavePoint { get; set; }
+
         #endregion
 
         #endregion
@@ -227,10 +242,12 @@ namespace Platform2D.CharacterStates
 
         [SerializeField] private bool _isHitting = false;
         [SerializeField] private bool _isDead = false;
+        [SerializeField] private bool _isRevived = false;
         [SerializeField] private bool _canDisale = false;
 
         [SerializeField] private bool _onGround = false;
         [SerializeField] private bool _isCeiling = false;
+        [SerializeField] private GameObject _savePoint;
 
         #endregion
 

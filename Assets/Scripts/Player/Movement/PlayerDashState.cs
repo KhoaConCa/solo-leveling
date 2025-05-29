@@ -53,6 +53,12 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState()
         {
+            if (_stateController.States.IsDead)
+            {
+                SwitchState(_stateFactory.Dead());
+                return;
+            }
+
             if (_stateController.States.OnGround && !_stateController.States.IsPenetrable)
             {
                 if (_stateController.States.OnMove == Vector2.zero || Mathf.Abs(_stateController.States.OnMove.y) > 0.7f)

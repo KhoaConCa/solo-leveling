@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceab1b24b44a00b4da024f3ee985bb9c, type: 3}
   m_Name: KnightStatsSO
   m_EditorClassIdentifier: 
-  healthPoint: 100
+  healthPoint: 1
   energyPoint: 100
   defencePoint: 6
   weight: 8

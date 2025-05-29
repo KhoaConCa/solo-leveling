@@ -56,7 +56,13 @@ namespace Platform2D.HierarchicalStateMachine
         {
             if (!_stateController.States.AllowedSwitch) return;
 
-            if(_stateController.States.TagInteract == TagLayerName.Checkpoint && _stateController.States.IsInteracted)
+            if (_stateController.States.IsDead)
+            {
+                SwitchState(_stateFactory.Dead());
+                return;
+            }
+
+            if (_stateController.States.TagInteract == TagLayerName.Checkpoint && _stateController.States.IsInteracted)
             {
                 SwitchState(_stateFactory.Recovery());
                 return;

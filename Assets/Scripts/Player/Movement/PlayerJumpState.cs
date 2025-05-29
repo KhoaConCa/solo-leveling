@@ -69,6 +69,12 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState()
         {
+            if (_stateController.States.IsDead)
+            {
+                SwitchState(_stateFactory.Dead());
+                return;
+            }
+
             if (_stateController.States.IsHitting)
             {
                 SwitchState(_stateFactory.Hit());

@@ -26,6 +26,7 @@ namespace Platform2D.CharacterAnimation
         public readonly static string CanDisable = "canDisable";
         public readonly static string IsFinish = "isFinish";
         public readonly static string EndJump = "endJump";
+        public readonly static string IsRevived = "isRevived";
         #endregion
 
         #region -- Float Parameters --

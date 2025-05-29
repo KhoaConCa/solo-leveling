@@ -22,6 +22,7 @@ namespace Platform2D.CharacterController
 
             var playerScpt = collision.gameObject.GetComponent<PlayerCore>();
             playerScpt.States.TagInteract = this.gameObject.tag;
+            playerScpt.States.SavePoint = this.gameObject;
             playerScpt.UICtrl.ShowInteractButton(true);
         }
 
@@ -33,6 +34,7 @@ namespace Platform2D.CharacterController
 
             var playerScpt = collision.gameObject.GetComponent<PlayerCore>();
             playerScpt.States.TagInteract = null;
+            playerScpt.States.SavePoint = null;
             playerScpt.UICtrl.ShowInteractButton(false);
         }
 

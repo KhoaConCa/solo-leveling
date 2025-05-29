@@ -79,6 +79,18 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         /// <returns>Trả về State Hit của Player.</returns>
         public BaseState<PlayerCore, PlayerStateFactory> Hit() => new PlayerHitState(_controller, this);
+
+        /// <summary>
+        /// Khởi tạo State Dead của Player.
+        /// </summary>
+        /// <returns>Trả về State Dead của Player.</returns>
+        public BaseState<PlayerCore, PlayerStateFactory> Dead() => new PlayerDeadState(_controller, this);
+
+        /// <summary>
+        /// Khởi tạo State Revive của Player.
+        /// </summary>
+        /// <returns>Trả về State Revive của Player.</returns>
+        public BaseState<PlayerCore, PlayerStateFactory> Revive() => new PlayerReviveState(_controller, this);
         #endregion
 
         #endregion
