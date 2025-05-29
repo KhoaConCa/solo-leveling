@@ -210,11 +210,14 @@ MonoBehaviour:
   _isDashing: 0
   _isAttacking: 0
   _isFinishAttack: 0
+  _isInteracted: 0
   _isHitting: 0
   _isDead: 0
+  _isRevived: 0
   _canDisale: 0
   _onGround: 0
   _isCeiling: 0
+  _savePoint: {fileID: 0}
 --- !u!1 &3461307752631191755
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +695,7 @@ MonoBehaviour:
   _basePos: {fileID: 3193142094045061396}
   _movementChecker: {fileID: 7179777633204708174}
   _actionChecker: {fileID: 4794701597768158476}
+  _uiCtrl: {fileID: 0}
   _healthBar: {fileID: 0}
   _states: {fileID: 3039421095261732384}
   _stats: {fileID: 6904211638612810108}
@@ -699,6 +703,36 @@ MonoBehaviour:
   _animator: {fileID: 7550521606521705762}
   _cameraFollower: {fileID: 0}
   _cameraController: {fileID: 0}
+  _onRecoveryCallbacl:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RecoveryHandle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onDeadCallbacl:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ShowDeadMenu
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &7179777633204708174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,6 +796,6 @@ MonoBehaviour:
   _inventoryData: {fileID: 11400000, guid: 1ac4124b433c1c74998cf0664266b12c, type: 2}
   initialItems:
   - item: {fileID: 11400000, guid: 195ee288751a67542b8a83761fb9d331, type: 2}
-    quantity: 0
+    quantity: 10
   - item: {fileID: 11400000, guid: d2d00447f3ff1034b89718515d860694, type: 2}
-    quantity: 0
+    quantity: 1
