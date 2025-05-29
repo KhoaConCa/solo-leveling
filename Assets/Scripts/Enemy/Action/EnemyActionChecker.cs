@@ -80,8 +80,23 @@ namespace Platform2D.CharacterController
             var col = Physics2D.OverlapCircle(_enemyController.Col2D.bounds.center, _enemyController.Stats.BaseStats.detectedRange, _playerLayer);
             if(col != null)
             {
+                var targetCtrl = col.gameObject.GetComponent<PlayerCore>();
+                if(targetCtrl.States.IsDead)
+                {
+                    _target = null;
+                    return;
+                }
+
                 _target = col.gameObject;
+                
                 Vector2 lengthDetect = _target.transform.position - _enemyController.transform.position;
+                RaycastHit2D rayHit = Physics2D.Raycast(_enemyController.transform.position, lengthDetect.normalized, lengthDetect.magnitude, LayerMask.GetMask(TagLayerName.Penatrable, TagLayerName.StaticLevel));
+                if (rayHit.collider != null)
+                {
+                    _target = null;
+                    _enemyController.States.IsDetecting = false;
+                    return;
+                }
                 Vector2 dirDetect = lengthDetect.normalized.x < 0 ? new Vector2(-1, lengthDetect.normalized.y) : new Vector2(1, lengthDetect.normalized.y);
                 if (dirDetect.x == _enemyController.States.Direction)
                 {
@@ -123,6 +138,8 @@ namespace Platform2D.CharacterController
         #region -- Properties --
 
         public IDamageable Player { get; private set; } = null;
+
+        public GameObject Target => _target;
 
         #endregion
 

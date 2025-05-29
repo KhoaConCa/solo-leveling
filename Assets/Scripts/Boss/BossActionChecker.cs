@@ -105,11 +105,23 @@ namespace Platform2D.CharacterController
 
         public IDamageable Player { get; set; } = null;
 
-        public GameObject TargetPlayer { get; set; } = null;
+        public GameObject TargetPlayer
+        {
+            get
+            {
+                return _player;
+            }
+            set
+            {
+                _player = value;
+            }
+        }
 
         #endregion
 
         #region --- Fields ---
+
+        [SerializeField] private GameObject _player = null;
 
         [SerializeField] private BossController _bossController;
 

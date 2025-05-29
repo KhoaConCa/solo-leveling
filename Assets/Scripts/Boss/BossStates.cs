@@ -20,6 +20,7 @@ namespace Platform2D.CharacterStates
         public GameObject AnchorPosLeft => _anchorPosLeft;
         public GameObject AnchorPosRight => _anchorPosRight;
 
+        public Vector2 AnchorPosSpawn { get; set; }
 
         public bool FirstFlipDirection { get; set; } = false;
 

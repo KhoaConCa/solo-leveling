@@ -23,10 +23,9 @@ namespace Platform2D.CanvasController
 
         #region --- Methods ---
 
-        public void ShowBossHealthBar()
+        public void ShowBossHealthBar(bool isActive = true)
         {
-            if(!_bossHealthBar.activeSelf)
-                _bossHealthBar.SetActive(true);
+            _bossHealthBar.SetActive(isActive);
         }
 
         public void ShowInteractButton(bool canInteract)

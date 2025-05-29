@@ -60,6 +60,9 @@ TagManager:
   - name: Background
     uniqueID: 178441277
     locked: 0
+  - name: HazrdTraps
+    uniqueID: 2668011653
+    locked: 0
   - name: Ground
     uniqueID: 2493415549
     locked: 0

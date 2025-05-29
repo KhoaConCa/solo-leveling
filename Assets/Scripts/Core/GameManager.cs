@@ -39,6 +39,11 @@ public class GameManager : MonoBehaviour
 
         _player.transform.position = _checkPoint.transform.position;
         var playerCtrl = _player.GetComponent<PlayerCore>();
+        var bossCtrl = _bossPrefab.GetComponentInChildren<BossController>();
+
+        if(!bossCtrl.States.IsDead)
+            bossCtrl.ResetStats();
+
         if (!playerCtrl.States.IsDead) return;
 
         playerCtrl.States.IsRevived = true;
@@ -47,6 +52,11 @@ public class GameManager : MonoBehaviour
     public void ShowDeadMenu(bool isActive)
     {
         _deadMenu.SetActive(isActive);
+
+        if(isActive)
+            Time.timeScale = 0f;
+        else
+            Time.timeScale = 1f;
     }
 
     #endregion
@@ -57,6 +67,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _player;
     [SerializeField] private List<GameObject> _spawners;
     [SerializeField] private GameObject _enemyPrefab;
+    [SerializeField] private GameObject _bossPrefab;
 
     [Header("Static Entities")]
     [SerializeField] private GameObject _checkPoint;
