@@ -22,7 +22,7 @@ namespace Platform2D.CameraSystem
 
             if (collider.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
-                Debug.Log("Camera Trigger Enter: " + collider.name);
+                //Debug.Log("Camera Trigger Enter: " + collider.name);
                 if (panCameraOnContact)
                 {
                     CameraController.instance.PanCameraOnContact(panDistance, panTime, panDirection, false);

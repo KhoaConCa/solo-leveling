@@ -94,7 +94,10 @@ namespace Platform2D.HierarchicalStateMachine
             if (!_stateController.States.IsAttacking) return;
 
             if (!_stateController.States.IsFinishAttack)
+            {
                 AttackPullForce();
+                FlipDirection();
+            }
 
             if (_stateController.ActionChecker.Enemy == null) return;
 
@@ -111,13 +114,20 @@ namespace Platform2D.HierarchicalStateMachine
         private void IncreaseDamageCombo()
         {
             _stateController.Stats.CurrentDamage += _stateController.Stats.CurrentDamage * _stateController.Stats.BaseStats.attackDamageMultiplier;
-            Debug.Log(_stateController.Stats.CurrentDamage);
+            //Debug.Log(_stateController.Stats.CurrentDamage);
         }
 
         private void AttackPullForce()
         {
-            var speed = _stateController.Stats.BaseStats.attackPullForce * _stateController.transform.localScale.x;
+            var speed = _stateController.Stats.BaseStats.attackPullForce * _stateController.States.Direction.x;
             _stateController.Rg2D.velocity = new Vector2(speed, _stateController.Rg2D.velocity.y);
+        }
+
+        private void FlipDirection()
+        {
+            var vecDir = _stateController.States.OnMove.x < 0 ? new Vector2(-1, 1) : new Vector2(1, 1);
+            if (_stateController.States.OnMove != Vector2.zero && _stateController.States.Direction.x != vecDir.x)
+                _stateController.transform.localScale = new Vector2(vecDir.x, 1);
         }
 
         private IEnumerator AttackFinisherHandle()

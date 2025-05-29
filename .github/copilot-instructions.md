@@ -2,7 +2,7 @@
 - Project name: solo-leveling
 - Unity version: Unity 2022.3.41f1
 - Active game object:
-  - Name: ControlPanelAlter
-  - Tag: MainUI
-  - Layer: UI
+  - Name: Turtorial
+  - Tag: Untagged
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

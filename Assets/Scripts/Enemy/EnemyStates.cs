@@ -59,6 +59,8 @@ namespace Platform2D.CharacterStates
 
         public float RangeToPlayer { get; set; } = -1;
 
+        public bool BossCanAttack => _animator.GetBool(AnimationStrings.CanAttack);
+
         public bool IsAttacking
         {
             get { 
