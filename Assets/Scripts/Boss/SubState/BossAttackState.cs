@@ -30,6 +30,7 @@ namespace Platform2D.HierarchicalStateMachine
         {
             _stateController.Rg2D.velocity = Vector2.zero;
 
+            _queAttackHandle.Clear();
             SetSkill();
 
             _stateController.StartCoroutine(ResetCoolDown(_stateController.Stats.BaseStats.appearanceDuration));

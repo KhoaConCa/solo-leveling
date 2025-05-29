@@ -9,11 +9,13 @@ public class Spawner : MonoBehaviour
 
     public void Spawn(GameObject prefab)
     {
-        if (Enemy != null) return;
+        if (Enemy == null)
+            Enemy = Instantiate(prefab, transform.position, transform.rotation, transform);
 
-        Enemy = Instantiate(prefab, transform.position, transform.rotation, transform);
         var enemyCtrl = Enemy.GetComponent<EnemyController>();
         enemyCtrl.SpawnerCtrl = this;
+        enemyCtrl.ResetStats();
+
         Enemy.SetActive(true);
     }
 

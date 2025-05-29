@@ -70,6 +70,12 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState() 
         {
+            if(_stateController.ActionChecker.Target == null)
+            {
+                SwitchState(_stateFactory.Return());
+                return;
+            }
+
             if (_stateController.States.IsDetecting && _stateController.States.RangeToPlayer >= _stateController.Stats.BaseStats.attackRange)
             {
                 SwitchState(_stateFactory.Chasing());

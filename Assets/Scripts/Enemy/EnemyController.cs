@@ -128,6 +128,12 @@ namespace Platform2D.CharacterController
             Destroy(this.gameObject, 2f);
         }
 
+        public void ResetStats()
+        {
+            _stats.CurrentHealthPoint = _stats.BaseStats.healthPoint;
+            _healthBar.SetMaxHealth(_stats.BaseStats.healthPoint);
+        }
+
         #endregion
 
         #region --- Properties ---
@@ -141,7 +147,7 @@ namespace Platform2D.CharacterController
         public List<ENEMY_ATTACK_TYPE> AttackType => _attackType;
 
         public CustomHealthBar HealthBar => _healthBar;
-
+        public EnemyActionChecker ActionChecker => _actionChecker;
         public EnemyStates States => _states;
         public EnemyStats Stats => _stats;
         public EnemyStateFactory EnemyStateFactory { get; set; }

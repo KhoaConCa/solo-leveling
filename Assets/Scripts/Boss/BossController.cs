@@ -33,6 +33,7 @@ namespace Platform2D.CharacterController
             _spriteRenderer.sprite = _stats.BaseStats.sprite;
 
             _states.Direction = gameObject.transform.localScale.x;
+            _states.AnchorPosSpawn = this.gameObject.transform.position;
 
             _stats.SetStats();
 
@@ -69,6 +70,18 @@ namespace Platform2D.CharacterController
                 _rg2D.gravityScale = 0;
                 _states.IsDrop = false;
             }
+        }
+
+        public void ResetStats()
+        {
+            CurrentState = _bossStateFactory.Detect();
+            CurrentState.EnterState();
+
+            _states.CanAttack = false;
+
+            this.gameObject.transform.position = _states.AnchorPosSpawn;
+
+            _stats.SetStats();
         }
 
         #endregion

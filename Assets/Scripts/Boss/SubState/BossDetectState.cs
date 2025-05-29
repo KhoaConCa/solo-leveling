@@ -27,8 +27,16 @@ namespace Platform2D.HierarchicalStateMachine
         public override void EnterState() 
         {
             _stateController.States.Invulnerable = true;
+            _stateController.States.IsDetecting = false;
 
             _stateController.Rg2D.velocity = Vector2.zero;
+            _stateController.Col2D.enabled = false;
+
+            if (_stateController.transform.localScale.x < 0)
+                _stateController.transform.localScale = new Vector2(1, 1);
+
+            _stateController.Animator.SetTrigger("wait");
+            _stateController.UICtrl.ShowBossHealthBar(false);
         }
 
         /// <summary>
@@ -82,6 +90,16 @@ namespace Platform2D.HierarchicalStateMachine
             if (foundTarget == null) return;
 
             if (!foundTarget.gameObject.CompareTag(TagLayerName.Player)) return;
+            Debug.Log(foundTarget.gameObject.name);
+
+            float range = (foundTarget.transform.position - _stateController.transform.position).magnitude;
+
+            if(range >= _stateController.Stats.BaseStats.detectedRange * 2.5f)
+            {
+                _stateController.ActionChecker.TargetPlayer = null;
+                _stateController.ActionChecker.Player = null;
+                return;
+            }
 
             _stateController.ActionChecker.TargetPlayer = foundTarget.gameObject;
             _stateController.ActionChecker.Player = foundTarget.gameObject.GetComponentInParent<PlayerActionChecker>();
