@@ -2,7 +2,7 @@
 - Project name: solo-leveling
 - Unity version: Unity 2022.3.41f1
 - Active game object:
-  - Name: Turtorial
+  - Name: BossGolemArea
   - Tag: Untagged
-  - Layer: Default
+  - Layer: BossArea
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

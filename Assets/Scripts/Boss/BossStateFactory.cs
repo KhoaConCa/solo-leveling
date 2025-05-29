@@ -1,4 +1,5 @@
-﻿using Platform2D.CharacterController;
+﻿using Platform2D.BossAttackType;
+using Platform2D.CharacterController;
 using UnityEngine;
 
 namespace Platform2D.HierarchicalStateMachine
@@ -28,6 +29,12 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         /// <returns>Trả về State Attack của Boss.</returns>
         public BaseState<BossController, BossStateFactory> Attack() => new BossAttackState(_controller, this);
+
+        /// <summary>
+        /// Khởi tạo State Injure của Boss
+        /// </summary>
+        /// <returns>Trả về State Injure của Boss.</returns>
+        public BaseState<BossController, BossStateFactory> Injure() => new BossInjureState(_controller, this);
 
         #endregion
 

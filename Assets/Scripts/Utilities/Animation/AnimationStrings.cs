@@ -23,7 +23,9 @@ namespace Platform2D.CharacterAnimation
         public readonly static string CanMove = "canMove";
         public readonly static string DefaultDamage = "defaultDamage";
         public readonly static string CanAttack = "canAttack";
+        public readonly static string CanDisable = "canDisable";
         public readonly static string IsFinish = "isFinish";
+        public readonly static string EndJump = "endJump";
         #endregion
 
         #region -- Float Parameters --
@@ -40,7 +42,9 @@ namespace Platform2D.CharacterAnimation
         public readonly static string AttackTrigger = "attack";
         public readonly static string HitTrigger = "hit";
         public readonly static string DeadTrigger = "dead";
+        public readonly static string WeaknessTrigger = "injure";
         public readonly static string MeleeAttackTrigger = "meleeAttack";
+        public readonly static string JumpAttackTrigger = "jumpAttack";
         #endregion
 
         #endregion

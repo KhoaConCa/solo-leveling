@@ -58,7 +58,6 @@ namespace Platform2D.HierarchicalStateMachine
             _stateController.States.Invulnerable = false;
             _stateController.Col2D.enabled = true;
             _stateController.Rg2D.gravityScale = 1f;
-
         }
 
         /// <summary>
@@ -66,7 +65,7 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState() 
         {
-            if(_stateController.Stats.CurrentHealthPoint >= _stateController.Stats.BaseStats.healthPoint && _stateController.States.OnGround)
+            if(_stateController.States.OnGround)
             {
                 SwitchState(_stateFactory.Attack());
             }
@@ -90,7 +89,14 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         private void AppearanceHandle()
         {
-            if(_stateController.Stats.CurrentHealthPoint < _stateController.Stats.BaseStats.healthPoint)
+            if (_stateController.Stats.CurrentHealthPoint >= _stateController.Stats.BaseStats.healthPoint && _stateController.States.IsFinishing)
+            {
+                _stateController.States.IsDrop = true;
+                _isDone = true;
+                return;
+            }
+
+            if (_stateController.Stats.CurrentHealthPoint < _stateController.Stats.BaseStats.healthPoint)
             {
                 _stateController.Stats.CurrentHealthPoint += _stateController.Stats.BaseStats.healthPoint / _timeHeal / 50;
 
@@ -99,7 +105,6 @@ namespace Platform2D.HierarchicalStateMachine
                     _stateController.Stats.CurrentHealthPoint = _stateController.Stats.BaseStats.healthPoint;
                     _stateController.Col2D.enabled = true;
                     _stateController.States.Invulnerable = false;
-                    _isDone = true;
                 }
 
                 _stateController.HealthBar.ChangeHealth(_stateController.Stats.CurrentHealthPoint);

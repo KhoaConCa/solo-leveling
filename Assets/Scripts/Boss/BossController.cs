@@ -34,12 +34,7 @@ namespace Platform2D.CharacterController
 
             _states.Direction = gameObject.transform.localScale.x;
 
-            _stats.CurrentHealthPoint = _stats.BaseStats.healthPoint;
-            _stats.CurrentEnergyPoint = _stats.BaseStats.energyPoint;
-            _stats.CurrentDefencePoint = _stats.BaseStats.defencePoint;
-
-            _stats.CurrentMovementSpeed = 0;
-            _coolDown = new Utilities.Timer();
+            _stats.SetStats();
 
             CurrentState = _bossStateFactory.Detect();
             CurrentState.EnterState();
@@ -47,8 +42,6 @@ namespace Platform2D.CharacterController
 
         private void FixedUpdate()
         {
-            //ResetAttackCooldown();
-
             GroundChecker();
 
             CurrentState.UpdateState();
@@ -66,28 +59,16 @@ namespace Platform2D.CharacterController
 
             _states.OnGround = _col2D.Cast(Vector2.down, _contactFilter, _groundHits, GROUND_DISTANCE) > 0;
 
-            if (!_states.OnGround && _stats.CurrentHealthPoint >= _stats.BaseStats.healthPoint)
+            if (!_states.OnGround && _states.IsDrop)
             {
-                _rg2D.gravityScale += 1.2f;
+                _rg2D.gravityScale += 1.4f;
             }
 
             if (_states.OnGround)
+            {
                 _rg2D.gravityScale = 0;
-        }
-
-        private void ResetAttackCooldown()
-        {
-            if (!_states.CanAttack)
-            {
-                _states.CanAttack = _coolDown.FixedTimeCountdown(_stats.BaseStats.attackDuration);
-                Debug.Log("countdown");
+                _states.IsDrop = false;
             }
-            else if (_states.CanAttack && _states.IsAttacking)
-            {
-                _coolDown.StartCountdown();
-                Debug.Log("reset");
-            }
-
         }
 
         #endregion
@@ -99,9 +80,10 @@ namespace Platform2D.CharacterController
         public Transform trans2D => gameObject.transform;
         public Animator Animator => _animator;
         public SpriteRenderer SpriteRenderer => _spriteRenderer;
-
         public ENEMY_TYPE EnemyType => _enemyType;
         public List<ENEMY_ATTACK_TYPE> AttackType => _attackType;
+
+        public BossAreaManager AreaManager => _areaManager;
 
         public BossActionChecker ActionChecker => _actionChecker;
         public UIController UICtrl => _uiCtrl;
@@ -128,6 +110,7 @@ namespace Platform2D.CharacterController
 
         [Header("Custom Components")]
         [SerializeField] private BossStateFactory _bossStateFactory;
+        [SerializeField] private BossAreaManager _areaManager;
         [SerializeField] private BossActionChecker _actionChecker;
         [SerializeField] private UIController _uiCtrl;
         [SerializeField] private CustomHealthBar _healthBar;
@@ -143,8 +126,6 @@ namespace Platform2D.CharacterController
         private readonly RaycastHit2D[] _groundHits = new RaycastHit2D[1];
 
         private const float GROUND_DISTANCE = 0.05f;
-
-        private Utilities.Timer _coolDown;
 
         #endregion
     }

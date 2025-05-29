@@ -18,12 +18,14 @@ MonoBehaviour:
   weight: 20
   knockBackMultiplier: 0.1
   DeadknockBackMultiplier: 0.2
-  movementSpeed: 1.5
+  movementSpeed: 6
   attackDamage: 20
+  weaknessMultiplier: 1.3
   detectedRange: 8
   attackRange: 5
-  appearanceDuration: 0
+  appearanceDuration: 2
   attackDuration: 2
+  chainAttackDuration: 5
   name: Ashbringer Golem
   sprite: {fileID: 1382417902, guid: f172e0a3d8ca0c44eb05d375ef4d662f, type: 3}
   animator: {fileID: 9100000, guid: a84d3e1d5ab9bde4ab1a9014508480f9, type: 2}

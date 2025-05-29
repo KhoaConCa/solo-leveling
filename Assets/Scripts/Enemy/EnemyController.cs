@@ -47,6 +47,11 @@ namespace Platform2D.CharacterController
 
         private void FixedUpdate()
         {
+            if (_states.CanDisable)
+            {
+                Destroy(this.gameObject);
+            }
+
             ResetAttackCooldown();
 
             GroundChecker();
