@@ -25,6 +25,15 @@ namespace Platform2D.UI.InventorySystem
             {
                 _inventoryItems.Add(InventoryItem.GetEmptyItem());
             }
+
+            //if (_inventoryItems == null || _inventoryItems.Count == 0)
+            //{
+            //    _inventoryItems = new List<InventoryItem>();
+            //    for (int i = 0; i < Size; i++)
+            //    {
+            //        _inventoryItems.Add(InventoryItem.GetEmptyItem());
+            //    }
+            //}
         }
 
         /// <summary>

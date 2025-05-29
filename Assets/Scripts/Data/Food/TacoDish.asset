@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf59122e8ca2c54a973ff36b187db24, type: 3}
   m_Name: TacoDish
   m_EditorClassIdentifier: 
-  <IsStackable>k__BackingField: 0
-  <MaxStackSize>k__BackingField: 1
+  <IsStackable>k__BackingField: 1
+  <MaxStackSize>k__BackingField: 99
   <Name>k__BackingField: Taco Dish
   <Description>k__BackingField: Delicious, invite you to eat.
   <ItemImage>k__BackingField: {fileID: 21300000, guid: bf85cb6fe863402438d68ab7cf5eef11, type: 3}

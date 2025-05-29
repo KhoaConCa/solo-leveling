@@ -120,7 +120,7 @@ namespace Platform2D.UI.InventorySystem
         public void Show()
         {
             gameObject.SetActive(true);
-            _descriptionPanel.ResetDescription();
+            //_descriptionPanel.ResetDescription();
             ResetSelection();
         }
 
