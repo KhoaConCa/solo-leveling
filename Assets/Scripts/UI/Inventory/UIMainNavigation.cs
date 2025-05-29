@@ -1,6 +1,5 @@
 ﻿using Platform2D.UI.Inventory;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,10 +49,10 @@ namespace Platform2D.UI
         {
             if (clickedButton == _goBackButton)
             {
-                _menu.SetActive(false);
                 _goBackButton.gameObject.SetActive(false);
-                _settingZone.gameObject.SetActive(true);
+                _menu.SetActive(false);
                 _slotPrefab.DeSelect();
+                _settingZone.gameObject.SetActive(true);
                 return;
             }
 
@@ -69,10 +68,19 @@ namespace Platform2D.UI
             {
                 _buttonControlUI[clickedButton].SetActive(true);
 
-                foreach (var btn in _mainBarButtons.Where(b => b != clickedButton))
+                //foreach (var btn in _mainBarButtons.Where(b => b != clickedButton))
+                //{
+                //    _buttonControlUI[btn].SetActive(false);
+                //}
+
+                foreach (var btn in _mainBarButtons)
                 {
-                    _buttonControlUI[btn].SetActive(false);
+                    if (btn != clickedButton)
+                    {
+                        _buttonControlUI[btn].SetActive(false);
+                    }
                 }
+
             }
 
             _activeButton = clickedButton;

@@ -331,7 +331,7 @@ MonoBehaviour:
   _bossStateFactory: {fileID: 177682391}
   _areaManager: {fileID: 0}
   _actionChecker: {fileID: 177682390}
-  _uiCtrl: {fileID: 0}
+  _uiCtrl: {fileID: 6961886210658256049}
   _healthBar: {fileID: 1594651787}
   _states: {fileID: 419826589}
   _stats: {fileID: 1986837956}
@@ -8215,6 +8215,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6961886210658256049 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6562975596045172862, guid: 0597d047dbf800f49a7b627d50900ca8, type: 3}
+  m_PrefabInstance: {fileID: 8468161785614472166}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a29aecb8bfae0e4f8a749fcbdb0d03d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8468161785614472166

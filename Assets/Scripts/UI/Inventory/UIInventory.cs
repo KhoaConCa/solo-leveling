@@ -35,6 +35,7 @@ namespace Platform2D.UI.InventorySystem
             {
                 UIInventoryItem slot = Instantiate(_slotPrefab, Vector3.zero, Quaternion.identity);
                 slot.transform.SetParent(_contentPannel);
+                slot.transform.localScale = Vector3.one;
                 _listOfSlot.Add(slot);
 
                 slot.OnItemClicked += HandleItemSelection;
