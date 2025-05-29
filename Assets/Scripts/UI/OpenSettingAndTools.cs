@@ -23,7 +23,6 @@ namespace Platform2D.UI
             foreach (var button in _buttons.Keys)
             {
                 Button btn = button;
-                Debug.Log($"Button: {btn.name} - Pannel: {_buttons[btn].name}");
                 btn.onClick.AddListener(() => OnClickButton(btn));
             }
         }
@@ -54,6 +53,7 @@ namespace Platform2D.UI
             {
                 _mainNavigation.PauseGame();
 
+                this.gameObject.SetActive(false);
                 _settingPannel.SetActive(true);
             }
         }

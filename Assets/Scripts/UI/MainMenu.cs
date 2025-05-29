@@ -6,17 +6,17 @@ using UnityEngine.UI;
 namespace Platform2D.UI
 {
     /// <summary>
-    /// PauseMenu - Quản lý giao diện menu tạm dừng trong trò chơi.
-    /// Tác giả: Dương Nhật Khoa, Ngày tạo: 29/05/2025.
+    /// MainMenu - Quản lý giao diện chính của trò chơi.
+    /// Tác giả: Dương Nhật Khoa, Ngày tạo: 30/05/2025.
     /// </summary>
 
-    public class PauseMenu : MonoBehaviour
+    public class MainMenu : MonoBehaviour
     {
         #region --- Unity Methods ---
 
         private void Awake()
         {
-            foreach (var button in new[] { _continueButton, _optionsButton, _returnToMenuButton })
+            foreach (var button in new[] { _startGameButton, _openSettingsButton, _exitButton })
             {
                 Button btn = button;
                 btn.onClick.AddListener(() => OnButtonClick(btn));
@@ -29,18 +29,17 @@ namespace Platform2D.UI
 
         private void OnButtonClick(Button btn)
         {
-            if (btn == _continueButton)
+            if (btn == _startGameButton)
             {
-                _mainNavigation.ContinueGame();
-                this.gameObject.SetActive(false);
+                SceneManager.LoadScene("MapDemo");
             }
-            else if (btn == _optionsButton)
+            else if (btn == _openSettingsButton)
             {
                 StartCoroutine(ShowNotification());
             }
-            else if (btn == _returnToMenuButton)
+            else if (btn == _exitButton)
             {
-                SceneManager.LoadScene("Menu");
+                Application.Quit();
             }
         }
 
@@ -57,12 +56,10 @@ namespace Platform2D.UI
 
         #region --- Fields ---
 
-        [SerializeField] private UIMainNavigation _mainNavigation;
-
-        [Header("Button")]
-        [SerializeField] private Button _continueButton;
-        [SerializeField] private Button _optionsButton;
-        [SerializeField] private Button _returnToMenuButton;
+        [Header("Buttons")]
+        [SerializeField] private Button _startGameButton;
+        [SerializeField] private Button _openSettingsButton;
+        [SerializeField] private Button _exitButton;
 
         [Header("Pannel")]
         [SerializeField] private GameObject _notificationPanel;
