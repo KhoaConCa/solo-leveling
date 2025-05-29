@@ -32,7 +32,9 @@ namespace Platform2D.UI
             if (btn == _continueButton)
             {
                 _mainNavigation.ContinueGame();
+
                 this.gameObject.SetActive(false);
+                _openSettingAndTools.gameObject.SetActive(true);
             }
             else if (btn == _optionsButton)
             {
@@ -48,7 +50,7 @@ namespace Platform2D.UI
         {
             _notificationPanel.SetActive(true);
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSecondsRealtime(2f);
 
             _notificationPanel.SetActive(false);
         }
@@ -58,6 +60,7 @@ namespace Platform2D.UI
         #region --- Fields ---
 
         [SerializeField] private UIMainNavigation _mainNavigation;
+        [SerializeField] private OpenSettingAndTools _openSettingAndTools;
 
         [Header("Button")]
         [SerializeField] private Button _continueButton;

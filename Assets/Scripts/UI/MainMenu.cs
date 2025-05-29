@@ -32,6 +32,7 @@ namespace Platform2D.UI
             if (btn == _startGameButton)
             {
                 SceneManager.LoadScene("MapDemo");
+                Time.timeScale = 1;
             }
             else if (btn == _openSettingsButton)
             {
@@ -47,7 +48,7 @@ namespace Platform2D.UI
         {
             _notificationPanel.SetActive(true);
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSecondsRealtime(2f);
 
             _notificationPanel.SetActive(false);
         }
