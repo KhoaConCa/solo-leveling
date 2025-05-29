@@ -88,6 +88,8 @@ MonoBehaviour:
   - {fileID: 8612936461949361845}
   _fallPanAmount: 0.25
   _fallPanYDampingTime: 0.1
+  _playerCollider: {fileID: 0}
+  _bossCollider: {fileID: 0}
 --- !u!1 &294012185447919794
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +326,7 @@ Transform:
   m_GameObject: {fileID: 3766917937234128638}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.3304024, y: 1.3687099, z: -10}
+  m_LocalPosition: {x: 3.3264682, y: 1.3687099, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1199,19 +1201,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3746684541613062415, guid: d88f0bd2a94ec954bbad1525bc78a75a, type: 3}
       propertyPath: m_Size.x
-      value: 1.2316055
+      value: 1.0907516
       objectReference: {fileID: 0}
     - target: {fileID: 3746684541613062415, guid: d88f0bd2a94ec954bbad1525bc78a75a, type: 3}
       propertyPath: m_Size.y
-      value: 11.101366
+      value: 17.298933
       objectReference: {fileID: 0}
     - target: {fileID: 3746684541613062415, guid: d88f0bd2a94ec954bbad1525bc78a75a, type: 3}
       propertyPath: m_Offset.x
-      value: 14.630512
+      value: 14.700939
       objectReference: {fileID: 0}
     - target: {fileID: 3746684541613062415, guid: d88f0bd2a94ec954bbad1525bc78a75a, type: 3}
       propertyPath: m_Offset.y
-      value: 9.257731
+      value: 6.158948
       objectReference: {fileID: 0}
     - target: {fileID: 5811619915003957493, guid: d88f0bd2a94ec954bbad1525bc78a75a, type: 3}
       propertyPath: m_Name
