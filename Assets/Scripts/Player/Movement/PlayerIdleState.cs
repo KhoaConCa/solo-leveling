@@ -1,5 +1,6 @@
 ﻿using Platform2D.CharacterAnimation;
 using Platform2D.CharacterController;
+using Platform2D.Utilities;
 using System.Collections;
 using UnityEngine;
 
@@ -51,6 +52,12 @@ namespace Platform2D.HierarchicalStateMachine
         public override void CheckSwitchState() 
         {
             if (!_stateController.States.AllowedSwitch) return;
+
+            if (_stateController.States.TagInteract == TagLayerName.Checkpoint && _stateController.States.IsInteracted)
+            {
+                SwitchState(_stateFactory.Recovery());
+                return;
+            }
 
             if (_stateController.States.IsHitting)
             {

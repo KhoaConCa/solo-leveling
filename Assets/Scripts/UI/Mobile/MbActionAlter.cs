@@ -31,6 +31,9 @@ namespace Platform2D.UIMovement
                 case ACTION_FUNCTION.ATTACK:
                     OnAttack();
                     break;
+                case ACTION_FUNCTION.INTERACT:
+                    _playerController.States.IsInteracted = true;
+                    break;
             }
         }
         #endregion

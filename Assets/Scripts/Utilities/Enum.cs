@@ -30,7 +30,8 @@ namespace Platform2D.EnumFunction
 
     enum ACTION_FUNCTION
     {
-        ATTACK
+        ATTACK,
+        INTERACT
     }
 }
 

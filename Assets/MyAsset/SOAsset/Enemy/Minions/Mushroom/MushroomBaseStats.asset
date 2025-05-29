@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c8b69cb991f1b540b30eedd880423a2, type: 3}
   m_Name: MushroomBaseStats
   m_EditorClassIdentifier: 
-  healthPoint: 100
+  healthPoint: 1
   energyPoint: 100
   defencePoint: 5
   weight: 8
