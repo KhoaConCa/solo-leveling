@@ -26,16 +26,16 @@ namespace Platform2D.UI.Inventory
         #region --- Methods ---
 
         /// <summary>
-        /// ResetData - Đặt lại dữ liệu của ô kho đồ về trạng thái mặc định, không có vật phẩm nào.
+        /// Đặt lại dữ liệu của ô kho đồ về trạng thái mặc định, không có vật phẩm nào.
         /// </summary>
         public void ResetData()
         {
-            this._itemIcon.gameObject.SetActive(false);
+            _itemIcon.gameObject.SetActive(false);
             _empty = true;
         }
 
         /// <summary>
-        /// DeSelect - Bỏ chọn ô kho đồ, ẩn hình ảnh được chọn.
+        ///  chọn ô kho đồ, ẩn hình ảnh được chọn.
         /// </summary>
         public void DeSelect()
         {
@@ -43,26 +43,27 @@ namespace Platform2D.UI.Inventory
         }
 
         /// <summary>
-        /// SetData - Thiết lập dữ liệu cho ô kho đồ với hình ảnh và số lượng vật phẩm.
+        /// Thiết lập dữ liệu cho ô kho đồ với hình ảnh và số lượng vật phẩm.
         /// </summary>
         /// <param name="sprite">Hình ảnh vật phẩm</param>
         /// <param name="quantity">Số lượng của vật phẩm đó</param>
         public void SetData(Sprite sprite, int quantity)
         {
-            this._itemIcon.gameObject.SetActive(true);
-            this._itemIcon.sprite = sprite;
-            this._itemQuantity.text = quantity.ToString();
+            _itemIcon.gameObject.SetActive(true);
+            _itemIcon.sprite = sprite;
+            _itemQuantity.text = quantity.ToString();
             _empty = false;
         }
 
         /// <summary>
-        /// Select - Chọn ô kho đồ, hiển thị hình ảnh được chọn để người dùng biết đây là ô đang được chọn.
+        /// Chọn ô kho đồ, hiển thị hình ảnh được chọn để người dùng biết đây là ô đang được chọn.
         /// </summary>
         public void Select()
         {
             _itemSelected.enabled = true;
         }
 
+        #region -- Events --
         public void OnPointerClick(PointerEventData pointerData)
         {
             if (pointerData.button == PointerEventData.InputButton.Right)
@@ -97,6 +98,7 @@ namespace Platform2D.UI.Inventory
         {
 
         }
+        #endregion
 
         #endregion
 

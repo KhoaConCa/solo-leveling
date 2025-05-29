@@ -38,7 +38,7 @@ TagManager:
   - EnemyHitBox
   - BossArea
   - Camera
-  - 
+  - MiniMapIcon
   - 
   - 
   - 
@@ -80,4 +80,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3332970773
+    locked: 0
+  - name: MiniMap
+    uniqueID: 3871833065
     locked: 0
