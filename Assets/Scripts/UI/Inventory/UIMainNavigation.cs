@@ -49,6 +49,7 @@ namespace Platform2D.UI
         {
             if (clickedButton == _goBackButton)
             {
+                ContinueGame();
                 _goBackButton.gameObject.SetActive(false);
 
                 _buttonControlUI[_inventoryButton].SetActive(true);
@@ -98,12 +99,28 @@ namespace Platform2D.UI
         /// </summary>
         /// <param name="button">Nút được đặt hình ảnh</param>
         /// <param name="sprite">Hình ảnh được chọn để gắn cho nút đó</param>
-        private void SetButtonSprite(Button button, Sprite sprite)
+        public void SetButtonSprite(Button button, Sprite sprite)
         {
             if (button.image != null)
             {
                 button.image.sprite = sprite;
             }
+        }
+
+        /// <summary>
+        /// Dừng trò chơi bằng cách đặt thời gian ngừng trôi.
+        /// </summary>
+        public void PauseGame()
+        {
+            Time.timeScale = 0;
+        }
+
+        /// <summary>
+        /// Tiếp tục trò chơi bằng cách đặt thời gian trở lại bình thường.
+        /// </summary>
+        public void ContinueGame()
+        {
+            Time.timeScale = 1;
         }
 
         #endregion

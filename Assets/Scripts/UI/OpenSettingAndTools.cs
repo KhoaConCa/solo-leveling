@@ -16,13 +16,14 @@ namespace Platform2D.UI
         {
             _buttons = new Dictionary<Button, GameObject>
             {
-                { _openTools, _toolsPannel }//,
-                //{ _openSettings, _settingPannel }
+                { _openTools, _toolsPannel },
+                { _openSettings, _settingPannel }
             };
 
             foreach (var button in _buttons.Keys)
             {
                 Button btn = button;
+                Debug.Log($"Button: {btn.name} - Pannel: {_buttons[btn].name}");
                 btn.onClick.AddListener(() => OnClickButton(btn));
             }
         }
@@ -41,14 +42,19 @@ namespace Platform2D.UI
                 return;
             else if (btn == _openTools)
             {
+                _mainNavigation.PauseGame();
+
                 _buttons[btn].SetActive(true);
                 this.gameObject.SetActive(false);
                 _goBackToHome.gameObject.SetActive(true);
+
                 _mainNavigation.OnClickButton(_inventoryButton);
             }
             else if (btn == _openSettings)
             {
-                Debug.LogWarning($"Button {btn.name} does not have an associated panel.");
+                _mainNavigation.PauseGame();
+
+                _settingPannel.SetActive(true);
             }
         }
 
@@ -57,7 +63,7 @@ namespace Platform2D.UI
         #region --- Fields ---
 
         [Header("Pannel")]
-        //[SerializeField] private GameObject _settingPannel;
+        [SerializeField] private GameObject _settingPannel;
         [SerializeField] private GameObject _toolsPannel;
 
         [Header("Button")]
