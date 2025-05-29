@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 5202707270288904357}
   - component: {fileID: 5963863456020754867}
   - component: {fileID: 8376476550323041168}
+  - component: {fileID: 259578842571204682}
   m_Layer: 11
   m_Name: Player_Knight_P2
   m_TagString: MainPlayer
@@ -322,6 +323,31 @@ MonoBehaviour:
   _currentHealthPoint: 0
   _currentEnergyPoint: 0
   _currentDefencePoint: 0
+--- !u!114 &259578842571204682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2756601591997093452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1244697aa30f9449821a134be92c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inventoryUI: {fileID: 0}
+  _goBackButton: {fileID: 0}
+  _goToTools: {fileID: 0}
+  _inventoryData: {fileID: 11400000, guid: 1ac4124b433c1c74998cf0664266b12c, type: 2}
+  initialItems:
+  - item: {fileID: 11400000, guid: d2d00447f3ff1034b89718515d860694, type: 2}
+    quantity: 1
+  - item: {fileID: 0}
+    quantity: 0
+  - item: {fileID: 11400000, guid: 195ee288751a67542b8a83761fb9d331, type: 2}
+    quantity: 5
+  - item: {fileID: 11400000, guid: 195ee288751a67542b8a83761fb9d331, type: 2}
+    quantity: 11
 --- !u!1 &3416908088909189780
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,9 +524,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -423134231
+  m_SortingLayer: 9
+  m_SortingOrder: 1
   m_Sprite: {fileID: 680880039, guid: cd30944034aa9d543b3d4d7477789b33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
