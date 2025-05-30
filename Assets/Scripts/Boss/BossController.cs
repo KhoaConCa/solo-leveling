@@ -8,6 +8,7 @@ using Platform2D.UIElement;
 using Platform2D.Utilities;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Platform2D.CharacterController
 {
@@ -104,6 +105,7 @@ namespace Platform2D.CharacterController
 
         public BossStates States => _states;
         public BossBaseStats Stats => _stats;
+        public UnityEvent OnDeadCallback => _onDeadCallback;
 
         #endregion
 
@@ -120,6 +122,9 @@ namespace Platform2D.CharacterController
         [SerializeField] private Rigidbody2D _rg2D;
         [SerializeField] private Collider2D _col2D;
         [SerializeField] private Transform _groundDetection;
+
+        [Header("Unity Event")]
+        [SerializeField] private UnityEvent _onDeadCallback;
 
         [Header("Custom Components")]
         [SerializeField] private BossStateFactory _bossStateFactory;
@@ -139,6 +144,8 @@ namespace Platform2D.CharacterController
         private readonly RaycastHit2D[] _groundHits = new RaycastHit2D[1];
 
         private const float GROUND_DISTANCE = 0.05f;
+
+        private bool _isTrigger = true;
 
         #endregion
     }

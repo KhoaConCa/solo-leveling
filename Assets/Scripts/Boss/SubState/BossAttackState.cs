@@ -59,7 +59,13 @@ namespace Platform2D.HierarchicalStateMachine
         /// </summary>
         public override void CheckSwitchState() 
         {
-            if(_queAttackHandle.Count == 0 && !_resetCoolDown)
+            if (_stateController.States.IsDead)
+            {
+                SwitchState(_stateFactory.Dead());
+                return;
+            }
+
+            if (_queAttackHandle.Count == 0 && !_resetCoolDown)
             {
                 SwitchState(_stateFactory.Injure());
             }

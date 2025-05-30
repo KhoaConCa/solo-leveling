@@ -36,6 +36,12 @@ namespace Platform2D.HierarchicalStateMachine
         /// <returns>Trả về State Injure của Boss.</returns>
         public BaseState<BossController, BossStateFactory> Injure() => new BossInjureState(_controller, this);
 
+        /// <summary>
+        /// Khởi tạo State Dead của Boss
+        /// </summary>
+        /// <returns>Trả về State Injure của Boss.</returns>
+        public BaseState<BossController, BossStateFactory> Dead() => new BossDeadState(_controller, this);
+
         #endregion
 
         #region --- Fields ---

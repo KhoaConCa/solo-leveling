@@ -1,8 +1,10 @@
-using Platform2D.CharacterController;
+﻿using Platform2D.CharacterController;
 using Platform2D.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -10,8 +12,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        RecoveryHandle();
-
+        ResetScene();
     }
 
     #endregion
@@ -59,6 +60,32 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
     }
 
+    public void ShowVictoryMenu(bool isActive)
+    {
+        _victoryMenu.SetActive(isActive);
+
+        if (isActive)
+            Time.timeScale = 0f;
+        else
+            Time.timeScale = 1f;
+    }
+
+    // Gọi hàm này để reset Scene hiện tại
+    public void ResetScene()
+    {
+        var bossCtrl = _bossPrefab.GetComponentInChildren<BossController>();
+
+        if (bossCtrl.States.IsDead)
+            bossCtrl.ResetStats();
+        _checkPoint = _baseCheckpoint;
+        RevivePlayer();
+    }
+
+    public void LoadSceneByName(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     #endregion
 
     #region --- Fields ---
@@ -70,10 +97,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _bossPrefab;
 
     [Header("Static Entities")]
+    [SerializeField] private GameObject _baseCheckpoint;
     [SerializeField] private GameObject _checkPoint;
 
     [Header("UI Object")]
     [SerializeField] private GameObject _deadMenu;
+    [SerializeField] private GameObject _victoryMenu;
 
     #endregion
 }
