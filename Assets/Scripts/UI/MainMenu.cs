@@ -31,7 +31,7 @@ namespace Platform2D.UI
         {
             if (btn == _startGameButton)
             {
-                SceneManager.LoadScene("MapDemo");
+                SceneManager.LoadScene("GameplayDemo");
                 Time.timeScale = 1;
             }
             else if (btn == _openSettingsButton)

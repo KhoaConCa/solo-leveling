@@ -1,6 +1,5 @@
 ﻿using Platform2D.CharacterController;
 using Platform2D.Utilities;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     public void RecoveryHandle()
     {
-        foreach(var spawner in _spawners)
+        foreach (var spawner in _spawners)
         {
             var spawnCtrl = spawner.GetComponent<Spawner>();
             spawnCtrl.Spawn(_enemyPrefab);
@@ -30,7 +29,7 @@ public class GameManager : MonoBehaviour
         var playerCtrl = _player.GetComponent<PlayerCore>();
         if (playerCtrl.States.IsDead) return;
 
-        if(playerCtrl.States.IsInteracted && playerCtrl.States.TagInteract == TagLayerName.Checkpoint)
+        if (playerCtrl.States.IsInteracted && playerCtrl.States.TagInteract == TagLayerName.Checkpoint)
             _checkPoint = playerCtrl.States.SavePoint;
     }
 
@@ -42,7 +41,7 @@ public class GameManager : MonoBehaviour
         var playerCtrl = _player.GetComponent<PlayerCore>();
         var bossCtrl = _bossPrefab.GetComponentInChildren<BossController>();
 
-        if(!bossCtrl.States.IsDead)
+        if (!bossCtrl.States.IsDead)
             bossCtrl.ResetStats();
 
         if (!playerCtrl.States.IsDead) return;
@@ -53,8 +52,9 @@ public class GameManager : MonoBehaviour
     public void ShowDeadMenu(bool isActive)
     {
         _deadMenu.SetActive(isActive);
+        _settingAndToolsMenu.SetActive(!isActive);
 
-        if(isActive)
+        if (isActive)
             Time.timeScale = 0f;
         else
             Time.timeScale = 1f;
@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
     public void ShowVictoryMenu(bool isActive)
     {
         _victoryMenu.SetActive(isActive);
+        _settingAndToolsMenu.SetActive(!isActive);
 
         if (isActive)
             Time.timeScale = 0f;
@@ -76,8 +77,12 @@ public class GameManager : MonoBehaviour
         var bossCtrl = _bossPrefab.GetComponentInChildren<BossController>();
 
         if (bossCtrl.States.IsDead)
+        {
             bossCtrl.ResetStats();
+            bossCtrl.States.IsDead = false;
+        }
         _checkPoint = _baseCheckpoint;
+
         RevivePlayer();
     }
 
@@ -103,6 +108,7 @@ public class GameManager : MonoBehaviour
     [Header("UI Object")]
     [SerializeField] private GameObject _deadMenu;
     [SerializeField] private GameObject _victoryMenu;
+    [SerializeField] private GameObject _settingAndToolsMenu;
 
     #endregion
 }
