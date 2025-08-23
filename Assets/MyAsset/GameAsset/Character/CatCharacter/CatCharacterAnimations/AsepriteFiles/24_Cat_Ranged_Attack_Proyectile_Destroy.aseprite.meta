@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -204,13 +205,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1813763390
+    uuid:
+      value0: 2871486390
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -1423480906
     name: 24_Cat_Ranged_Attack_Proyectile_Destroy
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 24_Cat_Ranged_Attack_Proyectile_Destroy_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -219,7 +225,7 @@ ScriptedImporter:
         width: 3
         height: 7
       spriteId: 0fa8c1910cf08f149be668420f7cad54
-    - name: 24_Cat_Ranged_Attack_Proyectile_Destroy_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -228,7 +234,7 @@ ScriptedImporter:
         width: 5
         height: 9
       spriteId: 8487914e08afceb43be4708a12953b3c
-    - name: 24_Cat_Ranged_Attack_Proyectile_Destroy_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -237,7 +243,7 @@ ScriptedImporter:
         width: 6
         height: 11
       spriteId: 38ca9d8735f15304eadb2c05a136a14a
-    - name: 24_Cat_Ranged_Attack_Proyectile_Destroy_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -253,3 +259,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 32, y: 64}

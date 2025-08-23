@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -284,13 +285,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -241132035
+    uuid:
+      value0: 1297619505
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 1297619505
     name: 24_Alternative_Colour_Cat_Special_Attack
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 24_Alternative_Colour_Cat_Special_Attack_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -299,7 +305,7 @@ ScriptedImporter:
         width: 13
         height: 18
       spriteId: 3c397058d8baafe4dafcdd2d4aa2b5b1
-    - name: 24_Alternative_Colour_Cat_Special_Attack_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -308,7 +314,7 @@ ScriptedImporter:
         width: 14
         height: 18
       spriteId: 83b5d87c57d3fc54bb90f7d57649148d
-    - name: 24_Alternative_Colour_Cat_Special_Attack_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -317,7 +323,7 @@ ScriptedImporter:
         width: 31
         height: 17
       spriteId: 5c7f6b5c907839349bfdbee83cb2a03f
-    - name: 24_Alternative_Colour_Cat_Special_Attack_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -326,7 +332,7 @@ ScriptedImporter:
         width: 26
         height: 22
       spriteId: 6a64a423970cdc342b6d0e00d7e90a5a
-    - name: 24_Alternative_Colour_Cat_Special_Attack_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -335,7 +341,7 @@ ScriptedImporter:
         width: 21
         height: 22
       spriteId: 6a2aeacb01c7749429530e6f29374d39
-    - name: 24_Alternative_Colour_Cat_Special_Attack_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -344,7 +350,7 @@ ScriptedImporter:
         width: 28
         height: 22
       spriteId: 5e50891cb7cbc154a917c165d7f66a59
-    - name: 24_Alternative_Colour_Cat_Special_Attack_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -353,7 +359,7 @@ ScriptedImporter:
         width: 31
         height: 22
       spriteId: e006daa1d57f63e48a6f508bdb0e377e
-    - name: 24_Alternative_Colour_Cat_Special_Attack_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -369,3 +375,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 32}
+  previousTextureSize: {x: 64, y: 128}

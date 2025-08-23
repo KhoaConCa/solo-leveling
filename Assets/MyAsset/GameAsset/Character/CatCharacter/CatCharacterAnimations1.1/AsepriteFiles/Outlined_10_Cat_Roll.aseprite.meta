@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -284,13 +285,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -852642839
+    uuid:
+      value0: 3957444301
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -337522995
     name: Outlined_10_Cat_Roll
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Outlined_10_Cat_Roll_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -299,7 +305,7 @@ ScriptedImporter:
         width: 16
         height: 18
       spriteId: 10f887695367abd4483587bca0172a23
-    - name: Outlined_10_Cat_Roll_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -308,7 +314,7 @@ ScriptedImporter:
         width: 17
         height: 15
       spriteId: be4072734d629a844832e5b834c311d6
-    - name: Outlined_10_Cat_Roll_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -317,7 +323,7 @@ ScriptedImporter:
         width: 16
         height: 13
       spriteId: 337d4b9c4a1e3ce439a6d69c6a1d0602
-    - name: Outlined_10_Cat_Roll_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -326,7 +332,7 @@ ScriptedImporter:
         width: 13
         height: 13
       spriteId: 8647660853f3e1b4b8e7b0e65ccd7ff1
-    - name: Outlined_10_Cat_Roll_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -335,7 +341,7 @@ ScriptedImporter:
         width: 13
         height: 12
       spriteId: 2a1e8a8d72f13d94ba763820bdf074df
-    - name: Outlined_10_Cat_Roll_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -344,7 +350,7 @@ ScriptedImporter:
         width: 14
         height: 12
       spriteId: c80f60d0c97260540a9e495d996df1fb
-    - name: Outlined_10_Cat_Roll_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -353,7 +359,7 @@ ScriptedImporter:
         width: 14
         height: 13
       spriteId: a3fd96449d352cd499c35f5cd73361ce
-    - name: Outlined_10_Cat_Roll_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -369,3 +375,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 128}

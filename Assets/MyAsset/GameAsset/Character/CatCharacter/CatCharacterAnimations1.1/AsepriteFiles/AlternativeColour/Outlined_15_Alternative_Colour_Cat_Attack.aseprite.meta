@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -244,13 +245,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1982966940
+    uuid:
+      value0: 1292403212
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 1292403212
     name: Outlined_15_Alternative_Colour_Cat_Attack
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Outlined_15_Alternative_Colour_Cat_Attack_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -259,7 +265,7 @@ ScriptedImporter:
         width: 15
         height: 16
       spriteId: da6dde8216200ca4bacded9bd32a3951
-    - name: Outlined_15_Alternative_Colour_Cat_Attack_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -268,7 +274,7 @@ ScriptedImporter:
         width: 16
         height: 14
       spriteId: 3ea0b4d1b7e951046be5c3569d61834c
-    - name: Outlined_15_Alternative_Colour_Cat_Attack_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -277,7 +283,7 @@ ScriptedImporter:
         width: 33
         height: 21
       spriteId: 89b528b349be69846b2d5ad0ebd6edd4
-    - name: Outlined_15_Alternative_Colour_Cat_Attack_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -286,7 +292,7 @@ ScriptedImporter:
         width: 32
         height: 20
       spriteId: 9aa26bb74f5e5c040a07ba69ae341bcf
-    - name: Outlined_15_Alternative_Colour_Cat_Attack_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -295,7 +301,7 @@ ScriptedImporter:
         width: 32
         height: 19
       spriteId: f1f6583448d3e9045b75eaf173616898
-    - name: Outlined_15_Alternative_Colour_Cat_Attack_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -311,3 +317,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 32}
+  previousTextureSize: {x: 64, y: 128}

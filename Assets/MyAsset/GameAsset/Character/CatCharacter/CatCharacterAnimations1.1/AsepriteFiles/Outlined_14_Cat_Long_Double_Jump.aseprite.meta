@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -364,13 +365,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -816269291
+    uuid:
+      value0: 1847917225
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 1847917225
     name: Outlined_14_Cat_Long_Double_Jump
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Outlined_14_Cat_Long_Double_Jump_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -379,7 +385,7 @@ ScriptedImporter:
         width: 17
         height: 16
       spriteId: 31f1f1f1a464204488efec0e2033678b
-    - name: Outlined_14_Cat_Long_Double_Jump_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -388,7 +394,7 @@ ScriptedImporter:
         width: 16
         height: 13
       spriteId: 1ab21f42974d7b74b802680dc864c02a
-    - name: Outlined_14_Cat_Long_Double_Jump_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -397,7 +403,7 @@ ScriptedImporter:
         width: 13
         height: 13
       spriteId: 486254e5b51f3c9428dc2903aec7a943
-    - name: Outlined_14_Cat_Long_Double_Jump_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -406,7 +412,7 @@ ScriptedImporter:
         width: 13
         height: 13
       spriteId: f9db8511583b37a4fa21766260824412
-    - name: Outlined_14_Cat_Long_Double_Jump_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -415,7 +421,7 @@ ScriptedImporter:
         width: 14
         height: 13
       spriteId: c3d45aae9d747f345853f266326900c6
-    - name: Outlined_14_Cat_Long_Double_Jump_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -424,7 +430,7 @@ ScriptedImporter:
         width: 14
         height: 13
       spriteId: 70d147de81794e44b8453d79e406188e
-    - name: Outlined_14_Cat_Long_Double_Jump_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -433,7 +439,7 @@ ScriptedImporter:
         width: 13
         height: 13
       spriteId: 7eaf5000d5d8dfd439328cff5baca1fa
-    - name: Outlined_14_Cat_Long_Double_Jump_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -442,7 +448,7 @@ ScriptedImporter:
         width: 13
         height: 13
       spriteId: d02b6939add67924bb4ca95a3cf43cd7
-    - name: Outlined_14_Cat_Long_Double_Jump_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -451,7 +457,7 @@ ScriptedImporter:
         width: 14
         height: 13
       spriteId: 25b77293c3982254587c237e40b03f5a
-    - name: Outlined_14_Cat_Long_Double_Jump_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -460,7 +466,7 @@ ScriptedImporter:
         width: 14
         height: 14
       spriteId: 343f9f5569795224cbe6c59e9053e4c4
-    - name: Outlined_14_Cat_Long_Double_Jump_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -469,7 +475,7 @@ ScriptedImporter:
         width: 12
         height: 18
       spriteId: 2aa0e422ac3407041a5bd9544ad3f997
-    - name: Outlined_14_Cat_Long_Double_Jump_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -485,3 +491,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 128, y: 128}

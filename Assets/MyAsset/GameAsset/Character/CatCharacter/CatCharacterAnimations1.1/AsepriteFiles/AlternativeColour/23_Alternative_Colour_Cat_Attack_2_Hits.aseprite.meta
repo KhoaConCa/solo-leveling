@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -324,13 +325,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -703076842
+    uuid:
+      value0: 214600174
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 214600174
     name: 23_Alternative_Colour_Cat_Attack_2_Hits
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 23_Alternative_Colour_Cat_Attack_2_Hits_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -339,7 +345,7 @@ ScriptedImporter:
         width: 13
         height: 18
       spriteId: 1a5732f61d0fb824488d8054b5cc6518
-    - name: 23_Alternative_Colour_Cat_Attack_2_Hits_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -348,7 +354,7 @@ ScriptedImporter:
         width: 14
         height: 18
       spriteId: 5d82a73de1bb1d44aa3a5c7bdd3c4ade
-    - name: 23_Alternative_Colour_Cat_Attack_2_Hits_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -357,7 +363,7 @@ ScriptedImporter:
         width: 33
         height: 18
       spriteId: e88d61bb905e9a64bb9021ce90844695
-    - name: 23_Alternative_Colour_Cat_Attack_2_Hits_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -366,7 +372,7 @@ ScriptedImporter:
         width: 33
         height: 18
       spriteId: f436ba127a5e897428dd31105dc36bb3
-    - name: 23_Alternative_Colour_Cat_Attack_2_Hits_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -375,7 +381,7 @@ ScriptedImporter:
         width: 33
         height: 18
       spriteId: 67dac532a8691ac4bbc6a73355b09c69
-    - name: 23_Alternative_Colour_Cat_Attack_2_Hits_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -384,7 +390,7 @@ ScriptedImporter:
         width: 14
         height: 18
       spriteId: e863465759070de488ab866bd5466a93
-    - name: 23_Alternative_Colour_Cat_Attack_2_Hits_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -393,7 +399,7 @@ ScriptedImporter:
         width: 29
         height: 19
       spriteId: a5e45bada9ba1f24ba87f231ce6de27d
-    - name: 23_Alternative_Colour_Cat_Attack_2_Hits_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -402,7 +408,7 @@ ScriptedImporter:
         width: 29
         height: 18
       spriteId: 5419c841bbd7bdf48b52a8430706b170
-    - name: 23_Alternative_Colour_Cat_Attack_2_Hits_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -411,7 +417,7 @@ ScriptedImporter:
         width: 27
         height: 18
       spriteId: c9685b87899bc864a84f34c4557835ab
-    - name: 23_Alternative_Colour_Cat_Attack_2_Hits_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -427,3 +433,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 32}
+  previousTextureSize: {x: 128, y: 128}

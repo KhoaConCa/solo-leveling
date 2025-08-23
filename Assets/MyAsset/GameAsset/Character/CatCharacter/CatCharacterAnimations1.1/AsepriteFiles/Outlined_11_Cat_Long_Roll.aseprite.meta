@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -364,13 +365,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1958952641
+    uuid:
+      value0: 4234990341
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -59976955
     name: Outlined_11_Cat_Long_Roll
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Outlined_11_Cat_Long_Roll_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -379,7 +385,7 @@ ScriptedImporter:
         width: 16
         height: 18
       spriteId: fb2dae705c4664846a98012083082d70
-    - name: Outlined_11_Cat_Long_Roll_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -388,7 +394,7 @@ ScriptedImporter:
         width: 17
         height: 15
       spriteId: 0852b26c0383cbc4fb88be9f4aec6e7d
-    - name: Outlined_11_Cat_Long_Roll_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -397,7 +403,7 @@ ScriptedImporter:
         width: 16
         height: 13
       spriteId: d17789144988aab46b8be93689b88320
-    - name: Outlined_11_Cat_Long_Roll_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -406,7 +412,7 @@ ScriptedImporter:
         width: 13
         height: 13
       spriteId: 3a201547326c51e449266dd97e7ad497
-    - name: Outlined_11_Cat_Long_Roll_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -415,7 +421,7 @@ ScriptedImporter:
         width: 13
         height: 12
       spriteId: 5abd7f42fcbf2cc4b8b9397e35432f22
-    - name: Outlined_11_Cat_Long_Roll_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -424,7 +430,7 @@ ScriptedImporter:
         width: 14
         height: 12
       spriteId: 95de5c1279986ec4aa819e12b34d5db7
-    - name: Outlined_11_Cat_Long_Roll_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -433,7 +439,7 @@ ScriptedImporter:
         width: 14
         height: 12
       spriteId: 8e6b4860669d2a144955e327d8e22e55
-    - name: Outlined_11_Cat_Long_Roll_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -442,7 +448,7 @@ ScriptedImporter:
         width: 13
         height: 12
       spriteId: aa5b83cfd35a8a84d92a71164fbb15a5
-    - name: Outlined_11_Cat_Long_Roll_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -451,7 +457,7 @@ ScriptedImporter:
         width: 13
         height: 12
       spriteId: f93f09e8ed925aa478c44a2210a0290a
-    - name: Outlined_11_Cat_Long_Roll_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -460,7 +466,7 @@ ScriptedImporter:
         width: 14
         height: 12
       spriteId: 1dffc1daf433dad4c9444a3b3c0f0d0c
-    - name: Outlined_11_Cat_Long_Roll_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -469,7 +475,7 @@ ScriptedImporter:
         width: 14
         height: 13
       spriteId: d095ad424733c4749b01fa6b767595d1
-    - name: Outlined_11_Cat_Long_Roll_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -485,3 +491,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 128, y: 128}

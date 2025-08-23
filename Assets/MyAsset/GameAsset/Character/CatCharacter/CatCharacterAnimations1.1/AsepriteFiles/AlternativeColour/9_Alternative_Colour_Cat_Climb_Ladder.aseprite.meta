@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -284,13 +285,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1108328884
+    uuid:
+      value0: 4081387908
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -213579388
     name: 9_Alternative_Colour_Cat_Climb_Ladder
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 9_Alternative_Colour_Cat_Climb_Ladder_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -299,7 +305,7 @@ ScriptedImporter:
         width: 11
         height: 20
       spriteId: b753e0ca38c6c714c8a05b6d2a262f46
-    - name: 9_Alternative_Colour_Cat_Climb_Ladder_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -308,7 +314,7 @@ ScriptedImporter:
         width: 12
         height: 20
       spriteId: fef9378eb50c6da48ac04d0d4c31a219
-    - name: 9_Alternative_Colour_Cat_Climb_Ladder_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -317,7 +323,7 @@ ScriptedImporter:
         width: 12
         height: 20
       spriteId: 8987211c49a2cb74baf7ae628ac3c5df
-    - name: 9_Alternative_Colour_Cat_Climb_Ladder_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -326,7 +332,7 @@ ScriptedImporter:
         width: 11
         height: 20
       spriteId: 2621dac6d44364c4c82e3f91ea341a8c
-    - name: 9_Alternative_Colour_Cat_Climb_Ladder_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -335,7 +341,7 @@ ScriptedImporter:
         width: 11
         height: 20
       spriteId: 26bd0f20f26301f4ab5bccceee858df0
-    - name: 9_Alternative_Colour_Cat_Climb_Ladder_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -344,7 +350,7 @@ ScriptedImporter:
         width: 12
         height: 20
       spriteId: 868269a5aa0f1e148b2a0a804c0bb14a
-    - name: 9_Alternative_Colour_Cat_Climb_Ladder_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -353,7 +359,7 @@ ScriptedImporter:
         width: 12
         height: 20
       spriteId: 43ed8df8a12608244b0e860f256e48f4
-    - name: 9_Alternative_Colour_Cat_Climb_Ladder_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -369,3 +375,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 128}

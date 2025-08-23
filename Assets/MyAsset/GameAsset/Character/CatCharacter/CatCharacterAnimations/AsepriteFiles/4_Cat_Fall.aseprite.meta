@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -204,13 +205,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1050160549
+    uuid:
+      value0: 2685647481
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -1609319815
     name: 4_Cat_Fall
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 4_Cat_Fall_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -219,7 +225,7 @@ ScriptedImporter:
         width: 11
         height: 18
       spriteId: 15003b7641f1dd241be5a668e2e73970
-    - name: 4_Cat_Fall_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -228,7 +234,7 @@ ScriptedImporter:
         width: 11
         height: 18
       spriteId: cfdb8d2c057506b438715a12f64838a6
-    - name: 4_Cat_Fall_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -237,7 +243,7 @@ ScriptedImporter:
         width: 11
         height: 18
       spriteId: 2b8227fb8cd39cf499d19f47f3e62835
-    - name: 4_Cat_Fall_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -253,3 +259,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 64}

@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -284,13 +285,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1050252133
+    uuid:
+      value0: 1447041223
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 1447041223
     name: 18_Cat_Death
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 18_Cat_Death_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -299,7 +305,7 @@ ScriptedImporter:
         width: 13
         height: 19
       spriteId: e6c1bb40f22646645886a0acd0a22ef2
-    - name: 18_Cat_Death_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -308,7 +314,7 @@ ScriptedImporter:
         width: 13
         height: 19
       spriteId: ecb7f2dac0b4f4445b3708de1ea3a2b3
-    - name: 18_Cat_Death_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -317,7 +323,7 @@ ScriptedImporter:
         width: 13
         height: 19
       spriteId: 2f3e3f75de962cd46b1603c8b5c80955
-    - name: 18_Cat_Death_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -326,7 +332,7 @@ ScriptedImporter:
         width: 13
         height: 19
       spriteId: 02d8424c0a9824e40bc7b78513ca850e
-    - name: 18_Cat_Death_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -335,7 +341,7 @@ ScriptedImporter:
         width: 19
         height: 22
       spriteId: 40d1af55bcc051d47800c2a28b9c6a01
-    - name: 18_Cat_Death_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -344,7 +350,7 @@ ScriptedImporter:
         width: 19
         height: 22
       spriteId: 55a98d4af1d20964e87a5ae4be101423
-    - name: 18_Cat_Death_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -353,7 +359,7 @@ ScriptedImporter:
         width: 19
         height: 22
       spriteId: 1934c903f23da61469218bc652f4f668
-    - name: 18_Cat_Death_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -369,3 +375,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 128}

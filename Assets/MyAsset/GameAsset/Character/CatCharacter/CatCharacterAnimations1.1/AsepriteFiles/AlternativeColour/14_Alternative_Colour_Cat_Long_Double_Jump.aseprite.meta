@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -364,13 +365,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 848854045
+    uuid:
+      value0: 3669629137
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -625338159
     name: 14_Alternative_Colour_Cat_Long_Double_Jump
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 14_Alternative_Colour_Cat_Long_Double_Jump_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -379,7 +385,7 @@ ScriptedImporter:
         width: 15
         height: 14
       spriteId: f31c5d5281c6b4a4ca391f06773a306b
-    - name: 14_Alternative_Colour_Cat_Long_Double_Jump_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -388,7 +394,7 @@ ScriptedImporter:
         width: 14
         height: 11
       spriteId: cde26d3a10f2bfd4ab7300c866bdb00d
-    - name: 14_Alternative_Colour_Cat_Long_Double_Jump_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -397,7 +403,7 @@ ScriptedImporter:
         width: 11
         height: 11
       spriteId: c23e629cb6e0053429b20bd4e1dadfa7
-    - name: 14_Alternative_Colour_Cat_Long_Double_Jump_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -406,7 +412,7 @@ ScriptedImporter:
         width: 11
         height: 11
       spriteId: 95eaf822c0e672f4caf81020f0bcac34
-    - name: 14_Alternative_Colour_Cat_Long_Double_Jump_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -415,7 +421,7 @@ ScriptedImporter:
         width: 12
         height: 11
       spriteId: e2d9a4440283db843991cb53ba5cfe99
-    - name: 14_Alternative_Colour_Cat_Long_Double_Jump_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -424,7 +430,7 @@ ScriptedImporter:
         width: 12
         height: 11
       spriteId: fd41eba4771fa9842b1c4d6a99cb100b
-    - name: 14_Alternative_Colour_Cat_Long_Double_Jump_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -433,7 +439,7 @@ ScriptedImporter:
         width: 11
         height: 11
       spriteId: 546928f839f3362449a91c60e219fac5
-    - name: 14_Alternative_Colour_Cat_Long_Double_Jump_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -442,7 +448,7 @@ ScriptedImporter:
         width: 11
         height: 11
       spriteId: 7a884021d3c28304a83f10dc5cbc01e7
-    - name: 14_Alternative_Colour_Cat_Long_Double_Jump_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -451,7 +457,7 @@ ScriptedImporter:
         width: 12
         height: 11
       spriteId: 4601b0f708e61cd48a8681dbb4aab4b0
-    - name: 14_Alternative_Colour_Cat_Long_Double_Jump_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -460,7 +466,7 @@ ScriptedImporter:
         width: 12
         height: 12
       spriteId: 10c0a0944cfcc364d979d1cf22a28b94
-    - name: 14_Alternative_Colour_Cat_Long_Double_Jump_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -469,7 +475,7 @@ ScriptedImporter:
         width: 10
         height: 16
       spriteId: 344c222f378da164e940cf9c45623d33
-    - name: 14_Alternative_Colour_Cat_Long_Double_Jump_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -485,3 +491,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 128}

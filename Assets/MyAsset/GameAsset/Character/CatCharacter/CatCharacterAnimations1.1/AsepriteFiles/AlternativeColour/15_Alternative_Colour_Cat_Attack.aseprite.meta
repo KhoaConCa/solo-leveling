@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -244,13 +245,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1107891161
+    uuid:
+      value0: 2707430013
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -1587537283
     name: 15_Alternative_Colour_Cat_Attack
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 15_Alternative_Colour_Cat_Attack_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -259,7 +265,7 @@ ScriptedImporter:
         width: 13
         height: 15
       spriteId: 1a94d97fccacce34691f4f3d5238468c
-    - name: 15_Alternative_Colour_Cat_Attack_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -268,7 +274,7 @@ ScriptedImporter:
         width: 14
         height: 13
       spriteId: 24eb660553101964cad76b1bc906c7d6
-    - name: 15_Alternative_Colour_Cat_Attack_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -277,7 +283,7 @@ ScriptedImporter:
         width: 32
         height: 20
       spriteId: b879676065dce8d448faeb43f5c7c647
-    - name: 15_Alternative_Colour_Cat_Attack_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -286,7 +292,7 @@ ScriptedImporter:
         width: 31
         height: 20
       spriteId: ccca9f3095a6931439dfb641aadb460e
-    - name: 15_Alternative_Colour_Cat_Attack_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -295,7 +301,7 @@ ScriptedImporter:
         width: 31
         height: 19
       spriteId: ca57058f8c4b2f645a74d9d1e6ea4a92
-    - name: 15_Alternative_Colour_Cat_Attack_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -311,3 +317,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 32}
+  previousTextureSize: {x: 64, y: 128}

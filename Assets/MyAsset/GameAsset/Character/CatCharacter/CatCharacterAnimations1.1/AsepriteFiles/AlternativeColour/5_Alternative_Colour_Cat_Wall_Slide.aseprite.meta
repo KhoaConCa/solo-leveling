@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -204,13 +205,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1420340672
+    uuid:
+      value0: 2773128384
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -1521838912
     name: 5_Alternative_Colour_Cat_Wall_Slide
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 5_Alternative_Colour_Cat_Wall_Slide_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -219,7 +225,7 @@ ScriptedImporter:
         width: 13
         height: 17
       spriteId: ca934d51d86397542af5cb48518b7f43
-    - name: 5_Alternative_Colour_Cat_Wall_Slide_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -228,7 +234,7 @@ ScriptedImporter:
         width: 13
         height: 17
       spriteId: 01b9f2be361e3c84dbdadde0d34674b5
-    - name: 5_Alternative_Colour_Cat_Wall_Slide_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -237,7 +243,7 @@ ScriptedImporter:
         width: 13
         height: 17
       spriteId: 32dfd447e88e0514ca40cce835f3fa50
-    - name: 5_Alternative_Colour_Cat_Wall_Slide_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -253,3 +259,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 64}

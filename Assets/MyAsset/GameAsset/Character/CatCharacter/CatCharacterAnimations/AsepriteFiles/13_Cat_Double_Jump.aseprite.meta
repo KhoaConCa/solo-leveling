@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -284,13 +285,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -726057960
+    uuid:
+      value0: 1653410424
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 1653410424
     name: 13_Cat_Double_Jump
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 13_Cat_Double_Jump_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -299,7 +305,7 @@ ScriptedImporter:
         width: 15
         height: 14
       spriteId: 77259398c90dc9c45b1916a54c371228
-    - name: 13_Cat_Double_Jump_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -308,7 +314,7 @@ ScriptedImporter:
         width: 14
         height: 11
       spriteId: ec1b74195570e7e49a7cf3cd6363f050
-    - name: 13_Cat_Double_Jump_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -317,7 +323,7 @@ ScriptedImporter:
         width: 11
         height: 11
       spriteId: 498eece97120a314fa2def739184db9d
-    - name: 13_Cat_Double_Jump_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -326,7 +332,7 @@ ScriptedImporter:
         width: 11
         height: 11
       spriteId: fd81635e574fe504a8a13a5d0c0bc027
-    - name: 13_Cat_Double_Jump_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -335,7 +341,7 @@ ScriptedImporter:
         width: 12
         height: 11
       spriteId: 153a95009613af0408d05c0aeaf840d5
-    - name: 13_Cat_Double_Jump_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -344,7 +350,7 @@ ScriptedImporter:
         width: 12
         height: 12
       spriteId: 223096a2f9dab8343962083cf1796f29
-    - name: 13_Cat_Double_Jump_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -353,7 +359,7 @@ ScriptedImporter:
         width: 10
         height: 16
       spriteId: 81ff0efc5f5964146a401c32043bcffa
-    - name: 13_Cat_Double_Jump_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -369,3 +375,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 128}

@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -284,13 +285,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -31505030
+    uuid:
+      value0: 2282636258
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -2012331038
     name: 10_Cat_Roll
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 10_Cat_Roll_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -299,7 +305,7 @@ ScriptedImporter:
         width: 14
         height: 17
       spriteId: bc7d4576aff4c28468c43acf7edae751
-    - name: 10_Cat_Roll_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -308,7 +314,7 @@ ScriptedImporter:
         width: 15
         height: 14
       spriteId: 1ea87e74818bf124e90ffe4daf4a0b84
-    - name: 10_Cat_Roll_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -317,7 +323,7 @@ ScriptedImporter:
         width: 14
         height: 11
       spriteId: 7b37ca8f2368ef247991bb3ff9ece481
-    - name: 10_Cat_Roll_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -326,7 +332,7 @@ ScriptedImporter:
         width: 11
         height: 11
       spriteId: 4c8cbe1c9b7b1f146901774e8819cd67
-    - name: 10_Cat_Roll_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -335,7 +341,7 @@ ScriptedImporter:
         width: 11
         height: 11
       spriteId: 3515bdb2212c803468d8492f8aa950d9
-    - name: 10_Cat_Roll_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -344,7 +350,7 @@ ScriptedImporter:
         width: 12
         height: 11
       spriteId: 02e673ba1b9ab7441a9f948282376e0d
-    - name: 10_Cat_Roll_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -353,7 +359,7 @@ ScriptedImporter:
         width: 12
         height: 12
       spriteId: a5da4b7fb3a0d434a89fa5e9bd8fd381
-    - name: 10_Cat_Roll_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -369,3 +375,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 64}

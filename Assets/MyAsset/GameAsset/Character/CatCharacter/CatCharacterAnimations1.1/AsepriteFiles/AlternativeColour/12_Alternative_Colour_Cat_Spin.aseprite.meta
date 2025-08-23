@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -204,13 +205,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1992736046
+    uuid:
+      value0: 4267531110
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -27436186
     name: 12_Alternative_Colour_Cat_Spin
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 12_Alternative_Colour_Cat_Spin_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -219,7 +225,7 @@ ScriptedImporter:
         width: 12
         height: 11
       spriteId: d1acaa874b8278148a86fba4cdeaf73d
-    - name: 12_Alternative_Colour_Cat_Spin_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -228,7 +234,7 @@ ScriptedImporter:
         width: 12
         height: 11
       spriteId: 4b0a73f42dbf89646b42f2ad5160caaf
-    - name: 12_Alternative_Colour_Cat_Spin_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -237,7 +243,7 @@ ScriptedImporter:
         width: 11
         height: 11
       spriteId: 08f50e3453bf8b246be69ad76271f013
-    - name: 12_Alternative_Colour_Cat_Spin_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -253,3 +259,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 64}

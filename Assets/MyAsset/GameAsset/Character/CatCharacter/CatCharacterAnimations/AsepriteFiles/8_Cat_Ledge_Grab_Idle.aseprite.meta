@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -284,13 +285,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1022115327
+    uuid:
+      value0: 316312763
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 316312763
     name: 8_Cat_Ledge_Grab_Idle
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 8_Cat_Ledge_Grab_Idle_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -299,7 +305,7 @@ ScriptedImporter:
         width: 12
         height: 17
       spriteId: 29b438f95cf40524db3363525e195043
-    - name: 8_Cat_Ledge_Grab_Idle_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -308,7 +314,7 @@ ScriptedImporter:
         width: 12
         height: 17
       spriteId: e20918478dc8c2c489736619c804abc0
-    - name: 8_Cat_Ledge_Grab_Idle_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -317,7 +323,7 @@ ScriptedImporter:
         width: 12
         height: 17
       spriteId: 8c80e47d74f3b5448a2a683906afdf18
-    - name: 8_Cat_Ledge_Grab_Idle_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -326,7 +332,7 @@ ScriptedImporter:
         width: 12
         height: 18
       spriteId: b9d1d99bd0629d74fa72d1f557464354
-    - name: 8_Cat_Ledge_Grab_Idle_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -335,7 +341,7 @@ ScriptedImporter:
         width: 12
         height: 19
       spriteId: 29267b23704f875419129eb286b3e6b2
-    - name: 8_Cat_Ledge_Grab_Idle_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -344,7 +350,7 @@ ScriptedImporter:
         width: 12
         height: 20
       spriteId: 28babcc0f2e1e5e40b12a6da6f08df25
-    - name: 8_Cat_Ledge_Grab_Idle_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -353,7 +359,7 @@ ScriptedImporter:
         width: 12
         height: 19
       spriteId: 6f02534b6eeaca944acf8f14c2660c4f
-    - name: 8_Cat_Ledge_Grab_Idle_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -369,3 +375,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 128}

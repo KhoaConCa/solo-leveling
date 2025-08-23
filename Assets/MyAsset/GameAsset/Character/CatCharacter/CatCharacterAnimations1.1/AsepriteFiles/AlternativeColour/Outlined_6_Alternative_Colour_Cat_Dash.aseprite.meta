@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -204,13 +205,18 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1284118122
+    uuid:
+      value0: 2588869778
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -1706097518
     name: Outlined_6_Alternative_Colour_Cat_Dash
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Outlined_6_Alternative_Colour_Cat_Dash_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -219,7 +225,7 @@ ScriptedImporter:
         width: 16
         height: 18
       spriteId: 19529089c3cfb9e479cf0e3dac151240
-    - name: Outlined_6_Alternative_Colour_Cat_Dash_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -228,7 +234,7 @@ ScriptedImporter:
         width: 16
         height: 18
       spriteId: fba10f37340f4df4bb6ceb4ddde2fb68
-    - name: Outlined_6_Alternative_Colour_Cat_Dash_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -237,7 +243,7 @@ ScriptedImporter:
         width: 16
         height: 18
       spriteId: dfde2fa5e3dbb924ebc8577a578b3f1a
-    - name: Outlined_6_Alternative_Colour_Cat_Dash_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -253,3 +259,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 64}
